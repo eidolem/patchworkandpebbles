@@ -1,3 +1,48 @@
-.post-index { display: none; }
 
-/*test test*/
+
+a {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.main-header {
+    height: 60vh;
+}
+
+
+.post-index { 
+	background-color: #526071; 
+	background-position: center;
+  	background-size: cover;
+  	margin: 10px;
+  	outline: none;
+  	position: relative;
+  	width: 30%;
+  	word-break: break-word;
+  	display: inline-block;
+  	text-align: center;
+  	height: 0;
+  	/*To make the images square*/
+  	padding-bottom: 30%;
+  	vertical-align: top;
+}
+
+
+body:not(.post-template) .post-title {
+    font-size: 2rem;
+    /*text-transform: uppercase;*/
+}
+
+.post-title {
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	height: 30%;
+ 	width: 75%;
+ 	margin: -5% 0% 0% -38%;
+}
+
+@media only screen and (max-width: 500px) {
+	.post-index{ 
+		width: 40%; }
+	}
