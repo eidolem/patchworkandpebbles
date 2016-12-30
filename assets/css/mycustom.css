@@ -1,37 +1,104 @@
 
-
 a {
-    color: #FFFFFF;
+    color: #FFF;
     transition: color 0.3s ease;
 }
 
+.post-title-latest a {
+    color: #FFF;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.post-title-latest a:hover{
+	color: #111;
+}
+
+.tag-title a {
+    color: #828991;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tag-title a:hover{
+	color: #111;
+}
+
+.tag-more a {
+    color: #828991;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.tag-more a:hover{
+	color: #111;
+}
+
+.content {
+	text-align: center;
+}
+
 .main-header {
-    height: 60vh;
+    height: 40vh;
 }
 
 
+/*Creates the square for each post*/
 .post-index { 
 	background-color: #526071; 
 	background-position: center;
   	background-size: cover;
-  	margin: 10px;
+  	margin: 0rem 0.5rem 2rem 0rem;
   	outline: none;
   	position: relative;
-  	width: 30%;
   	word-break: break-word;
   	display: inline-block;
   	text-align: center;
+  	opacity: 1.0;
+  	width: 22.5%;
   	height: 0;
   	/*To make the images square*/
-  	padding-bottom: 30%;
+  	padding-bottom: 20%;
   	vertical-align: top;
 }
 
-
-body:not(.post-template) .post-title {
-    font-size: 2rem;
-    /*text-transform: uppercase;*/
+.post-index:hover {
+	opacity: 0.9;
 }
+
+/*Creates the square for the larger Latest post in the first row*/
+.post-index-latest { 
+	background-color: #526071; 
+	background-position: center;
+  	background-size: cover;
+  	margin: 0rem 0.5rem 4rem 0rem;
+  	outline: none;
+  	position: relative;
+  	word-break: break-word;
+  	display: inline-block;
+  	text-align: center;
+  	width: 80%;
+  	height: 30vh;
+}
+
+.post-index-latest:hover{
+	opacity: 0.9;
+}
+
+.post-title-latest {
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	height: 30%;
+ 	width: 75%;
+ 	margin: -5% 0% 0% -38%;
+ 	letter-spacing: 0.1rem;
+ 	color: #FFF;
+ 	text-shadow: 0rem 0rem 0.8rem grey;
+ 	/*font-family: "Open Sans", serif;"*/
+}
+
 
 .post-title {
  	position: absolute;
@@ -40,6 +107,70 @@ body:not(.post-template) .post-title {
  	height: 30%;
  	width: 75%;
  	margin: -5% 0% 0% -38%;
+ 	letter-spacing: 0.1rem;
+ 	color: #FFF;
+ 	text-shadow: 0rem 0rem 0.8rem grey;
+ 	/*font-family: "Open Sans", serif;"*/
+}
+
+/*Kill the line break with a little circle from the bottom of each post square*/
+.post:after {
+    display: none;
+}
+
+.tag-list-slider {
+	margin: 2rem 0rem 2rem -0.5rem;
+	border-bottom: #e6e6e6 1px solid;
+}
+
+/* Add a little circle in the middle of the border-bottom on the slider*/
+.tag-list-slider:after {
+    display: block;
+    content: "";
+    width: 0.7rem;
+    height: 0.7rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: -0.5rem;
+    left: 50%;
+    margin-left: -0.5rem;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: white 0 0 0 0.5rem;
+}
+
+.tag-list-header {}
+
+/*The header for the tag in the slider row, like TRAVEL*/
+.tag-title {
+	font-size: 1.8rem;
+	margin: 4rem 0rem 0rem 0rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+	text-transform: uppercase;
+	color: #828991;
+	letter-spacing: 0.2rem;
+}
+
+
+.tag-more{
+	font-size: 1.4rem;
+	color: #a9a9a9;
+	font-family: serif;
+	font-style: italic;
+	font-weight: lighter;
+	margin: 0px 0px 40px 0px;
+}
+
+
+/*The title of the post in the square*/
+body:not(.post-template) .post-title {
+    font-size: 1.6rem;
+}
+
+/*The title of the post in the square*/
+body:not(.post-template) .post-title-latest {
+    font-size: 2.7rem;
 }
 
 @media only screen and (max-width: 500px) {

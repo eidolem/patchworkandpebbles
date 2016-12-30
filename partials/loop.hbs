@@ -1,36 +1,86 @@
-{{!-- Previous/next page links - only displayed on page 2+ --}}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
 
-{{!-- This is the post loop - each post will be output using this markup --}}
-{{#foreach posts}}
 
-<script>
-console.info("{{post_class}}");
-</script>
-
-<article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}">
-
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+{{!-- The most recent post --}}
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title"> Latest </h2>
     </header>
-
+    {{#get "posts" order="published_at desc" limit=1}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index-latest{{/is}}" style="background-image: url({{image}}">
+                <header class="post-header">
+                    <h2 class="post-title-latest">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+    {{/get}}
 </article>
-{{/foreach}}
 
-{{!-- Previous/next page links - displayed on every page --}}
-{{pagination}}
+
+{{!-- For tag X, create a row --}}
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title"> <a href="http://www.patchworkandpebbles.com/tag/travel/">on Travel</a> </h2>
+    </header>
+    {{#get "posts" filter="tag:travel" limit=4}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+    <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/travel/">more like this</a> </h3>
+    {{/get}}
+</article>
+
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title"> <a href="http://www.patchworkandpebbles.com/tag/sewing/">Sewing</a>  </h2>
+    </header>
+    {{#get "posts" filter="tag:sewing" limit=4}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+        <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/sewing/">more like this</a> </h3>
+    {{/get}}
+</article>
+
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title">  <a href="http://www.patchworkandpebbles.com/tag/travel/">Travel</a> </h2>
+    </header>
+    {{#get "posts" filter="tag:travel" limit=4}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+        <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/travel/">more like this</a> </h3>
+    {{/get}}
+</article>
 
 
 {{!-- DEBUGGING
-<script>
-console.info("{{post_class}}");
-</script>
+<script> console.info("{{post_class}}"); </script>
 --}}
 
 
-{{!-- ORIGINAL LOOP.HBS
+{{!-- ORIGINAL LOOP.HBS 
 {{! Previous/next page links - only displayed on page 2+ }}
 <div class="extra-pagination inner">
     {{pagination}}
@@ -54,4 +104,5 @@ console.info("{{post_class}}");
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}
-{{pagination}} --}}
+{{pagination}}
+--}}

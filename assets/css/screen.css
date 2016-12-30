@@ -582,7 +582,7 @@ body.nav-opened .site-wrapper {
     position: relative;
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     margin-bottom: 5rem;
     text-align: center;
     background: #222 no-repeat center center;
@@ -615,6 +615,7 @@ body.nav-opened .nav-cover {
     z-index: 200;
 }
 
+/* When Menu button is pressed and right sidebar comes into view.*/
 .nav {
     position: fixed;
     top: 0;
@@ -650,6 +651,7 @@ body.nav-opened .nav {
             transform: translate3D(0, 0, 0);
 }
 
+/* When Menu sidebar is opened, how the "MENU" title is displayed.*/
 .nav-title {
     position: absolute;
     top: 45px;
@@ -660,6 +662,7 @@ body.nav-opened .nav {
     color: #fff;
 }
 
+/* When Menu sidebar is opened, how the "X" in upper right is displayed.*/
 .nav-close {
     position: absolute;
     top: 38px;
@@ -670,16 +673,18 @@ body.nav-opened .nav {
     font-size: 10px;
 }
 
+/* When Menu sidebar is opened, how the "X" in upper right is displayed.*/
 .nav-close:focus {
     outline: 0;
 }
 
+/* When Menu sidebar is opened, how the "X" in upper right is displayed.*/
 .nav-close:before,
 .nav-close:after {
     content: '';
     position: absolute;
     top: 0;
-    width: 20px;
+    width: 10px;
     height: 1px;
     background: rgb(150,150,150);
     top: 15px;
@@ -860,6 +865,7 @@ body.nav-opened .nav {
     width: auto;
 }
 
+/* The Menu button in the upper right of the blog cover image. */
 .menu-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -943,7 +949,7 @@ body.nav-opened .nav {
     background: none;
 }
 
-/* The details of your blog. Defined in ghost/settings/ */
+/* The title of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 10px 0 10px 0;
     font-size: 5rem;
@@ -994,12 +1000,17 @@ body.nav-opened .nav {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: 80%;
+    width: 20%;
+    display: inline-block;
     max-width: 710px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
+}
+
+.post-index {
+    /*display: none;*/
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -1029,6 +1040,11 @@ body.page-template .post-title {
 
 .post-title a {
     text-decoration: none;
+}
+
+.post-image {
+    width: 80%;
+    height: 80%;
 }
 
 .post-excerpt p {
@@ -1582,6 +1598,7 @@ body.page-template .post-title {
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
+    clear: both;
 }
 
 .pagination a {
