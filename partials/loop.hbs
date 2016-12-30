@@ -1,9 +1,13 @@
 
 
+{{!-- Do this if in the index context (homepage) --}}
+{{#is "index"}}
+
 {{!-- The most recent post --}}
 <article class="tag-list-slider">
     <header class="tag-list-header">
-        <h2 class="tag-title"> Latest </h2>
+        <h2 class="tag-title"> 
+            <span class="italicized-words">the </a></span>Latest </h2>
     </header>
     {{#get "posts" order="published_at desc" limit=1}}
         {{#foreach posts}}
@@ -22,7 +26,9 @@
 {{!-- For tag X, create a row --}}
 <article class="tag-list-slider">
     <header class="tag-list-header">
-        <h2 class="tag-title"> <a href="http://www.patchworkandpebbles.com/tag/travel/">on Travel</a> </h2>
+        <h2 class="tag-title"> 
+            <a href="http://www.patchworkandpebbles.com/tag/travel/"><span class="italicized-words">on </span>Travel</a> 
+        </h2>
     </header>
     {{#get "posts" filter="tag:travel" limit=4}}
         {{#foreach posts}}
@@ -34,45 +40,79 @@
             </article>
             </a>
         {{/foreach}}
-    <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/travel/">more like this</a> </h3>
+    <h3 class="italicized-words"> <a href="http://http://localhost:2368/tag/travel/">more like this</a> </h3>
     {{/get}}
 </article>
 
+{{!-- For tag X, create a row --}}
 <article class="tag-list-slider">
     <header class="tag-list-header">
-        <h2 class="tag-title"> <a href="http://www.patchworkandpebbles.com/tag/sewing/">Sewing</a>  </h2>
-    </header>
-    {{#get "posts" filter="tag:sewing" limit=4}}
-        {{#foreach posts}}
-            <a href="{{url}}">
-            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}">
-                <header class="post-header">
-                    <h2 class="post-title">{{title}}</h2>
-                </header>
-            </article>
-            </a>
-        {{/foreach}}
-        <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/sewing/">more like this</a> </h3>
-    {{/get}}
-</article>
-
-<article class="tag-list-slider">
-    <header class="tag-list-header">
-        <h2 class="tag-title">  <a href="http://www.patchworkandpebbles.com/tag/travel/">Travel</a> </h2>
+        <h2 class="tag-title"> 
+            <span class="italicized-words"><a href="http://http://localhost:2368/tag/travel/">on </a></span>
+            <a href="http://www.patchworkandpebbles.com/tag/travel/">Sewing</a> 
+        </h2>
     </header>
     {{#get "posts" filter="tag:travel" limit=4}}
         {{#foreach posts}}
             <a href="{{url}}">
-            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
                 <header class="post-header">
                     <h2 class="post-title">{{title}}</h2>
                 </header>
             </article>
             </a>
         {{/foreach}}
-        <h3 class="tag-more"> <a href="http://www.patchworkandpebbles.com/tag/travel/">more like this</a> </h3>
+    <h3 class="italicized-words"> <a href="http://www.http://localhost:2368/tag/sewing/">more like this</a> </h3>
     {{/get}}
 </article>
+
+{{!-- For tag X, create a row --}}
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title"> 
+            <span class="italicized-words"><a href="http://www.http://localhost:2368/tag/travel/">on </a></span>
+            <a href="http://www.patchworkandpebbles.com/tag/travel/">Travel</a> 
+        </h2>
+    </header>
+    {{#get "posts" filter="tag:travel" limit=4}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+    <h3 class="italicized-words"> <a href="http://http://localhost:2368/tag/travel/">more like this</a> </h3>
+    {{/get}}
+</article>
+
+{{/is}}
+{{!-- End of the index context --}}
+
+
+{{!-- Do this if in the tag context to view all posts of that tag --}}
+{{#is "tag"}}
+<article class="tag-list-slider">
+    {{#get "posts" filter="tag:travel" limit=8}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{#is "tag"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+    <h3 class="italicized-words"> put pagination here</h3>
+    {{/get}}
+</article>
+{{/is}}
+
+
+
+
 
 
 {{!-- DEBUGGING

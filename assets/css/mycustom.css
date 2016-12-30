@@ -1,7 +1,12 @@
 
+body{
+	/*font-family: 'Roboto', serif;*/
+}
+
 a {
-    color: #FFF;
+    color: #828991;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .post-title-latest a {
@@ -14,33 +19,49 @@ a {
 	color: #111;
 }
 
-.tag-title a {
+.tag-title a, .post-meta a{
     color: #828991;
     transition: color 0.3s ease;
     text-decoration: none;
     display: inline-block;
 }
 
-.tag-title a:hover{
+.tag-title a:hover,  .post-meta a:hover{
 	color: #111;
-}
-
-.tag-more a {
-    color: #828991;
-    transition: color 0.3s ease;
     text-decoration: none;
 }
 
-.tag-more a:hover{
-	color: #111;
+.index-content {
+	text-align: center;
 }
 
-.content {
+.tag-content {
 	text-align: center;
+}
+
+.tag-content {
+	width: 100%;
 }
 
 .main-header {
     height: 40vh;
+}
+
+.page-title {
+    margin: 10px 0 10px 0;
+    font-size: 5rem;
+    text-shadow: 0rem 0rem 2rem black;
+    font-family: "Roboto", sans-serif;
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+}
+
+.page-description {
+    font-family: "Roboto", sans-serif;
+	text-shadow: 0rem 0rem 2rem black;
+    color: #fff;
+    font-weight: 400;
 }
 
 
@@ -95,28 +116,58 @@ a {
  	margin: -5% 0% 0% -38%;
  	letter-spacing: 0.1rem;
  	color: #FFF;
- 	text-shadow: 0rem 0rem 0.8rem grey;
- 	/*font-family: "Open Sans", serif;"*/
 }
 
-
+/*Titles that are centered in the squares*/
 .post-title {
  	position: absolute;
- 	top: 50%;
+ 	top: 55%;
  	left: 50%;
  	height: 30%;
- 	width: 75%;
- 	margin: -5% 0% 0% -38%;
+ 	width: 90%;
+ 	margin: -5% 0% 0% -45%;
  	letter-spacing: 0.1rem;
  	color: #FFF;
- 	text-shadow: 0rem 0rem 0.8rem grey;
- 	/*font-family: "Open Sans", serif;"*/
+}
+
+/*Title for viewing a single post*/
+.post-title-postpage, .post-title-staticpage {
+ 	position: relative;
+ 	color: #515861;
+ 	font-family: 'Roboto', sans-serif;
 }
 
 /*Kill the line break with a little circle from the bottom of each post square*/
 .post:after {
     display: none;
 }
+
+/*For the string "14 December 2016 on Travel" on the single post page*/
+.post-meta {
+    display: block;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1.75rem 0 0 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: #828991;
+}
+
+/*To make the date on the single post page different*/
+.post-date {
+    display: inline-block;
+    margin-left: 8px;
+    padding-left: 12px;
+    border-left: #d5dbde 1px solid;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    letter-spacing: 0rem;
+    font-weight: lighter;
+}
+
 
 .tag-list-slider {
 	margin: 2rem 0rem 2rem -0.5rem;
@@ -153,24 +204,35 @@ a {
 }
 
 
-.tag-more{
+.italicized-words {
 	font-size: 1.4rem;
 	color: #a9a9a9;
 	font-family: serif;
 	font-style: italic;
 	font-weight: lighter;
+	text-transform: lowercase;
+	transition: color 0.3s ease;
 	margin: 0px 0px 40px 0px;
 }
 
+a:hover .italicized-words{
+	color: #111;
+}
 
 /*The title of the post in the square*/
 body:not(.post-template) .post-title {
     font-size: 1.6rem;
+    text-shadow: 0rem 0rem 0.8rem black;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-weight: 500;
 }
 
 /*The title of the post in the square*/
 body:not(.post-template) .post-title-latest {
     font-size: 2.7rem;
+    text-shadow: 0rem 0rem 0.8rem black;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-weight: 500;
 }
 
 @media only screen and (max-width: 500px) {
