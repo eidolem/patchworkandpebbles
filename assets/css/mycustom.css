@@ -69,19 +69,19 @@ a {
 .post-index { 
 	background-color: #526071; 
 	background-position: center;
-  	background-size: cover;
-  	margin: 0rem 0.5rem 2rem 0rem;
-  	outline: none;
-  	position: relative;
-  	word-break: break-word;
-  	display: inline-block;
-  	text-align: center;
-  	opacity: 1.0;
-  	width: 22.5%;
-  	height: 0;
-  	/*To make the images square*/
-  	padding-bottom: 20%;
-  	vertical-align: top;
+  background-size: cover;
+	margin: 0rem 0.5rem 2rem 0rem;
+  outline: none;
+  position: relative;
+  word-break: break-word;
+  display: inline-block;
+  text-align: center;
+  opacity: 1.0;
+  width: 22.5%;
+  height: 0;
+  /*To make the images square*/
+  padding-bottom: 20%;
+  vertical-align: top;
 }
 
 .post-index:hover {
@@ -235,7 +235,56 @@ body:not(.post-template) .post-title-latest {
  	font-weight: 500;
 }
 
+
+section.post-content{
+    margin: 2rem 0rem 2rem -0.5rem;
+    border-bottom: #e6e6e6 1px solid;
+}
+
+section.post-content:after {
+    display: block;
+    content: "";
+    width: 0.7rem;
+    height: 0.7rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: -0.5rem;
+    left: 50%;
+    margin-left: -0.5rem;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: white 0 0 0 0.5rem;
+}
+
+.post-footer {
+    position: relative;
+    margin: 0rem 0 0 0;
+    padding: 0rem 0 0 0;
+    border-top: none;
+    height: 20vh;
+}
+
+.post-footer .share {
+    position: relative;
+    top: 3rem;
+    right: 0;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
 @media only screen and (max-width: 500px) {
-	.post-index{ 
-		width: 40%; }
-	}
+  .post-index{ 
+    width: 40%; 
+    height: 0;
+    /*To make the images square*/
+    padding-bottom: 40%;
+    vertical-align: top;
+    }
+
+  
+  .post-title-latest a {
+    font-size: 1.5rem;
+  }
+  }
+

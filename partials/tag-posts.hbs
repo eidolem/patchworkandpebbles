@@ -1,0 +1,20 @@
+{{!-- For tag X, create a row --}}
+<article class="tag-list-slider">
+    <header class="tag-list-header">
+        <h2 class="tag-title"> 
+            <a href="http://localhost:2368/tag/{{tag}}/"><span class="italicized-words">on </span>{{tag}}</a> 
+        </h2>
+    </header>
+    {{#get "posts" filter="tag:{{tag}}" limit=4}}
+        {{#foreach posts}}
+            <a href="{{url}}">
+            <article class="{{post_class}} {{#is "index"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
+                <header class="post-header">
+                    <h2 class="post-title">{{title}}</h2>
+                </header>
+            </article>
+            </a>
+        {{/foreach}}
+    {{/get}}
+    <h3 class="italicized-words"> <a href="http://localhost:2368/tag/{{tag}}/">more like this</a> </h3>
+</article>
