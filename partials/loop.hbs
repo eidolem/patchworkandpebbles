@@ -1,24 +1,23 @@
 
-
 {{!-- Do this if in the index context (homepage) --}}
 {{#is "index"}}
 
-{{!-- The most recent post --}}
+{{!-- The most recent post, which has different styling --}}
 <article class="tag-list-slider">
     <header class="tag-list-header">
         <h2 class="tag-title"> 
             <span class="italicized-words">the </a></span>Latest </h2>
     </header>
     {{#get "posts" order="published_at desc" limit=1}}
-        {{#foreach posts}}
+        {{#posts}}
             <a href="{{url}}">
-            <article class="{{post_class}} {{#is "index"}}post-index-latest{{/is}}" style="background-image: url({{image}}">
+            <article class="post-index-latest" style="background-image: url({{image}}">
                 <header class="post-header">
                     <h2 class="post-title-latest">{{title}}</h2>
                 </header>
             </article>
             </a>
-        {{/foreach}}
+        {{/posts}}
     {{/get}}
 </article>
 
@@ -47,40 +46,3 @@
     {{/get}}
 </article>
 {{/is}}
-
-
-
-
-
-
-{{!-- DEBUGGING
-<script> console.info("{{post_class}}"); </script>
---}}
-
-
-{{!-- ORIGINAL LOOP.HBS 
-{{! Previous/next page links - only displayed on page 2+ }}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
-
-{{! This is the post loop - each post will be output using this markup }}
-{{#foreach posts}}
-<article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="100"}}&hellip; <a class="read-more" href="{{url}}">Read more &raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <div class="post-author">{{author}}</div>
-        {{#if tags}}<div class="post-tags"><span class="icon-tags"></span>{{tags}}</div>{{/if}}
-    </footer>
-</article>
-{{/foreach}}
-
-{{! Previous/next page links - displayed on every page }}
-{{pagination}}
---}}

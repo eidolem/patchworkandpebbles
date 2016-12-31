@@ -4,7 +4,7 @@ body{
 }
 
 a {
-    color: #828991;
+    color: #707070;
     transition: color 0.3s ease;
     text-decoration: none;
 }
@@ -20,7 +20,7 @@ a {
 }
 
 .tag-title a, .post-meta a{
-    color: #828991;
+    color: #707070;
     transition: color 0.3s ease;
     text-decoration: none;
     display: inline-block;
@@ -59,7 +59,7 @@ a {
 
 .page-description {
     font-family: "Roboto", sans-serif;
-	text-shadow: 0rem 0rem 2rem black;
+	  text-shadow: 0rem 0rem 2rem black;
     color: #fff;
     font-weight: 400;
 }
@@ -199,14 +199,14 @@ a {
 	padding-bottom: 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
-	color: #828991;
+	color: #878787;
 	letter-spacing: 0.2rem;
 }
 
 
 .italicized-words {
 	font-size: 1.4rem;
-	color: #a9a9a9;
+	color: #878787;
 	font-family: serif;
 	font-style: italic;
 	font-weight: lighter;
