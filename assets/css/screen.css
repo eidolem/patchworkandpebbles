@@ -63,6 +63,7 @@ a:hover, a:hover .italicized-words{
     float: left;
     font-family: 'Roboto', sans-serif;
     font-size: 0.6rem;
+    letter-spacing: 0.05rem;
     color: #828991;
     text-decoration: none;
 }
@@ -137,7 +138,7 @@ a:hover, a:hover .italicized-words{
 
 
 /*Creates the title of the post in the Latest post, which is larger than square posts*/
-.post-title-latest {
+.post-title-latest, .post-title-latest a {
  	position: absolute;
  	top: 50%;
  	left: 50%;
@@ -176,9 +177,9 @@ a:hover, a:hover .italicized-words{
 }
 
 /*Titles that are centered in the squares*/
-.post-title {
+.post-title, .post-title a{
  	position: absolute;
- 	top: 55%;
+ 	top: 50%;
  	left: 50%;
  	height: 30%;
  	width: 90%;

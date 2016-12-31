@@ -13,7 +13,7 @@
             <a href="{{url}}">
             <article class="post-index-latest" style="background-image: url({{image}}">
                 <header class="post-header">
-                    <h2 class="post-title-latest">{{title}}</h2>
+                    <h2 class="post-title-latest"><a href="{{title}}">{{title}}</a></h2>
                 </header>
             </article>
             </a>
@@ -32,12 +32,12 @@
 {{!-- Do this only if in the tag context to view all posts of that tag --}}
 {{#is "tag"}}
 <article class="tag-list-slider">
-    {{#get "posts" filter="tag:travel" limit=8}}
+    {{#get "posts" filter="tag:travel"}}
         {{#foreach posts}}
             <a href="{{url}}">
             <article class="{{post_class}} {{#is "tag"}}post-index{{/is}}" style="background-image: url({{image}}" href="{{url}}">
                 <header class="post-header">
-                    <h2 class="post-title">{{title}}</h2>
+                    <h2 class="post-title"><a href="{{title}}">{{title}}</a></h2>
                 </header>
             </article>
             </a>
