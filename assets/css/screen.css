@@ -1,5 +1,7 @@
 
-a, a .italicized-words{
+a,
+a .italicized-words,
+a .italicized-words-spaced{
 	font-size: 0.9rem;
 	color: #7a7a7a;
 	font-family: serif;
@@ -8,13 +10,32 @@ a, a .italicized-words{
 	text-decoration: none;
 }
 
-a:hover, a:hover .italicized-words{
+a:hover, 
+a:hover .italicized-words,
+a:hover .italicized-words-spaced
+{
 	color: #111;
 }
 
 .italicized-words {
 	font-style: italic;
 	text-transform: lowercase;
+	font-family: serif;
+	font-weight: lighter;
+	text-decoration: none;
+	color: #7a7a7a;
+	letter-spacing: normal;
+}
+
+/*Makes the italicized words spaced farther apart for style*/
+.italicized-words-spaced {
+	font-style: italic;
+	text-transform: lowercase;
+	font-family: serif;
+	font-weight: lighter;
+	text-decoration: none;
+	color: #7a7a7a;
+	letter-spacing: 0.1rem;
 }
 
 .main-header{
@@ -35,12 +56,12 @@ a:hover, a:hover .italicized-words{
     height: 100%;                       
 }
 
+/*Should make things horiz and vert aligned*/
 .span-middle{
     display: table-cell;
     text-align: center;
     vertical-align: middle;                     
 }
-
 
 .page-title {
     text-shadow: 0rem 0rem 2rem black;
@@ -60,9 +81,69 @@ a:hover, a:hover .italicized-words{
 	color: #fff;
 }
 
+/*Container for the slider row*/
 .tag-slider {
 	margin: 1.5rem auto 1rem auto;
 	text-align: center;
+}
+
+/*The words at the top of the view-tag page, like "XX posts in tag"*/
+.tag-page-header{
+	margin: 1.5rem auto 1rem auto;
+	text-align: center;
+}
+
+
+/*The header for the tag in the slider row, like "TRAVEL"*/
+.tag-slider-title, .tag-slider-title a {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+/*The header for the view tag page, like "XX posts in the YY category"*/
+.tag-page-title{
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+/*The navigation under the tag slider row, like "more like this"*/
+.tag-slider-footer, .tag-slider-footer a{
+	margin: 0.4rem auto 1.5rem auto;
+	text-align: center;
+}
+
+/*Creates the square for each post*/
+.square-post { 
+	background-color: #FFF; 
+	background-position: center;
+  	background-size: cover;
+	text-align: center;
+	opacity: 1.0;
+}
+
+.square-post:hover, .latest-post:hover {
+	opacity: 0.9;
+}
+
+.thumbnail{
+	border: none;
+	border-radius: 0;
+	box-shadow: 0rem 0rem 0.8rem black;
+	box-shadow: 0rem 0rem 0.4rem grey;
+}
+
+.no-cover{
+    min-height: 160px;
+    max-height: 40vh;
+    background: #f5f8fa;
 }
 
 /* Add a little circle in the middle of the border-bottom on the slider*/
@@ -86,32 +167,15 @@ a:hover, a:hover .italicized-words{
     box-shadow: white 0 0 0 0.5rem;
 }
 
-/*The header for the tag in the slider row, like "TRAVEL"*/
-.tag-slider-title, .tag-slider-title a {
-	font-size: 1.1rem;
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
-	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
-}
-
-/*The navigation under the tag slider row, like "more like this"*/
-.tag-slider-footer, .tag-slider-footer a{
-	margin: 0.4rem auto 1.5rem auto;
-	text-align: center;
-}
-
 /*Creates the square for each post*/
-.square-post { 
+.latest-post { 
 	background-color: #526071; 
 	background-position: center;
   	background-size: cover;
 	text-align: center;
 	opacity: 1.0;
-}
-
-.square-post:hover {
-	opacity: 0.9;
+	height: 100%;
+	width: 100%;
 }
 
 /*Titles that are centered in the squares*/

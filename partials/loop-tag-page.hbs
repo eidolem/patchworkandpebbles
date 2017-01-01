@@ -1,0 +1,16 @@
+
+
+<div class="row small-up-2 medium-up-4">
+	{{#get "posts" filter="tag:{{name}}" limit=5}}
+	    {{#foreach posts}}
+	        <div class="column column-block">
+	            <a href="{{url}}">
+	                <article class="square-post">
+	                <img src="{{image}}" class="thumbnail" style="height:100%; width:100%"/>
+	                <h2 class="post-title">{{title}}</h2>
+	            </article>
+	            </a>
+	        </div>
+	    {{/foreach}}
+	{{/get}}
+</div>

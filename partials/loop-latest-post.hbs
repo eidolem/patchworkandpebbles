@@ -1,0 +1,37 @@
+ <div class="tag-slider row">
+    <h2 class="tag-slider-title column"> 
+        <a href="http://localhost:2368/tag/{{tag}}/">
+            <span class="italicized-words-spaced">the </span>latest
+        </a> 
+    </h2>
+</div>
+
+<div class="row">
+    {{#get "posts" order="published_at desc" limit=1}}
+        {{#posts}}
+            <div class="column column-block">
+                <a href="{{url}}">
+                    <article class="latest-post">
+                        <img src="{{image}}" style="height:100%; width:100%"/>
+                        <h2 class="post-title">{{title}}</h2>
+                    </article>
+                </a>
+            </div>
+        {{/posts}}
+    {{/get}}
+</div>
+
+<div class="tag-slider-footer row"> 
+    <h3 class="column">
+        <a href="http://localhost:2368/tag/{{tag}}/">
+            <span class="italicized-words">more like this </span>
+        </a>
+    </h3>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="divider">
+        </div>
+    </div>
+</div> 
