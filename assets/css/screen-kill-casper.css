@@ -1,0 +1,191 @@
+
+h3{
+	margin: 0.3rem 0 1.3rem 0;
+}
+
+a, a .italicized-words{
+	font-size: 0.9rem;
+	color: #7a7a7a;
+	font-family: serif;
+	font-weight: lighter;
+	transition: color 0.3s ease;
+	text-decoration: none;
+}
+
+a:hover, a:hover .italicized-words{
+	color: #111;
+}
+
+.italicized-words {
+	font-style: italic;
+	text-transform: lowercase;
+}
+
+/*The header for the tag in the slider row, like TRAVEL*/
+.tag-title, .tag-title a {
+	font-size: 1.1rem;
+	margin: 2.3rem 0rem 0rem 0rem;
+	padding-bottom: 1.5rem;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+
+
+.main-header {
+	position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-size: cover;
+    height: 40vh;
+    display: table;
+}
+
+.main-header-content{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.copyright, .poweredby, .copyright a, .poweredby a {
+    display: block;
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+    color: #828991;
+    text-decoration: none;
+}
+
+.poweredby, .poweredby a{
+	float: right;
+	text-align: right;
+}
+
+.page-title {
+    margin: 10px 0 10px 0;
+    text-shadow: 0rem 0rem 2rem black;
+	font-family: "Roboto", sans-serif;
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+}
+
+.page-description {
+    margin: 0;
+    text-shadow: 0rem 0rem 2rem black;
+    font-size: 2rem;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 120%;
+	color: #fff;
+}
+
+.tag-list-slider {
+	margin: 2rem 0rem 2rem -0.5rem;
+	border-bottom: #e6e6e6 1px solid;
+	text-align: center;
+}
+
+/* Add a little circle in the middle of the border-bottom on the slider*/
+.tag-list-slider:after {
+    display: block;
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: -0.5rem;
+    left: 50%;
+    margin-left: -0.5rem;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: white 0 0 0 0.5rem;
+}
+
+
+
+
+/*Creates the square for the larger Latest post in the first row*/
+.post-index-latest { 
+	background-color: #526071; 
+	background-position: center;
+  	background-size: cover;
+  	margin: 0rem 0.5rem 1rem 0rem;
+  	outline: none;
+  	position: relative;
+  	word-break: break-word;
+  	display: inline-block;
+  	text-align: center;
+  	width: 60%;
+  	height: 30vh;
+}
+
+.post-index-latest:hover{
+	opacity: 0.9;
+}
+
+
+/*Creates the title of the post in the Latest post, which is larger than square posts*/
+.post-title-latest, .post-title-latest a {
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	height: 30%;
+ 	width: 75%;
+ 	margin: -3% 0% 0% -38%;
+ 	letter-spacing: 0.1rem;
+ 	color: #FFF;
+ 	font-size: 1.7rem;
+    text-shadow: 0rem 0rem 0.8rem black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/*Creates the square for each post*/
+.post-index { 
+	background-color: #526071; 
+	background-position: center;
+  	background-size: cover;
+	margin: 0rem 0.5rem 1rem 0rem;
+  	outline: none;
+  	position: relative;
+	word-break: break-word;
+	display: inline-block;
+	text-align: center;
+	opacity: 1.0;
+	width: 22.5%;
+	height: 0;
+	/*To make the images square*/
+	padding-bottom: 20%;
+	vertical-align: top;
+}
+
+.post-index:hover {
+	opacity: 0.9;
+}
+
+/*Titles that are centered in the squares*/
+.post-title, .post-title a{
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	height: 30%;
+ 	width: 90%;
+ 	margin: -5% 0% 0% -45%;
+ 	letter-spacing: 0.1rem;
+ 	color: #FFF;
+ 	font-size: 1rem;
+    text-shadow: 0rem 0rem 0.8rem black;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-weight: 500;
+}
+
+.post-header{
+	    display: table-cell;
+    text-align: center;
+}
