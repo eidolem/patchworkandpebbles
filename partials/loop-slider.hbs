@@ -8,14 +8,14 @@
         </h2>
     </div>
 
-    <div class="row small-up-2 medium-up-4">
-    {{#get "posts" filter="tag:{{tag}}" limit=4}}
+    <div class="row data-equalizer small-up-2 medium-up-3">
+    {{#get "posts" filter="tag:{{tag}}" limit=6}}
         {{#foreach posts}}
-            <div class="column column-block">
+            <div class="column data-equalizer-watch column-block">
                 <a href="{{url}}">
                     <article class="square-post">
                     <img src="{{image}}" class="thumbnail" style="height:100%; width:100%"/>
-                    <h2 class="post-title">{{title}}</h2>
+                    {{!-- <h2 class="post-title">{{title}}</h2> --}}
                 </article>
                 </a>
             </div>

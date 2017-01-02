@@ -1,43 +1,49 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+{{!-- The off-canvas-wrapper class hides scroll bars when the sidebar is opened --}}
 <div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     {{!-- All of the content that gets shifted when the nav opens lives in here --}}
-        <div class="off-canvas-content" data-off-canvas-content>
-            {{#tag}}
-                {{!-- The blog image with the blog title and description centered --}}
-                <div class="main-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
-
-                        <div class="row">
-                            <div class="column">
-                                <div class="span-middle">
-                                    <h1 class="page-title">{{name}} </h1>
-                                    <h2 class="page-description">                
-                                        {{#if description}}
-                                            {{description}}
-                                        {{/if}}
-                                    </h2>
-                                </div>
-                            </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+        {{#tag}}
+            {{!-- The blog image with the blog title and description centered --}}
+            <div class="full-width row">
+                <div class="column">
+                    <div id="header" class="main-header {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
+                        <div class="span-middle">
+                            <h1 class="page-title">{{name}} </h1>
+                            <h2 class="page-description">                
+                                {{#if description}}
+                                    {{description}}
+                                {{/if}}
+                            </h2>
                         </div>
+                    </div>
+                </div>
+            </div>
 
+            {{>navigation}}
+
+            {{!-- Main container content --}}
+            <div class="row">
+                <div class="column small-10">
+                    <main>
+                        {{!-- Holds the grid of posts --}}
+                        <div class="tag-page-header row">
+                            <h3 class="tag-page-title column"> 
+                                <span class="italicized-words">{{../pagination.total}} posts in the</span>
+                                {{name}}
+                                <span class="italicized-words">category</span>
+                            </h3>
+                        </div>
+                        {{> "loop-tag-page"}}
+                    </main>
                 </div>
 
+                {{>sidebar}}
+            </div>
+        {{/tag}}
 
-                <main>
-                    <div class="tag-page-header row">
-                        <h3 class="tag-page-title column"> 
-                            <span class="italicized-words">{{../pagination.total}} posts in the</span>
-                            {{name}}
-                            <span class="italicized-words">category</span>
-                        </h3>
-                    </div>
-
-                    {{> "loop-tag-page"}}
-                </main>
-
-            {{/tag}}
-        </div>
+        {{>footer}}
     </div>
 </div>

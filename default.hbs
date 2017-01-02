@@ -19,8 +19,26 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/foundation.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "foundation-icons/foundation-icons.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+
+    {{!-- For social button intents --}}
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+    {{!-- Facebook --}}
+    <script>
+        document.getElementById('facebook-share').onclick = function() {
+          FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'https://developers.facebook.com/docs/',
+          }, function(response){});
+        }
+    </script>
+    {{!-- Linkedin --}}
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share"></script>
+
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -28,25 +46,17 @@
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
-
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
-
-        <footer class="footer-container row">
-            <section class="copyright column">
-                <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
-            </section>
-            <section class="poweredby column">
-                Published with <a href="https://ghost.org">Ghost</a>
-            </section>
-        </footer>
-
     </div>
 
     {{!-- For Zurb --}}
     <script type="text/javascript" src="{{asset "js/vendor/jquery.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/vendor/what-input.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/vendor/foundation.js"}}"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.equalizer.js"></script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}

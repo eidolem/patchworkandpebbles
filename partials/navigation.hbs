@@ -1,17 +1,44 @@
-<div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul>
-        {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-    </ul>
-    {{#if @labs.subscribers}}
-        <a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a>
-    {{else}}
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
-    {{/if}}
+
+<div data-sticky-container>        
+    <!-- The nav bar for a small screen -->
+    <nav class="title-bar hide-for-medium-up" data-responsive-toggle="widemenu">
+        <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <span class="title-bar-title">Foundation</span>
+        </div>
+    </nav >
+
+
+    <!-- off-canvas left menu -->
+    <nav class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+      <ul class="vertical dropdown menu" data-dropdown-menu>
+        <li><a href="#">Item</a>
+            <ul class="menu">
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 1</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+      </ul>
+    </nav>
+
+    <div data-sticky data-margin-top='0' data-top-anchor="header:bottom">
+        <nav class="top-bar hide-for-small-only">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li><a href="#">One</a>
+                    <ul class="menu">
+                        <li><a href="#">One</a></li>
+                        <li><a href="#">Twp</a></li>
+                        <li><a href="#">Three</a></li>
+                        <li><a href="#">Four</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
-<span class="nav-cover"></span>

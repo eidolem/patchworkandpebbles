@@ -1,7 +1,9 @@
 
 a,
 a .italicized-words,
-a .italicized-words-spaced{
+a .italicized-words-spaced,
+a .post-tag-taller,
+a .tag-slider-title{
 	font-size: 0.9rem;
 	color: #7a7a7a;
 	font-family: serif;
@@ -12,7 +14,9 @@ a .italicized-words-spaced{
 
 a:hover, 
 a:hover .italicized-words,
-a:hover .italicized-words-spaced
+a:hover .italicized-words-spaced,
+.post-tag-taller a:hover,
+.tag-slider-title a:hover
 {
 	color: #111;
 }
@@ -38,10 +42,22 @@ a:hover .italicized-words-spaced
 	letter-spacing: 0.1rem;
 }
 
+/*The image for the top of a main page*/
 .main-header{
 	width: 100%;
 	background-size: cover;
 	height: 40vh;
+	display: table;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*The image for the top of a blog post*/
+.post-header{
+	width: 100%;
+	background-size: cover;
+	height: 50vh;
 	display: table;
 	position: relative;
 	text-align: center;
@@ -53,7 +69,22 @@ a:hover .italicized-words-spaced
 .main-header .column{
     display: table;
     width: 100%;
-    height: 100%;                       
+    height: 100%; 
+    padding: none;
+    margin: none;                      
+}
+
+/*Allow things like headers and footers to take full screen width instead of flex width*/
+.row.full-width{
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+.full-width .column{
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
 }
 
 /*Should make things horiz and vert aligned*/
@@ -131,6 +162,7 @@ a:hover .italicized-words-spaced
 
 .square-post:hover, .latest-post:hover {
 	opacity: 0.9;
+	transition: 0.25s ease;
 }
 
 .thumbnail{
@@ -140,11 +172,6 @@ a:hover .italicized-words-spaced
 	box-shadow: 0rem 0rem 0.4rem grey;
 }
 
-.no-cover{
-    min-height: 160px;
-    max-height: 40vh;
-    background: #f5f8fa;
-}
 
 /* Add a little circle in the middle of the border-bottom on the slider*/
 .divider {
@@ -182,13 +209,66 @@ a:hover .italicized-words-spaced
 .post-title, .post-title a{
  	letter-spacing: 0.1rem;
  	color: #FFF;
- 	font-size: 1rem;
+ 	font-size: 0.8rem;
     text-shadow: 0rem 0rem 0.8rem black;
  	font-family: 'Roboto', sans-serif;
  	font-weight: 500; 
  	margin-top: -38%;
 }
 
+/*For the nav bar*/
+[data-sticky] {
+  width: 100%; }
+
+/*For the nav bar*/
+.top-bar{
+	text-align: center;
+  	background: #333333; 
+}
+
+/*Title for viewing a single post*/
+.post-title-postpage, .post-title-staticpage,
+h1 .post-title-postpage, h1 .post-title-staticpage {
+ 	position: relative;
+ 	color: #515861;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-size: 3rem;
+ 	letter-spacing: -0.15rem;
+ 	font-weight: bold;
+}
+
+/*To make the date on the single post page different*/
+.post-meta,
+.post-meta a {
+	text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    letter-spacing: 0rem;
+    font-weight: lighter;
+    color: #828991;
+    font-family: "Open Sans", sans-serif;
+}
+
+.post-tag-taller,
+.post-tag-taller a{
+	font-size: 1.1rem;
+}
+
+.post-content,
+.post-content p{
+	font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    font-size: 1.1rem;
+    line-height: 1.75em;
+    color: #3A4145;
+}
+
+.icon-button{
+	font-size: 2rem;
+	padding: 1rem;
+}
 
 .copyright, .copyright a{
     text-align: left;
@@ -206,4 +286,30 @@ a:hover .italicized-words-spaced
     letter-spacing: 0.05rem;
     color: #828991;
     text-decoration: none;
+}
+
+#scroll-to-top {
+  background-color: rgb(57,55,55);
+  background-color: rgba(57,55,55,0.8);
+  background-image: url('/assets/icons/scroll_to_top.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  height: 40px;
+  margin-top: -20px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  width: 40px;
+  z-index: 20000;
+}
+
+#scroll-to-top:hover {
+  background-color: rgba(57,55,55);
+  background-color: rgba(57,55,55,0.7);
 }
