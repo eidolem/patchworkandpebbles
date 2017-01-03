@@ -1,3 +1,9 @@
+body{
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    line-height: 1.75em;
+    color: #3A4145;
+}
 
 a,
 a .italicized-words,
@@ -29,6 +35,8 @@ a:hover .italicized-words-spaced,
 	text-decoration: none;
 	color: #7a7a7a;
 	letter-spacing: normal;
+	font-size: 0.9rem;
+	max-height: 1.3rem;
 }
 
 /*Makes the italicized words spaced farther apart for style*/
@@ -216,14 +224,115 @@ a:hover .italicized-words-spaced,
  	margin-top: -38%;
 }
 
-/*For the nav bar*/
+/*For nav bar background color on small screens*/
+.title-bar{
+	background-color: #FFF;
+	  	border-bottom: 1px solid #e6e6e6;
+  	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*For the nav bar title on small screens*/
+.title-bar-title,
+.title-bar-title a{
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+	font-size: 1rem;
+	font-weight: lighter;
+	letter-spacing: -0.04rem;
+}
+
+.tab-bar .menu-icon span:after {
+    height: 0.1rem;
+    margin-top: -0.3rem;
+    box-shadow: 0 -3px 0px 1px white, 0 4px 0 1px white, 0 11px 0 1px white;
+}
+
+/*For the first line of the hamburger icon*/
+.menu-icon:after{
+	background: #e6e6e6;
+	box-shadow: 0 7px 0 #e6e6e6, 0 14px 0 #e6e6e6;
+}
+
+/*For the second 2 lines of the menu icon on hover*/
+.menu-icon:hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+ }
+
+/*For the nav bar that floats in on hamburger icon*/
+ .off-canvas {
+ 	background: #f9f9f9;
+ }
+
+/*Makes the padding for the hamburger drawer items*/
+.menu.vertical li{
+	padding: 0.4rem 1.5rem;
+}
+
+/*Font for the hamburger side drawer*/
+.side-menu-font,
+.side-menu-font a{
+	font-size: 1rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+}
+
+/*Little line in the hamburger drawer between big nav items*/
+.nav-divider {
+    border-top: 1px solid;
+    border-top-color: #e6e6e6;
+    margin: 0.2rem 0;
+}
+
+
+/*For the nav bar sticky on large screens*/
 [data-sticky] {
   width: 100%; }
 
-/*For the nav bar*/
+/*For the nav bar on large screens*/
 .top-bar{
 	text-align: center;
-  	background: #333333; 
+  	background: grey;
+  	border-width: 5px;
+  	border-color: #FFF;
+  	background: #FFF;
+  	border-bottom: 1px solid #e6e6e6;
+  	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*For the left menu and right menu, in case they're different from the nav bar container*/
+.top-bar ul,
+.top-bar ul li{
+	text-align: center;
+  	background: #FFF;
+}
+
+/*Text treatment on hover for the nav bar*/
+.top-bar ul li a:hover {  
+  text-decoration: none;  
+  color: #000; 
+}
+
+/*Font for the large nav bar*/
+.large-navbar-font, 
+.large-navbar-font a{
+	font-size: 1rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+}
+
+/*Treatment for the sub drop down from the large nav bar*/
+.is-dropdown-submenu {
+	border: 1px solid #e6e6e6;
+	padding: 6px;
+	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*The down arrow for the expanding menu item for categories*/
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    border-color: #7a7a7a transparent transparent;
 }
 
 /*Title for viewing a single post*/
@@ -265,9 +374,56 @@ h1 .post-title-postpage, h1 .post-title-staticpage {
     color: #3A4145;
 }
 
-.icon-button{
+.icon-share-button{
 	font-size: 2rem;
 	padding: 1rem;
+}
+
+.icon-about-button{
+	font-size: 1.3rem;
+	padding: 0.3rem;
+}
+
+.author-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 6px;
+    background: #e6e6e6;
+    z-index: 2;
+    box-shadow: #FFF 0 0 2px 1px;
+    margin-right: 2rem;
+    float: right;
+}
+
+.author-image .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 100%;
+}
+
+.author-name{
+	text-transform: lowercase;
+	color: #7a7a7a;
+	font-family: 'Ruthie', cursive; 
+	/*font-family: 'Open Sans', serif';*/
+	font-size: 2.5rem;
+}
+
+.footer-container,
+.footer-container.row,
+.footer-container.column{
+	background-color: #e6e6e6;
+	padding: 1.5rem 0 0.5rem 0;
 }
 
 .copyright, .copyright a{
@@ -277,12 +433,14 @@ h1 .post-title-postpage, h1 .post-title-staticpage {
     letter-spacing: 0.05rem;
     color: #828991;
     text-decoration: none;
+    max-height: 0.8rem; /*a little bigger than font size*/
 }
 
 .poweredby, .poweredby a{
 	text-align: right;
     font-family: 'Roboto', sans-serif;
     font-size: 0.6rem;
+    max-height: 0.8rem; /*a little bigger than font size*/
     letter-spacing: 0.05rem;
     color: #828991;
     text-decoration: none;

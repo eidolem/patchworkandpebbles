@@ -1,19 +1,53 @@
+
+{{!-- Outer footer container --}}
 <footer class="footer-container full-width row">
 	<div class="column">
-		<div class="full-width row">
-			<div class="span-middle column">
-                <h5>This is a test footer</h5>
-                <p>Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo.</p>
-            </div>
-        </div>
 
-        <div class="full-width row">
+		{{!-- Row section for the author image, name, and links.  
+		Image is 2 col wide, info is 6 col wide (half of full 12 col width). 
+		The whole 8 col block is shifted to the right --}}
+		<div class="full-width align-right align-middle row">
+			<div class="small-2 column">
+				<div class="author-image">
+					<a class="img" href="/about-me/" style="background-image: url('/content/images/2017/01/profile-photo.jpg')"></a>
+				</div>
+			</div>
+
+			{{!-- Column for author name and links --}}
+			<div class="small-6 column">
+				<div class="author-name"> Melodie Meigs </div>
+				<div class="italicized-words">&ensp;find me on</div>
+				<a href="https://twitter.com/intent/tweet?text=Great+post+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-about-button twitter">
+		  			<i class="fi-social-twitter small"></i>
+				</a>
+				
+				<a id="facebook-share" class="icon-about-button facebook">
+		  			<i class="fi-social-facebook small"></i>
+				</a>
+
+				<a href="#" class="icon-about-button gplus">
+		  			<i class="fi-social-linkedin small"></i>
+				</a>
+
+				<a href="#" class="icon-about-button gplus">
+		  			<i class="fi-mail small"></i>
+				</a>
+
+				<a href="#" class="icon-about-button gplus">
+		  			<i class="fi-social-google-plus small"></i>
+				</a>							
+			</div>
+		</div>
+
+ 		<div class="full-width align-bottom row">
 		    <section class="copyright column">
 		        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
 		    </section>
 		    <section class="poweredby column">
 		        Published with <a href="https://ghost.org">Ghost</a>
 		    </section>
-		</div>
+	  </div> 
+
 	</div>
 </footer>
+

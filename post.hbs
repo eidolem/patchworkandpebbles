@@ -11,60 +11,38 @@
     <div class="off-canvas-content" data-off-canvas-content>
 
         {{!-- The post banner image --}}
-        <div class="full-width row">
+{{!--         <div class="full-width row">
             <div class="column">
                 <div id="header" class="post-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
                 </div>
             </div>
-        </div>
-        {{>navigation}}
+        </div> --}}
+        {{navigation}}
 
         {{!-- The post --}}
         {{!-- First, outer container for the post title, date, paragraphs --}}
-        <div class="row">
-            <div class="column small-10">
-                <main class="post-content" role="main">
-                    <article class="{{post_class}}">
-                        {{!-- The title, date, tags --}}
-                        <div class="row">
-                            <div class="column">
-                                <h1 class="post-title-postpage">{{title}}</h1>
-                            </div>
-                        </div>
+        <main class="post-content row" role="main">
+            <article class="{{post_class}} small-10 column">
+                {{!-- The title, date, tags --}}
+                <h1 class="post-title-postpage">{{title}}</h1>
 
-                        <div class="row">
-                            <div class="column">
-                                <div class="post-meta" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
-                                    <span class="italicized-words">&ensp;on &ensp;</span>
-                                    <span class="post-tag-taller"> {{tags}} </span>
-                                </div> 
-                            </div>
-                        </div>
+                <div class="post-meta" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
+                    {{#if tags}}
+                        <span class="italicized-words">&ensp;on &ensp;</span>
+                        <span class="post-tag-taller"> {{tags}} </span>
+                    {{/if}}
+                </div> 
 
-                        {{!-- The post itself --}}
-                        <div class="row">
-                            <div class="post-content column">
-                                {{content}}
-                            </div>
-                        </div>
+                {{content}}
+                {{>social}}
 
-                        {{!-- divider --}}
-                        <div class="row">
-                            <div class="column">
-                                <div class="divider">
-                                </div>
-                            </div>
-                        </div> 
+                {{!-- divider --}}
+                <div class="divider">
+                </div>
 
-
-                        {{>social}}
-
-                    </article>
-                </main>
-            </div>
-
+            </article>
             {{>sidebar}}
-        </div>
+        </main>
 
         {{>footer}}
     </div>

@@ -1,44 +1,54 @@
-
 <div data-sticky-container>        
     <!-- The nav bar for a small screen -->
     <nav class="title-bar hide-for-medium-up" data-responsive-toggle="widemenu">
         <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-            <span class="title-bar-title">Foundation</span>
+            <span class="title-bar-title">patchwork & pebbles </span>
         </div>
     </nav >
 
-
-    <!-- off-canvas left menu -->
+    <!-- the stuff that gets shifted in from left when hamburer icon is pressed on small screens -->
     <nav class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-      <ul class="vertical dropdown menu" data-dropdown-menu>
-        <li><a href="#">Item</a>
-            <ul class="menu">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 1</a></li>
+      <ul class="side-menu-font vertical menu" data-dropdown-menu>
+        <li><a href="#">Home</a></li>
+        <li class="nav-divider"></li>
+        <li>Categories</li>
+            <ul class="nested vertical menu">
+                {{#foreach navigation}}
+                    <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+                {{/foreach}}
             </ul>
-        </li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
+        <li class="nav-divider"></li>
+        <li><a href="www.patchworkandpebbles.com/about-me">About</a></li>
+        <li><a href="#""www.patchworkandpebbles.com/contact">Contact</a>
       </ul>
     </nav>
 
-    <div data-sticky data-margin-top='0' data-top-anchor="header:bottom">
-        <nav class="top-bar hide-for-small-only">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li><a href="#">One</a>
-                    <ul class="menu">
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Twp</a></li>
-                        <li><a href="#">Three</a></li>
-                        <li><a href="#">Four</a></li>
+    {{!-- The nav bar for med and large screens --}}
+    {{!-- <div data-sticky data-margin-top='0' data-top-anchor="header:bottom"> --}}
+    <div data-sticky-container>
+        <div class="sticky" data-sticky data-margin-top="0">
+            <nav class="top-bar large-navbar-font hide-for-small-only">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Categories</a>
+                            <ul class="menu vertical">
+                                {{#foreach navigation}}
+                                <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+                                {{/foreach}}
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
-            </ul>
-        </nav>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><a href="www.patchworkandpebbles.com/about-me">About</a></li>
+                        <li><a href="#""www.patchworkandpebbles.com/contact">Contact</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
+
 </div>

@@ -6,7 +6,7 @@
     {{!-- All of the content that gets shifted when the nav opens lives in here --}}
     <div class="off-canvas-content" data-off-canvas-content>
         {{!-- The header blog image with the blog title and description centered --}}
-        <div class="row full-width">
+        {{!-- <div class="row full-width">
             <div class="column">
                 <div id="header" class="main-header" style="background-image: url({{@blog.cover}})">
                     <div class="span-middle">
@@ -15,9 +15,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        {{>navigation}}
+        {{navigation}}
 
         {{!-- Main container content --}}
         <div class="row">
@@ -29,7 +29,6 @@
                         {{> "loop-slider" tag="travel"}}
                         {{> "loop-slider" tag="travel"}}
                         {{> "loop-slider" tag="travel"}}
-
                     </div>
                 </main>
             </div>
