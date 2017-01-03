@@ -1,6 +1,6 @@
+{{!-- "< default" means - insert everything in this file into 
+the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 {{!< default}}
-{{!-- "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -10,19 +10,12 @@
     {{!-- All of the content that gets shifted when the nav opens lives in here --}}
     <div class="off-canvas-content" data-off-canvas-content>
 
-        {{!-- The post banner image --}}
-{{!--         <div class="full-width row">
-            <div class="column">
-                <div id="header" class="post-header {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-                </div>
-            </div>
-        </div> --}}
         {{navigation}}
 
         {{!-- The post --}}
         {{!-- First, outer container for the post title, date, paragraphs --}}
-        <main class="post-content row" role="main">
-            <article class="{{post_class}} small-10 column">
+        <div class="post-content row" role="main">
+            <main class="{{post_class}} small-10 column">
                 {{!-- The title, date, tags --}}
                 <h1 class="post-title-postpage">{{title}}</h1>
 
@@ -40,9 +33,9 @@
                 <div class="divider">
                 </div>
 
-            </article>
+            </main>
             {{>sidebar}}
-        </main>
+        </div>
 
         {{>footer}}
     </div>

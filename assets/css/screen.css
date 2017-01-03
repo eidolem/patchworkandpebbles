@@ -128,8 +128,20 @@ a:hover .italicized-words-spaced,
 
 /*The words at the top of the view-tag page, like "XX posts in tag"*/
 .tag-page-header{
-	margin: 1.5rem auto 1rem auto;
+
+}
+
+/*The header for the view tag page, like "XX posts in the YY category"*/
+.tag-page-title{
+		margin: 1.5rem auto 1rem auto;
 	text-align: center;
+
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
 }
 
 
@@ -143,15 +155,14 @@ a:hover .italicized-words-spaced,
 	color: #7a7a7a;
 }
 
-/*The header for the view tag page, like "XX posts in the YY category"*/
-.tag-page-title{
-	font-size: 1.1rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
-	color: #7a7a7a;
+.card {
+  font-family: 'Roboto', sans-serif;
+  /*overflow: hidden;*/
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #272727;
+  border-radius: 2px; 
 }
+
 
 /*The navigation under the tag slider row, like "more like this"*/
 .tag-slider-footer, .tag-slider-footer a{
@@ -227,7 +238,7 @@ a:hover .italicized-words-spaced,
 /*For nav bar background color on small screens*/
 .title-bar{
 	background-color: #FFF;
-	  	border-bottom: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
   	box-shadow: #e6e6e6 0 0 2px 1px;
 }
 
@@ -239,6 +250,7 @@ a:hover .italicized-words-spaced,
 	font-size: 1rem;
 	font-weight: lighter;
 	letter-spacing: -0.04rem;
+	padding: 0 1rem;
 }
 
 .tab-bar .menu-icon span:after {
@@ -251,6 +263,7 @@ a:hover .italicized-words-spaced,
 .menu-icon:after{
 	background: #e6e6e6;
 	box-shadow: 0 7px 0 #e6e6e6, 0 14px 0 #e6e6e6;
+	transition: 0.25s ease;
 }
 
 /*For the second 2 lines of the menu icon on hover*/
@@ -264,8 +277,9 @@ a:hover .italicized-words-spaced,
  	background: #f9f9f9;
  }
 
-/*Makes the padding for the hamburger drawer items*/
-.menu.vertical li{
+/*Makes the padding for the hamburger drawer items on small screens (off-canvas)
+but not large screen drop-down*/
+.off-canvas .menu.vertical li{
 	padding: 0.4rem 1.5rem;
 }
 
@@ -278,13 +292,30 @@ a:hover .italicized-words-spaced,
 	color: #7a7a7a;
 }
 
-/*Little line in the hamburger drawer between big nav items*/
-.nav-divider {
-    border-top: 1px solid;
-    border-top-color: #e6e6e6;
-    margin: 0.2rem 0;
+ul.side-menu-font.vertical.menu{
+	padding: 1rem 0 0 0;
 }
 
+/*Little line in the hamburger drawer between big nav items*/
+.nav-divider {
+	border-bottom: #e6e6e6 1px solid;
+	height: 0rem;
+	margin: 0.5rem;
+}
+
+.nav-divider:after{
+    display: block;
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: -0.1rem;
+    left: 41%;
+    background: #f9f9f9;
+    border-radius: 100%;
+    box-shadow: #f9f9f9 0 0 0 0.3rem;
+}
 
 /*For the nav bar sticky on large screens*/
 [data-sticky] {
@@ -297,6 +328,7 @@ a:hover .italicized-words-spaced,
   	border-width: 5px;
   	border-color: #FFF;
   	background: #FFF;
+  	padding: 0.2rem 1.5rem;
   	border-bottom: 1px solid #e6e6e6;
   	box-shadow: #e6e6e6 0 0 2px 1px;
 }

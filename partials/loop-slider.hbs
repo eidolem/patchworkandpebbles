@@ -1,39 +1,50 @@
+{{!-- The title "the Latest" --}}
+<h2 class="tag-slider-title"> 
+    <a href="{{url absolute=true}}/tag/{{tag}}/">
+        <span class="italicized-words-spaced">on </span>
+        {{tag}}
+    </a> 
+</h2>
 
-    <div class="tag-slider row">
-        <h2 class="tag-slider-title column"> 
-            <a href="http://localhost:2368/tag/{{tag}}/">
-                <span class="italicized-words-spaced">on </span>
-                {{tag}}
-            </a> 
-        </h2>
-    </div>
 
-    <div class="row data-equalizer small-up-2 medium-up-3">
-    {{#get "posts" filter="tag:{{tag}}" limit=6}}
-        {{#foreach posts}}
-            <div class="column data-equalizer-watch column-block">
-                <a href="{{url}}">
-                    <article class="square-post">
-                    <img src="{{image}}" class="thumbnail" style="height:100%; width:100%"/>
-                    {{!-- <h2 class="post-title">{{title}}</h2> --}}
-                </article>
-                </a>
-            </div>
-        {{/foreach}}
-    {{/get}}
-    </div>
-
-    <div class="tag-slider-footer row"> 
-        <h3 class="column">
-            <a href="http://localhost:2368/tag/{{tag}}/">
-                <span class="italicized-words">more like this </span>
-            </a>
-        </h3>
-    </div>
-
-   <div class="row">
+<div class="row data-equalizer small-up-2 medium-up-3">
+{{#get "posts" filter="tag:{{tag}}" limit=6}}
+    {{#foreach posts}}
         <div class="column">
-            <div class="divider">
-            </div>
+            {{!-- Make the whole card a link --}}
+            <a href={{url}}>
+                <div class="card">
+                    <img src="{{image}}">
+                    <div class="card-section">
+                        <h3>{{title}}</h3>
+                    </div>
+                </div>
+            </a>
         </div>
-    </div> 
+    {{/foreach}}
+{{/get}}
+</div>
+
+{{!-- <div class="row data-equalizer small-up-2 medium-up-3">
+{{#get "posts" filter="tag:{{tag}}" limit=6}}
+    {{#foreach posts}}
+        <div class="column data-equalizer-watch column-block">
+            <a href="{{url}}">
+                <article class="square-post">
+                <img src="{{image}}" class="thumbnail" style="height:100%; width:100%"/>
+            </article>
+            </a>
+        </div>
+    {{/foreach}}
+{{/get}}
+</div> --}}
+
+{{!-- For the text "more like this" --}}
+<h3 class="tag-slider-footer">
+    <a href="{{url absolute=true}}/tag/{{tag}}/">
+        <span class="italicized-words">more like this </span>
+    </a>
+</h3>
+
+{{!-- Divider --}}
+<div class="divider"></div>

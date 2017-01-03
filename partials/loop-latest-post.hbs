@@ -1,10 +1,10 @@
- <div class="tag-slider row">
-    <h2 class="tag-slider-title column"> 
-        <a href="http://localhost:2368/tag/{{tag}}/">
-            <span class="italicized-words-spaced">the </span>latest
-        </a> 
-    </h2>
-</div>
+
+{{!-- The title "the Latest" --}}
+<h2 class="tag-slider-title"> 
+    <a href="{{url absolute=true}}/tag/{{tag}}/">
+        <span class="italicized-words-spaced">the </span>latest
+    </a> 
+</h2>
 
 <div class="row">
     {{#get "posts" order="published_at desc" limit=1}}
@@ -13,7 +13,6 @@
                 <a href="{{url}}">
                     <article class="latest-post">
                         <img src="{{image}}" style="height:100%; width:100%"/>
-                        {{!-- <h2 class="post-title">{{title}}</h2> --}}
                     </article>
                 </a>
             </div>
@@ -21,17 +20,13 @@
     {{/get}}
 </div>
 
-<div class="tag-slider-footer row"> 
-    <h3 class="column">
-        <a href="http://localhost:2368/tag/{{tag}}/">
-            <span class="italicized-words">more like this </span>
-        </a>
-    </h3>
-</div>
+{{!-- For the text "more like this" --}}
+<h3 class="tag-slider-footer"> 
+    <a href="{{url absolute=true}}/tag/{{tag}}/">
+        <span class="italicized-words">more like this </span>
+    </a>
+</h3>
 
-<div class="row">
-    <div class="column">
-        <div class="divider">
-        </div>
-    </div>
-</div> 
+{{!-- Divider --}}
+<div class="divider">
+</div>

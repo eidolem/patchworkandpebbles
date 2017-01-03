@@ -5,6 +5,8 @@
 <div class="off-canvas-wrapper">
     {{!-- All of the content that gets shifted when the nav opens lives in here --}}
     <div class="off-canvas-content" data-off-canvas-content>
+        
+
         {{!-- The header blog image with the blog title and description centered --}}
         {{!-- <div class="row full-width">
             <div class="column">
@@ -17,15 +19,18 @@
             </div>
         </div> --}}
 
+
+
         {{navigation}}
 
         {{!-- Main container content --}}
         <div class="row">
+            {{!-- Makes the main content 10 col wide, and sidebar takes the rest --}}
             <div class="column small-10">
                 {{!-- Holds all of the sliders for various tags --}}
                 <main>
-                    <div class="slider-container">
-                        {{> "loop-latest-post"}}
+                    <div class="tag-slider">
+                        {{> "loop-latest-post" tag="latest"}}
                         {{> "loop-slider" tag="travel"}}
                         {{> "loop-slider" tag="travel"}}
                         {{> "loop-slider" tag="travel"}}
@@ -33,6 +38,7 @@
                 </main>
             </div>
 
+            {{!-- Takes up remaining horiz space --}}
             {{>sidebar}}
 
         </div>
