@@ -1,48 +1,19 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The off-canvas-wrapper class hides scroll bars when the sidebar is opened --}}
-<div class="off-canvas-wrapper">
-    {{!-- All of the content that gets shifted when the nav opens lives in here --}}
-    <div class="off-canvas-content" data-off-canvas-content>
-        
-
-        {{!-- The header blog image with the blog title and description centered --}}
-        {{!-- <div class="row full-width">
-            <div class="column">
-                <div id="header" class="main-header" style="background-image: url({{@blog.cover}})">
-                    <div class="span-middle">
-                        <h1 class="page-title">{{@blog.title}} </h1>
-                        <h2 class="page-description">{{@blog.description}}</h2>
-                    </div>
-                </div>
+     <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
             </div>
-        </div> --}}
-
-
-
-        {{navigation}}
-
-        {{!-- Main container content --}}
-        <div class="row">
-            {{!-- Makes the main content 10 col wide, and sidebar takes the rest --}}
-            <div class="column small-10">
-                {{!-- Holds all of the sliders for various tags --}}
-                <main>
-                    <div class="tag-slider">
-                        {{> "loop-latest-post" tag="latest"}}
-                        {{> "loop-slider" tag="travel"}}
-                        {{> "loop-slider" tag="travel"}}
-                        {{> "loop-slider" tag="travel"}}
-                    </div>
-                </main>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
             </div>
-
-            {{!-- Takes up remaining horiz space --}}
-            {{>sidebar}}
-
+          </div>
         </div>
+      </div>
 
-        {{>footer}}
-    </div>
-</div>
+      

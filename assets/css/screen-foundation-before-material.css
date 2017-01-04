@@ -1,0 +1,505 @@
+body{
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    line-height: 1.75em;
+    color: #3A4145;
+}
+
+a,
+a .italicized-words,
+a .italicized-words-spaced,
+a .post-tag-taller,
+a .tag-slider-title{
+	font-size: 0.9rem;
+	color: #7a7a7a;
+	font-family: serif;
+	font-weight: lighter;
+	transition: color 0.3s ease;
+	text-decoration: none;
+}
+
+a:hover, 
+a:hover .italicized-words,
+a:hover .italicized-words-spaced,
+.post-tag-taller a:hover,
+.tag-slider-title a:hover
+{
+	color: #111;
+}
+
+.italicized-words {
+	font-style: italic;
+	text-transform: lowercase;
+	font-family: serif;
+	font-weight: lighter;
+	text-decoration: none;
+	color: #7a7a7a;
+	letter-spacing: normal;
+	font-size: 0.9rem;
+	max-height: 1.3rem;
+}
+
+/*Makes the italicized words spaced farther apart for style*/
+.italicized-words-spaced {
+	font-style: italic;
+	text-transform: lowercase;
+	font-family: serif;
+	font-weight: lighter;
+	text-decoration: none;
+	color: #7a7a7a;
+	letter-spacing: 0.1rem;
+}
+
+/*The image for the top of a main page*/
+.main-header{
+	width: 100%;
+	background-size: cover;
+	height: 40vh;
+	display: table;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*The image for the top of a blog post*/
+.post-header{
+	width: 100%;
+	background-size: cover;
+	height: 50vh;
+	display: table;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*Set up to horizontally and vertically align elements*/
+.main-header .row,
+.main-header .column{
+    display: table;
+    width: 100%;
+    height: 100%; 
+    padding: none;
+    margin: none;                      
+}
+
+/*Allow things like headers and footers to take full screen width instead of flex width*/
+.row.full-width{
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+.full-width .column{
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+/*Should make things horiz and vert aligned*/
+.span-middle{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;                     
+}
+
+.page-title {
+    text-shadow: 0rem 0rem 2rem black;
+	font-family: "Roboto", sans-serif;
+    font-size: 300%;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+
+.page-description {
+    text-shadow: 0rem 0rem 2rem black;
+    font-size: 2rem;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 120%;
+	color: #fff;
+}
+
+/*Container for the slider row*/
+.tag-slider {
+	margin: 1.5rem auto 1rem auto;
+	text-align: center;
+}
+
+/*The words at the top of the view-tag page, like "XX posts in tag"*/
+.tag-page-header{
+
+}
+
+/*The header for the view tag page, like "XX posts in the YY category"*/
+.tag-page-title{
+		margin: 1.5rem auto 1rem auto;
+	text-align: center;
+
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+
+/*The header for the tag in the slider row, like "TRAVEL"*/
+.tag-slider-title, .tag-slider-title a {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+.card {
+  font-family: 'Roboto', sans-serif;
+  /*overflow: hidden;*/
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #272727;
+  border-radius: 2px; 
+}
+
+
+/*The navigation under the tag slider row, like "more like this"*/
+.tag-slider-footer, .tag-slider-footer a{
+	margin: 0.4rem auto 1.5rem auto;
+	text-align: center;
+}
+
+/*Creates the square for each post*/
+.square-post { 
+	background-color: #FFF; 
+	background-position: center;
+  	background-size: cover;
+	text-align: center;
+	opacity: 1.0;
+}
+
+.square-post:hover, .latest-post:hover {
+	opacity: 0.9;
+	transition: 0.25s ease;
+}
+
+.thumbnail{
+	border: none;
+	border-radius: 0;
+	box-shadow: 0rem 0rem 0.8rem black;
+	box-shadow: 0rem 0rem 0.4rem grey;
+}
+
+
+/* Add a little circle in the middle of the border-bottom on the slider*/
+.divider {
+	border-bottom: #e6e6e6 1px solid;
+	height: 0rem;
+	margin: 1rem;
+}
+
+.divider:after{
+    display: block;
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: 0.2rem;
+    left: 50%;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: white 0 0 0 0.5rem;
+}
+
+/*Creates the square for each post*/
+.latest-post { 
+	background-color: #526071; 
+	background-position: center;
+  	background-size: cover;
+	text-align: center;
+	opacity: 1.0;
+	height: 100%;
+	width: 100%;
+}
+
+/*Titles that are centered in the squares*/
+.post-title, .post-title a{
+ 	letter-spacing: 0.1rem;
+ 	color: #FFF;
+ 	font-size: 0.8rem;
+    text-shadow: 0rem 0rem 0.8rem black;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-weight: 500; 
+ 	margin-top: -38%;
+}
+
+/*For nav bar background color on small screens*/
+.title-bar{
+	background-color: #FFF;
+	border-bottom: 1px solid #e6e6e6;
+  	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*For the nav bar title on small screens*/
+.title-bar-title,
+.title-bar-title a{
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+	font-size: 1rem;
+	font-weight: lighter;
+	letter-spacing: -0.04rem;
+	padding: 0 1rem;
+}
+
+.tab-bar .menu-icon span:after {
+    height: 0.1rem;
+    margin-top: -0.3rem;
+    box-shadow: 0 -3px 0px 1px white, 0 4px 0 1px white, 0 11px 0 1px white;
+}
+
+/*For the first line of the hamburger icon*/
+.menu-icon:after{
+	background: #e6e6e6;
+	box-shadow: 0 7px 0 #e6e6e6, 0 14px 0 #e6e6e6;
+	transition: 0.25s ease;
+}
+
+/*For the second 2 lines of the menu icon on hover*/
+.menu-icon:hover::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+ }
+
+/*For the nav bar that floats in on hamburger icon*/
+ .off-canvas {
+ 	background: #f9f9f9;
+ }
+
+/*Makes the padding for the hamburger drawer items on small screens (off-canvas)
+but not large screen drop-down*/
+.off-canvas .menu.vertical li{
+	padding: 0.4rem 1.5rem;
+}
+
+/*Font for the hamburger side drawer*/
+.side-menu-font,
+.side-menu-font a{
+	font-size: 1rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+}
+
+ul.side-menu-font.vertical.menu{
+	padding: 1rem 0 0 0;
+}
+
+/*Little line in the hamburger drawer between big nav items*/
+.nav-divider {
+	border-bottom: #e6e6e6 1px solid;
+	height: 0rem;
+	margin: 0.5rem;
+}
+
+.nav-divider:after{
+    display: block;
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border: #e6e6e6 1px solid;
+    position: relative;
+    bottom: -0.1rem;
+    left: 41%;
+    background: #f9f9f9;
+    border-radius: 100%;
+    box-shadow: #f9f9f9 0 0 0 0.3rem;
+}
+
+/*For the nav bar sticky on large screens*/
+[data-sticky] {
+  width: 100%; }
+
+/*For the nav bar on large screens*/
+.top-bar{
+	text-align: center;
+  	background: grey;
+  	border-width: 5px;
+  	border-color: #FFF;
+  	background: #FFF;
+  	padding: 0.2rem 1.5rem;
+  	border-bottom: 1px solid #e6e6e6;
+  	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*For the left menu and right menu, in case they're different from the nav bar container*/
+.top-bar ul,
+.top-bar ul li{
+	text-align: center;
+  	background: #FFF;
+}
+
+/*Text treatment on hover for the nav bar*/
+.top-bar ul li a:hover {  
+  text-decoration: none;  
+  color: #000; 
+}
+
+/*Font for the large nav bar*/
+.large-navbar-font, 
+.large-navbar-font a{
+	font-size: 1rem;
+	text-transform: capitalize;
+	font-family: 'Roboto', sans-serif;
+	color: #7a7a7a;
+}
+
+/*Treatment for the sub drop down from the large nav bar*/
+.is-dropdown-submenu {
+	border: 1px solid #e6e6e6;
+	padding: 6px;
+	box-shadow: #e6e6e6 0 0 2px 1px;
+}
+
+/*The down arrow for the expanding menu item for categories*/
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+    border-color: #7a7a7a transparent transparent;
+}
+
+/*Title for viewing a single post*/
+.post-title-postpage, .post-title-staticpage,
+h1 .post-title-postpage, h1 .post-title-staticpage {
+ 	position: relative;
+ 	color: #515861;
+ 	font-family: 'Roboto', sans-serif;
+ 	font-size: 3rem;
+ 	letter-spacing: -0.15rem;
+ 	font-weight: bold;
+}
+
+/*To make the date on the single post page different*/
+.post-meta,
+.post-meta a {
+	text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    letter-spacing: 0rem;
+    font-weight: lighter;
+    color: #828991;
+    font-family: "Open Sans", sans-serif;
+}
+
+.post-tag-taller,
+.post-tag-taller a{
+	font-size: 1.1rem;
+}
+
+.post-content,
+.post-content p{
+	font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    font-size: 1.1rem;
+    line-height: 1.75em;
+    color: #3A4145;
+}
+
+.icon-share-button{
+	font-size: 2rem;
+	padding: 1rem;
+}
+
+.icon-about-button{
+	font-size: 1.3rem;
+	padding: 0.3rem;
+}
+
+.author-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 6px;
+    background: #e6e6e6;
+    z-index: 2;
+    box-shadow: #FFF 0 0 2px 1px;
+    margin-right: 2rem;
+    float: right;
+}
+
+.author-image .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 100%;
+}
+
+.author-name{
+	text-transform: lowercase;
+	color: #7a7a7a;
+	font-family: 'Ruthie', cursive; 
+	/*font-family: 'Open Sans', serif';*/
+	font-size: 2.5rem;
+}
+
+.footer-container,
+.footer-container.row,
+.footer-container.column{
+	background-color: #e6e6e6;
+	padding: 1.5rem 0 0.5rem 0;
+}
+
+.copyright, .copyright a{
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+    color: #828991;
+    text-decoration: none;
+    max-height: 0.8rem; /*a little bigger than font size*/
+}
+
+.poweredby, .poweredby a{
+	text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.6rem;
+    max-height: 0.8rem; /*a little bigger than font size*/
+    letter-spacing: 0.05rem;
+    color: #828991;
+    text-decoration: none;
+}
+
+#scroll-to-top {
+  background-color: rgb(57,55,55);
+  background-color: rgba(57,55,55,0.8);
+  background-image: url('/assets/icons/scroll_to_top.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  height: 40px;
+  margin-top: -20px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  width: 40px;
+  z-index: 20000;
+}
+
+#scroll-to-top:hover {
+  background-color: rgba(57,55,55);
+  background-color: rgba(57,55,55,0.7);
+}
