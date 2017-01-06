@@ -1,50 +1,59 @@
-{{!-- The title "the Latest" --}}
-<h2 class="tag-slider-title"> 
-    <a href="{{url absolute=true}}/tag/{{tag}}/">
-        <span class="italicized-words-spaced">on </span>
-        {{tag}}
-    </a> 
-</h2>
-
-
-<div class="row data-equalizer small-up-2 medium-up-3">
-{{#get "posts" filter="tag:{{tag}}" limit=6}}
-    {{#foreach posts}}
-        <div class="column">
-            {{!-- Make the whole card a link --}}
-            <a href={{url}}>
-                <div class="card">
-                    <img src="{{image}}">
-                    <div class="card-section">
-                        <h3>{{title}}</h3>
-                    </div>
+<div class="row slider-container">
+    <div class="center-align slider-title col s12">
+        <h2> <span class="slider-title-smallfont">on&nbsp;</span>{{tag}}</h2>
+    </div>
+    
+    <div class="hide-on-med-and-up">
+        {{#get "posts" filter="tag:{{tag}}" limit=4}}
+            {{#foreach posts}}
+                <div class="post-box col s6">
+                    <a href={{url}}>
+                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
+                        <h3 class="post-title-small grey-text text-darken-3">{{title}}</h3>
+                        {{!-- might want to replace this with {{meta-description}} --}}
+                        {{!-- <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p> --}}
+                    </a>
                 </div>
-            </a>
-        </div>
-    {{/foreach}}
-{{/get}}
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+    <div class="hide-on-small-only hide-on-large-only">
+        {{#get "posts" filter="tag:{{tag}}" limit=3}}
+            {{#foreach posts}}
+                <div class="post-box col s4">
+                    <a href={{url}}>
+                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
+                        <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
+                        {{!-- might want to replace this with {{meta-description}} --}}
+                        <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+    <div class="hide-on-med-and-down">
+        {{#get "posts" filter="tag:{{tag}}" limit=3}}
+            {{#foreach posts}}
+                <div class="post-box col s4">
+                    <a href={{url}}>
+                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
+                        <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
+                        {{!-- might want to replace this with {{meta-description}} --}}
+                        <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+    
+    <div class="col s12 center-align slider-footer">
+        <a class="waves-effect waves-light btn">more like this</a>
+    </div>
+
+
+
 </div>
 
-{{!-- <div class="row data-equalizer small-up-2 medium-up-3">
-{{#get "posts" filter="tag:{{tag}}" limit=6}}
-    {{#foreach posts}}
-        <div class="column data-equalizer-watch column-block">
-            <a href="{{url}}">
-                <article class="square-post">
-                <img src="{{image}}" class="thumbnail" style="height:100%; width:100%"/>
-            </article>
-            </a>
-        </div>
-    {{/foreach}}
-{{/get}}
-</div> --}}
-
-{{!-- For the text "more like this" --}}
-<h3 class="tag-slider-footer">
-    <a href="{{url absolute=true}}/tag/{{tag}}/">
-        <span class="italicized-words">more like this </span>
-    </a>
-</h3>
-
-{{!-- Divider --}}
 <div class="divider"></div>

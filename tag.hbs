@@ -3,31 +3,40 @@
 
 {{#tag}}
 
-{{!-- The off-canvas-wrapper class hides scroll bars when the sidebar is opened --}}
-<div class="off-canvas-wrapper">
-    {{!-- All of the content that gets shifted when the nav opens lives in here --}}
-    <div class="off-canvas-content" data-off-canvas-content>
-        {{navigation}}
+{{navigation}}
 
-        {{!-- Main container content takes up 10col horiz--}}
+<main>
+    <div class="container">
         <div class="row">
-            <div class="column small-10">
-                <main>
-                    <h3 class="tag-page-title">
-                        <span class="italicized-words">{{../pagination.total}} posts in the</span>
-                        {{name}}
-                        <span class="italicized-words">category</span>
-                    </h3>
-                   
-                    {{> "loop-tag-page"}}
-                </main>
+            <div class="col s12 m9 l10">
+                <h2>tag page {{name}} </h2>
+                <img class="responsive-img" src="http://placehold.it/900x700">
+                <p> This is some main content text. This is some side panel text. This is some main content text. This is somemain content  text. </p>
             </div>
 
-            {{>sidebar}}
+            <div class="col m3 l2 hide-on-small-only">
+                <h2>sidebar</h2>
+                <img class="responsive-img" src="http://placehold.it/350x150">
+                <p> This is some side panel text. This is some side panel text. This is some side panel text. This is some side panel text. </p>
+            </div>
         </div>
-
-        {{>footer}}
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card hoverable blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">home.hbs</span>
+                            <p>This is displaying from home.hbs</p>
+                        </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</main>
+
+{{>footer}}
 
 {{/tag}}

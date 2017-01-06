@@ -1,0 +1,107 @@
+@import "components/color";
+@import "components/variables";
+
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 90%; } }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    // background-color: #eeeeee; //grey lighten-3
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav{
+	//background-color: color("blue-grey", "darken-2"); 
+	 background-color: #3c4863; //#45526E;
+}
+
+/*The image for the top home.hbs*/
+.main-header{
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	height: 25vh;
+	opacity: 0.85;
+	margin: 0 0 3rem 0;
+}
+
+h1.blog-title{
+    font-size: 3rem;
+    margin: 0 0;
+    color: white;
+}
+
+h1.blog-title2{
+    font-size: 5rem;
+    margin: 2vh 2vh;
+    font-family: 'Ruthie', cursive;
+}
+
+h2.blog-description{
+    font-size: 2vmax;
+    color: white;
+    margin: 1rem 0;
+}
+
+h4.blog-description2{
+    font-size: 2vmax;
+    margin: 1rem 0;
+    font-weight: 300;
+    line-height: 2.3rem;
+}
+
+.slider-title h2{
+	font-size: 2rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	opacity: 0.8;
+	// margin: 3rem 0 3rem 0;
+	margin: 4vmax 0 4vmax 0;
+	font-style: bold;
+}
+
+h2 .slider-title-smallfont{
+	font-size: 1.3rem;
+	letter-spacing: 0.3rem;
+}
+
+.slider-footer{
+	margin: 3vmax 0 3.5vmax 0;}
+
+h3.post-title{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+// for small screens
+h3.post-title-small{
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 300;
+    margin: 1vmax 0.5vmax 3vmax 0.5vmax;
+}
+
+p.post-excerpt{
+	font-size: 1rem;
+	color: rgba(0, 0, 0, 0.87);
+	text-align: center;
+	margin: 0 0.5rem;
+	font-weight: 300;
+}
+
+.slider-container{
+	background-color: white;
+	padding: 0 0 0 0;
+}
+
+.slider .indicators .indicator-item.active{
+	background-color: $secondary-color;
+}

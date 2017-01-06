@@ -17,8 +17,10 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{!-- Styles'n'Scripts --}}
+    {{!-- ***replace with minimized file! *** --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/materialize.css"}}"  media="screen,projection"/>
+
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/materialize.min.css"}}"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -29,24 +31,30 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 </head>
+
 <body class="{{body_class}}">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
 
-    <div class="site-wrapper">
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-    </div>
-
-    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>--}}
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-    {{!-- Fitvids makes video embeds responsive and awesome 
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>--}}
+
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     
     {{!-- For materialize --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="{{asset "js/bin/materialize.min.js"}}"></script>
+    <script type="text/javascript">
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
+            $('.carousel').carousel();
+            $('.slider').slider();
+        });
+    </script>
+
 
     {{!-- For social button intents --}}
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>

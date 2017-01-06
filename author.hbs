@@ -1,41 +1,42 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The big featured header --}}
-
 {{!-- Everything inside the #author tags pulls data from the author --}}
 {{#author}}
-    <header class="main-header author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
-        <nav class="main-nav overlay clearfix">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>
-    </header>
+{{navigation}}
 
-    <section class="author-profile inner">
-        {{#if image}}
-        <figure class="author-image">
-            <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
-        </figure>
-        {{/if}}
-        <h1 class="author-title">{{name}}</h1>
-        {{#if bio}}
-            <h2 class="author-bio">{{bio}}</h2>
-        {{/if}}
-        <div class="author-meta">
-            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-            <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <h2>Author page {{name}} </h2>
+                <img class="responsive-img" src="http://placehold.it/900x700">
+                <p> This is some main content text. This is some side panel text. This is some main content text. This is somemain content  text. </p>
+            </div>
+
+            <div class="col m3 l2 hide-on-small-only">
+                <h2>sidebar</h2>
+                <img class="responsive-img" src="http://placehold.it/350x150">
+                <p> This is some side panel text. This is some side panel text. This is some side panel text. This is some side panel text. </p>
+            </div>
         </div>
-    </section>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card hoverable blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">home.hbs</span>
+                            <p>This is displaying from home.hbs</p>
+                        </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{>footer}}
 {{/author}}
 
-{{!-- The main content area on the homepage --}}
-<main class="content" role="main">
-
-    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
-    {{> "loop"}}
-
-</main>
