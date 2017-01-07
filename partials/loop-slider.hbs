@@ -1,59 +1,43 @@
-<div class="row slider-container">
-    <div class="center-align slider-title col s12">
+<section class="row slider-container">
+    <header class="center-align slider-title col s12">
         <h2> <span class="slider-title-smallfont">on&nbsp;</span>{{tag}}</h2>
-    </div>
+    </header>
     
     <div class="hide-on-med-and-up">
         {{#get "posts" filter="tag:{{tag}}" limit=4}}
             {{#foreach posts}}
-                <div class="post-box col s6">
+                <article class="post-box col s6">
                     <a href={{url}}>
                         <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
-                        <h3 class="post-title-small grey-text text-darken-3">{{title}}</h3>
-                        {{!-- might want to replace this with {{meta-description}} --}}
-                        {{!-- <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p> --}}
+                        <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
                     </a>
-                </div>
+                </article>
             {{/foreach}}
         {{/get}}
     </div>
 
-    <div class="hide-on-small-only hide-on-large-only">
+    <div class="hide-on-small-only">
         {{#get "posts" filter="tag:{{tag}}" limit=3}}
             {{#foreach posts}}
-                <div class="post-box col s4">
+                <article class="post-box col s4">
                     <a href={{url}}>
                         <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
                         <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
-                        {{!-- might want to replace this with {{meta-description}} --}}
+                        {{!-- Might want to replace with meta-description --}}
                         <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p>
                     </a>
-                </div>
+                </article>
             {{/foreach}}
         {{/get}}
     </div>
 
-    <div class="hide-on-med-and-down">
-        {{#get "posts" filter="tag:{{tag}}" limit=3}}
-            {{#foreach posts}}
-                <div class="post-box col s4">
-                    <a href={{url}}>
-                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
-                        <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
-                        {{!-- might want to replace this with {{meta-description}} --}}
-                        <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p>
-                    </a>
-                </div>
-            {{/foreach}}
-        {{/get}}
-    </div>
     
-    <div class="col s12 center-align slider-footer">
+    <footer class="col s12 center-align slider-footer">
         <a class="waves-effect waves-light btn">more like this</a>
-    </div>
+    </footer>
 
 
 
-</div>
+</section>
 
 <div class="divider"></div>
