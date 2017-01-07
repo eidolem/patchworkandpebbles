@@ -6,9 +6,9 @@
     <div class="hide-on-med-and-up">
         {{#get "posts" filter="tag:{{tag}}" limit=4}}
             {{#foreach posts}}
-                <article class="post-box col s6">
+                <article class="post-box hoverable col s6">
                     <a href={{url}}>
-                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
+                        <img class="z-depth-2 responsive-img" src="{{image}}">
                         <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
                     </a>
                 </article>
@@ -19,9 +19,9 @@
     <div class="hide-on-small-only">
         {{#get "posts" filter="tag:{{tag}}" limit=3}}
             {{#foreach posts}}
-                <article class="post-box col s4">
+                <article class="post-box hoverable col s4">
                     <a href={{url}}>
-                        <img class="hoverable z-depth-2 responsive-img" src="{{image}}">
+                        <img class="z-depth-2 responsive-img" src="{{image}}">
                         <h3 class="post-title grey-text text-darken-3">{{title}}</h3>
                         {{!-- Might want to replace with meta-description --}}
                         <p class="post-excerpt grey-text text-darken-3">{{excerpt words="50"}}...</p>

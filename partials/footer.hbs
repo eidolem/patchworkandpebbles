@@ -1,26 +1,26 @@
-<footer class="page-footer">
+<footer id="page-footer" class="page-footer">
   	<div class="container">
     	<div class="row">
-      		<div class="col l6 s12">
-        		<h5 class="white-text">Footer Content</h5>
-        		<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      		<div class="col valign s4 offset-s4 m2 offset-m3">
+        		<img src="{{@blog.logo}}" class="z-depth-3 circle responsive-img">
       		</div>
-      	<div class="col l4 offset-l2 s12">
-        	<h5 class="white-text">Links</h5>
-	        <ul>
-	          	<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-	          	<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-	          	<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-	          	<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-	        </ul>
-      	</div>
+      		<div class="center-align col s12 m5">
+      			<p class="footer-name grey-text text-lighten-3">Melodie Meigs</p>
+      			<p class="footer-find-me-on grey-text text-lighten-3">find me on</p>
+                <img class="share-post-icon" src="{{asset "/svg/instagram.svg"}}">&nbsp;
+                <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
+                <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
+                <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
+                <img class="share-post-icon" src="{{asset "/svg/youtube.svg"}}">&nbsp;
+                <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
+      		</div>
     </div>
 
     {{!-- Need this /div so the copyright line is full-width outside the container --}}
 	</div>
  	<div class="footer-copyright">
 	    <div class="container">
-	    	<a class="grey-text text-lighten-4 left" href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+	    	<a class="left grey-text text-lighten-4" href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
 	    	<div class="right">Published with <a class="grey-text text-lighten-4" href="https://ghost.org">Ghost</a> and <a class="grey-text text-lighten-4" href="http://materializecss.com/">Materialize</a></div>
 	    </div>
 	</div>

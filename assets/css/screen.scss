@@ -19,37 +19,87 @@ main {
 
 // Upper nav bar
 nav{
-	//background-color: color("blue-grey", "darken-2"); 
-	 background-color: #3c4863; //#293a48; //#45526E;
+	background-color: #3c4863; //#293a48; //#45526E;
+	font-weight: 300;
 }
 
 .dropdown-content li > a{
 	color: $primary-color;
-	font-weight: 300;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: color("grey", "lighten-4");
+	}
 }
 
-nav ul a:hover {
-    background-color: color("grey", "lighten-4");
+// Sets the blog title properties on the top nav bar
+.brand-logo{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	margin: 0 0 0 0.7rem;
 }
 
-/*The image for the top home.hbs*/
-// .main-header{
-// 	width: 100%;
-// 	background-size: cover;
-// 	background-position: center center;
-// 	height: 25vh;
-// 	opacity: 0.85;
-// 	margin: 0 0 3rem 0;
-// }
+.side-nav a{
+	font-weight: 400;
+}
+
+.side-nav .subheader{
+	text-transform: uppercase;
+}
+
+// For buttons in the side nav, like Subscribe RSS
+.side-nav a.btn{
+	background-color: #fff;
+    color: color("grey", "base");
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+
+    &:hover{
+    	background-color: color("grey", "lighten-3");
+    }
+}
+
+// RSS icon in the side nav
+.side-nav-rss{
+    float: right;
+    margin: 7px;
+	width: 2rem;
+	height: 2rem;
+	opacity: 0.5;
+	display: inline-block;
+}
+
+.subheader-items{
+	text-indent: 1.5rem;
+}
+
+// Sets the height of the blog image on the sidenav
+.userView{
+	min-height: 150px;
+}
+
+// Sets the blog image properties on the sidenav
+.background{
+	background-size: cover;
+	overflow: visible;
+}
+
+i.close-sidenav{
+	color: white;
+	font-size: 2.5rem;
+}
 
 h1.blog-title{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 4rem 0 0 0;
-    font-family: 'Ruthie', cursive;
+    text-transform: lowercase;
+    font-weight: 900;
+    letter-spacing: -0.2rem;
 }
 
 h2.blog-description{
-    font-size: 1.6vmax;
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: 2.3rem;
 }
@@ -72,19 +122,21 @@ h2 .slider-title-smallfont{
 }
 
 .slider-footer{
-	margin: 3vmax 0 3.5vmax 0;}
+	margin: 3rem 0 3.5rem 0;
+}
+
+.post-box{
+	margin-bottom: 1rem;
+}
 
 h3.post-title{
     font-size: 1.5rem;
     text-align: center;
     font-weight: 300;
     font-family: 'Roboto Slab', serif;
-}
 
-@media (max-width: $small-screen){
-	h3.post-title{
-    font-size: 1.1rem;
-    margin: 1vmax 0.5vmax 3vmax 0.5vmax;
+    @media #{$small-and-down} {
+    	font-size: 1.1rem;
     }
 }
 
@@ -92,7 +144,7 @@ p.post-excerpt{
 	font-size: 1rem;
 	color: rgba(0, 0, 0, 0.87);
 	text-align: center;
-	margin: 0 0.5rem;
+	margin: 0 0.5rem 0.5rem 0.5rem;
 	font-weight: 300;
 }
 
@@ -110,24 +162,34 @@ p.post-excerpt{
 	background-color: $secondary-color;
 }
 
-.btn, .btn-large{
-	color: #ff8f00; //amber darken-3
-    background-color: #fff;
-}
+.homepage a.btn{
+	background-color: #fff;
+    color: $secondary-color;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    border-radius: 2px;
 
-.btn:hover, .btn-large:hover{
-	color: #fff;
+    &:hover{
+     	color: white;  
+     	background-color: $secondary-color;	
+ 	    border-style: solid;
+	    border-width: 1px;
+	    box-shadow: none;
+	    border-radius: 2px;
+	    border-color: $secondary-color;
+    }
 }
 
 // Change the margins for the post title and meta
 .post-header-container{
 	margin: 5rem 0 2rem 4rem;
 
-	@media only screen and (max-width: $medium-screen) {
+    @media #{$medium-only} {
 		margin: 4rem 0 1.5rem 2rem;
 	}
 
-	@media only screen and (max-width: $small-screen) {
+    @media #{$small-and-down} {
 		margin: 2rem 0 1rem 0;
 	}
 }
@@ -138,7 +200,7 @@ h1.post-title{
 	font-weight: 300;
 	margin: 0 0 5rem 0;
 
-  	@media only screen and (max-width: $small-screen) {
+    @media #{$small-and-down} {
 		font-size: 3rem;
   	}
 }
@@ -164,12 +226,12 @@ a .post-meta-tags{
 	width: 70%;
 	margin: 0 0 0 4rem;
 
-	@media only screen and (max-width: $medium-screen) {
+    @media #{$medium-only} {
 		margin: 0 0 0 2rem;
 		width: 90%;
 	}
 
-  	@media only screen and (max-width: $small-screen) {
+    @media #{$small-and-down} {
 		font-size: 1rem;
 		margin: 0 0 0 0;
 		width: 100%;
@@ -208,12 +270,12 @@ a .post-meta-tags{
     font-style: italic;
     font-weight: 100;
 
-	@media only screen and (max-width: $medium-screen) {
+    @media #{$medium-only} {
 		margin: 4rem 0 1.5rem 2rem;
 		width: 90%;
 	}
 
-	@media only screen and (max-width: $small-screen) {
+    @media #{$small-and-down} {
 		margin: 2rem 0 1rem 0;
 		width: 100%
 	}
@@ -228,11 +290,44 @@ a .post-meta-tags{
 	height: 2.5rem;
 	opacity: 0.5;
 	display: inline-block;
+
+	&:hover{
+		opacity: 0.9;
+	}
+}
+.card.horizontal .card-title p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5rem 0 0 0.7rem;
+    color: color("light-blue", "darken-2");
 }
 
-.share-post-icon:hover{
-	opacity: 0.9;
+.card.horizontal .card-content{
+    padding: 0;
+    border-radius: 0 0 2px 2px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0 0.5rem 0 0.7rem;
+
+    @media #{$medium-only} {
+		font-size: 1.3rem;
+	}
+    @media #{$small-and-down} {
+		font-size: 1rem;
+	}
 }
 
+.footer-name, .footer-name p{
+	font-size: 1.5rem;
+	margin: 0;
+	font-weight: 100;
+}
+
+.footer-find-me-on, .footer-find-me-on p{
+	font-size: 0.8rem;
+	font-weight: 100;
+}
 
 //     background: linear-gradient(rgba(0,0,0,.45) 100%,transparent);

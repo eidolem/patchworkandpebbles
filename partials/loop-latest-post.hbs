@@ -10,10 +10,12 @@
                 {{#get "posts" limit=4}}
                     {{#foreach posts}}
                         <li>
-                            <img src="{{image}}">
-                            <div class="caption left-align">
-                                <h3>{{title}}</h3>
-                            </div>
+                            <a href="{{url}}">
+                                <img src="{{image}}">
+                                <div class="caption left-align">
+                                    <h3>{{title}}</h3>
+                                </div>
+                            </a>
                         </li>
                     {{/foreach}}
                 {{/get}}

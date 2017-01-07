@@ -41,6 +41,7 @@ of the default.hbs template, containing the blog header/footer. --}}
                         <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
                         <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
                         <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
+                        <img class="share-post-icon" src="{{asset "/svg/pinterest.svg"}}">&nbsp;
                         <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
                     </div>
                 </div>
@@ -49,39 +50,38 @@ of the default.hbs template, containing the blog header/footer. --}}
 
                 <div class="row">
                     {{#prev_post}}
-                        <div class="col s12 m6">
-                            <div class="card hoverable horizontal">
-                                <div class="card-image">
-                                    <img src="{{image}}">
+                        <div class="col s12 l6">
+                            <a href="{{url}}" class="card hoverable horizontal">
+                                <div class="valign-wrapper card-image">
+                                    <img class="valign" src="{{image}}">
                                 </div>
                                 <div class="card-stacked">
                                     <div class="card-title">
-                                        <p>Next Post</p>
+                                        <p>Previous Post</p>
                                     </div>
-                                    <div class="card-content">
-                                        <p>{{title}}</p>
+                                    <div class="valign-wrapper card-content grey-text">
+                                        <p class="valign">{{title}}</p>
                                     </div>
                                 </div>  
-                            </div>
+                            </a>
                         </div>
                     {{/prev_post}}
 
                     {{#next_post}}
-                        <div class="col s12 m6">
-                            <div class="card hoverable horizontal">
+                        <div class="col s12 l6">
+                            <a href="{{url}}" class="card hoverable horizontal">
                                 <div class="card-stacked">
                                     <div class="card-title">
                                         <p>Next Post</p>
                                     </div>
-                                    <div class="card-content">
-                                        <p>{{title}}</p>
+                                    <div class="valign-wrapper card-content grey-text">
+                                        <p class="valign">{{title}}</p>
                                     </div>
                                 </div>  
-                            <div class="card horizontal">
-                                <div class="card-image">
-                                    <img src="{{image}}">
+                                <div class="valign-wrapper card-image">
+                                    <img class="valign"src="{{image}}">
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     {{/next_post}}
                 </div>
