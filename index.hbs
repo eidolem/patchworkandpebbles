@@ -1,23 +1,37 @@
 {{!< default}}
 
-
 {{navigation}}
 
 <main>
     <div class="container">
         <div class="row">
+            {{!-- The main content of posts --}}
             <div class="col s12 m9 l10">
-                <h2>index page 2+ </h2>
-                {{!-- <img class="responsive-img" src="http://placehold.it/200x100"> --}}
-                <p> This is some main content text. This is some side panel text. This is some main content text. This is somemain content  text. </p>
+                <header class="index-header grey-text text-darken-1 center-align">all posts</header>
+                {{#get "posts" limit="all" include="tags"}}
+                    {{#foreach posts}}
+                        <article class="post-box hoverable col s6 l4" onclick="goToArticle({{url}})">
+                            <img class="z-depth-2 responsive-img" src="{{image}}" />
+                            <header class="post-title grey-text text-darken-3">
+                                {{title}}
+                            </header>
+                            <footer class="post-box-meta grey-text center-align">
+                                {{#if tags}}
+                                    &nbsp;on&nbsp;{{tags}}
+                                {{/if}}
+                                {{tags.name}}
+                            </footer>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
             </div>
 
+            {{!-- The sidebar --}}
             <div class="col m3 l2 hide-on-small-only">
                 <h2>sidebar</h2>
                 {{!-- <img class="responsive-img" src="http://placehold.it/350x150"> --}}
                 <p> This is some side panel text. This is some side panel text. This is some side panel text. This is some side panel text. </p>
             </div>
-        </div>
         </div>
     </div>
 </main>
@@ -25,3 +39,10 @@
 
 {{>footer}}
 
+
+<script>
+    function goToArticle(url){
+        window.location=url;
+    }
+
+</script>
