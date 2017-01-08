@@ -1,17 +1,17 @@
- {{!-- navbar-fixed required to stick nav at top --}}
+ {{!-- navbar-fixed required for materialize to stick nav at top --}}
  <div class="navbar-fixed">
     <nav>
-        <ul id="dropdown1" class="dropdown-content">
+        <ul id="dropdown" class="dropdown-content">
             {{#foreach navigation}}
-                <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+                <li><a href="{{url}}">{{label}}</a></li>
             {{/foreach}}
         </ul>
 
         <div class="nav-wrapper">
-            <a href="{{@blog.url}}" class="brand-logo hide-on-large-only">PATCHWORK & PEBBLES</a>
+            <a href="{{@blog.url}}" class="hide-on-large-only brand-logo">{{@blog.title}}</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{@blog.url}}">Home</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="{{url absolute="true"}}/about-me">About</a></li>
                 <li><a href="#page-footer">Contact</a></li>
             </ul>
@@ -23,17 +23,13 @@
 
 {{!-- Slide-out nav content for small/med screens --}}
 <ul id="slide-out" class="side-nav">
-    <li>
-        <div class="userView">
-            <div class="background" style="background-image: url({{@blog.cover}}"></div>
-            {{!-- <i class="material-icons align-right close-sidenav">close</i> --}}
-        </div>
-    </li>
+    <li><a class="side-nav-title">{{@blog.title}}</a></li>
+    <li><div class="divider"></div></li>
     <li><a href="{{@blog.url}}">Home</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Categories</a></li>
     {{#foreach navigation}}
-        <li class="subheader-items"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        <li class="subheader-items"><a href="{{url}}">{{label}}</a></li>
     {{/foreach}}   
     <li><div class="divider"></div></li>
     <li><a href="{{url absolute="true"}}/about-me">About</a></li>

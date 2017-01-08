@@ -1,11 +1,11 @@
 @import "components/color";
 @import "components/variables";
 
-// Make the whole view area width larger (materialize default is 70%)
+// Make the whole view area width larger (materialize default is 70%)***
 .container {
     width: 90%; } 
 
-// Needed for the sticky footer
+// Needed for the sticky footer***
 body {
     display: flex;
     min-height: 100vh;
@@ -49,8 +49,9 @@ code, tt {
     font-feature-settings: "liga" 0;
 }
 
+// Work-around for materialize to make lists bulleted but not on nav items***
 ul {
-  &:not(.browser-default) {
+  &:not(.browser-default or .navbar-fixed or .side-nav) {
     list-style-type: disc;
     padding-left: 2rem;
 
@@ -60,6 +61,7 @@ ul {
   }
 }
 
+// Work-around for materialize to make lists bulleted but not on nav items***
 ol {
   &:not(.browser-default) {
     list-style-type: decimal;
@@ -75,80 +77,86 @@ main {
     flex: 1 0 auto;
 }
 
-// Upper nav bar
+// Upper nav bar***
 nav{
 	background-color: #3c4863; //#293a48; //#45526E;
-	font-weight: 300;
-}
 
-.dropdown-content li > a{
-	color: $primary-color;
-	text-transform: uppercase;
+	ul li{
+		font-weight: 300;
+		letter-spacing: 0.03rem;
+	}
 
-	&:hover {
-		background-color: color("grey", "lighten-4");
+	.brand-logo{
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		margin: 0 0 0 1.5rem;
+		text-transform: uppercase;
+		font-size: 1.3rem;
+	}
+
+	.dropdown-content li > a{
+		color: $primary-color;
+		text-transform: uppercase;
+		&:hover {
+			background-color: color("grey", "lighten-4");
+		}
 	}
 }
 
-// Sets the blog title properties on the top nav bar
-.brand-logo{
-	font-family: 'Roboto', sans-serif;
-	font-weight: 100;
-	margin: 0 0 0 0.7rem;
-}
+//side nav that pulls out on right***
+.side-nav{
+	a{
+	 	padding: 0 2rem;
+ 		font-weight: 400;
+	}
 
-.side-nav a{
-	font-weight: 400;
-}
+	.subheader{
+	 	text-transform: uppercase;
+	}
 
-.side-nav .subheader{
-	text-transform: uppercase;
-}
+	li :not(.divider){
+	 	padding-top: 0.25rem;
+	 	padding-bottom: 0.25rem;
+	 }
 
-// For buttons in the side nav, like Subscribe RSS
-.side-nav a.btn{
-	background-color: #fff;
-    color: color("grey", "base");
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
+	a.btn{
+		background-color: #fff;
+    	color: color("grey", "base");
+    	border-style: solid;
+    	border-width: 1px;
+    	border-radius: 2px;
 
-    &:hover{
-    	background-color: color("grey", "lighten-3");
+    	&:hover{
+    		background-color: color("grey", "lighten-3");
+    	}
     }
+
+    .side-nav-title{
+	    text-transform: uppercase;
+	    font-size: 1.5rem;
+	    font-weight: 300;
+	    text-align: center;
+	    display: inline-block;
+	    line-height: 3rem;
+	    // background-color: $primary-color;
+	    }
+
+	.side-nav-rss{
+    	float: right;
+		margin: 7px;
+		width: 2rem;
+		height: 2rem;
+		opacity: 0.5;
+		display: inline-block;
+	}
+	
+	.subheader-items{
+		text-indent: 1.5rem;
+	}
 }
 
-// RSS icon in the side nav
-.side-nav-rss{
-    float: right;
-    margin: 7px;
-	width: 2rem;
-	height: 2rem;
-	opacity: 0.5;
-	display: inline-block;
-}
-
-.subheader-items{
-	text-indent: 1.5rem;
-}
-
-// Sets the height of the blog image on the sidenav
-.userView{
-	min-height: 150px;
-}
-
-// Sets the blog image properties on the sidenav
-.background{
-	background-size: cover;
-	overflow: visible;
-}
-
-i.close-sidenav{
-	color: white;
-	font-size: 2.5rem;
-}
-
-h1.blog-title{
+//For the main title on the homepage***
+.blog-title{
     font-size: 4rem;
     margin: 4rem 0 0 0;
     text-transform: lowercase;
@@ -156,98 +164,71 @@ h1.blog-title{
     letter-spacing: -0.2rem;
 }
 
-h2.blog-description{
+//For the blog description on the homepage***
+.blog-description{
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 2.3rem;
 }
 
-.slider-title h2{
+//For the title of each category slider, like "on TRAVEL"***
+.slider-title{
 	letter-spacing: -0.5px;
 	font-size: 3rem;
 	font-weight: 100;
 	text-transform: uppercase;
+
+	@media #{$small-and-down} {
+		font-size: 2.4rem;
+	}
+
 }
 
-h2 .slider-title-smallfont{
+//To make some words smaller size in the title of the category slider***
+.slider-title-smallfont{
 	font-size: 1.3rem;
 	letter-spacing: 0.3rem;
-}
 
-.slides .caption h3{
-	font-family: 'Roboto Slab', serif;
-}
-
-.slider{
-	margin-bottom: 3rem;
-}
-.slider-footer{
-	margin: 0 0 3.5rem 0;
-}
-
-.post-box{
-	margin-bottom: 3rem;
-	cursor: pointer;
-}
-
-.post-box .post-meta{
-	margin-bottom: 1.5rem;
-	text-transform: uppercase;
-	font-weight: 300;
-}
-
-.post-box-meta{
-	margin-bottom: 2rem;
-	a{
-		text-transform: uppercase;
-		color: color("grey", "lighten-1");
+	@media #{$small-and-down} {
+		font-size: 1.5rem;
 	}
 }
 
-.post-title-post-page{
-	font-size: 4.2rem;
-    font-weight: 300;
-    font-family: 'Roboto Slab', serif;
-    margin: 3.5rem 0 4rem 0; 
-}
-
-header.post-title,
-h3.post-title{
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: 300;
-    font-family: 'Roboto Slab', serif;
-    margin: 1rem 0;
-
-    @media #{$small-and-down} {
-    	font-size: 1.1rem;
-    	margin-top: 0.5rem;
-    }
-}
-
-p.post-excerpt{
-	font-size: 1rem;
-	color: rgba(0, 0, 0, 0.87);
-	text-align: center;
-	margin: 0 0.5rem 0.5rem 0.5rem;
-	font-weight: 300;
-}
-
+//The container for each category/tag***
 .slider-container{
 	background-color: white;
 	padding: 0 0 0 0;
+
+	// For the rotating loop-slider on latest posts
+	.slider{
+		margin-bottom: 3rem;
+
+		.caption h3{
+			font-family: 'Roboto Slab', serif;
+		}
+
+		@media #{$medium-and-down} {
+			margin-bottom: 1rem;
+		}
+
+		.indicator-item{
+			height: 12px;
+			width: 12px;
+		}
+
+		.indicator-item.active{
+			background-color: $secondary-color;
+		}
+	}
+
+	//For any category/tag slider
+	.slider-footer{
+		margin: 0 0 2rem 0;
+	}
 }
 
-.slider .indicators .indicator-item{
-	height: 12px;
-	width: 12px;
-}
-
-.slider .indicators .indicator-item.active{
-	background-color: $secondary-color;
-}
-
-.homepage a.btn{
+//For the homepage, what the buttons look like for "more like this"
+.home-template a.btn{
 	background-color: #fff;
     color: $secondary-color;
     border-style: solid;
@@ -265,6 +246,75 @@ p.post-excerpt{
 	    border-color: $secondary-color;
     }
 }
+
+// Styles for the various post-boxes
+.post-box{
+	cursor: pointer;
+
+	.post-title{  
+    	text-align: center;
+    	font-weight: 300;
+    	font-family: 'Roboto Slab', serif;
+    	line-height: 110%;
+	}	
+
+	.post-meta{
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 1rem;
+	}
+
+	.post-meta a{
+		color: color("grey","lighten-1");
+		font-weight: 400;
+		font-size: 1.1rem;
+	}
+
+	.post-excerpt{
+		font-size: 1rem;
+		color: rgba(0, 0, 0, 0.87);
+		text-align: center;
+		margin: 0 0.5rem 0.5rem 0.5rem;
+		font-weight: 300;
+	}
+
+	@media #{$small-and-down} {
+		margin-bottom: 1rem;
+
+		.post-title{
+			font-size: 1rem;
+			margin: 0.5rem 0 0.5rem 0;
+		}
+
+		.post-meta{
+			font-size: 0.6rem;
+		}
+
+		.post-meta a{
+			font-size: 0.8rem;
+		}
+	}
+
+	@media #{$medium-only} {
+		margin-bottom: 2rem;
+		
+		.post-title{
+			font-size: 1.3rem;
+			margin: 0.75rem;
+		}
+	}
+
+	@media #{$large-and-up} {
+		margin-bottom: 2rem;
+
+		.post-title{
+			font-size: 1.5rem;
+			margin: 1rem 0;
+		}
+	}
+}
+
 
 // Change the margins for the post title and meta
 .post-header-container{
