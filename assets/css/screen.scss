@@ -3,7 +3,12 @@
 
 // Make the whole view area width larger (materialize default is 70%)
 .container {
-    width: 90%; } 
+    width: 90%; 
+
+	@media #{$medium-and-down} {
+		width: 95%;
+	}
+} 
 
 // Needed for the sticky footer
 body {
@@ -51,14 +56,22 @@ code, tt {
 
 // Work-around for materialize to make lists bulleted but not on nav items
 ul {
-  &:not(.browser-default or .navbar-fixed or .side-nav) {
+  &:not(.side-nav){
     list-style-type: disc;
     padding-left: 2rem;
-
     >li {
       list-style-type: disc;
     }
   }
+}
+
+div.nav-wrapper {
+    ul{
+	    list-style-type: none;
+	    >li {
+	      list-style-type: none;
+	    }
+  	}
 }
 
 // Work-around for materialize to make lists bulleted but not on nav items
@@ -96,7 +109,6 @@ nav{
 
 	.dropdown-content li > a{
 		color: $primary-color;
-		text-transform: uppercase;
 		&:hover {
 			background-color: color("grey", "lighten-4");
 		}
@@ -108,6 +120,7 @@ nav{
 	a{
 	 	padding: 0 2rem;
  		font-weight: 400;
+ 		line-height: 44px;
 	}
 
 	.subheader{
@@ -117,7 +130,17 @@ nav{
 	li :not(.divider){
 	 	padding-top: 0.25rem;
 	 	padding-bottom: 0.25rem;
-	 }
+	}
+
+	.divider{
+		margin: 0;
+	}
+
+	//for the <- button to close side drawer
+	.material-icons{
+		float: right;
+    	margin: 8px 10px 0 0;
+	}
 
 	a.btn{
 		background-color: #fff;
@@ -133,12 +156,12 @@ nav{
 
     .side-nav-title{
 	    text-transform: uppercase;
-	    font-size: 1.5rem;
+	    font-size: 1.3rem;
 	    font-weight: 300;
 	    text-align: center;
 	    display: inline-block;
 	    line-height: 3rem;
-	    // background-color: $primary-color;
+	    color: $primary-color;
 	    }
 
 	.side-nav-rss{
@@ -223,7 +246,7 @@ nav{
 
 	//For any category/tag slider
 	.slider-footer{
-		margin: 0 0 2rem 0;
+		margin: 0 0 1.8rem 0;
 	}
 
 	a.btn{
@@ -248,6 +271,7 @@ nav{
 // Styles for the various post-boxes
 .post-box{
 	cursor: pointer;
+	border-radius: 2px;
 
 	.post-title{  
     	text-align: center;
@@ -278,7 +302,7 @@ nav{
 	}
 
 	@media #{$small-and-down} {
-		margin-bottom: 1rem;
+		margin-bottom: 1.2rem;
 
 		.post-title{
 			font-size: 1rem;
@@ -295,7 +319,7 @@ nav{
 	}
 
 	@media #{$medium-only} {
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
 		
 		.post-title{
 			font-size: 1.2rem;
@@ -414,7 +438,7 @@ nav{
 	text-align: center;
     font-size: 1.5rem;
     font-style: italic;
-    font-weight: 100;
+    font-weight: 300;
 
     img.share-post-icon{
 		width: 2rem;
@@ -516,6 +540,93 @@ nav{
     font-family: 'Roboto Slab', serif;
 }
 
+//For the card that displays all types of categories on homepage
+.categories-card{
+	background-color: color("blue-grey", "base");
+	.card-content{
+		color: white;
+		.card-title{
+			line-height: 40px;
+		}
+	}
+
+	a{
+		font-family: 'Roboto', sans-serif;
+		color: lighten($secondary-color, 15%);
+		font-size: 1.2rem;
+		transition: color .3s ease;
+		font-weight: 400;
+		&:hover{
+			color: white;
+		}
+	}
+}
+
+//overwrite colors on categories card for post pages
+.post-template{
+	.categories-card{
+		background-color: white;
+		.card-content{
+			color: grey;
+			.card-title{
+				font-size: 1.5rem;
+			}
+		}
+		a{
+			font-size: 1.2rem;
+			font-weight: 300;
+			&:hover{
+				color: grey;
+			}
+		}
+	}
+}
+
+//For the card to subscribe via RSS or email on homepage
+.subscribe-card{
+	background-color: color("blue-grey", "base");
+	.card-content{
+		color: white;
+		.card-title{
+			line-height: 40px;
+		}
+		p{
+			margin: 1rem 0;
+		}
+	}
+
+	a{
+		font-family: 'Roboto', sans-serif;
+		color: lighten($secondary-color, 15%);
+		font-size: 1.2rem;
+		transition: color .3s ease;
+		font-weight: 400;
+		&:hover{
+			color: white
+		}
+	}
+}
+
+//overwrite colors for post pages
+.post-template{
+	.subscribe-card{
+		background-color: white;
+		.card-content{
+			color: grey;
+			.card-title{
+				font-size: 1.5rem;
+				line-height: 35px;
+			}
+		}
+
+		a{
+			&:hover{
+				color: grey;
+			}
+		}
+	}
+}
+
 // Author name in the footer 
 .footer-name, .footer-name p{
 	font-size: 1.5rem;
@@ -526,7 +637,7 @@ nav{
 // "find me on" text in the footer 
 .footer-find-me-on, p.footer-find-me-on{
 	font-size: 1rem;
-	font-weight: 100;
+	font-weight: 300;
 	margin: 1rem 0 1rem 0;
 }
 
@@ -539,6 +650,31 @@ footer img.share-post-icon{
 	&:hover{
 		opacity: 0.9;
 	}
+}
+
+#scroll-to-top {
+  background-color: rgb(57,55,55);
+  background-color: rgba(57,55,55,0.8);
+  background-image: url('/assets/svg/arrow-upward.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  height: 40px;
+  margin-top: -20px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 20px;
+  top: 90%;
+  width: 40px;
+  z-index: 20000;
+}
+
+#scroll-to-top:hover {
+  background-color: rgba(57,55,55,0.7);
 }
 
 // background: linear-gradient(rgba(0,0,0,.45) 100%,transparent);

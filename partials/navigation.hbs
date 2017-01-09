@@ -23,16 +23,17 @@
 
 {{!-- Slide-out nav content for small/med screens --}}
 <ul id="slide-out" class="side-nav">
-    <li><a class="side-nav-title">{{@blog.title}}</a></li>
-    <li><div class="divider"></div></li>
+    <li><a class="side-nav-title">{{@blog.title}}</a><i onclick="$('.button-collapse').sideNav('hide');" class="material-icons">arrow_back</i></li>
+    {{!-- <li><div class="divider"></div></li> --}}
     <li><a href="{{@blog.url}}">Home</a></li>
-    <li><div class="divider"></div></li>
+    {{!-- <li><div class="divider"></div></li> --}}
     <li><a class="subheader">Categories</a></li>
     {{#foreach navigation}}
         <li class="subheader-items"><a href="{{url}}">{{label}}</a></li>
     {{/foreach}}   
-    <li><div class="divider"></div></li>
+    {{!-- <li><div class="divider"></div></li> --}}
     <li><a href="{{url absolute="true"}}/about-me">About</a></li>
+    {{!-- <li><div class="divider"></div></li> --}}
     <li><a href="#page-footer">Contact</a></li>
     <a href="{{url absolute="true"}}/rss/" class="waves-effect waves-light btn z-depth-0"><img class="side-nav-rss" src="{{asset "/svg/rss-light.svg"}}">Subscribe</a>
 </ul>

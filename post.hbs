@@ -10,11 +10,11 @@ of the default.hbs template, containing the blog header/footer. --}}
 {{!-- Container sets the screen width --}}
 <div class="container">
     <div class="row">
-        <div class="col m3 l2 hide-on-small-only">
+        <div class="col m4 l3 hide-on-small-only">
             {{>sidebar}}
         </div>
 
-        <article class="col s12 m9 l10">
+        <article class="col s12 m8 l9">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="post-meta grey-text">
@@ -29,7 +29,7 @@ of the default.hbs template, containing the blog header/footer. --}}
                 <div class="divider"></div>
             </header>
 
-            <section class="post-content grey-text text-darken-2">
+            <section class="post-content grey-text text-darken-3">
                 {{content}}
             </section>
 
@@ -45,6 +45,12 @@ of the default.hbs template, containing the blog header/footer. --}}
                         <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
                     </div>
                 </div>
+
+                <div class="divider"></div>
+
+{{!--                 {{#if tags}}
+                    &nbsp;Read more on:&nbsp;&nbsp;<span class="post-meta-tags grey-text">{{tags}}</span>
+                {{/if}} --}}
 
                 <div class="row">
                     {{#prev_post}}
@@ -74,6 +80,14 @@ of the default.hbs template, containing the blog header/footer. --}}
                             </a>
                         </div>
                     {{/next_post}}
+
+                    <div class="col s12 hide-on-med-and-up">
+                        {{>categories-card}}
+                    </div>
+
+                    <div class="col s12 hide-on-med-and-up">
+                        {{>subscribe-card}}
+                    </div>
                 </div>
 
             </footer>

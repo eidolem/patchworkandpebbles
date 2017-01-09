@@ -19,22 +19,21 @@
         {{>loop-latest-post}}
         {{>loop-slider tag="travel"}}
         {{>loop-slider tag="travel"}}
-        {{>loop-slider tag="travel"}}
-
+        
         <div class="row">
+            {{!-- Card for more categories --}}
             <div class="col s12 m6">
-                <div class="card hoverable blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">Subscribe RSS/email box</span>
-                        <p>This is displaying from home.hbs</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+                {{>categories-card}}
+            </div>
+
+            {{!-- Card for subscribe --}}
+            <div class="col s12 m6">
+                {{>subscribe-card}}
             </div>
         </div>
+
+        {{>loop-slider tag="travel"}}
+
     </main>
 </div>
 
