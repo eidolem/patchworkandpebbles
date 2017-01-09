@@ -16,7 +16,7 @@ of the default.hbs template, containing the blog header/footer. --}}
 
         <article class="col s12 m9 l10">
             <header class="post-header-container">
-                <h1 class="post-title-post-page grey-text text-darken-1">{{title}}</h1>
+                <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="post-meta grey-text">
                     <p>
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
@@ -35,7 +35,7 @@ of the default.hbs template, containing the blog header/footer. --}}
 
             <footer> 
                 <div class="share-love">
-                    <p class="grey-text grey-lighten-4">share some love&nbsp;</p>
+                    <div class="grey-text grey-lighten-4">share some love&nbsp;</div>
                     <div>
                         <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
                         <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
@@ -46,22 +46,16 @@ of the default.hbs template, containing the blog header/footer. --}}
                     </div>
                 </div>
 
-                <div class="divider"></div>
-
                 <div class="row">
                     {{#prev_post}}
                         <div class="col s12 l6">
-                            <a href="{{url}}" class="card hoverable horizontal">
-                                <div class="valign-wrapper card-image">
-                                    <img class="valign" src="{{image}}">
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                                <div class="valign card-image">
+                                    <img src="{{image}}"/>
                                 </div>
-                                <div class="card-stacked">
-                                    <div class="card-title">
-                                        <p>Previous Post</p>
-                                    </div>
-                                    <div class="valign-wrapper card-content grey-text">
-                                        <p class="valign">{{title}}</p>
-                                    </div>
+                                <div class="valign card-stacked">
+                                    <p class="card-title">Previous Post</p>
+                                    <p class="card-content grey-text">{{title}}</p>
                                 </div>  
                             </a>
                         </div>
@@ -69,17 +63,13 @@ of the default.hbs template, containing the blog header/footer. --}}
 
                     {{#next_post}}
                         <div class="col s12 l6">
-                            <a href="{{url}}" class="card hoverable horizontal">
-                                <div class="card-stacked">
-                                    <div class="card-title">
-                                        <p>Next Post</p>
-                                    </div>
-                                    <div class="valign-wrapper card-content grey-text">
-                                        <p class="valign">{{title}}</p>
-                                    </div>
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                                <div class="valign card-stacked">
+                                    <p class="card-title">Next Post</p>
+                                    <p class="card-content grey-text">{{title}}</p>
                                 </div>  
-                                <div class="valign-wrapper card-image">
-                                    <img class="valign"src="{{image}}">
+                                <div class="valign card-image">
+                                    <img src="{{image}}"/>
                                 </div>
                             </a>
                         </div>

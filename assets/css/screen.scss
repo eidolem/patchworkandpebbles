@@ -1,11 +1,11 @@
 @import "components/color";
 @import "components/variables";
 
-// Make the whole view area width larger (materialize default is 70%)***
+// Make the whole view area width larger (materialize default is 70%)
 .container {
     width: 90%; } 
 
-// Needed for the sticky footer***
+// Needed for the sticky footer
 body {
     display: flex;
     min-height: 100vh;
@@ -13,27 +13,27 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 code, tt {
@@ -49,7 +49,7 @@ code, tt {
     font-feature-settings: "liga" 0;
 }
 
-// Work-around for materialize to make lists bulleted but not on nav items***
+// Work-around for materialize to make lists bulleted but not on nav items
 ul {
   &:not(.browser-default or .navbar-fixed or .side-nav) {
     list-style-type: disc;
@@ -61,7 +61,7 @@ ul {
   }
 }
 
-// Work-around for materialize to make lists bulleted but not on nav items***
+// Work-around for materialize to make lists bulleted but not on nav items
 ol {
   &:not(.browser-default) {
     list-style-type: decimal;
@@ -77,7 +77,7 @@ main {
     flex: 1 0 auto;
 }
 
-// Upper nav bar***
+// Upper nav bar
 nav{
 	background-color: #3c4863; //#293a48; //#45526E;
 
@@ -103,7 +103,7 @@ nav{
 	}
 }
 
-//side nav that pulls out on right***
+//side nav that pulls out on right
 .side-nav{
 	a{
 	 	padding: 0 2rem;
@@ -155,7 +155,7 @@ nav{
 	}
 }
 
-//For the main title on the homepage***
+//For the main title on the homepage
 .blog-title{
     font-size: 4rem;
     margin: 4rem 0 0 0;
@@ -164,14 +164,14 @@ nav{
     letter-spacing: -0.2rem;
 }
 
-//For the blog description on the homepage***
+//For the blog description on the homepage
 .blog-description{
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 2.3rem;
 }
 
-//For the title of each category slider, like "on TRAVEL"***
+//For the title of each category slider, like "on TRAVEL"
 .slider-title{
 	letter-spacing: -0.5px;
 	font-size: 3rem;
@@ -184,7 +184,7 @@ nav{
 
 }
 
-//To make some words smaller size in the title of the category slider***
+//To make some words smaller size in the title of the category slider
 .slider-title-smallfont{
 	font-size: 1.3rem;
 	letter-spacing: 0.3rem;
@@ -194,7 +194,7 @@ nav{
 	}
 }
 
-//The container for each category/tag***
+//The container for each category/tag
 .slider-container{
 	background-color: white;
 	padding: 0 0 0 0;
@@ -225,25 +225,23 @@ nav{
 	.slider-footer{
 		margin: 0 0 2rem 0;
 	}
-}
 
-//For the homepage, what the buttons look like for "more like this"
-.home-template a.btn{
-	background-color: #fff;
-    color: $secondary-color;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: none;
-    border-radius: 2px;
-
-    &:hover{
-     	color: white;  
-     	background-color: $secondary-color;	
- 	    border-style: solid;
-	    border-width: 1px;
-	    box-shadow: none;
-	    border-radius: 2px;
-	    border-color: $secondary-color;
+	a.btn{
+		background-color: #fff;
+    	color: $secondary-color;
+    	border-style: solid;
+    	border-width: 1px;
+    	box-shadow: none;
+    	border-radius: 2px;
+    	&:hover{
+	     	color: white;  
+	     	background-color: $secondary-color;	
+	 	    border-style: solid;
+		    border-width: 1px;
+		    box-shadow: none;
+		    border-radius: 2px;
+		    border-color: $secondary-color;
+    	}
     }
 }
 
@@ -259,7 +257,7 @@ nav{
 	}	
 
 	.post-meta{
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		text-transform: uppercase;
 		font-weight: 300;
 		font-size: 1rem;
@@ -300,7 +298,7 @@ nav{
 		margin-bottom: 2rem;
 		
 		.post-title{
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 			margin: 0.75rem;
 		}
 	}
@@ -309,50 +307,62 @@ nav{
 		margin-bottom: 2rem;
 
 		.post-title{
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			margin: 1rem 0;
 		}
 	}
 }
 
 
-// Change the margins for the post title and meta
+// Change the margins for the post title and meta 
 .post-header-container{
 	margin: 5rem 0 2rem 4rem;
 
-    @media #{$medium-only} {
-		margin: 4rem 0 1.5rem 2rem;
+	.post-title{
+		font-family: 'Roboto Slab', serif;
+		font-weight: 300;
+		line-height: 130%;
 	}
 
+	.post-meta{
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 1rem;
+	}
+
+	.post-meta-tags{
+		font-size: 1.2rem;
+	}
+    
     @media #{$small-and-down} {
 		margin: 2rem 0 1rem 0;
+
+		.post-title{
+			font-size: 2.5rem;
+			margin: 0 0 2rem 0;
+		}
 	}
+
+    @media #{$medium-only} {
+		margin: 4rem 0 1.5rem 2rem;
+
+		.post-title{
+			font-size: 3rem;
+			margin: 0 0 2rem 0;
+		}
+	}
+
+	@media #{$large-and-up} {
+		.post-title{
+			font-size: 4rem;
+			margin: 0 0 2rem 0;
+		}
+	}
+
 }
 
-// Font for the title of a single blog post
-h1.post-title{
-	font-family: 'Roboto Slab', serif;
-	font-weight: 300;
-	margin: 0 0 5rem 0;
-
-    @media #{$small-and-down} {
-		font-size: 3rem;
-  	}
-}
-
-// Metadata like date and tags under the title of a single blog post
-.post-meta,
-.post-meta p{
-	text-transform: uppercase;
-	font-weight: 300;
-}
-
-// Make the post metadata tags slightly larger
-.post-meta-tags,
-a .post-meta-tags{
-	font-size: 1.2rem;
-}
-
+// For the post content, like text of a blog post
 .post-content{
 	font-family: 'Roboto Slab', serif;
 	font-weight: 300;
@@ -362,66 +372,165 @@ a .post-meta-tags{
 	width: 70%;
 	margin: 0 0 0 4rem;
 
+	h1, h2, h3, h4, h5, h6{
+		font-family: 'Roboto', sans-serif;
+	}
+
+	img{
+		min-width: 0;
+  		max-width: 80%;
+  		height: auto; 
+  		display: block;
+  		margin: 0 auto;
+		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
+	}
+
+	.image-caption{
+		text-align: center;
+		display: block;
+		max-width: 85%;
+		margin: 0 auto;
+		font-size: 1rem;
+		line-height: 1.5rem;
+    	font-family: 'roboto', sans-serif;
+    	font-style: italic;
+	}
+
+    @media #{$small-and-down} {
+		margin: 0 0 0 0;
+		width: 100%;
+  	}
+    
     @media #{$medium-only} {
 		margin: 0 0 0 2rem;
 		width: 90%;
 	}
-
-    @media #{$small-and-down} {
-		font-size: 1rem;
-		margin: 0 0 0 0;
-		width: 100%;
-  	}
 }
 
-// Make the headers Roboto sans-serif instead of serif like the rest of post-content
-.post-content h1, h2, h3, h4, h5, h6{
-	font-family: 'Roboto', sans-serif;
-}
-
-.post-content img {
-	min-width: 0;
-  	max-width: 80%;
-  	height: auto; 
-  	display: block;
-  	margin: 0 auto;
-	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
-}
-
-.post-content .image-caption{
-	text-align: center;
-	display: block;
-	max-width: 80%;
-	margin: 0 auto;
-	font-size: 1rem;
-	line-height: 1.5rem;
-}
-
-.share-love{
-	margin: 5rem 0 2rem 4rem;
+//For the "share this post" and social share icons at the bottom of the post content
+.share-love,
+.share-love p{
 	display: block;
 	text-align: center;
-	width: 70%;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 100;
 
-    @media #{$medium-only} {
-		margin: 4rem 0 1.5rem 2rem;
-		width: 90%;
+    img.share-post-icon{
+		width: 2rem;
+		height: 2rem;
+		opacity: 0.5;
+		display: inline-block;
+		margin: 1rem 0 0 0;
+
+		&:hover{
+			opacity: 0.9;
+		}
 	}
 
     @media #{$small-and-down} {
-		margin: 2rem 0 1rem 0;
+		margin: 0 0 2rem 0;
 		width: 100%
+	}
+
+    @media #{$medium-only} {
+		margin: 1rem 0 3rem 2rem;
+		width: 90%;
+	}
+
+	@media #{$large-and-up} {
+		margin: 2rem 0 4rem 4rem;
+		width: 70%
 	}
 }
 
-.share-love p{
-	margin: 0 0 1rem 0;
+// For the horizontal cards for previous and next post
+.post-box-prev-next{
+	.card-title{
+    	font-weight: 300;
+    	text-transform: uppercase;
+
+    	color: color("light-blue", "darken-2");
+	}
+
+	.card-content{
+		padding: 0;
+    	font-family: 'Roboto Slab', serif;
+    	font-weight: 400;
+	}
+
+	@media #{$small-and-down} {
+		.card-title{
+			font-size: 1.1rem;
+			margin: 0.7rem 0 0.5rem 0.7rem;
+		}
+
+		.card-content{
+			font-size: 1rem;
+			margin: 0 0.5rem 0.5rem 0.7rem;		
+		}
+	}
+
+	@media #{$medium-only}{
+		.card-title{
+			font-size: 1.4rem;
+    		margin: 1rem 0 0.5rem 1rem;
+		}
+
+		.card-content{
+			font-size: 1.3rem;
+			margin: 0 0.5rem 0.5rem 1rem;
+		}
+	}
+
+	@media #{$large-and-up} {
+		.card-title{
+			font-size: 1.2rem;
+    		margin: 1rem 0 0 0.7rem;
+		}
+
+		.card-content{
+    		font-size: 1.1rem;
+    		margin: 0 0.5rem 0.5rem 0.7rem;
+		}
+	}
 }
 
-.share-post-icon{
+
+//For the header like "All Posts" and "Travel"
+.index-header{
+    letter-spacing: -0.5px;
+    font-size: 4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 4rem 0;
+}
+
+//For subheaders like "XX posts in category"
+.index-subheader{
+	font-size: 2.5rem;
+	font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: -3rem 0 3rem 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+// Author name in the footer 
+.footer-name, .footer-name p{
+	font-size: 1.5rem;
+	margin: 0.5rem 0 0 0;
+	font-weight: 100;
+}
+
+// "find me on" text in the footer 
+.footer-find-me-on, p.footer-find-me-on{
+	font-size: 1rem;
+	font-weight: 100;
+	margin: 1rem 0 1rem 0;
+}
+
+footer img.share-post-icon{
 	width: 2.5rem;
 	height: 2.5rem;
 	opacity: 0.5;
@@ -431,56 +540,5 @@ a .post-meta-tags{
 		opacity: 0.9;
 	}
 }
-.card.horizontal .card-title p{
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    margin: 0.5rem 0 0 0.7rem;
-    color: color("light-blue", "darken-2");
-}
 
-.card.horizontal .card-content{
-    padding: 0;
-    border-radius: 0 0 2px 2px;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    font-size: 1.1rem;
-    margin: 0 0.5rem 0 0.7rem;
-
-    @media #{$medium-only} {
-		font-size: 1.3rem;
-	}
-    @media #{$small-and-down} {
-		font-size: 1rem;
-	}
-}
-
-.index-header{
-    letter-spacing: -0.5px;
-    font-size: 4rem;
-    font-weight: 100;
-    text-transform: uppercase;
-    margin: 4rem 0;
-}
-
-.index-subheader{
-	font-size: 2.5rem;
-	font-weight: 100;
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: -3rem 0 5rem 0;
-    font-family: 'Roboto Slab', serif;
-}
-
-.footer-name, .footer-name p{
-	font-size: 1.5rem;
-	margin: 0;
-	font-weight: 100;
-}
-
-.footer-find-me-on, .footer-find-me-on p{
-	font-size: 0.8rem;
-	font-weight: 100;
-}
-
-//     background: linear-gradient(rgba(0,0,0,.45) 100%,transparent);
+// background: linear-gradient(rgba(0,0,0,.45) 100%,transparent);
