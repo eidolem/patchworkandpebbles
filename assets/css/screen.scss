@@ -1,7 +1,7 @@
 @import "components/color";
 @import "components/variables";
 
-// Make the whole view area width larger (materialize default is 70%)
+//Make the whole view area width larger (materialize default is 70%)
 //Define a variable so it can be referenced for sidebar width
 $container-width: 90%;
 .container {
@@ -11,6 +11,61 @@ $container-width: 90%;
 		width: 95%;
 	}
 } 
+
+//Needed to make all items in a column equal height
+@media #{$small-and-down}{
+	.col{
+		.s2:nth-child(6n+1){
+			clear: left;
+		}
+		.s3:nth-child(4n+1){
+			clear: left;
+		}
+		.s4:nth-child(3n+1){
+			clear: left;
+		}
+		.s5:nth-child(2n+1),
+		.s6:nth-child(2n+1){
+			clear: left;
+		}
+	}
+}
+
+@media #{$medium-only}{
+	.col{
+		.m2:nth-child(6n+1){
+			clear: left;
+		}
+		.m3:nth-child(4n+1){
+			clear: left;
+		}
+		.m4:nth-child(3n+1){
+			clear: left;
+		}
+		.m5:nth-child(2n+1),
+		.m6:nth-child(2n+1){
+			clear: left;
+		}
+	}
+}
+
+@media #{$large-and-up}{
+	.col{
+		.l2:nth-child(6n+1){
+			clear: left;
+		}
+		.l3:nth-child(4n+1){
+			clear: left;
+		}
+		.l4:nth-child(3n+1){
+			clear: left;
+		}
+		.l5:nth-child(2n+1),
+		.l6:nth-child(2n+1){
+			clear: left;
+		}
+	}
+}
 
 // Needed for the sticky footer
 body {
@@ -415,11 +470,26 @@ nav{
 
 	img{
 		min-width: 0;
-  		max-width: 80%;
+  		width: 100%;
   		height: auto; 
   		display: block;
-  		margin: 0 auto;
+  		margin: 1rem auto;
 		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
+	}
+
+	.video {
+	    position: relative;
+	    padding-bottom: 56.25%;
+	    height: 0;
+	    overflow: hidden;
+
+	    iframe, object, embed {
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+	      width: 100%;
+	      height: 100%;
+	    }
 	}
 
 	.image-caption{
@@ -562,108 +632,86 @@ nav{
     font-family: 'Roboto Slab', serif;
 }
 
-//For the card that displays all types of categories on homepage
-.categories-card{
-	background-color: color("blue-grey", "base");
-	.card-content{
-		color: white;
-		.card-title{
-			line-height: 40px;
-			font-size: 1.4rem;
-		}
-	}
-
-	a{
-		font-family: 'Roboto', sans-serif;
-		color: lighten($secondary-color, 10%);
-		font-size: 1.1rem;
-		transition: color .3s ease;
-		font-weight: 400;
-		&:hover{
-			color: white;
-		}
-	}
-}
-
-//overwrite categories card colors on some pages
-.post-template, .tag-template, .archive-template{
-	.categories-card{
-		background-color: white;
+//Styles for cards like subscribe and categories
+.card-dark{
+	.card{
+		background-color: color("blue-grey", "base");
 		.card-content{
-			color: grey;
-			padding: 15px;
-			.card-title{
-				font-size: 1.3rem;
-				line-height: 25px;
-				margin: 0 0 1rem 0;
-				display: inline-block;
-			}
-		}
-		a{
-			font-size: 1.1rem;
-			font-weight: 300;
-			color: $secondary-color;
-			&:hover{
-				color: grey;
-			}
-		}
-	}
-}
-
-//For the card to subscribe via RSS or email on homepage
-.subscribe-card{
-	background-color: color("blue-grey", "base");
-	position: relative;
-	.card-content{
-		color: white;
-		.card-title{
-			line-height: 40px;
-			font-size: 1.3rem;
-		}
-		p{
-			margin: 1rem 0;
-			font-size: 1.1rem;
 			color: white;
-			font-weight: 300;
-		}
-	}
-
-	a{
-		font-family: 'Roboto', sans-serif;
-		color: lighten($secondary-color, 15%);
-		font-size: 1.1rem;
-		transition: color .3s ease;
-		font-weight: 300;
-		&:hover{
-			color: white;
-		}
-	}
-}
-
-//overwrite subscribe card colors for some pages
-.post-template, .tag-template, .archive-template{
-	.subscribe-card{
-		background-color: white;
-		.card-content{
-			color: grey;
-			padding: 15px;
 			.card-title{
+				line-height: 40px;
 				font-size: 1.3rem;
-				line-height: 25px;
-				margin: 0 0 1rem 0;
-				display: inline-block;
 			}
-
 			p{
-				color: grey;
+				margin: 1rem 0;
+				font-size: 1.1rem;
+				color: white;
+				font-weight: 300;
+			}
+		}
+
+		a{
+			font-family: 'Roboto', sans-serif;
+			color: lighten($secondary-color, 10%);
+			font-size: 1.1rem;
+			transition: color .3s ease;
+			font-weight: 400;
+			&:hover{
+				color: white;
+			}
+		}
+	}
+}
+
+.card-light{
+	.card{
+		background-color: white;
+		.card-content{
+			color: grey;
+			padding: 15px;
+			.card-title{
+				font-size: 1.3rem;
+				line-height: 25px;
+				margin: 0 0 1rem 0;
+				display: inline-block;
+				font-weight: 400;
 			}
 		}
 		a{
 			font-size: 1.1rem;
 			color: $secondary-color;
+			font-weight: 300;
 			&:hover{
 				color: grey;
-				color: lighten($secondary-color, 15%);
+				color: lighten($secondary-color, 20%);
+			}
+		}
+	}
+}
+
+.contact-card{
+	.card-content{
+		color: grey;
+		font-size: 1.2rem;
+		.card-title{
+			font-size: 2rem;
+			color: $secondary-color;
+
+		}
+	    img {
+			width: 2.5rem;
+			height: 2.5rem;
+			opacity: 0.5;
+			display: inline-block;
+			margin: 1.6rem 0.5rem -0.9rem 1rem;
+		}
+		a{
+			color: grey;
+			&:hover{
+				color: $secondary-color;
+				img{
+					opacity: 0.7;
+				}
 			}
 		}
 	}
@@ -685,6 +733,10 @@ footer{
 		font-size: 1rem;
 		font-weight: 300;
 		margin: 1rem 0 0.5rem 0;
+	}
+
+	.footer-copyright{
+		font-size: 0.8rem;
 	}
 	img.share-post-icon{
 		width: 2.5rem;

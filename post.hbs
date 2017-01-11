@@ -7,14 +7,15 @@ of the default.hbs template, containing the blog header/footer. --}}
 
 {{navigation}}
 
+<main>
 {{!-- Container sets the screen width --}}
 <div class="container">
     <div class="row">
-        <div class="col l3 hide-on-med-and-down">
+        <div class="col l3 hide-on-med-and-down card-light">
             {{>sidebar}}
         </div>
 
-        <article class="col s12 l9">
+        <article class="col s12 m12 l9">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="post-meta grey-text">
@@ -50,7 +51,7 @@ of the default.hbs template, containing the blog header/footer. --}}
 
                 <div class="row">
                     {{#prev_post}}
-                        <div class="col s12 l6">
+                        <div class="col s12 m12 l6">
                             <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
                                 <div class="valign card-image">
                                     <img src="{{image}}"/>
@@ -64,7 +65,7 @@ of the default.hbs template, containing the blog header/footer. --}}
                     {{/prev_post}}
 
                     {{#next_post}}
-                        <div class="col s12 l6">
+                        <div class="col s12 m12 l6">
                             <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
                                 <div class="valign card-stacked">
                                     <p class="card-title">Next Post</p>
@@ -77,11 +78,11 @@ of the default.hbs template, containing the blog header/footer. --}}
                         </div>
                     {{/next_post}}
 
-                    <div class="col s12 hide-on-med-and-up">
+                    <div class="col s12 hide-on-med-and-up card-dark">
                         {{>categories-card}}
                     </div>
 
-                    <div class="col s12 hide-on-med-and-up">
+                    <div class="col s12 hide-on-med-and-up card-dark">
                         {{>subscribe-card}}
                     </div>
                 </div>
@@ -90,6 +91,7 @@ of the default.hbs template, containing the blog header/footer. --}}
         </article>
     </div>
 </div>
+</main>
 
 {{>footer}}
 

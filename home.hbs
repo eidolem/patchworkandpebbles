@@ -5,10 +5,10 @@
 {{!-- The container class puts a horiz screen width limit --}}
 <div class="homepage container">
     <header class="row">
-        <h1 class="col center-align s10 offset-s1 blog-title hide-on-small-only grey-text text-lighten-1">
+        <h1 class="col center-align m10 offset-m1 blog-title hide-on-small-only grey-text text-lighten-1">
             {{@blog.title}} 
         </h1>
-        <h2 class="col center-align s10 offset-s1 blog-description grey-text text-darken-2">
+        <h2 class="col center-align m10 offset-m1 blog-description grey-text text-darken-2">
             {{@blog.description}}
         </h2>
     </header>
@@ -24,12 +24,12 @@
         
         <div class="row">
             {{!-- Card for more categories --}}
-            <div class="col s12 m6">
+            <div class="col s12 m6 card-dark">
                 {{>categories-card}}
             </div>
 
             {{!-- Card for subscribe --}}
-            <div class="col s12 m6">
+            <div class="col s12 m6 card-dark">
                 {{>subscribe-card}}
             </div>
         </div>

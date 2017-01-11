@@ -1606,6 +1606,36 @@
     .container {
       width: 95%; } }
 
+@media only screen and (max-width: 600px) {
+  .col .s2:nth-child(6n+1) {
+    clear: left; }
+  .col .s3:nth-child(4n+1) {
+    clear: left; }
+  .col .s4:nth-child(3n+1) {
+    clear: left; }
+  .col .s5:nth-child(2n+1),
+  .col .s6:nth-child(2n+1) {
+    clear: left; } }
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .col .m2:nth-child(6n+1) {
+    clear: left; }
+  .col .m3:nth-child(4n+1) {
+    clear: left; }
+  .col .m4:nth-child(3n+1) {
+    clear: left; }
+  .col .m5:nth-child(2n+1),
+  .col .m6:nth-child(2n+1) {
+    clear: left; } }
+@media only screen and (min-width: 993px) {
+  .col .l2:nth-child(6n+1) {
+    clear: left; }
+  .col .l3:nth-child(4n+1) {
+    clear: left; }
+  .col .l4:nth-child(3n+1) {
+    clear: left; }
+  .col .l5:nth-child(2n+1),
+  .col .l6:nth-child(2n+1) {
+    clear: left; } }
 body {
   display: flex;
   min-height: 100vh;
@@ -1876,11 +1906,22 @@ nav {
     font-family: 'Roboto', sans-serif; }
   .post-content img {
     min-width: 0;
-    max-width: 80%;
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); }
+  .post-content .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden; }
+    .post-content .video iframe, .post-content .video object, .post-content .video embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
   .post-content .image-caption {
     text-align: center;
     display: block;
@@ -1984,79 +2025,64 @@ nav {
   margin: 3rem 0 3rem 0;
   font-family: 'Roboto Slab', serif; }
 
-.categories-card {
+.card-dark .card {
   background-color: #607d8b; }
-  .categories-card .card-content {
+  .card-dark .card .card-content {
     color: white; }
-    .categories-card .card-content .card-title {
+    .card-dark .card .card-content .card-title {
       line-height: 40px;
-      font-size: 1.4rem; }
-  .categories-card a {
+      font-size: 1.3rem; }
+    .card-dark .card .card-content p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 300; }
+  .card-dark .card a {
     font-family: 'Roboto', sans-serif;
     color: #e79f5f;
     font-size: 1.1rem;
     transition: color .3s ease;
     font-weight: 400; }
-    .categories-card a:hover {
+    .card-dark .card a:hover {
       color: white; }
 
-.post-template .categories-card, .tag-template .categories-card, .archive-template .categories-card {
+.card-light .card {
   background-color: white; }
-  .post-template .categories-card .card-content, .tag-template .categories-card .card-content, .archive-template .categories-card .card-content {
+  .card-light .card .card-content {
     color: grey;
     padding: 15px; }
-    .post-template .categories-card .card-content .card-title, .tag-template .categories-card .card-content .card-title, .archive-template .categories-card .card-content .card-title {
+    .card-light .card .card-content .card-title {
       font-size: 1.3rem;
       line-height: 25px;
       margin: 0 0 1rem 0;
-      display: inline-block; }
-  .post-template .categories-card a, .tag-template .categories-card a, .archive-template .categories-card a {
+      display: inline-block;
+      font-weight: 400; }
+  .card-light .card a {
     font-size: 1.1rem;
-    font-weight: 300;
-    color: #e08433; }
-    .post-template .categories-card a:hover, .tag-template .categories-card a:hover, .archive-template .categories-card a:hover {
-      color: grey; }
-
-.subscribe-card {
-  background-color: #607d8b;
-  position: relative; }
-  .subscribe-card .card-content {
-    color: white; }
-    .subscribe-card .card-content .card-title {
-      line-height: 40px;
-      font-size: 1.3rem; }
-    .subscribe-card .card-content p {
-      margin: 1rem 0;
-      font-size: 1.1rem;
-      color: white;
-      font-weight: 300; }
-  .subscribe-card a {
-    font-family: 'Roboto', sans-serif;
-    color: #eaac75;
-    font-size: 1.1rem;
-    transition: color .3s ease;
+    color: #e08433;
     font-weight: 300; }
-    .subscribe-card a:hover {
-      color: white; }
-
-.post-template .subscribe-card, .tag-template .subscribe-card, .archive-template .subscribe-card {
-  background-color: white; }
-  .post-template .subscribe-card .card-content, .tag-template .subscribe-card .card-content, .archive-template .subscribe-card .card-content {
-    color: grey;
-    padding: 15px; }
-    .post-template .subscribe-card .card-content .card-title, .tag-template .subscribe-card .card-content .card-title, .archive-template .subscribe-card .card-content .card-title {
-      font-size: 1.3rem;
-      line-height: 25px;
-      margin: 0 0 1rem 0;
-      display: inline-block; }
-    .post-template .subscribe-card .card-content p, .tag-template .subscribe-card .card-content p, .archive-template .subscribe-card .card-content p {
-      color: grey; }
-  .post-template .subscribe-card a, .tag-template .subscribe-card a, .archive-template .subscribe-card a {
-    font-size: 1.1rem;
-    color: #e08433; }
-    .post-template .subscribe-card a:hover, .tag-template .subscribe-card a:hover, .archive-template .subscribe-card a:hover {
+    .card-light .card a:hover {
       color: grey;
-      color: #eaac75; }
+      color: #edb98c; }
+
+.contact-card .card-content {
+  color: grey;
+  font-size: 1.2rem; }
+  .contact-card .card-content .card-title {
+    font-size: 2rem;
+    color: #e08433; }
+  .contact-card .card-content img {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.5;
+    display: inline-block;
+    margin: 1.6rem 0.5rem -0.9rem 1rem; }
+  .contact-card .card-content a {
+    color: grey; }
+    .contact-card .card-content a:hover {
+      color: #e08433; }
+      .contact-card .card-content a:hover img {
+        opacity: 0.7; }
 
 footer .footer-name, footer .footer-name p {
   font-size: 1.5rem;
@@ -2069,6 +2095,8 @@ footer .footer-find-me-on, footer p.footer-find-me-on {
   font-size: 1rem;
   font-weight: 300;
   margin: 1rem 0 0.5rem 0; }
+footer .footer-copyright {
+  font-size: 0.8rem; }
 footer img.share-post-icon {
   width: 2.5rem;
   height: 2.5rem;

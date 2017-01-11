@@ -11,7 +11,7 @@
 {{!-- Container sets the screen width --}}
 <div class="container">
     <div class="row">
-        <article class="col s12">
+        <article class="col s12 m12 l10 offset-l1">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="divider"></div>
@@ -20,7 +20,12 @@
             <section class="post-content grey-text text-darken-4">
                 {{content}}
             </section>
+
         </article>
+
+        <section class="col s12 m12 l6 offset-l3">
+            {{>contact-card}}
+        </section>
     </div>
 </div>
 

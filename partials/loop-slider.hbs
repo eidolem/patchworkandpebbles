@@ -1,5 +1,5 @@
 <section class="row slider-container">
-    <header class="center-align grey-text text-darken-2 col s12">
+    <header class="center-align grey-text text-darken-2 col s12 m12 l12">
         <h2 class="slider-title"> <span class="slider-title-smallfont">on&nbsp;</span>{{tag}}</h2>
     </header>
     
@@ -19,7 +19,7 @@
     <div class="hide-on-small-only">
         {{#get "posts" filter="tag:{{tag}}" limit=3}}
             {{#foreach posts}}
-                <article class="post-box hoverable col s4">
+                <article class="post-box hoverable col m4 l4">
                     <a href={{url}}>
                         <img class="z-depth-2 responsive-img" src="{{image}}">
                         <h3 class="post-title grey-text text-darken-1">{{title}}</h3>
@@ -32,11 +32,9 @@
     </div>
 
     
-    <footer class="col s12 center-align slider-footer">
+    <footer class="col s12 m12 l12 center-align slider-footer">
         <a href="/tag/{{tag}}" class="waves-effect waves-light btn">more like this</a>
     </footer>
-
-
 
 </section>
 

@@ -7,7 +7,8 @@
 <main>
     <div class="container">
         <div class="row">
-            <div class="col s12 l9">
+
+            <div class="col s12 m12 l9">
                 <header>
                     <h1 class="index-header grey-text text-darken-1 center-align">
                         {{name}}
@@ -20,9 +21,12 @@
                         - {{../pagination.total}} posts in category -
                     </h3>
                 </header>
+            </div>
+
+            <div class="col s12 m12 l9">
                 {{#get "posts" filter="tag:{{name}}"}}
                     {{#foreach posts}}
-                        <article class="post-box hoverable col s6 l4">
+                        <article class="post-box hoverable col s6 m6 l4">
                             <a href={{url}}>
                                 <img class="z-depth-2 responsive-img" src="{{image}}">
                                 <header class="post-title grey-text text-darken-1">

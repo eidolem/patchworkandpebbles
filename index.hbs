@@ -2,16 +2,18 @@
 
 {{navigation}}
 
-
 <main>
     <div class="container">
         <div class="row">
             {{!-- The main content of posts --}}
-            <div class="col s12 l9">
+            <div class="col s12 m12 l9">
                 <header class="index-header grey-text text-darken-1 center-align">all posts</header>
+            </div>
+
+            <div class="col s12 m12 l9">
                 {{#get "posts" limit="all" include="tags"}}
                     {{#foreach posts}}
-                        <article class="post-box hoverable col s6 l4" onclick="goToArticle({{url}})">
+                        <article class="post-box hoverable col s6 m6 l4" onclick="goToArticle({{url}})">
                             <img class="z-depth-2 responsive-img" src="{{image}}" />
                             <header class="post-title grey-text text-darken-1">
                                 {{title}}
@@ -32,11 +34,11 @@
                 {{>sidebar}}
             </div>
 
-            <div class="col s12 hide-on-large-only">
+            <div class="col s12 m12 hide-on-large-only">
                 {{>categories-card}}
             </div>
 
-            <div class="col s12 hide-on-large-only">
+            <div class="col s12 m12 hide-on-large-only">
                 {{>subscribe-card}}
             </div>
         </div>
