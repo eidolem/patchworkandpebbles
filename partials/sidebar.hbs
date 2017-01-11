@@ -1,6 +1,9 @@
 
 {{!-- The sidebar --}}
-<sidebar class="section pin-top column show-for-medium">
-    {{>categories-card}}
-    {{>subscribe-card}}
-</sidebar>
+<div id="sidebar-wrapper">
+	{{>categories-card}}
+	{{>subscribe-card}}
+	{{!-- {{> (lookup . 'var') }} --}}
+	{{>ad-card}}
+</div>
+

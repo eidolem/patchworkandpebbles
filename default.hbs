@@ -55,7 +55,10 @@
             $('.carousel.carousel-slider').carousel();
             $('.slider').slider();
             $(".dropdown-button").dropdown({hover:true});
-            $('.scrollspy').scrollSpy();
+            $('#sidebar-wrapper').pushpin({
+                top: 0,
+                offset: 45
+            });
         });
     </script>
 

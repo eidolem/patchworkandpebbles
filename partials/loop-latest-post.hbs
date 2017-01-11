@@ -1,17 +1,19 @@
 
+
 <section class="row slider-container">
     <header class="center-align grey-text text-darken-1 col s12">
         <h2 class="slider-title"> <span class="slider-title-smallfont">the&nbsp;</span>latest</h2>
     </header>
 
-    <article class="center-align slider-title col s10 offset-s1">
+    {{!-- Show the javascript slider carousel on large only --}}
+    <article class="center-align col s10 offset-s1 hide-on-med-and-down">
         <div class="slider">
             <ul class="slides">
                 {{#get "posts" limit=4}}
                     {{#foreach posts}}
                         <li>
                             <a href="{{url}}">
-                                <img src="{{image}}">
+                                <img class="img-responsive" src="{{image}}">
                                 <div class="caption left-align">
                                     <h3>{{title}}</h3>
                                 </div>
@@ -21,12 +23,26 @@
                 {{/get}}
             </ul>
         </div>
-
     </article>
 
+    {{!-- Show just the latest post for small and med --}}
+    <div class="hide-on-large-only">
+        {{#get "posts" limit=2}}
+            {{#foreach posts}}
+                <article class="post-box hoverable center-align col s6">
+                    <a href={{url}}>
+                        <img class="z-depth-2 responsive-img" src="{{image}}">
+                        <h3 class="post-title grey-text text-darken-1">{{title}}</h3>
+                        <p class="post-excerpt grey-text text-darken-3">{{excerpt words="30"}}...</p>
+                    </a>
+                </article>
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+
     <footer class="col s12 center-align slider-footer">
-        <a href="/page/2" class="waves-effect waves-light btn">see all</a>
+        <a href="/page/2" class="waves-effect waves-light btn">see all posts</a>
     </footer>
 </section>
 
-<div class="divider"></div>

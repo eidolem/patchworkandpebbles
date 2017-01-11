@@ -1,0 +1,41 @@
+
+
+{{!-- 
+<script type="text/javascript">
+	Handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
+	    if (arguments.length < 3)
+	        throw new Error("Handlebars Helper equal needs 2 parameters");
+	    if( lvalue!=rvalue ) {
+	        return options.inverse(this);
+	    } else {
+	        return options.fn(this);
+	    }
+	});
+</script>
+
+{{#is "index"}}
+	index
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-client="ca-pub-2599762387787801"
+	     data-ad-slot="2928136947"
+	     data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+{{/is}}
+
+{{#is "tag"}}
+	tag
+	{{name}}
+	{{#equal this "travel" }}
+		yay!!
+	{{/equal}}
+{{/is}}
+
+{{#is "post"}}
+	post
+{{/is}}
+ --}}

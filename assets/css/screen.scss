@@ -2,8 +2,10 @@
 @import "components/variables";
 
 // Make the whole view area width larger (materialize default is 70%)
+//Define a variable so it can be referenced for sidebar width
+$container-width: 90%;
 .container {
-    width: 90%; 
+    width: $container-width; 
 
 	@media #{$medium-and-down} {
 		width: 95%;
@@ -55,14 +57,18 @@ code, tt {
 }
 
 // Work-around for materialize to make lists bulleted but not on nav items
-ul {
-  &:not(.side-nav){
+ul, ul:not(.browser-default) {
     list-style-type: disc;
     padding-left: 2rem;
-    >li {
+    li {
       list-style-type: disc;
-    }
-  }
+	}
+}
+
+.nav-wrapper ul,
+ul.side-nav {
+	list-style-type: none;
+	padding-left: 0;
 }
 
 div.nav-wrapper {
@@ -92,7 +98,7 @@ main {
 
 // Upper nav bar
 nav{
-	background-color: #3c4863; //#293a48; //#45526E;
+	background-color: $primary-color; //#293a48; //#45526E;
 
 	ul li{
 		font-weight: 300;
@@ -120,16 +126,11 @@ nav{
 	a{
 	 	padding: 0 2rem;
  		font-weight: 400;
- 		line-height: 44px;
+ 		height: 40px;
 	}
 
 	.subheader{
 	 	text-transform: uppercase;
-	}
-
-	li :not(.divider){
-	 	padding-top: 0.25rem;
-	 	padding-bottom: 0.25rem;
 	}
 
 	.divider{
@@ -148,9 +149,20 @@ nav{
     	border-style: solid;
     	border-width: 1px;
     	border-radius: 2px;
+    	height: 48px;
+    	margin-top: 1.3rem;
 
     	&:hover{
     		background-color: color("grey", "lighten-3");
+    	}
+    }
+
+    i{
+    	margin: 0.5rem 0 0 0;
+    	opacity: 0.7;
+    	padding-top: 0.5rem;
+    	&:hover{
+    		cursor: pointer;
     	}
     }
 
@@ -162,6 +174,7 @@ nav{
 	    display: inline-block;
 	    line-height: 3rem;
 	    color: $primary-color;
+	    padding: 0.5rem 2rem 0.25rem 2rem;
 	    }
 
 	.side-nav-rss{
@@ -224,7 +237,7 @@ nav{
 
 	// For the rotating loop-slider on latest posts
 	.slider{
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 
 		.caption h3{
 			font-family: 'Roboto Slab', serif;
@@ -275,7 +288,7 @@ nav{
 
 	.post-title{  
     	text-align: center;
-    	font-weight: 300;
+    	font-weight: 400;
     	font-family: 'Roboto Slab', serif;
     	line-height: 110%;
 	}	
@@ -305,7 +318,7 @@ nav{
 		margin-bottom: 1.2rem;
 
 		.post-title{
-			font-size: 1rem;
+			font-size: 1.1rem;
 			margin: 0.5rem 0 0.5rem 0;
 		}
 
@@ -338,7 +351,7 @@ nav{
 }
 
 
-// Change the margins for the post title and meta 
+// Change the margins for the post page title and meta 
 .post-header-container{
 	margin: 5rem 0 2rem 4rem;
 
@@ -527,16 +540,25 @@ nav{
     font-size: 4rem;
     font-weight: 100;
     text-transform: uppercase;
-    margin: 4rem 0;
+    margin: 3rem 0 1rem 0;
+    display: block;
 }
 
-//For subheaders like "XX posts in category"
+//For subheaders for description of the tag
 .index-subheader{
-	font-size: 2.5rem;
-	font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    margin: -3rem 0 3rem 0;
+    margin: 1rem 0 2rem 0;
+    font-family: 'Roboto Slab', serif;
+    display: block;
+}
+
+//For the text "XX posts in category"
+.index-count{
+	font-weight: 100;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 3rem 0 3rem 0;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -547,13 +569,14 @@ nav{
 		color: white;
 		.card-title{
 			line-height: 40px;
+			font-size: 1.4rem;
 		}
 	}
 
 	a{
 		font-family: 'Roboto', sans-serif;
-		color: lighten($secondary-color, 15%);
-		font-size: 1.2rem;
+		color: lighten($secondary-color, 10%);
+		font-size: 1.1rem;
 		transition: color .3s ease;
 		font-weight: 400;
 		&:hover{
@@ -562,19 +585,24 @@ nav{
 	}
 }
 
-//overwrite colors on categories card for post pages
-.post-template{
+//overwrite categories card colors on some pages
+.post-template, .tag-template, .archive-template{
 	.categories-card{
 		background-color: white;
 		.card-content{
 			color: grey;
+			padding: 15px;
 			.card-title{
-				font-size: 1.5rem;
+				font-size: 1.3rem;
+				line-height: 25px;
+				margin: 0 0 1rem 0;
+				display: inline-block;
 			}
 		}
 		a{
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: 300;
+			color: $secondary-color;
 			&:hover{
 				color: grey;
 			}
@@ -585,72 +613,92 @@ nav{
 //For the card to subscribe via RSS or email on homepage
 .subscribe-card{
 	background-color: color("blue-grey", "base");
+	position: relative;
 	.card-content{
 		color: white;
 		.card-title{
 			line-height: 40px;
+			font-size: 1.3rem;
 		}
 		p{
 			margin: 1rem 0;
+			font-size: 1.1rem;
+			color: white;
+			font-weight: 300;
 		}
 	}
 
 	a{
 		font-family: 'Roboto', sans-serif;
 		color: lighten($secondary-color, 15%);
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		transition: color .3s ease;
-		font-weight: 400;
+		font-weight: 300;
 		&:hover{
-			color: white
+			color: white;
 		}
 	}
 }
 
-//overwrite colors for post pages
-.post-template{
+//overwrite subscribe card colors for some pages
+.post-template, .tag-template, .archive-template{
 	.subscribe-card{
 		background-color: white;
 		.card-content{
 			color: grey;
+			padding: 15px;
 			.card-title{
-				font-size: 1.5rem;
-				line-height: 35px;
+				font-size: 1.3rem;
+				line-height: 25px;
+				margin: 0 0 1rem 0;
+				display: inline-block;
 			}
-		}
 
-		a{
-			&:hover{
+			p{
 				color: grey;
 			}
 		}
+		a{
+			font-size: 1.1rem;
+			color: $secondary-color;
+			&:hover{
+				color: grey;
+				color: lighten($secondary-color, 15%);
+			}
+		}
 	}
 }
 
-// Author name in the footer 
-.footer-name, .footer-name p{
-	font-size: 1.5rem;
-	margin: 0.5rem 0 0 0;
-	font-weight: 100;
-}
+footer{
+	.footer-name, .footer-name p{
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0 0;
+		font-weight: 100;
+	}
 
-// "find me on" text in the footer 
-.footer-find-me-on, p.footer-find-me-on{
-	font-size: 1rem;
-	font-weight: 300;
-	margin: 1rem 0 1rem 0;
-}
+	.email{
+		margin: 0;
+		font-weight: 300;
+	}
 
-footer img.share-post-icon{
-	width: 2.5rem;
-	height: 2.5rem;
-	opacity: 0.5;
-	display: inline-block;
+	.footer-find-me-on, p.footer-find-me-on{
+		font-size: 1rem;
+		font-weight: 300;
+		margin: 1rem 0 0.5rem 0;
+	}
+	img.share-post-icon{
+		width: 2.5rem;
+		height: 2.5rem;
+		opacity: 0.5;
+		display: inline-block;
 
-	&:hover{
+		&:hover{
 		opacity: 0.9;
 	}
 }
+
+}
+
 
 #scroll-to-top {
   background-color: rgb(57,55,55);
@@ -677,4 +725,30 @@ footer img.share-post-icon{
   background-color: rgba(57,55,55,0.7);
 }
 
+//Fixes the width of the sidebar so that position:fixed looks ok on the pinned sidebar
+//The sidebar is 3 of 12 col wide for large only, and 0.95 makes it slightly smaller for a margin
+#sidebar-wrapper{
+	width: ($container-width*3/12*0.95);
+	padding-top: 2rem;
+}
+
+// Class for when element is above threshold
+.pin-top {
+	position: relative;
+}
+
+// Class for when element is below threshold
+.pin-bottom {
+	position: relative;
+}
+
+// Class for when element is pinned
+.pinned {
+	position: fixed !important;
+}
+
+
+// #sidebar-wrapper .pinned {
+//     width: inherit;
+// }
 // background: linear-gradient(rgba(0,0,0,.45) 100%,transparent);
