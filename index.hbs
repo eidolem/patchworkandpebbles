@@ -3,7 +3,7 @@
 {{navigation}}
 
 <main>
-    <div class="container">
+    <div class="container data-target">
         <div class="row">
             {{!-- The main content of posts --}}
             <div class="col s12 m12 l9">
@@ -30,17 +30,22 @@
             </div>
 
             {{!-- The sidebar, show on large only --}}
-            <div class="col l3 hide-on-med-and-down">
+            <div class="card-light col l3 hide-on-med-and-down">
                 {{>sidebar}}
             </div>
 
-            <div class="col s12 m12 hide-on-large-only">
+            <div class="card-dark col s12 m12 hide-on-large-only">
                 {{>categories-card}}
             </div>
 
-            <div class="col s12 m12 hide-on-large-only">
+            <div class="col s12 hide-on-large-only">
+                {{>ad-card}}
+            </div>    
+                    
+            {{!-- Add back once have email subscribe and ad backup --}}
+{{!--             <div class="card-dark col s12 m12 hide-on-large-only">
                 {{>subscribe-card}}
-            </div>
+            </div> --}}
         </div>
     </div>
 </main>

@@ -9,13 +9,10 @@ of the default.hbs template, containing the blog header/footer. --}}
 
 <main>
 {{!-- Container sets the screen width --}}
-<div class="container">
+<div class="container data-target">
     <div class="row">
-        <div class="col l3 hide-on-med-and-down card-light">
-            {{>sidebar}}
-        </div>
 
-        <article class="col s12 m12 l9">
+        <article class="col s12 m12 l9 push-l3">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="post-meta grey-text">
@@ -38,12 +35,25 @@ of the default.hbs template, containing the blog header/footer. --}}
                 <div class="share-love">
                     <div class="grey-text grey-lighten-4">share some love&nbsp;</div>
                     <div>
-                        <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
-                        <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
-                        <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
-                        <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
-                        <img class="share-post-icon" src="{{asset "/svg/pinterest.svg"}}">&nbsp;
-                        <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
+                        <a href="https://www.facebook.com/dialog/feed?app_id=963392447124143&link={{url absolute=true}}&name={{title}}&description={{meta_description}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
+                        </a>
+                        <a href="mailto:?subject=Great+article+on+%22{{title}}%22%21&body={{title}}%0D%0A%0D%0A{{url absolute=true}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=1000');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{title}}&summary=Great+article+by+Melodie+Meigs%21&source=patchworkandpebbles.com" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=Great+post+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-share-button twitter">
+                            <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
+                        </a>
+                        <a href="http://pinterest.com/pin/create/button/?url=test" data-pin-do="buttonBookmark" data-pin-custom="true">
+                            <img class="share-post-icon" src="{{asset "/svg/pinterest.svg"}}">&nbsp;
+                        </a>
+                        <a href="https://plus.google.com/share?url={{url absolute=true}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -78,17 +88,26 @@ of the default.hbs template, containing the blog header/footer. --}}
                         </div>
                     {{/next_post}}
 
-                    <div class="col s12 hide-on-med-and-up card-dark">
+                    <div class="col s12 hide-on-large-only card-dark">
                         {{>categories-card}}
                     </div>
-
-                    <div class="col s12 hide-on-med-and-up card-dark">
-                        {{>subscribe-card}}
+                    
+                    <div class="col s12 hide-on-large-only">
+                        {{>ad-card}}
                     </div>
+                    
+                    {{!-- Add back once have email subscribe and ad backup --}}
+{{!--                     <div class="col s12 hide-on-large-only card-dark">
+                        {{>subscribe-card}}
+                    </div> --}}
                 </div>
-
             </footer>
         </article>
+
+        <div class="col l3 pull-l9 hide-on-med-and-down card-light">
+            {{>sidebar}}
+        </div>
+
     </div>
 </div>
 </main>

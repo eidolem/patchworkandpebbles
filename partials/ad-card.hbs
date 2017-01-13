@@ -1,23 +1,22 @@
 
 
-{{!-- 
-<script type="text/javascript">
-	Handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
-	    if (arguments.length < 3)
-	        throw new Error("Handlebars Helper equal needs 2 parameters");
-	    if( lvalue!=rvalue ) {
-	        return options.inverse(this);
-	    } else {
-	        return options.fn(this);
-	    }
-	});
-</script>
-
 {{#is "index"}}
-	index
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- Test -->
 	<ins class="adsbygoogle"
+	    style="display:block;"
+	    data-ad-client="ca-pub-2599762387787801"
+	    data-ad-slot="2928136947"
+	    data-ad-format="rectangle, horizontal">
+    </ins>
+
+	{{!--     <ins class="adsbygoogle-index"
+	   style="display:inline-block;min-width:200px;max-width:600px;width:100%;height:200px"
+	   data-ad-client="ca-pub-2599762387787801"
+	   data-ad-slot="2928136947">
+   </ins> --}}
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Index Page -->
+	<ins class="adsbygoogle-index"
 	     style="display:block"
 	     data-ad-client="ca-pub-2599762387787801"
 	     data-ad-slot="2928136947"
@@ -27,15 +26,50 @@
 	</script>
 {{/is}}
 
+
 {{#is "tag"}}
-	tag
-	{{name}}
-	{{#equal this "travel" }}
-		yay!!
-	{{/equal}}
+	<ins class="adsbygoogle-tag"
+	    style="display:block;"
+	    data-ad-client="ca-pub-2599762387787801"
+	    data-ad-slot="6394477348"
+	    data-ad-format="rectangle, horizontal">
+    </ins>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Tag Page -->
+	<ins class="adsbygoogle-tag"
+	     style="display:block"
+	     data-ad-client="ca-pub-2599762387787801"
+	     data-ad-slot="6394477348"
+	     data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 {{/is}}
 
+
 {{#is "post"}}
-	post
+	{{!--     <ins class="adsbygoogle-post"
+	   style="display:inline-block;min-width:200px;max-width:600px;width:100%;height:200px"
+	   data-ad-client="ca-pub-2599762387787801"
+	   data-ad-slot="7871210540">
+    </ins> --}}
+
+	<ins class="adsbygoogle"
+	    style="display:block;"
+	    data-ad-client="ca-pub-2599762387787801"
+	    data-ad-slot="7871210540"
+	    data-ad-format="rectangle, horizontal">
+    </ins>
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Post Page -->
+	<ins class="adsbygoogle-post"
+	     style="display:block"
+	     data-ad-client="ca-pub-2599762387787801"
+	     data-ad-slot="7871210540"
+	     data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 {{/is}}
- --}}

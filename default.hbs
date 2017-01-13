@@ -55,30 +55,29 @@
             $('.carousel.carousel-slider').carousel();
             $('.slider').slider();
             $(".dropdown-button").dropdown({hover:true});
-            $('#sidebar-wrapper').pushpin({
-                top: 0,
-                offset: 45
-            });
         });
+
+        $( window ).load(function(){
+            $('#sidebar-wrapper').each(function() {
+            var self = $(this);
+            var target =  $(".data-target");
+            self.pushpin({
+              top: 0,
+              bottom: target.outerHeight() - self.height() - 50,
+              offset: 0
+            });
+          });
+        });
+
     </script>
 
     {{!-- For social button intents --}}
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
-    {{!-- Facebook --}}
-    <script>
-        // document.getElementById('facebook-share').onclick = function() {
-        //   FB.ui({
-        //     method: 'share',
-        //     display: 'popup',
-        //     href: 'https://developers.facebook.com/docs/',
-        //   }, function(response){});
-        // }
-    </script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
     {{!-- For the back-to-top arrow --}}
     <script>
         (function($) {
-
           ScrollToTop = {
             setup: function() {
               var $window = $(window),
