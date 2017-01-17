@@ -14,7 +14,7 @@
                         {{name}}
                     </h1>
                     <h2 class="index-subheader grey-text center-align">
-                        {{description}}
+                        {{meta_description}}
                     </h2>
                     <div class="divider"></div>
                     <h3 class="index-count grey-text center-align">
@@ -24,11 +24,15 @@
             </div>
 
             <div class="col s12 m12 l9">
-                {{#get "posts" filter="tag:{{name}}"}}
+                {{#get "posts" filter="tag:{{slug}}"}}
                     {{#foreach posts}}
                         <article class="post-box hoverable col s6 m6 l4">
                             <a href={{url}}>
-                                <img class="z-depth-2 responsive-img" src="{{image}}">
+                                {{#if image}}
+                                    <img class="z-depth-2 responsive-img" src="{{image}}">
+                                {{else}}
+                                    <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
+                                {{/if}}
                                 <header class="post-title grey-text text-darken-1">
                                     {{title}}</header>
                             </a>

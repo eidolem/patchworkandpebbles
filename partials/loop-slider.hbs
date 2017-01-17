@@ -1,6 +1,6 @@
 <section class="row slider-container">
     <header class="center-align grey-text text-darken-2 col s12 m12 l12">
-        <h2 class="slider-title"> <span class="slider-title-smallfont">on&nbsp;</span>{{tag}}</h2>
+        <h2 class="slider-title"> <span class="slider-title-smallfont">on&nbsp;</span>{{disp-title}}</h2>
     </header>
     
     <div class="hide-on-med-and-up">
@@ -8,7 +8,11 @@
             {{#foreach posts}}
                 <article class="post-box hoverable col s6">
                     <a href={{url}}>
-                        <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{#if image}}
+                            <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{else}}
+                            <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
+                        {{/if}}
                         <h3 class="post-title grey-text text-darken-1">{{title}}</h3>
                     </a>
                 </article>
@@ -21,7 +25,11 @@
             {{#foreach posts}}
                 <article class="post-box hoverable col m4 l4">
                     <a href={{url}}>
-                        <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{#if image}}
+                            <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{else}}
+                            <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
+                        {{/if}}
                         <h3 class="post-title grey-text text-darken-1">{{title}}</h3>
                         {{!-- Might want to replace with meta-description --}}
                         <p class="post-excerpt grey-text text-darken-3">{{excerpt words="30"}}...</p>

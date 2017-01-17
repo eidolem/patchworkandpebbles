@@ -33,18 +33,22 @@ of the default.hbs template, containing the blog header/footer. --}}
 
             <footer> 
                 <div class="share-love">
-                    <div class="grey-text grey-lighten-4">share some love&nbsp;</div>
-                    <div>
+                    {{#if tags}}
+                        <div class="read-more-articles">
+                            more articles on <span class="read-more-articles-tags">{{tags separator=" | "}}</span>
+                        </div>
+                    {{/if}}
+                    <div class="">share some love&nbsp;
                         <a href="https://www.facebook.com/dialog/feed?app_id=963392447124143&link={{url absolute=true}}&name={{title}}&description={{meta_description}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;">
                             <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
-                        </a>
-                        <a href="mailto:?subject=Great+article+on+%22{{title}}%22%21&body={{title}}%0D%0A%0D%0A{{url absolute=true}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=1000');return false;">
+                        </a> 
+                        <a href="mailto:?subject=Great%20article%20on%20%22{{title}}%22%21&body={{title}}%0D%0A%0D%0A{{url absolute=true}}" target="_blank">
                             <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
                         </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{title}}&summary=Great+article+by+Melodie+Meigs%21&source=patchworkandpebbles.com" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+{{!--                         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{title}}&summary=Great+article+by+Melodie+Meigs%21&source=patchworkandpebbles.com" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                             <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?text=Great+post+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-share-button twitter">
+                        </a> --}}
+                        <a href="https://twitter.com/intent/tweet?text=Great+article+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-share-button twitter">
                             <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
                         </a>
                         <a href="http://pinterest.com/pin/create/button/?url=test" data-pin-do="buttonBookmark" data-pin-custom="true">
@@ -53,11 +57,9 @@ of the default.hbs template, containing the blog header/footer. --}}
                         <a href="https://plus.google.com/share?url={{url absolute=true}}" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                             <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
                         </a>
-                        
-                    </div>
+                        </div>
                 </div>
 
-                <div class="divider"></div>
 
                 <div class="row">
                     {{#prev_post}}

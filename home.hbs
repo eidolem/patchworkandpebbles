@@ -18,23 +18,27 @@
     <main>
         {{>loop-latest-post}}
         <div class="divider"></div>
-        {{>loop-slider tag="travel"}}
+        {{>loop-slider tag="travel" disp-title="Travel"}}
         <div class="divider"></div>
-        {{>loop-slider tag="travel"}}
+        {{>loop-slider tag="sports-fitness-recovery" disp-title="Sports Fitness & Recovery"}}
         
         <div class="row">
             {{!-- Card for more categories --}}
-            <div class="col s12 m6 card-dark">
+            <div class="col s12 m6 offset-m3 card-dark">
                 {{>categories-card}}
             </div>
 
-            {{!-- Card for subscribe --}}
-            <div class="col s12 m6 card-dark">
+            {{!-- Put back after have subscribe email. Card for subscribe --}}
+{{!--             <div class="col s12 m6 card-dark">
                 {{>subscribe-card}}
-            </div>
+            </div> --}}
         </div>
 
-        {{>loop-slider tag="travel"}}
+        {{>loop-slider tag="climbing" disp-title="Rock Climbing"}}
+        {{>loop-slider tag="sewing" disp-title="Quilting & Sewing"}}
+        {{>loop-slider tag="life" disp-title="Life"}}
+        {{>loop-slider tag="van-life" disp-title="Van Life"}}
+        {{>loop-slider tag="other" disp-title="Other"}}
 
     </main>
 </div>

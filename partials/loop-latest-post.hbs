@@ -31,7 +31,11 @@
             {{#foreach posts}}
                 <article class="post-box hoverable center-align col s6 m6">
                     <a href={{url}}>
-                        <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{#if image}}
+                            <img class="z-depth-2 responsive-img" src="{{image}}">
+                        {{else}}
+                            <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
+                        {{/if}}
                         <h3 class="post-title grey-text text-darken-1">{{title}}</h3>
                         <p class="post-excerpt grey-text text-darken-3">{{excerpt words="30"}}...</p>
                     </a>

@@ -14,55 +14,55 @@ $container-width: 90%;
 
 //Needed to make all items in a column equal height
 @media #{$small-and-down}{
-	.col{
+	.row{
 		.s2:nth-child(6n+1){
-			clear: left;
+			clear: both;
 		}
 		.s3:nth-child(4n+1){
-			clear: left;
+			clear: both;
 		}
 		.s4:nth-child(3n+1){
-			clear: left;
+			clear: both;
 		}
 		.s5:nth-child(2n+1),
 		.s6:nth-child(2n+1){
-			clear: left;
+			clear: both;
 		}
 	}
 }
 
 @media #{$medium-only}{
-	.col{
+	.row{
 		.m2:nth-child(6n+1){
-			clear: left;
+			clear: both;
 		}
 		.m3:nth-child(4n+1){
-			clear: left;
+			clear: both;
 		}
 		.m4:nth-child(3n+1){
-			clear: left;
+			clear: both;
 		}
 		.m5:nth-child(2n+1),
 		.m6:nth-child(2n+1){
-			clear: left;
+			clear: both;
 		}
 	}
 }
 
 @media #{$large-and-up}{
-	.col{
+	.row{
 		.l2:nth-child(6n+1){
-			clear: left;
+			clear: both;
 		}
 		.l3:nth-child(4n+1){
-			clear: left;
+			clear: both;
 		}
 		.l4:nth-child(3n+1){
-			clear: left;
+			clear: both;
 		}
 		.l5:nth-child(2n+1),
 		.l6:nth-child(2n+1){
-			clear: left;
+			clear: both;
 		}
 	}
 }
@@ -96,6 +96,13 @@ h5 {
 
 h6 {
   font-size: 1.3rem;
+}
+
+blockquote {
+  margin: 0 3rem;
+  font-style: italic;
+  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
 }
 
 code, tt {
@@ -153,7 +160,7 @@ main {
 
 // Upper nav bar
 nav{
-	background-color: $primary-color; //#293a48; //#45526E;
+	background-color: $primary-color; 
 
 	ul li{
 		font-weight: 300;
@@ -171,7 +178,9 @@ nav{
 	.dropdown-content li > a{
 		color: $primary-color;
 		&:hover {
-			background-color: color("grey", "lighten-4");
+			// background-color: color("grey", "lighten-4");
+			color: $secondary-color;
+			background-color: white;
 		}
 	}
 }
@@ -182,6 +191,10 @@ nav{
 	 	padding: 0 2rem;
  		font-weight: 400;
  		height: 40px;
+ 		&:hover{
+			color: $secondary-color;
+			background-color: white;
+ 		}
 	}
 
 	.subheader{
@@ -504,6 +517,17 @@ nav{
     	font-style: italic;
 	}
 
+	p:last-of-type::after{
+	    background-color: color("grey", "darken-1");
+	    content: '';
+	    display: inline-block;
+	    position: relative;
+	    height: 1.2rem;
+	    margin-left: 0.5rem;
+	    top: 0.1rem;
+	    width: 0.6rem;
+	}
+
     @media #{$small-and-down} {
 		margin: 0 0 0 0;
 		width: 100%;
@@ -515,21 +539,35 @@ nav{
 	}
 }
 
+.read-more-articles{
+	font-weight: 300;
+	font-size: 1.1rem;
+	// font-style: italic;
+	font-family: 'Roboto', sans-serif;
+	margin: 2rem 0 1rem 0;
+
+	.read-more-articles-tags{
+		text-transform: uppercase;
+	}
+}
+
 //For the "share this post" and social share icons at the bottom of the post content
 .share-love,
 .share-love p{
 	display: block;
-	text-align: center;
-    font-size: 1.5rem;
-    font-style: italic;
+	// text-align: center;
+    font-size: 1.1rem;
+    // font-style: italic;
     font-weight: 300;
+    border-left: 5px solid color("grey", "darken-2");
+    padding-left: 1rem;
 
     img.share-post-icon{
 		width: 2rem;
 		height: 2rem;
 		opacity: 0.5;
 		display: inline-block;
-		margin: 1rem 0 0 0;
+		margin: 0rem 0 -0.5rem 0;
 		cursor: pointer;
 
 		&:hover{
@@ -716,6 +754,13 @@ nav{
 				}
 			}
 		}
+
+		@media #{$small-and-down} {
+			font-size: 1rem;
+			img { 
+				margin-left: 0rem;
+			}
+		}
 	}
 }
 
@@ -783,7 +828,7 @@ footer{
 //Fixes the width of the sidebar so that position:fixed looks ok on the pinned sidebar
 //The sidebar is 3 of 12 col wide for large only, and 0.95 makes it slightly smaller for a margin
 #sidebar-wrapper{
-	padding-top: 8rem;
+	padding-top: 5rem;
 }
 
 #sidebar-wrapper.pinned{

@@ -1607,35 +1607,35 @@
       width: 95%; } }
 
 @media only screen and (max-width: 600px) {
-  .col .s2:nth-child(6n+1) {
-    clear: left; }
-  .col .s3:nth-child(4n+1) {
-    clear: left; }
-  .col .s4:nth-child(3n+1) {
-    clear: left; }
-  .col .s5:nth-child(2n+1),
-  .col .s6:nth-child(2n+1) {
-    clear: left; } }
+  .row .s2:nth-child(6n+1) {
+    clear: both; }
+  .row .s3:nth-child(4n+1) {
+    clear: both; }
+  .row .s4:nth-child(3n+1) {
+    clear: both; }
+  .row .s5:nth-child(2n+1),
+  .row .s6:nth-child(2n+1) {
+    clear: both; } }
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .col .m2:nth-child(6n+1) {
-    clear: left; }
-  .col .m3:nth-child(4n+1) {
-    clear: left; }
-  .col .m4:nth-child(3n+1) {
-    clear: left; }
-  .col .m5:nth-child(2n+1),
-  .col .m6:nth-child(2n+1) {
-    clear: left; } }
+  .row .m2:nth-child(6n+1) {
+    clear: both; }
+  .row .m3:nth-child(4n+1) {
+    clear: both; }
+  .row .m4:nth-child(3n+1) {
+    clear: both; }
+  .row .m5:nth-child(2n+1),
+  .row .m6:nth-child(2n+1) {
+    clear: both; } }
 @media only screen and (min-width: 993px) {
-  .col .l2:nth-child(6n+1) {
-    clear: left; }
-  .col .l3:nth-child(4n+1) {
-    clear: left; }
-  .col .l4:nth-child(3n+1) {
-    clear: left; }
-  .col .l5:nth-child(2n+1),
-  .col .l6:nth-child(2n+1) {
-    clear: left; } }
+  .row .l2:nth-child(6n+1) {
+    clear: both; }
+  .row .l3:nth-child(4n+1) {
+    clear: both; }
+  .row .l4:nth-child(3n+1) {
+    clear: both; }
+  .row .l5:nth-child(2n+1),
+  .row .l6:nth-child(2n+1) {
+    clear: both; } }
 body {
   display: flex;
   min-height: 100vh;
@@ -1658,6 +1658,12 @@ h5 {
 
 h6 {
   font-size: 1.3rem; }
+
+blockquote {
+  margin: 0 3rem;
+  font-style: italic;
+  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif; }
 
 code, tt {
   padding: 1px 3px;
@@ -1709,12 +1715,16 @@ nav {
   nav .dropdown-content li > a {
     color: #3c4863; }
     nav .dropdown-content li > a:hover {
-      background-color: #f5f5f5; }
+      color: #e08433;
+      background-color: white; }
 
 .side-nav a {
   padding: 0 2rem;
   font-weight: 400;
   height: 40px; }
+  .side-nav a:hover {
+    color: #e08433;
+    background-color: white; }
 .side-nav .subheader {
   text-transform: uppercase; }
 .side-nav .divider {
@@ -1932,6 +1942,15 @@ nav {
     line-height: 1.5rem;
     font-family: 'roboto', sans-serif;
     font-style: italic; }
+  .post-content p:last-of-type::after {
+    background-color: #757575;
+    content: '';
+    display: inline-block;
+    position: relative;
+    height: 1.2rem;
+    margin-left: 0.5rem;
+    top: 0.1rem;
+    width: 0.6rem; }
   @media only screen and (max-width: 600px) {
     .post-content {
       margin: 0 0 0 0;
@@ -1941,20 +1960,28 @@ nav {
       margin: 0 0 0 2rem;
       width: 90%; } }
 
+.read-more-articles {
+  font-weight: 300;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem 0 1rem 0; }
+  .read-more-articles .read-more-articles-tags {
+    text-transform: uppercase; }
+
 .share-love,
 .share-love p {
   display: block;
-  text-align: center;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 300; }
+  font-size: 1.1rem;
+  font-weight: 300;
+  border-left: 5px solid #616161;
+  padding-left: 1rem; }
   .share-love img.share-post-icon,
   .share-love p img.share-post-icon {
     width: 2rem;
     height: 2rem;
     opacity: 0.5;
     display: inline-block;
-    margin: 1rem 0 0 0;
+    margin: 0rem 0 -0.5rem 0;
     cursor: pointer; }
     .share-love img.share-post-icon:hover,
     .share-love p img.share-post-icon:hover {
@@ -2085,6 +2112,11 @@ nav {
       color: #e08433; }
       .contact-card .card-content a:hover img {
         opacity: 0.7; }
+  @media only screen and (max-width: 600px) {
+    .contact-card .card-content {
+      font-size: 1rem; }
+      .contact-card .card-content img {
+        margin-left: 0rem; } }
 
 footer .footer-name, footer .footer-name p {
   font-size: 1.5rem;
@@ -2131,7 +2163,7 @@ footer img.share-post-icon {
   background-color: rgba(57, 55, 55, 0.7); }
 
 #sidebar-wrapper {
-  padding-top: 8rem; }
+  padding-top: 5rem; }
 
 #sidebar-wrapper.pinned {
   width: 21.375%; }

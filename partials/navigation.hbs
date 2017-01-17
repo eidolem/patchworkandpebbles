@@ -3,17 +3,17 @@
     <nav>
         <ul id="dropdown" class="dropdown-content">
             {{#foreach navigation}}
-                <li><a href="{{url}}">{{label}}</a></li>
+                <li><a href="{{url}}" class="waves-effect">{{label}}</a></li>
             {{/foreach}}
         </ul>
 
         <div class="nav-wrapper">
             <a href="/" class="hide-on-large-only brand-logo">{{@blog.title}}</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="waves-effect">Home</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="/about-me">About</a></li>
-                <li><a href="/about-me/#contact-card">Contact</a></li>
+                <li><a href="/about-me" class="waves-effect">About Me</a></li>
+                <li><a href="/about-me/#contact-card" class="waves-effect">Contact Info</a></li>
             </ul>
 
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -23,20 +23,14 @@
 
 {{!-- Slide-out nav content for small/med screens --}}
 <ul id="slide-out" class="side-nav">
-   {{!--  <li><a class="side-nav-title">{{@blog.title}}</a><i onclick="$('.button-collapse').sideNav('hide');" class="material-icons">arrow_back</i></li> --}}
-
     <li class="side-nav-title">{{@blog.title}}</li><i onclick="$('.button-collapse').sideNav('hide');" class="material-icons">arrow_back</i>
-
     <div class="divider"></div>
-    <li><a href="/">Home</a></li>
-    {{!-- <li><div class="divider"></div></li> --}}
+    <li><a href="/" class="waves-effect">Home</a></li>
     <li><a class="subheader">Categories</a></li>
     {{#foreach navigation}}
-        <li class="subheader-items"><a href="{{url}}">{{label}}</a></li>
+        <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
     {{/foreach}}   
-    {{!-- <li><div class="divider"></div></li> --}}
-    <li><a href="/about-me">About</a></li>
-    {{!-- <li><div class="divider"></div></li> --}}
-    <li><a href="#page-footer">Contact</a></li>
+    <li><a href="/about-me" class="waves-effect">About Me</a></li>
+    <li><a href="/about-me/#contact-card" class="waves-effect">Contact Info</a></li>
     <a href="/rss/" class="waves-effect waves-light btn z-depth-0"><img class="side-nav-rss" src="{{asset "/svg/rss-light.svg"}}">Subscribe</a>
 </ul>

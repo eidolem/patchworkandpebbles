@@ -14,7 +14,11 @@
                 {{#get "posts" limit="all" include="tags"}}
                     {{#foreach posts}}
                         <article class="post-box hoverable col s6 m6 l4" onclick="goToArticle({{url}})">
-                            <img class="z-depth-2 responsive-img" src="{{image}}" />
+                            {{#if image}}
+                                <img class="z-depth-2 responsive-img" src="{{image}}">
+                            {{else}}
+                                <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
+                            {{/if}}
                             <header class="post-title grey-text text-darken-1">
                                 {{title}}
                             </header>
