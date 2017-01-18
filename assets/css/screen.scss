@@ -3,12 +3,14 @@
 
 //Make the whole view area width larger (materialize default is 70%)
 //Define a variable so it can be referenced for sidebar width
+
 $container-width: 90%;
 .container {
     width: $container-width; 
 
 	@media #{$medium-and-down} {
 		width: 95%;
+		$container-width: 95%;
 	}
 } 
 
@@ -366,13 +368,17 @@ nav{
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 		font-weight: 300;
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 
 	.post-meta a{
 		color: color("grey","lighten-1");
 		font-weight: 400;
 		font-size: 1.1rem;
+
+		&:hover{
+			color: $secondary-color;
+		}
 	}
 
 	.post-excerpt{
@@ -418,7 +424,6 @@ nav{
 		}
 	}
 }
-
 
 // Change the margins for the post page title and meta 
 .post-header-container{
@@ -470,25 +475,65 @@ nav{
 
 // For the post content, like text of a blog post
 .post-content{
-	font-family: 'Roboto Slab', serif;
-	font-weight: 300;
-	line-height: 2rem;
-	word-wrap: break-word;
-	font-size: 1.2rem;
-	width: 90%;
-	margin: 0 0 0 4rem;
+	margin: auto;
+
+	@media #{$small-and-down} {
+		width: 100%;
+	}
+
+	@media #{$medium-only} {
+		width: 80%;
+	}
+
+	@media #{$large-and-up} {
+		width: 75%;
+	}
 
 	h1, h2, h3, h4, h5, h6{
 		font-family: 'Roboto', sans-serif;
 	}
 
+	p{
+		font-family: 'Roboto Slab', serif;
+		font-weight: 300;
+		line-height: 2rem;
+		word-wrap: break-word;
+		font-size: 1.2rem;
+	}
+
+	// Tombstone
+	p:last-of-type::after{
+	    background-color: color("grey", "darken-1");
+	    content: '';
+	    display: inline-block;
+	    position: relative;
+	    height: 1.1rem;
+	    margin-left: 0.5rem;
+	    top: 0.1rem;
+	    width: 0.5rem;
+	}
+
 	img{
-		min-width: 0;
-  		width: 100%;
   		height: auto; 
   		display: block;
-  		margin: 1rem auto;
+  		position: relative;
 		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
+		margin: 1rem auto;
+
+		@media #{$small-and-down} {
+			width: 110%;
+			left: -5%;
+			padding: 0;
+		}
+		@media #{$medium-only} {
+			width: 110%;
+			left: -5%;
+		}
+		@media #{$large-and-up} {
+			// Width is 1/80% (post-content container width)
+			width: 120%;
+			left: -10%;
+		}
 	}
 
 	.video {
@@ -516,33 +561,11 @@ nav{
     	font-family: 'roboto', sans-serif;
     	font-style: italic;
 	}
-
-	p:last-of-type::after{
-	    background-color: color("grey", "darken-1");
-	    content: '';
-	    display: inline-block;
-	    position: relative;
-	    height: 1.2rem;
-	    margin-left: 0.5rem;
-	    top: 0.1rem;
-	    width: 0.6rem;
-	}
-
-    @media #{$small-and-down} {
-		margin: 0 0 0 0;
-		width: 100%;
-  	}
-    
-    @media #{$medium-only} {
-		margin: 0 0 0 2rem;
-		width: 90%;
-	}
 }
 
 .read-more-articles{
 	font-weight: 300;
 	font-size: 1.1rem;
-	// font-style: italic;
 	font-family: 'Roboto', sans-serif;
 	margin: 2rem 0 1rem 0;
 
@@ -555,9 +578,7 @@ nav{
 .share-love,
 .share-love p{
 	display: block;
-	// text-align: center;
     font-size: 1.1rem;
-    // font-style: italic;
     font-weight: 300;
     border-left: 5px solid color("grey", "darken-2");
     padding-left: 1rem;
@@ -575,19 +596,20 @@ nav{
 		}
 	}
 
+	// media queries match .post-content width
     @media #{$small-and-down} {
-		margin: 0 0 2rem 0;
+		margin: 2rem 0 3rem 0;
 		width: 100%
 	}
 
     @media #{$medium-only} {
-		margin: 1rem 0 3rem 2rem;
-		width: 90%;
+		margin: 2rem auto 3rem auto;
+		width: 80%;
 	}
 
 	@media #{$large-and-up} {
-		margin: 2rem 0 4rem 4rem;
-		width: 70%
+		margin: 3rem auto 4rem auto;
+		width: 75%;
 	}
 }
 
@@ -832,7 +854,7 @@ footer{
 }
 
 #sidebar-wrapper.pinned{
-	width: ($container-width*3/12*0.95);
+	max-width: ($container-width*3/12*0.95);
 }
 
 // Class for when element is above threshold

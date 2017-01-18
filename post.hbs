@@ -12,14 +12,14 @@ of the default.hbs template, containing the blog header/footer. --}}
 <div class="container data-target">
     <div class="row">
 
-        <article class="col s12 m12 l9 push-l3">
+        <article class="post-container col s12 m12 l9 push-l3">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
                 <div class="post-meta grey-text">
                     <p>
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
                         {{#if tags}}
-                            &nbsp;on&nbsp;&nbsp;<span class="post-meta-tags grey-text">{{tags}}</span>
+                            &nbsp;on&nbsp;&nbsp;<span class="post-meta-tags grey-text">{{tags separator=" | "}}</span>
                         {{/if}}
                     </p>
                 </div>
