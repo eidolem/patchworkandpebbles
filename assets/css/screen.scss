@@ -101,10 +101,14 @@ h6 {
 }
 
 blockquote {
-  margin: 0 3rem;
+  margin: 0 2rem;
   font-style: italic;
   background: #f9f9f9;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+  border-left: 10px solid $primary-color;
 }
 
 code, tt {
@@ -162,27 +166,44 @@ main {
 
 // Upper nav bar
 nav{
-	background-color: $primary-color; 
+	background-color: #fff;
+	box-shadow: none;
 
 	ul li{
 		font-weight: 300;
 		letter-spacing: 0.03rem;
+		text-transform: uppercase;
+	}
+
+	//a: hamburger icon, ul a: links in expanded version
+	a {
+		color: #000;
+	}
+
+	ul a {
+		color: #000;
+		&:hover{
+			transition: none;
+			background-color: #fff;
+			color: $secondary-color;
+		}
 	}
 
 	.brand-logo{
 		font-family: 'Roboto', sans-serif;
-		font-weight: 100;
+		font-weight: 300;
 		margin: 0 0 0 1.5rem;
 		text-transform: uppercase;
 		font-size: 1.3rem;
+		color: #000;
 	}
 
 	.dropdown-content li > a{
-		color: $primary-color;
+		color: #000;
 		&:hover {
-			// background-color: color("grey", "lighten-4");
 			color: $secondary-color;
 			background-color: white;
+			transition: none;
 		}
 	}
 }
@@ -191,8 +212,9 @@ nav{
 .side-nav{
 	a{
 	 	padding: 0 2rem;
- 		font-weight: 400;
+ 		font-weight: 300;
  		height: 40px;
+ 		text-transform: uppercase;
  		&:hover{
 			color: $secondary-color;
 			background-color: white;
@@ -201,6 +223,7 @@ nav{
 
 	.subheader{
 	 	text-transform: uppercase;
+	 	font-weight: 300;
 	}
 
 	.divider{
@@ -256,8 +279,10 @@ nav{
 		display: inline-block;
 	}
 	
-	.subheader-items{
+	.subheader-items, 
+	.subheader-items a{
 		text-indent: 1.5rem;
+		text-transform: capitalize;
 	}
 }
 
@@ -284,9 +309,11 @@ nav{
 	font-size: 3rem;
 	font-weight: 100;
 	text-transform: uppercase;
+	margin: 3rem 0 3rem 0;
 
 	@media #{$small-and-down} {
 		font-size: 2.4rem;
+		margin: 1.5rem 0 2rem 0;
 	}
 
 }
@@ -683,13 +710,13 @@ nav{
     margin: 1rem 0 2rem 0;
     font-family: 'Roboto Slab', serif;
     display: block;
+    line-height: 2rem;
 }
 
 //For the text "XX posts in category"
 .index-count{
-	font-weight: 100;
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 300;
     margin: 3rem 0 3rem 0;
     font-family: 'Roboto Slab', serif;
 }
@@ -698,6 +725,7 @@ nav{
 .card-dark{
 	.card{
 		background-color: color("blue-grey", "base");
+		margin-top: 2rem;
 		.card-content{
 			color: white;
 			.card-title{
@@ -786,6 +814,16 @@ nav{
 	}
 }
 
+footer.page-footer{
+	background-color: #3a404c;
+
+	.footer-copyright{
+		font-size: 0.8rem;
+		height: 40px;
+		background-color: #363b46;
+	}
+}
+
 footer{
 	.footer-name, .footer-name p{
 		font-size: 1.5rem;
@@ -804,9 +842,6 @@ footer{
 		margin: 1rem 0 0.5rem 0;
 	}
 
-	.footer-copyright{
-		font-size: 0.8rem;
-	}
 	img.share-post-icon{
 		width: 2.5rem;
 		height: 2.5rem;
@@ -815,9 +850,8 @@ footer{
 
 		&:hover{
 		opacity: 0.9;
+		}
 	}
-}
-
 }
 
 

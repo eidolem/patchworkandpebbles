@@ -2964,8 +2964,8 @@ nav {
   color: #fff;
   background-color: #3c4863;
   width: 100%;
-  height: 45px;
-  line-height: 45px; }
+  height: 40px;
+  line-height: 40px; }
   nav.nav-extended {
     height: auto; }
     nav.nav-extended .nav-wrapper {
@@ -2977,8 +2977,8 @@ nav {
   nav i.material-icons {
     display: block;
     font-size: 24px;
-    height: 45px;
-    line-height: 45px; }
+    height: 40px;
+    line-height: 40px; }
   nav .nav-wrapper {
     position: relative;
     height: 100%; }
@@ -2989,11 +2989,11 @@ nav {
     float: left;
     position: relative;
     z-index: 1;
-    height: 45px;
+    height: 40px;
     margin: 0 18px; }
     nav .button-collapse i {
-      height: 45px;
-      line-height: 45px; }
+      height: 40px;
+      line-height: 40px; }
   nav .brand-logo {
     position: absolute;
     color: #fff;
@@ -3073,18 +3073,18 @@ nav {
 
 .navbar-fixed {
   position: relative;
-  height: 45px;
+  height: 40px;
   z-index: 997; }
   .navbar-fixed nav {
     position: fixed; }
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 45px;
-    line-height: 45px; }
+    height: 40px;
+    line-height: 40px; }
 
   .navbar-fixed {
-    height: 45px; } }
+    height: 40px; } }
 @font-face {
   font-family: "Roboto";
   src: local(Roboto Thin), url("../fonts/roboto/Roboto-Thin.eot");
@@ -3350,7 +3350,7 @@ small {
       transition: color .3s ease;
       text-transform: uppercase; }
       .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-        color: #ffd8a6; }
+        color: #ffd180; }
   .card .card-reveal {
     padding: 20px;
     position: absolute;
@@ -3746,7 +3746,7 @@ button.btn-floating {
     clear: both;
     color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
-    min-height: 50px;
+    min-height: 45px;
     line-height: 1.5rem;
     width: 100%;
     text-align: left;
@@ -3763,7 +3763,7 @@ button.btn-floating {
       color: #e08433;
       display: block;
       line-height: 22px;
-      padding: 14px 16px; }
+      padding: 11.5px 16px; }
     .dropdown-content li > span > label {
       top: 1px;
       left: 0;
@@ -4496,8 +4496,8 @@ textarea {
   .autocomplete-content li .highlight {
     color: #444; }
   .autocomplete-content li img {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     margin: 5px 15px; }
 
 /* Radio Buttons
@@ -4904,8 +4904,8 @@ select:disabled {
   margin-left: 3rem; }
 
 .select-dropdown li img {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   margin: 5px 15px;
   float: right; }
 
