@@ -14,7 +14,7 @@
                         {{name}}
                     </h1>
                     <h2 class="index-subheader grey-text center-align">
-                        {{meta_description}}
+                        {{description}}
                     </h2>
                     <div class="divider"></div>
                     <h3 class="index-count grey-text center-align">
@@ -24,7 +24,7 @@
             </div>
 
             <div class="col s12 m12 l9">
-                {{#get "posts" filter="tag:{{slug}}"}}
+                {{#get "posts" filter="tag:{{slug}}" limit="all"}}
                     {{#foreach posts}}
                         <article class="post-box hoverable col s6 m6 l4">
                             <a href={{url}}>
@@ -33,10 +33,27 @@
                                 {{else}}
                                     <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
                                 {{/if}}
-                                <header class="post-title grey-text text-darken-1">
-                                    {{title}}</header>
+                                <div class="post-box-content">
+                                    <header class="post-title grey-text text-darken-1">
+                                        {{title}}</header>
+                                </div>
                             </a>
                         </article>
+
+{{!--                         <article class="col s6 m6 l4">
+                                <div class="card hoverable">
+                                    <div class="card-image">
+                                        {{#if image}}
+                                            <img src="{{image}}">
+                                        {{else}}
+                                            <img src="{{asset "/img/grey-tile.jpg"}}">
+                                        {{/if}}
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{title}}</p>
+                                    </div>
+                                </div>
+                        </article> --}}
                     {{/foreach}}
                 {{/get}}
             </div>

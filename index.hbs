@@ -19,14 +19,16 @@
                             {{else}}
                                 <img class="z-depth-2 responsive-img" src="{{asset "/img/grey-tile.jpg"}}">
                             {{/if}}
-                            <header class="post-title grey-text text-darken-1">
-                                {{title}}
-                            </header>
-                            <footer class="post-meta grey-text center-align">
-                                {{#if tags}}
-                                    &nbsp;on&nbsp;&nbsp;{{tags}}
-                                {{/if}}
-                            </footer>
+                            <div class="post-box-content">
+                                <header class="post-title grey-text text-darken-1">
+                                    {{title}}
+                                </header>
+                                <footer class="post-meta center-align">
+                                    {{#if tags}}
+                                        &nbsp;on&nbsp;&nbsp;{{tags separator="  |  "}}
+                                    {{/if}}
+                                </footer>
+                            </div>
                         </article>
                     {{/foreach}}
                 {{/get}}

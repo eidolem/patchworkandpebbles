@@ -1854,26 +1854,27 @@ nav {
 .post-box {
   cursor: pointer;
   border-radius: 2px; }
+  .post-box .post-box-content {
+    margin-bottom: 3rem; }
   .post-box .post-title {
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Roboto Slab', serif;
     line-height: 110%; }
   .post-box .post-meta {
+    color: #bdbdbd;
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 0.8rem; }
+    font-weight: 300; }
   .post-box .post-meta a {
     color: #bdbdbd;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.1rem; }
     .post-box .post-meta a:hover {
-      color: #e08433; }
+      text-decoration: underline; }
   .post-box .post-excerpt {
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.87);
-    text-align: center;
+    text-align: left;
     margin: 0 0.5rem 0.5rem 0.5rem;
     font-weight: 300; }
   @media only screen and (max-width: 600px) {
@@ -1881,7 +1882,7 @@ nav {
       margin-bottom: 1.2rem; }
       .post-box .post-title {
         font-size: 1.1rem;
-        margin: 0.5rem 0 0.5rem 0; }
+        margin: 0.5rem 0 1.5rem 0; }
       .post-box .post-meta {
         font-size: 0.6rem; }
       .post-box .post-meta a {
@@ -1891,13 +1892,13 @@ nav {
       margin-bottom: 1.5rem; }
       .post-box .post-title {
         font-size: 1.2rem;
-        margin: 0.75rem; } }
+        margin: 1rem 0 1rem 0; } }
   @media only screen and (min-width: 993px) {
     .post-box {
       margin-bottom: 2rem; }
       .post-box .post-title {
         font-size: 1.2rem;
-        margin: 1rem 0; } }
+        margin: 1rem 0 1rem 0; } }
 
 .post-header-container {
   margin: 5rem 0 2rem 4rem; }
@@ -1912,6 +1913,8 @@ nav {
     font-size: 1rem; }
   .post-header-container .post-meta-tags {
     font-size: 1.2rem; }
+    .post-header-container .post-meta-tags :hover {
+      text-decoration: underline; }
   @media only screen and (max-width: 600px) {
     .post-header-container {
       margin: 2rem 0 1rem 0; }
@@ -1942,21 +1945,14 @@ nav {
       width: 75%; } }
   .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
     font-family: 'Roboto', sans-serif; }
-  .post-content p {
+  .post-content p, .post-content ul li {
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
     line-height: 2rem;
     word-wrap: break-word;
     font-size: 1.2rem; }
-  .post-content p:last-of-type::after {
-    background-color: #757575;
-    content: '';
-    display: inline-block;
-    position: relative;
-    height: 1.1rem;
-    margin-left: 0.5rem;
-    top: 0.1rem;
-    width: 0.5rem; }
+  .post-content a:hover {
+    text-decoration: underline; }
   .post-content img {
     height: auto;
     display: block;
@@ -2004,6 +2000,8 @@ nav {
   margin: 2rem 0 1rem 0; }
   .read-more-articles .read-more-articles-tags {
     text-transform: uppercase; }
+    .read-more-articles .read-more-articles-tags :hover {
+      text-decoration: underline; }
 
 .share-love,
 .share-love p {
@@ -2074,7 +2072,7 @@ nav {
   font-size: 4rem;
   font-weight: 100;
   text-transform: uppercase;
-  margin: 3rem 0 1rem 0;
+  margin: 2rem 0 3rem 0;
   display: block; }
 
 .index-subheader {
@@ -2086,10 +2084,9 @@ nav {
   line-height: 2rem; }
 
 .index-count {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 300;
-  margin: 3rem 0 3rem 0;
-  font-family: 'Roboto Slab', serif; }
+  margin: 1rem 0 2rem 0; }
 
 .card-dark .card {
   background-color: #607d8b;
@@ -2111,10 +2108,11 @@ nav {
     transition: color .3s ease;
     font-weight: 400; }
     .card-dark .card a:hover {
-      color: white; }
+      text-decoration: underline; }
 
 .card-light .card {
-  background-color: white; }
+  background-color: white;
+  margin-bottom: 4rem; }
   .card-light .card .card-content {
     color: grey;
     padding: 15px; }
@@ -2123,14 +2121,13 @@ nav {
       line-height: 25px;
       margin: 0 0 1rem 0;
       display: inline-block;
-      font-weight: 400; }
+      font-weight: 300; }
   .card-light .card a {
     font-size: 1.1rem;
     color: #e08433;
     font-weight: 300; }
     .card-light .card a:hover {
-      color: grey;
-      color: #edb98c; }
+      text-decoration: underline; }
 
 .contact-card .card-content {
   color: grey;
@@ -2157,11 +2154,11 @@ nav {
         margin-left: 0rem; } }
 
 footer.page-footer {
-  background-color: #3a404c; }
+  background-color: #263238; }
   footer.page-footer .footer-copyright {
     font-size: 0.8rem;
     height: 40px;
-    background-color: #363b46; }
+    background-color: #334046; }
 
 footer .footer-name, footer .footer-name p {
   font-size: 1.5rem;
@@ -2206,7 +2203,7 @@ footer img.share-post-icon {
   background-color: rgba(57, 55, 55, 0.7); }
 
 #sidebar-wrapper {
-  padding-top: 5rem; }
+  padding-top: 8rem; }
 
 #sidebar-wrapper.pinned {
   max-width: 21.375%; }
