@@ -1692,10 +1692,14 @@ ul.side-nav {
   list-style-type: none;
   padding-left: 0; }
 
-div.nav-wrapper ul {
+div.nav-wrapper > ul {
   list-style-type: none; }
-  div.nav-wrapper ul > li {
-    list-style-type: none; }
+  div.nav-wrapper > ul > li {
+    list-style-type: none;
+    height: 48px; }
+    div.nav-wrapper > ul > li:hover {
+      box-sizing: border-box;
+      border-bottom: 3px solid #e08433; }
 
 ol:not(.browser-default) {
   list-style-type: decimal; }
@@ -1717,9 +1721,7 @@ nav {
   nav ul a {
     color: #000; }
     nav ul a:hover {
-      transition: none;
-      background-color: #fff;
-      color: #e08433; }
+      background-color: transparent; }
   nav .brand-logo {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -1728,11 +1730,10 @@ nav {
     font-size: 1.3rem;
     color: #000; }
   nav .dropdown-content li > a {
-    color: #000; }
+    color: #000;
+    background-color: #fff; }
     nav .dropdown-content li > a:hover {
-      color: #e08433;
-      background-color: white;
-      transition: none; }
+      background-color: #eee; }
 
 .side-nav a {
   padding: 0 2rem;
@@ -1744,7 +1745,8 @@ nav {
     background-color: white; }
 .side-nav .subheader {
   text-transform: uppercase;
-  font-weight: 300; }
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.87); }
 .side-nav .divider {
   margin: 0; }
 .side-nav .material-icons {
@@ -1944,7 +1946,11 @@ nav {
     .post-content {
       width: 75%; } }
   .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-    font-family: 'Roboto', sans-serif; }
+    font-family: 'Roboto', sans-serif;
+    color: #616161;
+    letter-spacing: 0.02rem;
+    font-weight: 300;
+    margin: 4rem 0 2rem 0; }
   .post-content p, .post-content ul li {
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
@@ -1972,17 +1978,13 @@ nav {
       .post-content img {
         width: 120%;
         left: -10%; } }
-  .post-content .video {
+  .post-content iframe {
+    max-width: 100%;
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
     overflow: hidden; }
-    .post-content .video iframe, .post-content .video object, .post-content .video embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
   .post-content .image-caption {
     text-align: center;
     display: block;
@@ -2009,7 +2011,8 @@ nav {
   font-size: 1.1rem;
   font-weight: 300;
   border-left: 5px solid #616161;
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  margin: 4rem auto 5rem auto; }
   .share-love img.share-post-icon,
   .share-love p img.share-post-icon {
     width: 2rem;
@@ -2024,17 +2027,14 @@ nav {
   @media only screen and (max-width: 600px) {
     .share-love,
     .share-love p {
-      margin: 2rem 0 3rem 0;
       width: 100%; } }
   @media only screen and (min-width: 601px) and (max-width: 992px) {
     .share-love,
     .share-love p {
-      margin: 2rem auto 3rem auto;
       width: 80%; } }
   @media only screen and (min-width: 993px) {
     .share-love,
     .share-love p {
-      margin: 3rem auto 4rem auto;
       width: 75%; } }
 
 .post-box-prev-next .card-title {
