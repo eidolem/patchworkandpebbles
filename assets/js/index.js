@@ -54,3 +54,52 @@
 
     };
 })(jQuery);
+
+
+(function($) {
+  // if (ScrollToTop) return;
+
+  ScrollToTop = {
+    setup: function() {
+      var $window = $(window),
+          $scrollToTopButton = $('<div id="scroll-to-top"></div>').appendTo('body');
+
+      $scrollToTopButton.on('click touchstart', function() {
+        $('body, html').animate({ scrollTop: 0 }, 300);
+      });
+
+      // show and hide scroll to top button logic
+      $window.on('scroll.scroll-to-top', function() {
+        var threshold = 50,
+            duration = 200;
+
+        if ($window.scrollTop() >= threshold && $scrollToTopButton.is(':hidden')) {
+          $scrollToTopButton.fadeIn(duration);
+        } else if ($window.scrollTop() < threshold && $scrollToTopButton.is(':visible')) {
+          $scrollToTopButton.fadeOut(duration);
+        }
+      });
+
+      // Mousewheel events don't work through position-fixed elements. This is a fix.
+      // http://stackoverflow.com/questions/7182502/pass-mousewheel-event-through-fixed-content
+      $scrollToTopButton.on('mousewheel DOMMouseScroll', function(e) {
+        var originalEvent = e.originalEvent,
+            wheelDelta;
+
+        if (originalEvent.wheelDelta) {
+          wheelDelta = originalEvent.wheelDelta * -1;
+        } else if (originalEvent.detail) {
+          wheelDelta = originalEvent.detail * 15;
+        }
+
+        var scrollTo = wheelDelta + $window.scrollTop();
+        $window.scrollTop(scrollTo);
+      });
+    },
+
+    teardown: function() {
+      $(window).off('scroll.scroll-to-top');
+      $('#scroll-to-top').remove();
+    }
+  }
+}(jQuery));

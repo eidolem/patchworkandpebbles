@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
@@ -17,40 +17,114 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/mycustom.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+    {{!-- ***replace with minimized file! *** --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/materialize.min.css"}}"  media="screen,projection"/>
+
+    {{!-- *** replace with minimized file! *** --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.min.css"}}" />
+    <link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
 
-    {{!-- The blog navigation links --}}
-    {{navigation}}
-
-    <div class="site-wrapper">
-
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-
-        {{!-- The tiny footer at the very bottom --}}
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Published with <a href="https://ghost.org">Ghost</a></section>
-        </footer>
-
-    </div>
+<body class="{{body_class}}">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
+
     {{!-- Fitvids makes video embeds responsive and awesome --}}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{!-- The main JavaScript file for Casper --}}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    
+    {{!-- For materialize --}}
+    <script type="text/javascript" src="{{asset "js/bin/materialize.min.js"}}"></script>
+    <script type="text/javascript">
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
+            $('.carousel').carousel();
+            $('.carousel.carousel-slider').carousel();
+            $('.slider').slider();
+            $(".dropdown-button").dropdown({hover:false});
+        });
+
+        $( window ).load(function(){
+            $('#sidebar-wrapper').each(function() {
+            var self = $(this);
+            var target =  $(".data-target");
+            self.pushpin({
+              top: 0,
+              bottom: target.outerHeight() - self.height() - 50,
+              offset: 0
+            });
+          });
+        });
+
+    </script>
+
+    {{!-- For social button intents --}}
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+    {{!-- For the back-to-top arrow --}}
+    <script>
+        (function($) {
+          ScrollToTop = {
+            setup: function() {
+              var $window = $(window),
+                  $scrollToTopButton = $('<div id="scroll-to-top"></div>').appendTo('body');
+
+              $scrollToTopButton.on('click touchstart', function() {
+                $('body, html').animate({ scrollTop: 0 }, 300);
+              });
+
+              // show and hide scroll to top button logic
+              $window.on('scroll.scroll-to-top', function() {
+                var threshold = 50,
+                    duration = 200;
+
+                if ($window.scrollTop() >= threshold && $scrollToTopButton.is(':hidden')) {
+                  $scrollToTopButton.fadeIn(duration);
+                } else if ($window.scrollTop() < threshold && $scrollToTopButton.is(':visible')) {
+                  $scrollToTopButton.fadeOut(duration);
+                }
+              });
+
+              // Mousewheel events don't work through position-fixed elements. This is a fix.
+              // http://stackoverflow.com/questions/7182502/pass-mousewheel-event-through-fixed-content
+              $scrollToTopButton.on('mousewheel DOMMouseScroll', function(e) {
+                var originalEvent = e.originalEvent,
+                    wheelDelta;
+
+                if (originalEvent.wheelDelta) {
+                  wheelDelta = originalEvent.wheelDelta * -1;
+                } else if (originalEvent.detail) {
+                  wheelDelta = originalEvent.detail * 15;
+                }
+
+                var scrollTo = wheelDelta + $window.scrollTop();
+                $window.scrollTop(scrollTo);
+              });
+            },
+
+            teardown: function() {
+              $(window).off('scroll.scroll-to-top');
+              $('#scroll-to-top').remove();
+            }
+          }
+        }(jQuery));
+
+        ScrollToTop.setup();
+    </script>
 
 </body>
 </html>

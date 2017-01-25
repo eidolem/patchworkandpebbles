@@ -1,0 +1,50 @@
+{{!< default}}
+
+{{navigation}}
+
+{{!-- The container class puts a horiz screen width limit --}}
+<div class="homepage container">
+    <header class="row">
+        <h1 class="col center-align m10 offset-m1 blog-title hide-on-small-only">
+            {{@blog.title}}
+        </h1>
+        <h2 class="col center-align m10 offset-m1 blog-description grey-text text-darken-2">
+            {{@blog.description}}
+        </h2>
+    </header>
+
+    <div class="divider"></div>
+
+    <main>
+        {{>loop-latest-post}}
+        <div class="divider"></div>
+        {{>loop-slider tag="travel" disp-title="Travel"}}
+        <div class="divider"></div>
+        {{>loop-slider tag="sports-fitness-recovery" disp-title="Sports Fitness & Recovery"}}
+        <div class="divider"></div>
+
+        <div class="row">
+            {{!-- Card for more categories --}}
+            <div class="col s12 m6 offset-m3 card-dark">
+                {{>categories-card}}
+            </div>
+            {{!-- Put back after have subscribe email. Card for subscribe --}}
+            {{!-- <div class="col s12 m6 card-dark">
+                {{>subscribe-card}}
+            </div> --}}
+        </div>
+        <div class="divider"></div>
+        {{>loop-slider tag="climbing" disp-title="Rock Climbing"}}
+        <div class="divider"></div>
+        {{>loop-slider tag="sewing" disp-title="Quilting & Sewing"}}
+        <div class="divider"></div>
+        {{>loop-slider tag="life" disp-title="Life"}}
+        <div class="divider"></div>
+        {{>loop-slider tag="van-life" disp-title="Van Life"}}
+        <div class="divider"></div>
+        {{>loop-slider tag="other" disp-title="Other"}}
+
+    </main>
+</div>
+
+{{>footer}}

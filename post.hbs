@@ -1,98 +1,119 @@
+{{!-- "< default" means - insert everything in this file into the {{{body}}} 
+of the default.hbs template, containing the blog header/footer. --}}
 {{!< default}}
-
-{{!-- The comment above "< default" means - insert everything in this file into
-    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
+{{navigation}}
 
+<main>
+{{!-- Container sets the screen width --}}
+<div class="container data-target">
+    <div class="row">
 
-<main class="post-content" role="main">
-    <article class="{{post_class}}">
+        <article class="post-container col s12 m12 l9 push-l3">
+            <header class="post-header-container">
+                <h1 class="post-title grey-text text-darken-1">{{title}}</h1>
+                <div class="post-meta grey-text">
+                    <p>
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                        {{#if tags}}
+                            &nbsp;on&nbsp;&nbsp;<span class="post-meta-tags grey-text">{{tags separator=" | "}}</span>
+                        {{/if}}
+                    </p>
+                </div>
 
-        <header class="post-header">
-            <h1 class="post-title-postpage">{{title}}</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time> <span class="italicized-words">&ensp;on &ensp;</span>{{tags}}
-            </section>
-        </header>
+                <div class="divider"></div>
+            </header>
 
-        <section class="post-content">
-            {{content}}
-        </section>
-
-        <footer class="post-footer">
-
-            <section class="share">
-                <h4> <span class="italicized-words"> share some love </span></h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
+            <section class="post-content grey-text text-darken-4">
+                {{content}}
             </section>
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="gh-subscribe">
-                <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                {{subscribe_form placeholder="Your email address"}}
-                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
-            </section>
-            {{/if}}
+            <footer> 
+                <div class="share-love">
+                    {{#if tags}}
+                        <div class="read-more-articles">
+                            more articles on <span class="read-more-articles-tags">{{tags separator=" | "}}</span>
+                        </div>
+                    {{/if}}
+                    <div class="">share some love&nbsp;
+                        <a href="https://www.facebook.com/dialog/feed?app_id=963392447124143&link={{url absolute=true}}&name={{title}}&description={{meta_description}}" onclick="ga('send', 'event', 'Social Share', 'click', 'Facebook');javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;" target="_blank">
+                            <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
+                        </a> 
+                        <a href="mailto:?subject=Great%20article%20on%20%22{{title}}%22%21&body={{title}}%0D%0A%0D%0A{{url absolute=true}}" target="_blank" onclick="ga('send', 'event', 'Social Share', 'click', 'Email')">
+                            <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
+                        </a>
+{{!--                         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{title}}&summary=Great+article+by+Melodie+Meigs%21&source=patchworkandpebbles.com" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
+                        </a> --}}
+                        <a href="https://twitter.com/intent/tweet?text=Great+article+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-share-button twitter" onclick="ga('send', 'event', 'Social Share', 'click', 'Twitter')">
+                            <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
+                        </a>
+                        <a href="http://pinterest.com/pin/create/button/?url=test" data-pin-do="buttonBookmark" data-pin-custom="true" onclick="ga('send', 'event', 'Social Share', 'click', 'Pinterest')">
+                            <img class="share-post-icon" src="{{asset "/svg/pinterest.svg"}}">&nbsp;
+                        </a>
+                        <a href="https://plus.google.com/share?url={{url absolute=true}}" target="_blank" onclick="ga('send', 'event', 'Social Share', 'click', 'Google+');javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                            <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
+                        </a>
+                        </div>
+                </div>
 
-        </footer>
 
-    </article>
+                <div class="row">
+                    {{#prev_post}}
+                        <div class="col s12 m12 l6">
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                                <div class="valign card-image">
+                                    <img src="{{image}}"/>
+                                </div>
+                                <div class="valign card-stacked">
+                                    <p class="card-title">Previous Post</p>
+                                    <p class="card-content grey-text">{{title}}</p>
+                                </div>  
+                            </a>
+                        </div>
+                    {{/prev_post}}
+
+                    {{#next_post}}
+                        <div class="col s12 m12 l6">
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                                <div class="valign card-stacked">
+                                    <p class="card-title">Next Post</p>
+                                    <p class="card-content grey-text">{{title}}</p>
+                                </div>  
+                                <div class="valign card-image">
+                                    <img src="{{image}}"/>
+                                </div>
+                            </a>
+                        </div>
+                    {{/next_post}}
+
+                    <div class="col s12 hide-on-large-only card-dark">
+                        {{>categories-card}}
+                    </div>
+                    
+                    <div class="col s12 hide-on-large-only">
+                        {{>ad-card}}
+                    </div>
+                    
+                    {{!-- Add back once have email subscribe and ad backup --}}
+{{!--                     <div class="col s12 hide-on-large-only card-dark">
+                        {{>subscribe-card}}
+                    </div> --}}
+                </div>
+            </footer>
+        </article>
+
+        <div class="col l3 pull-l9 hide-on-med-and-down card-dark">
+            {{>sidebar}}
+        </div>
+
+    </div>
+</div>
 </main>
 
-
-{{!-- For the navigation to prev, next, more posts --}}
-<article class="read-next">
-    {{#next_post}}
-    {{/next_post}}
-</article>
+{{>footer}}
 
 {{/post}}
-
-
-
-{{!-- 
-Links to Previous/Next posts 
-<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
-</aside>
---}}
-
