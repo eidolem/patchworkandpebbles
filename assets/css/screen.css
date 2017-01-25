@@ -1642,32 +1642,32 @@ body {
   flex-direction: column; }
 
 h1 {
-  font-size: 2.7rem; }
+  font-size: 3rem; }
 
 h2 {
-  font-size: 2.3rem; }
+  font-size: 2.8rem; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 2.5rem; }
 
 h4 {
-  font-size: 1.8rem; }
+  font-size: 2.2rem; }
 
 h5 {
-  font-size: 1.6rem; }
+  font-size: 2rem; }
 
 h6 {
-  font-size: 1.3rem; }
+  font-size: 1.6rem; }
 
 blockquote {
-  margin: 0 2rem;
+  margin: 4rem 2rem;
   font-style: italic;
   background: #f9f9f9;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.8rem;
-  border-left: 10px solid #3c4863; }
+  border-left: 10px solid #e08433; }
 
 code, tt {
   padding: 1px 3px;
@@ -1934,66 +1934,75 @@ nav {
       font-size: 4rem;
       margin: 0 0 2rem 0; } }
 
-.post-content {
-  margin: auto; }
-  @media only screen and (max-width: 600px) {
-    .post-content {
-      width: 100%; } }
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
-    .post-content {
-      width: 80%; } }
-  @media only screen and (min-width: 993px) {
-    .post-content {
-      width: 75%; } }
-  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-    font-family: 'Roboto', sans-serif;
-    color: #616161;
-    letter-spacing: 0.02rem;
-    font-weight: 300;
-    margin: 4rem 0 2rem 0; }
-  .post-content p, .post-content ul li {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 300;
-    line-height: 2rem;
-    word-wrap: break-word;
-    font-size: 1.2rem; }
+@media only screen and (max-width: 600px) {
+  .post-content {
+    width: 100%;
+    margin-left: 0rem; } }
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .post-content {
+    width: 80%;
+    margin-left: 2rem; } }
+@media only screen and (min-width: 993px) {
+  .post-content {
+    width: 75%;
+    margin-left: 4rem; } }
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+  font-family: 'Roboto', sans-serif;
+  color: #616161;
+  letter-spacing: 0.02rem;
+  font-weight: 300;
+  margin: 4rem 0 2rem 0; }
+.post-content p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 2rem;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+  margin: 2rem 0 0 0; }
+.post-content ul li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 2rem;
+  word-wrap: break-word;
+  font-size: 1.2rem; }
+.post-content a {
+  text-decoration: underline; }
   .post-content a:hover {
     text-decoration: underline; }
-  .post-content img {
-    height: auto;
-    display: block;
-    position: relative;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 1rem auto; }
-    @media only screen and (max-width: 600px) {
-      .post-content img {
-        width: 110%;
-        left: -5%;
-        padding: 0; } }
-    @media only screen and (min-width: 601px) and (max-width: 992px) {
-      .post-content img {
-        width: 110%;
-        left: -5%; } }
-    @media only screen and (min-width: 993px) {
-      .post-content img {
-        width: 120%;
-        left: -10%; } }
-  .post-content iframe {
-    max-width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden; }
-  .post-content .image-caption {
-    text-align: center;
-    display: block;
-    max-width: 85%;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-family: 'roboto', sans-serif;
-    font-style: italic; }
+.post-content img {
+  height: auto;
+  display: block;
+  position: relative;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 1rem auto; }
+  @media only screen and (max-width: 600px) {
+    .post-content img {
+      width: 105%;
+      left: -2%; } }
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .post-content img {
+      width: 110%;
+      left: -5%; } }
+  @media only screen and (min-width: 993px) {
+    .post-content img {
+      width: 120%;
+      left: -10%; } }
+.post-content iframe {
+  max-width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; }
+.post-content .image-caption {
+  text-align: center;
+  display: block;
+  max-width: 85%;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: 'roboto', sans-serif;
+  font-style: italic; }
 
 .read-more-articles {
   font-weight: 300;

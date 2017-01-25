@@ -3,7 +3,6 @@
 
 //Make the whole view area width larger (materialize default is 70%)
 //Define a variable so it can be referenced for sidebar width
-
 $container-width: 90%;
 .container {
     width: $container-width; 
@@ -70,45 +69,45 @@ $container-width: 90%;
 }
 
 // Needed for the sticky footer
-body {
+body { 
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-h1 {
-  font-size: 2.7rem;
+h1 { 
+  font-size: 3rem;
 }
 
-h2 {
-  font-size: 2.3rem;
+h2 { 
+  font-size: 2.8rem;
 }
 
-h3 {
-  font-size: 2rem;
+h3 { 
+  font-size: 2.5rem;
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 h5 {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 h6 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 blockquote {
-  margin: 0 2rem;
+  margin: 4rem 2rem;
   font-style: italic;
   background: #f9f9f9;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 1.8rem;
-  border-left: 10px solid $primary-color;
+  border-left: 10px solid $secondary-color;
 }
 
 code, tt {
@@ -512,18 +511,19 @@ nav{
 
 // For the post content, like text of a blog post
 .post-content{
-	margin: auto;
-
 	@media #{$small-and-down} {
 		width: 100%;
+		margin-left: 0rem;
 	}
 
 	@media #{$medium-only} {
 		width: 80%;
+		margin-left: 2rem;
 	}
 
 	@media #{$large-and-up} {
 		width: 75%;
+		margin-left: 4rem;
 	}
 
 	h1, h2, h3, h4, h5, h6{
@@ -534,29 +534,29 @@ nav{
 		margin: 4rem 0 2rem 0;
 	}
 
-	p, ul li{
-		font-family: 'Roboto Slab', serif;
+	p{ 
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+		line-height: 2rem;
+		word-wrap: break-word;
+		font-size: 1.2rem;
+		margin: 2rem 0 0 0;
+	}
+
+	ul li{
+		font-family: 'Roboto', sans-serif;
 		font-weight: 300;
 		line-height: 2rem;
 		word-wrap: break-word;
 		font-size: 1.2rem;
 	}
 
-	a:hover{
+	a{
 		text-decoration: underline;
+		&:hover{
+			text-decoration: underline;
+		}
 	}
-
-	// Tombstone
-	// p :not(blockquote) :last-of-type::after{
-	//     background-color: color("grey", "darken-1");
-	//     content: '';
-	//     display: inline-block;
-	//     position: relative;
-	//     height: 1.1rem;
-	//     margin-left: 0.5rem;
-	//     top: 0.1rem;
-	//     width: 0.5rem;
-	// }
 
 	img{
   		height: auto; 
@@ -566,9 +566,11 @@ nav{
 		margin: 1rem auto;
 
 		@media #{$small-and-down} {
-			width: 110%;
-			left: -5%;
-			padding: 0;
+			// width: 110%;
+			// left: -5%;
+			// padding: 0;
+			width: 105%;
+			left: -2%;
 		}
 		@media #{$medium-only} {
 			width: 110%;

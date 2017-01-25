@@ -1,20 +1,15 @@
 {
     "name": "patchworkandpebbles",
     "description": "The theme for patchworkandpebbles.com",
-    "demo": "https://demo.ghost.io",
     "version": "0.0.1",
     "engines": {
         "ghost": ">=0.9.0 <1.0.0"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
-    },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Melodie Meigs",
+        "email": "patchworkandpebbles@gmail.com",
+        "url": "http://www.patchworkandpebbles.com"
     },
     "gpm": {
         "type": "theme",

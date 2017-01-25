@@ -10,20 +10,20 @@
       			<p class="footer-name grey-text text-lighten-3">Melodie Meigs</p>
             <p class="email grey-text text-lighten-1">patchworkandpebbles@gmail.com</p>
       			<p class="footer-find-me-on grey-text text-lighten-1">- find me on -</p>
-                <a href="https://www.instagram.com/patchworkandpebbles/" target="_blank"><img class="share-post-icon" alt="instagram" src="{{asset "/svg/instagram.svg"}}">&nbsp;</a>
+                <a href="https://www.instagram.com/patchworkandpebbles/" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Instagram - Footer');"><img class="share-post-icon" alt="instagram" src="{{asset "/svg/instagram.svg"}}">&nbsp;</a>
 
-                <a href="https://www.linkedin.com/in/melodie-meigs" target="_blank"><img class="share-post-icon" alt="linkedin" src="{{asset "/svg/linkedin.svg"}}">&nbsp;</a>
+                <a href="https://www.linkedin.com/in/melodie-meigs" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'LinkedIn - Footer');"><img class="share-post-icon" alt="linkedin" src="{{asset "/svg/linkedin.svg"}}">&nbsp;</a>
 
-                <a href="mailto:patchworkandpebbles@gmail.com" target="_blank"><img class="share-post-icon" alt="email" src="{{asset "/svg/email.svg"}}">&nbsp;</a>
+                <a href="mailto:patchworkandpebbles@gmail.com" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Email - Footer');"><img class="share-post-icon" alt="email" src="{{asset "/svg/email.svg"}}">&nbsp;</a>
 
-                <a href="http://youtube.com/eidolem7" target="_blank"><img class="share-post-icon" alt="youtube" src="{{asset "/svg/youtube.svg"}}">&nbsp;</a>
+                <a href="http://youtube.com/eidolem7" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'YouTube - Footer');"><img class="share-post-icon" alt="youtube" src="{{asset "/svg/youtube.svg"}}">&nbsp;</a>
       		</div>
     </div>
 
     {{!-- Need this /div so the copyright line is full-width outside the container --}}
 	</div>
  	<div class="footer-copyright">
-	    <div class="container">
+	    <div>
 	    	<a class="left grey-text text-lighten-1" href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
 	    	<div class="right grey-text text-lighten-1">Published with <a class="grey-text text-lighten-1" target="_blank" href="https://ghost.org">Ghost</a> and <a class="grey-text text-lighten-1"  target="_blank" href="http://materializecss.com/">Materialize</a></div>
 	    </div>
