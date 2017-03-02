@@ -577,9 +577,8 @@ nav{
 			left: -5%;
 		}
 		@media #{$large-and-up} {
-			// Width is 1/80% (post-content container width)
-			width: 120%;
-			left: -10%;
+			// Width is a little less than 1/80% (post-content container width)
+			width: 115%;
 		}
 	}
 
@@ -642,7 +641,7 @@ nav{
 			opacity: 0.9;
 		}
 	}
-
+ 
 	// media queries match .post-content width
     @media #{$small-and-down} {
 		width: 100%
@@ -653,12 +652,13 @@ nav{
 	}
 
 	@media #{$large-and-up} {
-		width: 75%;
+		width: 90%;
 	}
 }
 
 // For the horizontal cards for previous and next post
 .post-box-prev-next{
+	margin-bottom: 4rem;
 	.card-title{
     	font-weight: 300;
     	text-transform: uppercase;
@@ -742,6 +742,7 @@ nav{
 	.card{
 		background-color: color("blue-grey", "base");
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 		.card-content{
 			color: white;
 			.card-title{

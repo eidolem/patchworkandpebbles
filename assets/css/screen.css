@@ -1985,8 +1985,7 @@ nav {
       left: -5%; } }
   @media only screen and (min-width: 993px) {
     .post-content img {
-      width: 120%;
-      left: -10%; } }
+      width: 115%; } }
 .post-content iframe {
   max-width: 100%;
   position: relative;
@@ -2044,37 +2043,39 @@ nav {
   @media only screen and (min-width: 993px) {
     .share-love,
     .share-love p {
-      width: 75%; } }
+      width: 90%; } }
 
-.post-box-prev-next .card-title {
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #0288d1; }
-.post-box-prev-next .card-content {
-  padding: 0;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 400; }
-@media only screen and (max-width: 600px) {
+.post-box-prev-next {
+  margin-bottom: 4rem; }
   .post-box-prev-next .card-title {
-    font-size: 1.1rem;
-    margin: 0.7rem 0 0.5rem 0.7rem; }
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #0288d1; }
   .post-box-prev-next .card-content {
-    font-size: 1rem;
-    margin: 0 0.5rem 0.5rem 0.7rem; } }
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  .post-box-prev-next .card-title {
-    font-size: 1.4rem;
-    margin: 1rem 0 0.5rem 1rem; }
-  .post-box-prev-next .card-content {
-    font-size: 1.3rem;
-    margin: 0 0.5rem 0.5rem 1rem; } }
-@media only screen and (min-width: 993px) {
-  .post-box-prev-next .card-title {
-    font-size: 1.2rem;
-    margin: 1rem 0 0 0.7rem; }
-  .post-box-prev-next .card-content {
-    font-size: 1.1rem;
-    margin: 0 0.5rem 0.5rem 0.7rem; } }
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400; }
+  @media only screen and (max-width: 600px) {
+    .post-box-prev-next .card-title {
+      font-size: 1.1rem;
+      margin: 0.7rem 0 0.5rem 0.7rem; }
+    .post-box-prev-next .card-content {
+      font-size: 1rem;
+      margin: 0 0.5rem 0.5rem 0.7rem; } }
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .post-box-prev-next .card-title {
+      font-size: 1.4rem;
+      margin: 1rem 0 0.5rem 1rem; }
+    .post-box-prev-next .card-content {
+      font-size: 1.3rem;
+      margin: 0 0.5rem 0.5rem 1rem; } }
+  @media only screen and (min-width: 993px) {
+    .post-box-prev-next .card-title {
+      font-size: 1.2rem;
+      margin: 1rem 0 0 0.7rem; }
+    .post-box-prev-next .card-content {
+      font-size: 1.1rem;
+      margin: 0 0.5rem 0.5rem 0.7rem; } }
 
 .index-header {
   letter-spacing: -0.5px;
@@ -2099,7 +2100,8 @@ nav {
 
 .card-dark .card {
   background-color: #607d8b;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
   .card-dark .card .card-content {
     color: white; }
     .card-dark .card .card-content .card-title {

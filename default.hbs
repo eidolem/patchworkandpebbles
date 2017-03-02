@@ -31,6 +31,8 @@
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body class="{{body_class}}">
@@ -54,7 +56,10 @@
             $('.carousel').carousel();
             $('.carousel.carousel-slider').carousel();
             $('.slider').slider();
-            $(".dropdown-button").dropdown({hover:false});
+            $(".dropdown-button").dropdown({
+                hover:true,
+                belowOrigin:true
+              });
         });
 
         $( window ).load(function(){
@@ -63,7 +68,7 @@
             var target =  $(".data-target");
             self.pushpin({
               top: 0,
-              bottom: target.outerHeight() - self.height() - 50,
+              bottom: target.outerHeight() - self.height() - 330 - 150 - 150- 50,
               offset: 0
             });
           });

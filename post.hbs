@@ -1,6 +1,13 @@
 {{!-- "< default" means - insert everything in this file into the {{{body}}} 
 of the default.hbs template, containing the blog header/footer. --}}
 {{!< default}}
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2599762387787801",
+    enable_page_level_ads: true
+  });
+</script>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -38,33 +45,12 @@ of the default.hbs template, containing the blog header/footer. --}}
                             more articles on <span class="read-more-articles-tags">{{tags separator=" | "}}</span>
                         </div>
                     {{/if}}
-                    <div class="">share some love&nbsp;
-                        <a href="https://www.facebook.com/dialog/feed?app_id=963392447124143&link={{url absolute=true}}&name={{title}}&description={{meta_description}}" onclick="ga('send', 'event', 'Social Share', 'click', 'Facebook');javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;" target="_blank">
-                            <img class="share-post-icon" src="{{asset "/svg/facebook.svg"}}">&nbsp;
-                        </a> 
-                        <a href="mailto:?subject=Great%20article%20on%20%22{{title}}%22%21&body={{title}}%0D%0A%0D%0A{{url absolute=true}}" target="_blank" onclick="ga('send', 'event', 'Social Share', 'click', 'Email')">
-                            <img class="share-post-icon" src="{{asset "/svg/email.svg"}}">&nbsp;
-                        </a>
-{{!--                         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute=true}}&title={{title}}&summary=Great+article+by+Melodie+Meigs%21&source=patchworkandpebbles.com" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                            <img class="share-post-icon" src="{{asset "/svg/linkedin.svg"}}">&nbsp;
-                        </a> --}}
-                        <a href="https://twitter.com/intent/tweet?text=Great+article+on+%22{{title}}%22+by+%40patchworkandpebbles%21%0D%0A{{url absolute=true}}" class="icon-share-button twitter" onclick="ga('send', 'event', 'Social Share', 'click', 'Twitter')">
-                            <img class="share-post-icon" src="{{asset "/svg/twitter.svg"}}">&nbsp;
-                        </a>
-                        <a href="http://pinterest.com/pin/create/button/?url=test" data-pin-do="buttonBookmark" data-pin-custom="true" onclick="ga('send', 'event', 'Social Share', 'click', 'Pinterest')">
-                            <img class="share-post-icon" src="{{asset "/svg/pinterest.svg"}}">&nbsp;
-                        </a>
-                        <a href="https://plus.google.com/share?url={{url absolute=true}}" target="_blank" onclick="ga('send', 'event', 'Social Share', 'click', 'Google+');javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                            <img class="share-post-icon" src="{{asset "/svg/google_plus.svg"}}">
-                        </a>
-                        </div>
                 </div>
-
 
                 <div class="row">
                     {{#prev_post}}
                         <div class="col s12 m12 l6">
-                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal" onclick="ga('send', 'event', 'Prev Next post', 'click', 'Previous');">
                                 <div class="valign card-image">
                                     <img src="{{image}}"/>
                                 </div>
@@ -78,7 +64,7 @@ of the default.hbs template, containing the blog header/footer. --}}
 
                     {{#next_post}}
                         <div class="col s12 m12 l6">
-                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal">
+                            <a href="{{url}}" class="valign-wrapper post-box-prev-next card hoverable horizontal" onclick="ga('send', 'event', 'Prev Next post', 'click', 'Next');">
                                 <div class="valign card-stacked">
                                     <p class="card-title">Next Post</p>
                                     <p class="card-content grey-text">{{title}}</p>
@@ -90,6 +76,10 @@ of the default.hbs template, containing the blog header/footer. --}}
                         </div>
                     {{/next_post}}
 
+                    <div class="col s12 m12 l12">
+                        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=1ad9be2c-45f7-4858-afff-ba92dcd0a670"></script>
+                    </div>
+
                     <div class="col s12 hide-on-large-only card-dark">
                         {{>categories-card}}
                     </div>
@@ -98,10 +88,6 @@ of the default.hbs template, containing the blog header/footer. --}}
                         {{>ad-card}}
                     </div>
                     
-                    {{!-- Add back once have email subscribe and ad backup --}}
-{{!--                     <div class="col s12 hide-on-large-only card-dark">
-                        {{>subscribe-card}}
-                    </div> --}}
                 </div>
             </footer>
         </article>
