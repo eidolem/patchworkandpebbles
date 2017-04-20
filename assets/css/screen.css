@@ -1642,13 +1642,13 @@ body {
   flex-direction: column; }
 
 h1 {
-  font-size: 3rem; }
+  font-size: 3.4rem; }
 
 h2 {
-  font-size: 2.8rem; }
+  font-size: 3.2rem; }
 
 h3 {
-  font-size: 2.5rem; }
+  font-size: 2.6rem; }
 
 h4 {
   font-size: 2.2rem; }
@@ -1948,9 +1948,9 @@ nav {
     margin-left: 4rem; } }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   font-family: 'Roboto', sans-serif;
-  color: #616161;
+  color: #424242;
   letter-spacing: 0.02rem;
-  font-weight: 300;
+  font-weight: 400;
   margin: 4rem 0 2rem 0; }
 .post-content p {
   font-family: 'Roboto', sans-serif;
@@ -1958,7 +1958,7 @@ nav {
   line-height: 2rem;
   word-wrap: break-word;
   font-size: 1.2rem;
-  margin: 2rem 0 0 0; }
+  margin: 2rem 0 1rem 0; }
 .post-content ul li {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -1973,7 +1973,6 @@ nav {
   height: auto;
   display: block;
   position: relative;
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   margin: 1rem auto; }
   @media only screen and (max-width: 600px) {
     .post-content img {

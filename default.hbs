@@ -32,7 +32,17 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
+    {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{!-- AdSense mobile page-level ads --}}
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2599762387787801",
+      enable_page_level_ads: true
+      });
+    </script>
+    {{!-- Amazon CPM ads --}}
+    <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/getads.js"></script>
 </head>
 
 <body class="{{body_class}}">
