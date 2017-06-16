@@ -12,6 +12,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="/" class="waves-effect">Home</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+                {{!-- <li><a href="https://www.etsy.com/shop/patchworkandpebbles"class="waves-effect">Etsy Store</a></li> --}}
                 <li><a href="/about-me" class="waves-effect">About Me</a></li>
                 <li><a href="/about-me/#contact-card" class="waves-effect">Contact</a></li>
             </ul>
@@ -30,6 +31,7 @@
     {{#foreach navigation}}
         <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
     {{/foreach}}   
+    {{!-- <li><a href="https://www.etsy.com/shop/patchworkandpebbles"class="waves-effect">Etsy Store</a></li> --}}
     <li><a href="/about-me" class="waves-effect">About Me</a></li>
     <li><a href="/about-me/#contact-card" class="waves-effect">Contact</a></li>
     <a href="/rss/" class="waves-effect waves-light btn z-depth-0"><img class="side-nav-rss" src="{{asset "/svg/rss-light.svg"}}">Subscribe</a>

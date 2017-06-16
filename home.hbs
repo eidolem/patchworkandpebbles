@@ -14,35 +14,37 @@
     </header>
 
     <div class="divider"></div>
-
-    <main>
+    
+   <main>
         {{>loop-latest-post}}
+        
         <div class="divider"></div>
-        {{>loop-slider tag="travel" disp-title="Travel"}}
+        {{>loop-slider tag="sewing" disp-title="Quilting & Sewing"}}
+
+        <div class="divider"></div>
+        {{>loop-slider tag="career-gender-equality" disp-title="Career & Gender Equality"}}
+
         <div class="divider"></div>
         {{>loop-slider tag="sports-fitness-recovery" disp-title="Sports Fitness & Recovery"}}
-        <div class="divider"></div>
 
-        <div class="row">
-            {{!-- Card for more categories --}}
+        <div class="divider"></div>
+        {{>loop-slider tag="travel" disp-title="Travel"}}
+
+
+        <div class="divider"></div>
+        {{>loop-slider tag="climbing" disp-title="Rock Climbing"}}
+
+
+        <div class="divider"></div>
+        {{>loop-slider tag="diy-projects" disp-title="DIY Project"}}
+
+        {{!--         <div class="row">
+            <div class="divider"></div>
             <div class="col s12 m6 offset-m3 card-dark">
                 {{>categories-card}}
             </div>
-            {{!-- Put back after have subscribe email. Card for subscribe --}}
-            {{!-- <div class="col s12 m6 card-dark">
-                {{>subscribe-card}}
-            </div> --}}
-        </div>
-        <div class="divider"></div>
-        {{>loop-slider tag="climbing" disp-title="Rock Climbing"}}
-        <div class="divider"></div>
-        {{>loop-slider tag="sewing" disp-title="Quilting & Sewing"}}
-        <div class="divider"></div>
-        {{>loop-slider tag="life" disp-title="Life"}}
-        <div class="divider"></div>
-        {{>loop-slider tag="van-life" disp-title="Van Life"}}
-        <div class="divider"></div>
-        {{>loop-slider tag="other" disp-title="Other"}}
+        </div> --}}
+
 
     </main>
 </div>

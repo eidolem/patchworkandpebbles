@@ -31,6 +31,18 @@
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
+
+    {{!-- AdSense regular ad slots --}}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{!-- AdSense mobile page-level ads --}}
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2599762387787801",
+      enable_page_level_ads: true
+      });
+    </script>
+    {{!-- Amazon CPM ads --}}
+    <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/getads.js"></script>
 </head>
 
 <body class="{{body_class}}">
@@ -54,20 +66,23 @@
             $('.carousel').carousel();
             $('.carousel.carousel-slider').carousel();
             $('.slider').slider();
-            $(".dropdown-button").dropdown({hover:false});
+            $(".dropdown-button").dropdown({
+                hover:true,
+                belowOrigin:true
+              });
         });
 
-        $( window ).load(function(){
-            $('#sidebar-wrapper').each(function() {
-            var self = $(this);
-            var target =  $(".data-target");
-            self.pushpin({
-              top: 0,
-              bottom: target.outerHeight() - self.height() - 50,
-              offset: 0
-            });
-          });
-        });
+        // $( window ).load(function(){
+        //     $('#sidebar-wrapper').each(function() {
+        //     var self = $(this);
+        //     var target =  $(".data-target");
+        //     self.pushpin({
+        //       top: 0,
+        //       bottom: target.outerHeight() - self.height() - 330 - 150 - 150- 50,
+        //       offset: 0
+        //     });
+        //   });
+        // });
 
     </script>
 

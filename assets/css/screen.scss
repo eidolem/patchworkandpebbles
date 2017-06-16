@@ -68,6 +68,12 @@ $container-width: 90%;
 	}
 }
 
+@media only screen and (min-width: 993px) {
+	.row .col.pull-l9{
+		right: 78%;
+	}
+}
+
 // Needed for the sticky footer
 body { 
     display: flex;
@@ -76,15 +82,15 @@ body {
 }
 
 h1 { 
-  font-size: 3rem;
+  font-size: 3.4rem;
 }
 
 h2 { 
-  font-size: 2.8rem;
+  font-size: 3.2rem;
 }
 
 h3 { 
-  font-size: 2.5rem;
+  font-size: 2.6rem;
 }
 
 h4 {
@@ -97,17 +103,6 @@ h5 {
 
 h6 {
   font-size: 1.6rem;
-}
-
-blockquote {
-  margin: 4rem 2rem;
-  font-style: italic;
-  background: #f9f9f9;
-  font-family: 'Roboto Slab', serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1.8rem;
-  border-left: 10px solid $secondary-color;
 }
 
 code, tt {
@@ -514,23 +509,26 @@ nav{
 	@media #{$small-and-down} {
 		width: 100%;
 		margin-left: 0rem;
+		margin-bottom: 2rem;
 	}
 
 	@media #{$medium-only} {
 		width: 80%;
 		margin-left: 2rem;
+		margin-bottom: 3rem;
 	}
 
 	@media #{$large-and-up} {
 		width: 75%;
 		margin-left: 4rem;
+		margin-bottom: 5rem;
 	}
 
 	h1, h2, h3, h4, h5, h6{
 		font-family: 'Roboto', sans-serif;
-		color: color("grey", "darken-2");
+		color: color("grey", "darken-3");
 		letter-spacing: 0.02rem;
-		font-weight: 300;
+		font-weight: 400;
 		margin: 4rem 0 2rem 0;
 	}
 
@@ -539,8 +537,24 @@ nav{
 		font-weight: 300;
 		line-height: 2rem;
 		word-wrap: break-word;
-		font-size: 1.2rem;
-		margin: 2rem 0 0 0;
+		font-size: 1.3rem;
+		margin: 2rem 0 1rem 0;
+		color: #000;
+	}
+
+	blockquote {
+		border-left: 10px solid $secondary-color;
+		margin: 3rem 2rem;
+		background: #f9f9f9;
+		background: #ece5de;
+		
+		p{
+		  font-family: 'Roboto Slab', serif;
+		  font-size: 1.4rem;
+		  font-weight: 300;
+		  line-height: 1.8rem;
+		  padding: 0.5rem 0 0.5rem 0;
+		}
 	}
 
 	ul li{
@@ -562,7 +576,7 @@ nav{
   		height: auto; 
   		display: block;
   		position: relative;
-		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
+		// box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); 
 		margin: 1rem auto;
 
 		@media #{$small-and-down} {
@@ -577,9 +591,8 @@ nav{
 			left: -5%;
 		}
 		@media #{$large-and-up} {
-			// Width is 1/80% (post-content container width)
-			width: 120%;
-			left: -10%;
+			// Width is a little less than 1/80% (post-content container width)
+			width: 115%;
 		}
 	}
 
@@ -605,6 +618,8 @@ nav{
     	font-style: italic;
 	}
 }
+
+
 
 .read-more-articles{
 	font-weight: 300;
@@ -642,7 +657,7 @@ nav{
 			opacity: 0.9;
 		}
 	}
-
+ 
 	// media queries match .post-content width
     @media #{$small-and-down} {
 		width: 100%
@@ -653,12 +668,13 @@ nav{
 	}
 
 	@media #{$large-and-up} {
-		width: 75%;
+		width: 90%;
 	}
 }
 
 // For the horizontal cards for previous and next post
 .post-box-prev-next{
+	margin-bottom: 4rem;
 	.card-title{
     	font-weight: 300;
     	text-transform: uppercase;
@@ -742,6 +758,7 @@ nav{
 	.card{
 		background-color: color("blue-grey", "base");
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 		.card-content{
 			color: white;
 			.card-title{
@@ -885,9 +902,9 @@ footer{
   margin-top: -20px;
   margin: 0;
   padding: 0;
-  position: fixed;
+  position: fixed; 
   right: 20px;
-  top: 90%;
+  top: 85%;
   width: 40px;
   z-index: 20000;
 }
@@ -900,7 +917,7 @@ footer{
 //Fixes the width of the sidebar so that position:fixed looks ok on the pinned sidebar
 //The sidebar is 3 of 12 col wide for large only, and 0.95 makes it slightly smaller for a margin
 #sidebar-wrapper{
-	padding-top: 8rem;
+	padding-top: 30rem;
 }
 
 #sidebar-wrapper.pinned{
