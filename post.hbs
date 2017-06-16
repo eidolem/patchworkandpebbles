@@ -12,7 +12,8 @@ of the default.hbs template, containing the blog header/footer. --}}
 <div class="container data-target">
     <div class="row">
 
-        <article class="post-container col s12 m12 l9 push-l3">
+        {{!-- <article class="post-container col s12 m12 l9 push-l3"> --}}
+        <article class="post-container col s12 m12 l9 push-l1">
             <header class="post-header-container">
                 <h1 class="post-title grey-text text-darken-3">{{title}}</h1>
                 <div class="post-meta grey-text">
@@ -32,13 +33,6 @@ of the default.hbs template, containing the blog header/footer. --}}
             </section>
 
             <footer> 
-                <div class="share-love">
-                    {{#if tags}}
-                        <div class="read-more-articles">
-                            more articles on <span class="read-more-articles-tags">{{tags separator=" | "}}</span>
-                        </div>
-                    {{/if}}
-                </div>
 
                 <div class="row">
                     {{#prev_post}}
@@ -69,20 +63,24 @@ of the default.hbs template, containing the blog header/footer. --}}
                         </div>
                     {{/next_post}}
 
-                    <div class="col s12 m12 l12">
-                        {{!-- <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6b682d3c-97f3-4360-8c6a-7a842b7854fd"></script>--}}
-                        <!-- Post page -->
+{{!--                     <div class="share-love">
+                        {{#if tags}}
+                            <div class="read-more-articles">
+                            more articles on <span class="read-more-articles-tags">{{tags separator=" | "}}</span>
+                            </div>
+                        {{/if}}
+                    </div> --}}
 
-                        {{!-- <ins class="adsbygoogle"
+                    <div class="col s12 m12 l12">
+                        <!-- Post page -->
+                        <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-2599762387787801"
                              data-ad-slot="7650868943"
                              data-ad-format="auto"></ins>
                         <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>--}}
-
-
+                        </script>
                     </div>
 
                     <div class="col s12 hide-on-large-only card-dark">
@@ -97,7 +95,8 @@ of the default.hbs template, containing the blog header/footer. --}}
             </footer>
         </article>
 
-        <div class="col l3 pull-l9 hide-on-med-and-down card-dark">
+        {{!-- <div class="col l3 pull-l9 hide-on-med-and-down card-dark"> --}}
+        <div class="col l3 hide-on-med-and-down card-dark">
             {{>sidebar}}
         </div>
 
