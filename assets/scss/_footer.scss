@@ -1,0 +1,16 @@
+// Needed for Materialize Sticky Footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+// Needed for Materialize Sticky Footer
+main {
+  flex: 1 0 auto;
+}
+
+div {
+	color: #000;
+}
+      

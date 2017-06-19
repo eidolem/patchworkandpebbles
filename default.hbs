@@ -5,32 +5,29 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
+
     {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
+
 
     {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{!-- Styles'n'Scripts --}}
     {{!-- ***replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "scss/materialize.css"}}"  media="screen,projection"/>
-
+    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/materialize.css"}}"  media="screen,projection"/>
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "scss/screen.css"}}" />
-    <link href="https://fonts.googleapis.com/css?family=Ruthie" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "scss/application.css"}}" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
+
 
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -41,13 +38,13 @@
       enable_page_level_ads: true
       });
     </script>
-    {{!-- Amazon CPM ads --}}
-    <script type="text/javascript" language="javascript" src="//c.amazon-adsystem.com/aax2/getads.js"></script>
 </head>
 
 <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
+    <div class="container">
+      {{{body}}}
+    </div>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -71,24 +68,7 @@
                 belowOrigin:true
               });
         });
-
-        // $( window ).load(function(){
-        //     $('#sidebar-wrapper').each(function() {
-        //     var self = $(this);
-        //     var target =  $(".data-target");
-        //     self.pushpin({
-        //       top: 0,
-        //       bottom: target.outerHeight() - self.height() - 330 - 150 - 150- 50,
-        //       offset: 0
-        //     });
-        //   });
-        // });
-
     </script>
-
-    {{!-- For social button intents --}}
-    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
-    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
     {{!-- For the back-to-top arrow --}}
     <script>
