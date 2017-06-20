@@ -9,6 +9,8 @@ blockquote {
 	  font-family: 'Roboto Slab', serif;
 	  font-size: 1.5rem;
 	  line-height: 2.2rem;
+	  color: #212121;
+	  font-weight: 300;
 	  // Changes line spacing if there's more than one paragraph within the blockquote
 	  margin: 1rem 0rem;  
 	}
@@ -102,12 +104,15 @@ figcaption {
 .post-header {
 	position: relative;
 	background-color: #0f9d58;
-	padding: 2rem 2rem;
+	// padding: 2rem 2rem;
+	// width: 75%;
+	// margin-left: auto;
+	// margin-right: auto;
 	margin-top: -13%;
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
+	&.col {
+		padding: 3rem 5rem;
+	}
 }
 
 // Styling for the post title

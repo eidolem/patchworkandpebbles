@@ -6,6 +6,8 @@ blockquote {
     font-family: 'Roboto Slab', serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
+    color: #212121;
+    font-weight: 300;
     margin: 1rem 0rem; }
   blockquote p:first-child, blockquote p:last-child {
     padding: 0.6rem 0 0.6rem 0; }
@@ -71,12 +73,10 @@ figcaption {
 .post-header {
   position: relative;
   background-color: #0f9d58;
-  padding: 2rem 2rem;
   margin-top: -13%;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4rem; }
+  margin-bottom: 3rem; }
+  .post-header.col {
+    padding: 3rem 5rem; }
 
 .post-title {
   font-weight: 300;
@@ -142,18 +142,13 @@ a {
   a:hover {
     text-decoration: underline; }
 
-.post-content {
-  width: 80%;
-  max-width: 710px;
-  margin-left: auto;
-  margin-right: auto; }
-  .post-content img {
-    display: block;
-    max-width: 126%;
-    height: auto;
-    padding: 0.6em 0;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); }
+.post-content img {
+  display: block;
+  max-width: 126%;
+  height: auto;
+  padding: 0.6em 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
 
 /*# sourceMappingURL=application.css.map */
