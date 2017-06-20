@@ -48,9 +48,19 @@ a {
 	}
 }
 
+.post-content{
+	width: 80%;
+	max-width: 710px;
+	margin-left: auto;
+	margin-right: auto;
 
-// For image width
-img {
-	width: 100%;
+	img {
+		display: block;
+		max-width: 126%;
+		height: auto;
+		padding: 0.6em 0;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
-

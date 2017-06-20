@@ -19,8 +19,6 @@ blockquote {
 	}
 }
 
-
-
 code, tt {
 	margin-left: 2rem;
 	padding: 0.2rem 0.3rem 0.1rem;
@@ -84,20 +82,35 @@ figcaption {
 	}
 }
 
+//  Wrapper for the cover image (not shown on mobile)
 .feature-image-wrapper {
-	height: 300px;
+	position: relative;
+	height: 33vh;
 	overflow: hidden;
 }
 
+//  Cover image (not shown on mobile)
 .feature-image {
-	background-position: 50%;
+	position: absolute;
+	max-width: 100%;
+	top: -1%; left: 0; right: 0; bottom: -1%;
+	margin: auto;
+	opacity: 0.8;
 }
 
+// The colored header bar that includes post title and modified date
 .post-header {
+	position: relative;
 	background-color: #0f9d58;
 	padding: 2rem 2rem;
+	margin-top: -13%;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 4rem;
 }
 
+// Styling for the post title
 .post-title {
 	font-weight: 300;
 	font-size: 4rem;
@@ -107,6 +120,7 @@ figcaption {
 	padding-bottom: 1.5rem;
 }
 
+//  Styling for modified date
 .post-meta {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;

@@ -54,15 +54,29 @@ figcaption {
     padding-right: 0.5rem; }
 
 .feature-image-wrapper {
-  height: 300px;
+  position: relative;
+  height: 33vh;
   overflow: hidden; }
 
 .feature-image {
-  background-position: 50%; }
+  position: absolute;
+  max-width: 100%;
+  top: -1%;
+  left: 0;
+  right: 0;
+  bottom: -1%;
+  margin: auto;
+  opacity: 0.8; }
 
 .post-header {
+  position: relative;
   background-color: #0f9d58;
-  padding: 2rem 2rem; }
+  padding: 2rem 2rem;
+  margin-top: -13%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem; }
 
 .post-title {
   font-weight: 300;
@@ -128,7 +142,18 @@ a {
   a:hover {
     text-decoration: underline; }
 
-img {
-  width: 100%; }
+.post-content {
+  width: 80%;
+  max-width: 710px;
+  margin-left: auto;
+  margin-right: auto; }
+  .post-content img {
+    display: block;
+    max-width: 126%;
+    height: auto;
+    padding: 0.6em 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
 
 /*# sourceMappingURL=application.css.map */
