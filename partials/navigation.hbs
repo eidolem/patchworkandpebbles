@@ -1,0 +1,28 @@
+
+
+<div class="nav-extended">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Patchwork & Pebbles</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li>
+            </ul>
+            <ul class="side-nav">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs">
+                {{#foreach navigation}}
+                    <li class="tab subheader-items"><a href="{{url}}">{{label}}</a></li>
+                {{/foreach}}
+{{!--           <li class="tab"><a href="#test1">Test 1</a></li>
+                <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+                <li class="tab"><a href="#test4">Test 4</a></li> --}}
+            </ul>
+        </div>
+    </nav>
+</div>

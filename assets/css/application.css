@@ -133,6 +133,46 @@ main {
 div {
   color: #000; }
 
+nav {
+  color: #000;
+  background-color: #fff; }
+  nav .brand-logo {
+    color: #000; }
+  nav a {
+    text-decoration: none;
+    color: #000; }
+
+.nav-extended {
+  height: calc(64px*2); }
+
+nav .nav-wrapper {
+  height: 64px;
+  line-height: 64px;
+  border-bottom: 1px solid #ccc; }
+  nav .nav-wrapper > ul {
+    list-style-type: none; }
+    nav .nav-wrapper > ul > li {
+      list-style-type: none;
+      color: #000; }
+      nav .nav-wrapper > ul > li a {
+        height: 64px;
+        line-height: 64px;
+        color: #000; }
+      nav .nav-wrapper > ul > li i {
+        height: 64px;
+        line-height: 64px; }
+
+.brand-logo {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0rem 1rem; }
+  .brand-logo:hover {
+    text-decoration: none; }
+
+.tabs .tab a {
+  color: #424242; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
   margin: 2rem 0 2rem 0; }
