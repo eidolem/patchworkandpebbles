@@ -1,9 +1,11 @@
+@import "variables";
 @import "post";
 @import "footer";
 
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Slab', serif;
-	margin: 3rem 0 2rem 0;
+	margin: 2rem 0 2rem 0;
 }
 
 h1 { 
@@ -31,13 +33,13 @@ h6 {
 }
 
 p {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	line-height: 2rem;
+	font-family: 'Roboto', serif;
+	font-weight: 300;
+	line-height: 2.2rem;
 	word-wrap: break-word;
 	font-size: 1.3rem;
 	margin: 2rem 0 1rem 0;
-	color: #424242;
+	color: #000;
 }
 
 // For anchors
@@ -48,19 +50,3 @@ a {
 	}
 }
 
-.post-content{
-	// width: 80%;
-	// max-width: 710px;
-	// margin-left: auto;
-	// margin-right: auto;
-
-	img {
-		display: block;
-		max-width: 126%;
-		height: auto;
-		padding: 0.6em 0;
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-}

@@ -10,23 +10,23 @@ of the default.hbs template, containing the blog header/footer. --}}
 <main class="content" role="main">
     <article class="{{post_class}}">
 
-        <div class="row">
+        <div class="row hide-on-med-and-down">
             <div class="col s12 m12 l12 feature-image-wrapper">
                 <img class="feature-image" src="{{image}}"></img>
             </div>
         </div>
 
         <div class="row">
-            <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
+            <header class="col s12 m12 l10 offset-l1 post-header">
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
-                    <time class="post-date">updated on {{date updated_at format="MM.DD.YYYY"}}</time>
+                    <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
                 </section>
             </header>
         </div>
 
         <div class="row">
-            <section class="col s12 m6 l6 offset-m2 offset-l2 post-content">
+            <section class="col s12 m8 l6 offset-m2 offset-l2 post-content">
                 {{content}}
             </section>
         </div>
