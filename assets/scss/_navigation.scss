@@ -25,7 +25,6 @@
 	}
 
 	.nav-content {
-		// border-bottom: 1px solid #ccc;
 		.tabs {
 			position: relative;
 			white-space: normal;
@@ -37,16 +36,8 @@
 				width: 14%;
 				text-align: center;
 				height: 2.9rem;
-				// line-height: 2.9rem;
-				// display: flex;
 
 				a {
-					// display: table-cell;
-					// vertical-align: middle;
-					// height: 100%;
-					// vertical-align: middle;
-					// display: block;
-
 					padding-top: 6px;
 					font-size: 0.9rem;
 					color: #666;
@@ -62,10 +53,6 @@
 				height: 5px;
 				background-color: #ffad4d;
 			}
-		}
-
-		.tabs a {
-			// padding: 0rem 1rem;
 		}
 	}
 }

@@ -124,8 +124,38 @@ body {
 main {
   flex: 1 0 auto; }
 
-div {
-  color: #000; }
+.page-footer {
+  background-color: #E0E0E0; }
+  .page-footer .footer-copyright {
+    font-size: 0.8rem;
+    height: 40px;
+    background-color: #BDBDBD;
+    color: #000; }
+    .page-footer .footer-copyright a {
+      color: #000; }
+    .page-footer .footer-copyright .footer-left {
+      position: absolute;
+      left: 0px; }
+    .page-footer .footer-copyright .footer-right {
+      position: absolute;
+      right: 0px; }
+  .page-footer a {
+    text-decoration: none; }
+  .page-footer .footer-name {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0 0; }
+  .page-footer .email {
+    margin: 0; }
+  .page-footer .footer-find-me-on {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0; }
+  .page-footer img.share-post-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.5;
+    display: inline-block; }
+    .page-footer img.share-post-icon:hover {
+      opacity: 0.9; }
 
 .nav-extended {
   color: #000;
