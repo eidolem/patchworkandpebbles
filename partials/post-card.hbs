@@ -1,7 +1,6 @@
 
 <article>
-    {{!-- <a href={{url}}> --}}
-        <div class="card z-depth-2 hoverable">
+    <div class="card z-depth-2 hoverable">
         <a href={{url}}>
             <div class="card-image">
                 {{#if image}}
@@ -11,18 +10,23 @@
 
             <div class="card-content">
                 <header>
+
+                    {{#is "index"}}
+                        <section class="card-tag">
+                            {{tags autolink="false"}}
+                        </section>
+                    {{/is}}
+
                     <h1 class="card-title">
                         {{title}}
                     </h1>
 
                     <section class="card-excerpt">
-                        <p>
-                            {{meta_description}}
-                        </p>
+                        <p>{{meta_description}}</p>
                     </section>
                 </header>
             </div>
-            </a>
-        </div>
-    {{!-- </a> --}}
+        </a>
+    </div>
+
 </article>

@@ -45,9 +45,18 @@
   font-weight: 400;
   color: #424242;
   font-size: 0.9rem;
-  text-align: right;
   letter-spacing: 0.15rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  height: 1rem; }
+  .post-meta .post-tags {
+    position: absolute;
+    left: 1rem; }
+    .post-meta .post-tags a {
+      color: #424242;
+      text-decoration-style: dotted; }
+  .post-meta .post-date {
+    position: absolute;
+    right: 1rem; }
 
 @media only screen and (max-width: 600px) {
   .post-content img {
@@ -162,8 +171,13 @@
     .nav-extended .nav-wrapper .brand-logo {
       font-family: 'Roboto Condensed', sans-serif;
       text-transform: uppercase;
-      font-weight: 300;
-      margin: 0rem 2rem; }
+      font-weight: 300; }
+      @media only screen and (max-width: 992px) {
+        .nav-extended .nav-wrapper .brand-logo {
+          margin: 0rem 1rem; } }
+      @media only screen and (min-width: 993px) {
+        .nav-extended .nav-wrapper .brand-logo {
+          margin: 0rem 3rem; } }
   .nav-extended .nav-content .tabs {
     position: relative;
     white-space: normal;
@@ -175,8 +189,8 @@
       text-align: center;
       height: 2.9rem; }
       .nav-extended .nav-content .tabs .tab a {
-        padding-top: 6px;
-        font-size: 0.9rem;
+        padding: 8px 10px 10px 0;
+        font-size: 1rem;
         color: #666;
         overflow: visible;
         overflow-wrap: break-word;
@@ -187,12 +201,11 @@
       height: 5px;
       background-color: #ffad4d; }
 
-.side-nav .side-nav-title {
+.side-nav .side-nav-title a {
   text-transform: uppercase;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
-  padding-left: 1rem;
   text-decoration: none;
   color: #000;
   padding-left: 2rem; }
@@ -214,6 +227,12 @@
 .card .card-content {
   padding: 1rem 1rem;
   cursor: pointer; }
+  .card .card-content .card-tag {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: #ffad4d; }
   .card .card-content h1.card-title {
     padding: 0rem 0rem 0.5rem 0rem;
     margin: 0;
@@ -250,6 +269,26 @@
 
 .gutter-sizer {
   width: 4%; }
+
+@media only screen and (max-width: 992px) {
+  .tag-page-header {
+    padding: 2rem 1rem; } }
+@media only screen and (min-width: 993px) {
+  .tag-page-header {
+    padding: 2rem 10rem; } }
+.tag-page-header .tag-page-num-posts {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 1rem; }
+.tag-page-header .tag-page-description {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;

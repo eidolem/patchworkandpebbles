@@ -60,9 +60,25 @@
 	font-weight: 400;
 	color: #424242;
 	font-size: 0.9rem;
-	text-align: right;
 	letter-spacing: 0.15rem;
 	text-transform: uppercase;
+	height: 1rem;
+
+	.post-tags {
+		position: absolute;
+		left: 1rem;
+
+
+		a {
+			color: #424242;
+			text-decoration-style: dotted;
+		}
+	}
+
+	.post-date {
+		position: absolute;
+		right: 1rem;
+	}
 }
 
 // Images in a post--make them slightly wider than the text

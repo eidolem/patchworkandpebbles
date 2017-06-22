@@ -2,7 +2,6 @@
 .nav-extended {
 	color: #000;
 	background-color: #fff;
-	// box-shadow: none;
 
 	.brand-logo{
 		color: #000;
@@ -20,7 +19,12 @@
 			font-family: 'Roboto Condensed', sans-serif;
 			text-transform: uppercase;
 			font-weight: 300;
-			margin: 0rem 2rem;
+			@media #{$medium-and-down} {
+				margin: 0rem 1rem;
+			}
+			@media #{$large-and-up} {
+				margin: 0rem 3rem;
+			}
 		}
 	}
 
@@ -38,8 +42,8 @@
 				height: 2.9rem;
 
 				a {
-					padding-top: 6px;
-					font-size: 0.9rem;
+					padding: 8px 10px 10px 0;
+					font-size: 1rem;
 					color: #666;
 					overflow: visible;
 					overflow-wrap: break-word;
@@ -59,12 +63,11 @@
 
 
 .side-nav {
-	.side-nav-title {
+	.side-nav-title a {
 		text-transform: uppercase;
 		font-family: 'Roboto Condensed', sans-serif;
 		font-weight: 400;
 		font-size: 1.5rem;
-		padding-left: 1rem;
 		text-decoration: none;
 		color: #000;
 		padding-left: 2rem;
