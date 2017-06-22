@@ -286,13 +286,13 @@
     width: 100%; } }
 @media only screen and (min-width: 601px) {
   .grid-sizer-home, .grid-item-home {
-    width: 48%; } }
+    width: 47%; } }
 @media only screen and (min-width: 993px) {
   .grid-sizer-home, .grid-item-home {
-    width: 31%; } }
+    width: 29%; } }
 
 .gutter-sizer-home {
-  width: 4%; }
+  width: 8%; }
 
 @media only screen and (max-width: 992px) {
   .tag-page-header {
@@ -317,10 +317,10 @@
 .section-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000; }
-  .section-card .title {
+  .section-card > .title {
     padding: 1rem;
     border-bottom: 1px solid #ccc; }
-    .section-card .title a {
+    .section-card > .title a {
       font-family: 'Roboto Condensed', sans-serif;
       font-weight: 400;
       font-size: 2rem;
@@ -330,24 +330,36 @@
   .section-card .post-listing {
     padding: 0rem 1rem; }
     .section-card .post-listing .post {
-      padding: 1rem 0; }
+      padding: 0.6rem 0;
+      margin-bottom: 0; }
+      .section-card .post-listing .post a {
+        text-decoration: none; }
+      .section-card .post-listing .post:first-child .image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center; }
+      .section-card .post-listing .post:first-child .title {
+        color: #000;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.2rem;
+        padding: 1rem 0 0 0; }
       .section-card .post-listing .post:not(:first-child) {
         border-top: 1px solid #ccc; }
         .section-card .post-listing .post:not(:first-child) .image {
-          width: 33%;
           height: 100px;
           overflow: hidden;
           position: relative;
           background-size: cover;
-          background-position: center;
-          float: left; }
+          background-position: center; }
         .section-card .post-listing .post:not(:first-child) .title {
           color: #000;
-          font-family: 'Roboto', sans-serif;
-          font-size: 1.2rem;
+          font-family: 'Roboto Slab', serif;
+          font-size: 1rem;
           padding-left: 1rem; }
   .section-card .more {
-    padding: 1rem;
+    padding: 0.3rem 1rem 0.8rem 1rem;
     border-top: 1px solid #ccc; }
     .section-card .more a {
       font-family: 'Roboto Condensed', sans-serif;
@@ -359,7 +371,8 @@
       .section-card .more a i {
         font-weight: 600;
         position: relative;
-        top: 5px; }
+        top: 7px;
+        margin-right: 0.3rem; }
 
 .home-content {
   margin-top: 2rem; }
