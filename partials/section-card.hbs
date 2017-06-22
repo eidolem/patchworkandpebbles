@@ -6,15 +6,19 @@
             <a href="/tag/{{slug}}">{{disp-title}}</a>
         </div>
 
-        <div class="divider"></div>
-
         <div class="post-listing">
-            {{#get "posts" limit="5" order="published_at desc"}}
-                {{title}}
+            {{#get "posts" limit="5" filter="tag:{{slug}}" order="published_at desc"}}
+                {{#foreach posts}}
+                    <div class="post">
+                        <a href="{{url}}">
+                            <div class="image" style="background-image: url({{image}})"></div>
+                            <div class="title">{{title}}</div>
+                        </a>
+                    </div>
+                {{/foreach}}
+
             {{/get}}
         </div>
-
-        <div class="divider"></div>
 
         <div class="more">
             <a href="/tag/{{slug}}">
