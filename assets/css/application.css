@@ -57,6 +57,8 @@
       color: #424242;
       text-decoration-style: dotted; }
 
+.post-content.col {
+  padding-left: 3rem; }
 @media only screen and (max-width: 600px) {
   .post-content img {
     display: block;
@@ -124,7 +126,8 @@
     padding-right: 0.5rem; }
 
 .page-footer {
-  background-color: #E0E0E0; }
+  background-color: #E0E0E0;
+  margin-top: 2rem; }
   .page-footer .footer-copyright {
     font-size: 0.8rem;
     height: 40px;
@@ -376,6 +379,56 @@
 
 .home-content {
   margin-top: 2rem; }
+
+.related-posts-card {
+  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  border-top: 10px solid #000;
+  margin: 2rem 0; }
+  .related-posts-card > .title {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc; }
+    .related-posts-card > .title a {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #000;
+      text-decoration: none; }
+  .related-posts-card .post-listing {
+    padding: 0rem 1rem; }
+    .related-posts-card .post-listing .post {
+      padding: 0.6rem 0;
+      margin-bottom: 0; }
+      .related-posts-card .post-listing .post:not(:first-child) {
+        border-top: 1px solid #ccc; }
+        .related-posts-card .post-listing .post:not(:first-child) a {
+          text-decoration: none; }
+        .related-posts-card .post-listing .post:not(:first-child) .image {
+          height: 90px;
+          overflow: hidden;
+          position: relative;
+          background-size: cover;
+          background-position: center; }
+        .related-posts-card .post-listing .post:not(:first-child) .title {
+          color: #000;
+          font-family: 'Roboto Slab', serif;
+          font-size: 1rem;
+          padding-left: 1rem; }
+  .related-posts-card .more {
+    padding: 0.3rem 1rem 0.8rem 1rem;
+    border-top: 1px solid #ccc; }
+    .related-posts-card .more a {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #666;
+      text-decoration: none; }
+      .related-posts-card .more a i {
+        font-weight: 600;
+        position: relative;
+        top: 7px;
+        margin-right: 0.3rem; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;

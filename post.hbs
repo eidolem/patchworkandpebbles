@@ -22,16 +22,32 @@ of the default.hbs template, containing the blog header/footer. --}}
                     </div>
                     
                     <div class="col s12 m12 l6">
-                        <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
+                        <time class="right post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
                     </div>
                 </section>
             </header>
         </div>
 
         <div class="row">
-            <section class="col s12 m8 l6 offset-m2 offset-l2 post-content">
+            <section class="col s12 m8 l6 offset-m2 offset-l1 post-content">
                 {{content}}
             </section>
+
+            <section class="col s12 m6 l3 offset-m3 offset-l1">
+                {{> sidebar}}
+            </section>
+        </div>
+
+
+        <div class="col l12 hide-on-med-and-down">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2599762387787801"
+                 data-ad-slot="7650868943"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
 
     </article>

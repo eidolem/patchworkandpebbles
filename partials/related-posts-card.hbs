@@ -1,0 +1,30 @@
+<div class="related-posts-card">
+    <div class="title">
+        {{#foreach tags limit="1"}}
+            <a href="{{url}}">Related Posts</a>
+        {{/foreach}}
+    </div>
+
+    <div class="post-listing">
+        {{#get "posts" filter="tags:[{{tags[*].slug}}]+id:-{{id}}" limit="6" }}
+            {{#foreach posts}}
+                <div class="row post">
+                    <a href="{{url}}" class="valign-wrapper">
+                        <div class="image col s4 m4 l4" style="background-image: url({{image}})"></div>
+                        <div class="title col s8 m8 l8">{{title}}</div>
+                    </a>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+
+    <div class="more">
+        {{#foreach tags limit="1"}}
+            <a href="/tag/{{slug}}">
+                <i class="material-icons">arrow_forward</i>
+                <span class="more-text"> more articles</span>
+            </a>
+        {{/foreach}}
+    </div>
+
+    </div>
