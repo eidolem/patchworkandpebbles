@@ -78,9 +78,11 @@
 // Images in a post--make them slightly wider than the text
 .post-content{
 	&.col {
-		padding-left: 3rem;
+		@media #{$large-and-up}{
+			padding-left: 3rem;
+		}
 	}
-	
+
 	img {
 
 		@media #{$small-and-down}{

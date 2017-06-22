@@ -33,21 +33,26 @@ of the default.hbs template, containing the blog header/footer. --}}
                 {{content}}
             </section>
 
-            <section class="col s12 m6 l3 offset-m3 offset-l1">
+            <section class="col s12 l3 offset-l1 hide-on-med-only">
                 {{> sidebar}}
             </section>
         </div>
 
+        <div class="row hide-on-small-and-down">
+            <div class="col m12 l10 offset-l1">
+                {{> related-posts-wide}}
+            </div>
 
-        <div class="col l12 hide-on-med-and-down">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2599762387787801"
-                 data-ad-slot="7650868943"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <div class="col m12 l12 hide-on-small-and-down">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2599762387787801"
+                     data-ad-slot="7650868943"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
 
     </article>

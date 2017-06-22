@@ -57,8 +57,9 @@
       color: #424242;
       text-decoration-style: dotted; }
 
-.post-content.col {
-  padding-left: 3rem; }
+@media only screen and (min-width: 993px) {
+  .post-content.col {
+    padding-left: 3rem; } }
 @media only screen and (max-width: 600px) {
   .post-content img {
     display: block;
@@ -399,21 +400,21 @@
     .related-posts-card .post-listing .post {
       padding: 0.6rem 0;
       margin-bottom: 0; }
+      .related-posts-card .post-listing .post a {
+        text-decoration: none; }
+      .related-posts-card .post-listing .post .image {
+        height: 90px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center; }
+      .related-posts-card .post-listing .post .title {
+        color: #000;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1rem;
+        padding-left: 1rem; }
       .related-posts-card .post-listing .post:not(:first-child) {
         border-top: 1px solid #ccc; }
-        .related-posts-card .post-listing .post:not(:first-child) a {
-          text-decoration: none; }
-        .related-posts-card .post-listing .post:not(:first-child) .image {
-          height: 90px;
-          overflow: hidden;
-          position: relative;
-          background-size: cover;
-          background-position: center; }
-        .related-posts-card .post-listing .post:not(:first-child) .title {
-          color: #000;
-          font-family: 'Roboto Slab', serif;
-          font-size: 1rem;
-          padding-left: 1rem; }
   .related-posts-card .more {
     padding: 0.3rem 1rem 0.8rem 1rem;
     border-top: 1px solid #ccc; }
@@ -429,6 +430,55 @@
         position: relative;
         top: 7px;
         margin-right: 0.3rem; }
+
+.related-posts-wide {
+  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  border-top: 10px solid #000;
+  margin: 2rem 3rem; }
+  .related-posts-wide .title-bar {
+    border-bottom: 1px solid #ccc; }
+  .related-posts-wide > .row.title-bar a .title {
+    padding: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none; }
+  .related-posts-wide a .more {
+    padding: 1rem 3rem 0.8rem 1rem;
+    border-top: 1px solid #ccc;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none; }
+    .related-posts-wide a .more i {
+      font-weight: 600;
+      position: relative;
+      top: 7px;
+      margin-right: 0.3rem; }
+  .related-posts-wide .post-listing {
+    padding: 0rem 1rem; }
+    .related-posts-wide .post-listing .posts-row {
+      padding: 0.6rem 0;
+      margin: 1rem 1rem 1rem 1rem; }
+      .related-posts-wide .post-listing .posts-row a {
+        text-decoration: none; }
+      .related-posts-wide .post-listing .posts-row .post .image {
+        height: 90px;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center; }
+      .related-posts-wide .post-listing .posts-row .post .title {
+        color: #000;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1rem;
+        padding-top: 1rem; }
+      .related-posts-wide .post-listing .posts-row .post:not(:first-child) {
+        border-left: 1px solid #ccc; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
