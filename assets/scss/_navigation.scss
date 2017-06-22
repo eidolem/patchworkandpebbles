@@ -65,6 +65,9 @@
 		font-weight: 400;
 		font-size: 1.5rem;
 		padding-left: 1rem;
+		text-decoration: none;
+		color: #000;
+		padding-left: 2rem;
 	}
 
 	.divider {
@@ -77,6 +80,7 @@
 		a {
 			text-decoration: none;
 			font-weight: 300;
+			font-size: 1.2rem;
 		}
 
 		+.subheader-items {

@@ -1,0 +1,28 @@
+
+<article>
+    {{!-- <a href={{url}}> --}}
+        <div class="card z-depth-2 hoverable">
+        <a href={{url}}>
+            <div class="card-image">
+                {{#if image}}
+                    <img src="{{image}}">
+                {{/if}}
+            </div>
+
+            <div class="card-content">
+                <header>
+                    <h1 class="card-title">
+                        {{title}}
+                    </h1>
+
+                    <section class="card-excerpt">
+                        <p>
+                            {{meta_description}}
+                        </p>
+                    </section>
+                </header>
+            </div>
+            </a>
+        </div>
+    {{!-- </a> --}}
+</article>

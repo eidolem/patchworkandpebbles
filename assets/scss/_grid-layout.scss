@@ -1,0 +1,35 @@
+.grid {
+	margin: 0 4%;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  float: left;
+  margin-bottom: 1rem;
+
+  // height: 300px;
+  // border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-sizer, .grid-item {
+	@media #{$small-and-down} {
+		width: 100%;
+	}
+
+	@media #{$medium-and-up} {
+		width: 48%;
+	}
+
+	@media #{$large-and-up}{
+		width: 23%;
+	}
+}
+
+.gutter-sizer {
+	width: 4%;
+}

@@ -1,15 +1,3 @@
-// Needed for Materialize Sticky Footer
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-// Needed for Materialize Sticky Footer
-main {
-  flex: 1 0 auto;
-}
-
 .page-footer{
 	background-color: #E0E0E0;
 
@@ -43,8 +31,9 @@ main {
 		margin: 0.5rem 0 0 0;
 	}
 
-	.email {
+	.footer-email {
 		margin: 0;
+		font-size: 1rem;
 	}
 
 	.footer-find-me-on {
