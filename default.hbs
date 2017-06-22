@@ -56,20 +56,14 @@
     {{ghost_foot}}
 
     {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/fitvids.js"}}"></script>
     
     {{!-- For materialize --}}
     <script type="text/javascript" src="{{asset "js/bin/materialize.min.js"}}"></script>
     <script type="text/javascript">
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
-            // $('.carousel').carousel();
-            // $('.carousel.carousel-slider').carousel();
-            // $('.slider').slider();
-            // $(".dropdown-button").dropdown({
-            //     hover:true,
-            //     belowOrigin:true
-            //   });
+            $(".post-content").fitVids();
         });
     </script>
 
@@ -82,6 +76,19 @@
         columnWidth: '.grid-sizer',
         percentPosition: true, 
         gutter: '.gutter-sizer'
+      });
+      // layout Masonry after each image loads
+      $grid.imagesLoaded().progress( function() {
+        $grid.masonry();
+      });  
+    </script>
+
+    <script type="text/javascript">
+      var $grid = $('.grid-home').masonry({
+        itemSelector: '.grid-item-home',
+        columnWidth: '.grid-sizer-home',
+        percentPosition: true, 
+        gutter: '.gutter-sizer-home'
       });
       // layout Masonry after each image loads
       $grid.imagesLoaded().progress( function() {

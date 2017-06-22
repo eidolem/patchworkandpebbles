@@ -11,7 +11,7 @@
 
 
 {{!-- The main content area --}}
-<div class="grid">
+<main class="grid">
     {{#get "posts" limit="all" include="tags"}}
         {{#foreach posts}}
             <div class="grid-item">
@@ -22,4 +22,4 @@
             </div>
         {{/foreach}}
     {{/get}}
-</div> 
+</main> 

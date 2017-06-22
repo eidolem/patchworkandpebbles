@@ -1,0 +1,27 @@
+
+
+<article>
+    <div class="section-card">
+        <div class="title">
+            <a href="/tag/{{slug}}">{{disp-title}}</a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="post-listing">
+            {{#get "posts" limit="5" order="published_at desc"}}
+                {{title}}
+            {{/get}}
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="more">
+            <a href="/tag/{{slug}}">
+                <i class="material-icons">arrow_forward</i>
+                <span class="more-text"> more {{disp-title}}</span>
+            </a>
+        </div>
+
+    </div>
+</article>

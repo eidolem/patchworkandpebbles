@@ -1,15 +1,42 @@
 {{!< default}}
 
-<p> You're Home! </p>
+<main class="home-content grid-home">
 
-{{!-- The container class puts a horiz screen width limit --}}
-<div class="homepage">
-    <header class="row">
-        <h1 class="col center-align m10 offset-m1 blog-title hide-on-small-only">
-            {{@blog.title}}
-        </h1>
-        <h2 class="col center-align m10 offset-m1 blog-description grey-text text-darken-2">
-            {{@blog.description}}
-        </h2>
-    </header>
-</div>
+        <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="sewing" disp-title="Quilting & Sewing"}}
+	    </div>
+
+        <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="career-gender-equality" disp-title="Career & Gender Equality"}}
+	    </div>
+
+	    <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="sports-fitness-recovery" disp-title="Sports Fitness & Recovery"}}
+	    </div>
+
+	    <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="travel" disp-title="Travel"}}
+	    </div>
+
+	    <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="climbing" disp-title="Rock Climbing"}}
+	    </div>
+
+	    <div class="grid-item-home">
+        	<div class="grid-sizer-home"></div>
+        	<div class="gutter-sizer-home"></div>
+	        {{>section-card slug="diy-projects" disp-title="DIY Project"}}
+	    </div>    
+	        
+
+</main>

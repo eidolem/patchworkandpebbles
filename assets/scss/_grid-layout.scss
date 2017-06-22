@@ -1,3 +1,5 @@
+
+// Masonry grid for listing posts in index and page
 .grid {
 	margin: 0 4%;
 }
@@ -31,5 +33,44 @@
 }
 
 .gutter-sizer {
+	width: 4%;
+}
+
+
+
+
+
+// Masonry grid for the homepage only
+.grid-home {
+	margin: 0 4%;
+}
+
+.grid-home:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item-home {
+  float: left;
+  margin-bottom: 1rem;
+
+}
+
+.grid-sizer-home, .grid-item-home {
+	@media #{$small-and-down} {
+		width: 100%;
+	}
+
+	@media #{$medium-and-up} {
+		width: 48%;
+	}
+
+	@media #{$large-and-up}{
+		width: 31%;
+	}
+}
+
+.gutter-sizer-home {
 	width: 4%;
 }

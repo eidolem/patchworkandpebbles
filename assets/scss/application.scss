@@ -5,6 +5,8 @@
 @import "post-card";
 @import "grid-layout";
 @import "tag";
+@import "section-card";
+@import "home";
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Slab', serif;
@@ -66,4 +68,8 @@ main {
 	@media #{$large-and-up}{
 		padding-top: 2.9rem;
 	}
+}
+
+.divider {
+	background-color: #ccc;
 }
