@@ -86,3 +86,24 @@ main {
 .divider {
 	background-color: #ccc;
 }
+
+// Needed for Materialize PushPin. Class for when element is above threshold
+.pin-top {
+	position: relative;
+}
+
+// Needed for Materialize PushPin. Class for when element is below threshold
+.pin-bottom {
+	position: relative;
+}
+
+// Needed for Materialize PushPin. Class for when element is pinned
+.pinned {
+	position: fixed !important;
+}
+
+//Fixes the width of the sidebar so that position:fixed looks ok
+//25% is 3 of 12 columns, which is the width of the sidebar on large screens, minus 1.5rem, which is 2x padding of 0.75rem
+.sidebar-content .pinned{
+	max-width: calc(25% - 1.5rem);
+}

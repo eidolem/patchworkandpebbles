@@ -32,6 +32,8 @@
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -52,9 +54,6 @@
     </main>
     {{> footer}}
 
-    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 
@@ -68,6 +67,25 @@
             $(".button-collapse").sideNav();
             $(".post-content").fitVids();
         });
+
+        $( window ).load(function(){
+          // $('#sidebar-content').each(function() {
+          //   var self = $(this);
+          //   var target =  $(".data-target");
+          //   self.pushpin({
+          //     top: 0,
+          //     bottom: target.outerHeight() - self.height() - 300,
+          //     offset: 0
+          //   });
+          // });
+
+          $('.pushpin-target').pushpin({
+            top: 1050,
+            bottom: 3000,
+            offset: 100
+          });
+        });
+
     </script>
 
     {{!-- For masonry layout https://masonry.desandro.com/ --}}

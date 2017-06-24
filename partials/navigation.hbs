@@ -11,15 +11,10 @@
             
         </div>
         <div class="nav-content">
-            <ul class="tabs row">
+            <ul class="my-tabs row">
                 {{#foreach navigation}}
-                    <div class="col l2">
-                        <li class="subheader-items"><a target="_self" href="{{url}}">{{label}}</a></li>
-                    </div>
+                    <li class="my-tab subheader-items" id="{{slug}}"><a target="_self" href="{{url}}">{{label}}</a></li>
                 {{/foreach}}
-                {{!-- {{#foreach navigation}}
-                    <li class="tab subheader-items"><a target="_self" href="{{url}}">{{label}}</a></li>
-                {{/foreach}} --}}
             </ul>
         </div>
     </nav>
@@ -27,6 +22,7 @@
 
 {{!-- This is the same as above, only navbar isn't fixed, so it scrolls away on med and small screens --}}
 <div class="hide-on-large-only">
+
     <nav class="nav-extended">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">Patchwork & Pebbles</a>
@@ -37,13 +33,14 @@
             
         </div>
         <div class="nav-content hide-on-med-and-down">
-            <ul class="tabs">
+            <ul class="my-tabs row">
                 {{#foreach navigation}}
-                    <li class="tab subheader-items"><a href="{{url}}">{{label}}</a></li>
+                    <li class="my-tab subheader-items" id="{{slug}}"><a target="_self" href="{{url}}">{{label}}</a></li>
                 {{/foreach}}
             </ul>
         </div>
     </nav>
+
 </div>
 
 {{!-- Sidebar for med and small screens --}}
@@ -58,3 +55,13 @@
     <li><a href="/about-me" class="waves-effect">About Me</a></li>
     <li><a href="/about-me/#contact-card" class="waves-effect">Contact</a></li>
 </ul>
+
+
+<script>
+    var path = location.pathname
+    $('.my-tab > a').each(function() {
+        if ($(this).attr('href') == path) {
+            $(this).addClass('active');
+        }
+    });
+</script>

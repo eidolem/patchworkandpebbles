@@ -181,29 +181,38 @@
       @media only screen and (min-width: 993px) {
         .nav-extended .nav-wrapper .brand-logo {
           margin: 0rem 3rem; } }
-  .nav-extended .nav-content .tabs {
-    position: relative;
-    white-space: normal;
-    height: 2.9rem; }
-    .nav-extended .nav-content .tabs .tab {
-      display: inline-block;
-      margin: 0 auto;
-      width: 14%;
-      text-align: center;
-      height: 2.9rem; }
-      .nav-extended .nav-content .tabs .tab a {
-        padding: 8px 10px 10px 0;
-        font-size: 1rem;
-        color: #666;
-        overflow: visible;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        word-wrap: break-word;
-        line-height: 1.1rem;
-        font-family: 'Roboto', sans-serif; }
-    .nav-extended .nav-content .tabs .indicator {
-      height: 5px;
-      background-color: #ffad4d; }
+  .nav-extended .nav-content {
+    width: 100%; }
+    .nav-extended .nav-content .my-tabs {
+      position: relative;
+      white-space: normal;
+      height: 2.9rem;
+      width: 91%;
+      margin: 0 auto; }
+      .nav-extended .nav-content .my-tabs .my-tab {
+        display: inline-block;
+        width: 15.5%;
+        height: 2.9rem;
+        text-align: center;
+        text-transform: uppercase; }
+        .nav-extended .nav-content .my-tabs .my-tab:first-of-type {
+          width: 7%; }
+        .nav-extended .nav-content .my-tabs .my-tab a {
+          padding: 8px 10px 10px 0;
+          font-size: 1rem;
+          color: #666;
+          overflow: visible;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          word-wrap: break-word;
+          line-height: 1.1rem;
+          font-family: 'Roboto', sans-serif;
+          height: 2.9rem; }
+        .nav-extended .nav-content .my-tabs .my-tab a.active {
+          border-bottom: 5px solid orange; }
+      .nav-extended .nav-content .my-tabs .indicator {
+        height: 5px;
+        background-color: #ffad4d; }
 
 .side-nav .side-nav-title a {
   text-transform: uppercase;
@@ -385,6 +394,9 @@
 .home-content {
   margin-top: 2rem; }
 
+.sidebar-content {
+  margin-top: 8rem; }
+
 .related-posts-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
@@ -440,7 +452,7 @@
 .related-posts-wide {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
-  margin: 2rem 3rem; }
+  margin: 2rem 3rem 5rem 2rem; }
   .related-posts-wide .title-bar {
     border-bottom: 1px solid #ccc; }
   .related-posts-wide > .row.title-bar a .title {
@@ -541,5 +553,17 @@ main {
 
 .divider {
   background-color: #ccc; }
+
+.pin-top {
+  position: relative; }
+
+.pin-bottom {
+  position: relative; }
+
+.pinned {
+  position: fixed !important; }
+
+.sidebar-content .pinned {
+  max-width: calc(25% - 1.5rem); }
 
 /*# sourceMappingURL=application.css.map */
