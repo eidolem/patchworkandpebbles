@@ -11,6 +11,16 @@
 @import "related-posts-card";
 @import "related-posts-wide";
 
+@font-face {
+    font-family: 'OPTIBodoniCampanileFive';
+    src:url('/assets/fonts/bodoni/OPTIBodoniCampanileFive.ttf.woff') format('woff'),
+        url('/assets/fonts/bodoni/OPTIBodoniCampanileFive.ttf.svg#OPTIBodoniCampanileFive') format('svg'),
+        url('/assets/fonts/bodoni/OPTIBodoniCampanileFive.ttf.eot'),
+        url('/assets/fonts/bodoni/OPTIBodoniCampanileFive.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Slab', serif;
 	margin: 2rem 0 2rem 0;

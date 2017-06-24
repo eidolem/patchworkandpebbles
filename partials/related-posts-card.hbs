@@ -6,7 +6,7 @@
     </div>
 
     <div class="post-listing">
-        {{#get "posts" filter="tags:[{{tags[*].slug}}]+id:-{{id}}" limit="6" }}
+        {{#get "posts" filter="tags:[{{tags[*].slug}}]+id:-{{id}}" limit="5" }}
             {{#foreach posts}}
                 <div class="row post">
                     <a href="{{url}}" class="valign-wrapper">

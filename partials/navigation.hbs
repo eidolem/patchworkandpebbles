@@ -11,10 +11,15 @@
             
         </div>
         <div class="nav-content">
-            <ul class="tabs">
+            <ul class="tabs row">
                 {{#foreach navigation}}
-                    <li class="tab subheader-items"><a target="_self" href="{{url}}">{{label}}</a></li>
+                    <div class="col l2">
+                        <li class="subheader-items"><a target="_self" href="{{url}}">{{label}}</a></li>
+                    </div>
                 {{/foreach}}
+                {{!-- {{#foreach navigation}}
+                    <li class="tab subheader-items"><a target="_self" href="{{url}}">{{label}}</a></li>
+                {{/foreach}} --}}
             </ul>
         </div>
     </nav>
