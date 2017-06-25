@@ -4,7 +4,6 @@ of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-
     <article class="{{post_class}}">
 
         <div class="row hide-on-small-and-down">
@@ -56,5 +55,72 @@ of the default.hbs template, containing the blog header/footer. --}}
         </div>
 
     </article>
+
+
+    {{!-- In order to grab random posts with the same tags as this post: --}}
+    {{!-- Create an empty array to contain the tags --}}
+    <script>
+        var $tags = [];
+    </script>
+
+    {{!-- Loop over the tags from this post and create an array with just the slugs --}}
+    {{#foreach tags}}
+        <script>
+            $tags.push("{{slug}}");
+        </script>
+    {{/foreach}}
+
+    <script>
+        // Grab all posts, filtered by tags
+        $(document).ready(function () {
+                $.get(
+                    ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]"})
+                ).done(onSuccess)
+            });
+
+        function onSuccess(data) {
+            // list-of-posts is on related-posts-card
+            var $result = $('#list-of-posts');
+            // Randomize array
+            var sortedPosts = shuffleArray(data.posts);
+            // Take the first 3
+            var displayPosts = sortedPosts.slice(0,3);
+            // Insert at bottom of post list
+            $.each(displayPosts, function (i, post) {
+                $result.append(
+                    '<div class="row post">'
+                        + '<a href="' + post.url + '" class="valign-wrapper">'
+                        + '<div class="image col s4 m4 l4" style="background-image: url(' + post.image + ')"></div>'
+                        + '<div class="title col s8 m8 l8">' + post.title + '</div>'
+                        + '</a></div>'
+                );
+            });
+
+            // list-of-posts-wide is on related-posts-card-wide
+            var $result2 = $('#list-of-posts-wide');
+            // Take posts 4-7 from the randomized array
+            var displayPosts = sortedPosts.slice(4,7);
+            // Insert at end of post list
+            $.each(displayPosts, function (i, post) {
+                $result2.append(
+                        '<a href="' + post.url + '" class="post col m2 l2">'
+                        + '<div class="image" style="background-image: url(' + post.image + ')"></div>'
+                        + '<div class="title">' + post.title + '</div>'
+                        + '</a>'
+                );
+            });
+        }
+
+        // Function to randomize an array
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+    </script>
 
 {{/post}}

@@ -400,10 +400,11 @@
 .related-posts-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
-  margin: 2rem 0; }
+  margin: 4rem 0; }
   .related-posts-card > .title {
-    padding: 0.3rem 1rem 0rem 1rem;
-    border-bottom: 1px solid #ccc; }
+    padding: 1rem 1rem 0rem 1rem;
+    border-bottom: 1px solid #ccc;
+    line-height: 3rem; }
     .related-posts-card > .title a {
       padding: 0rem 0rem;
       font-family: 'OPTIBodoniCampanileFive', sans-serif;
@@ -411,7 +412,8 @@
       font-size: 3rem;
       text-transform: uppercase;
       color: #000;
-      text-decoration: none; }
+      text-decoration: none;
+      line-height: 3rem; }
   .related-posts-card .post-listing {
     padding: 0rem 1rem; }
     .related-posts-card .post-listing .post {
@@ -430,8 +432,8 @@
         font-family: 'Roboto Slab', serif;
         font-size: 1rem;
         padding-left: 1rem; }
-      .related-posts-card .post-listing .post:not(:first-child) {
-        border-top: 1px solid #ccc; }
+      .related-posts-card .post-listing .post:not(:last-child) {
+        border-bottom: 1px solid #ccc; }
   .related-posts-card .more {
     padding: 0.3rem 1rem 0.8rem 1rem;
     border-top: 1px solid #ccc; }

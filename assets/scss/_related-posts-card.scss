@@ -2,11 +2,12 @@
 .related-posts-card {
 	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12), 1px 0 2px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
 	border-top: 10px solid #000;
-	margin: 2rem 0;
+	margin: 4rem 0;
 
 	>.title {
-		padding: 0.3rem 1rem 0rem 1rem;
+		padding: 1rem 1rem 0rem 1rem;
 		border-bottom: 1px solid #ccc;
+		line-height: 3rem;
 		a {
 			padding: 0rem 0rem;
 			font-family: 'OPTIBodoniCampanileFive', sans-serif;
@@ -15,6 +16,7 @@
 			text-transform: uppercase;
 			color: #000;
 			text-decoration: none;
+			line-height: 3rem;
 		}
 	}
 
@@ -43,8 +45,8 @@
 				padding-left: 1rem;
 			}
 			
-			&:not(:first-child) {
-				border-top: 1px solid #ccc;
+			&:not(:last-child) {
+				border-bottom: 1px solid #ccc;
 			}
 		}
 	}
