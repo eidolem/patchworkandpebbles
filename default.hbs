@@ -37,6 +37,7 @@
 
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     {{!-- AdSense mobile page-level ads --}}
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -44,6 +45,9 @@
       enable_page_level_ads: true
       });
     </script>
+
+    <!-- MailChimp -->
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="{{body_class}}">
@@ -86,7 +90,8 @@
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         percentPosition: true, 
-        gutter: '.gutter-sizer'
+        gutter: '.gutter-sizer',
+        stagger: 30
       });
       // layout Masonry after each image loads
       $grid.imagesLoaded().progress( function() {
@@ -99,7 +104,9 @@
         itemSelector: '.grid-item-home',
         columnWidth: '.grid-sizer-home',
         percentPosition: true, 
-        gutter: '.gutter-sizer-home'
+        gutter: '.gutter-sizer-home',
+        horizontalOrder: true,
+        stagger: 30
       });
       // layout Masonry after each image loads
       $grid.imagesLoaded().progress( function() {

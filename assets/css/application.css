@@ -331,7 +331,8 @@
 
 .section-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  border-top: 10px solid #000; }
+  border-top: 10px solid #000;
+  margin-bottom: 2rem; }
   .section-card > .title {
     padding: 1rem;
     border-bottom: 1px solid #ccc; }
@@ -499,8 +500,91 @@
         font-family: 'Roboto Slab', serif;
         font-size: 1rem;
         padding-top: 1rem; }
-      .related-posts-wide .post-listing .posts-row .post:not(:first-child) {
-        border-left: 1px solid #ccc; }
+      .related-posts-wide .post-listing .posts-row .post:not(:last-child) {
+        border-right: 1px solid #ccc; }
+
+.email-subscribe-card {
+  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  border-top: 10px solid #000;
+  margin: 0rem 0 2rem 0rem; }
+  .email-subscribe-card .title {
+    padding: 1rem 1rem 0.7rem 1rem;
+    border-bottom: 1px solid #ccc;
+    line-height: 3rem;
+    font-family: 'OPTIBodoniCampanileFive', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none; }
+  .email-subscribe-card #mc_embed_signup label {
+    display: block;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #666; }
+  .email-subscribe-card #mc_embed_signup input.email {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 1rem; }
+    .email-subscribe-card #mc_embed_signup input.email:focus {
+      box-shadow: none; }
+  .email-subscribe-card #mc_embed_signup .button {
+    height: 2.5rem; }
+  .email-subscribe-card #mc_embed_signup input.button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem; }
+  .email-subscribe-card #mc-embedded-subscribe-form {
+    padding: 1rem 1rem 1rem 1rem; }
+
+.about-me-card {
+  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  border-top: 10px solid #000;
+  margin: 0rem 0 2rem 0rem; }
+  .about-me-card .title {
+    padding: 1rem 1rem 0.7rem 1rem;
+    border-bottom: 1px solid #ccc;
+    line-height: 3rem;
+    font-family: 'OPTIBodoniCampanileFive', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none; }
+  .about-me-card .about-me-name {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: center; }
+  .about-me-card .about-me-find-me-on {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0; }
+  .about-me-card .row {
+    margin-bottom: 0; }
+    .about-me-card .row .col {
+      padding: 0 0.5rem 0 0.5rem; }
+  .about-me-card p {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    line-height: 1.5rem; }
+  .about-me-card .social-icons-row a {
+    text-decoration: none; }
+  .about-me-card .my-story a {
+    text-decoration-style: dotted;
+    color: #000; }
+  .about-me-card img {
+    max-width: 100%;
+    margin-top: 1rem; }
+  .about-me-card img.social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.5;
+    display: inline-block; }
+    .about-me-card img.social-icon:hover {
+      opacity: 0.9; }
 
 @font-face {
   font-family: 'OPTIBodoniCampanileFive';

@@ -66,8 +66,8 @@
 					padding-top: 1rem;
 				}				
 
-				&:not(:first-child) {
-					border-left: 1px solid #ccc;
+				&:not(:last-child) {
+					border-right: 1px solid #ccc;
 				}
 			}
 		}
