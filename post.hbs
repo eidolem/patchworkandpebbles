@@ -28,7 +28,7 @@ of the default.hbs template, containing the blog header/footer. --}}
         </div>
 
         <div class="row">
-            <section class="col s12 m8 l6 offset-m2 offset-l1 post-content">
+            <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
                 {{content}}
             </section>
 
@@ -36,6 +36,12 @@ of the default.hbs template, containing the blog header/footer. --}}
                 {{> sidebar}}
             </section>
         </div>
+
+        {{!-- <div class="row"> --}}
+            {{!-- <section class="col s12 m3 l1"> --}}
+                {{> email-subscribe-popup}}
+            {{!-- </section> --}}
+        {{!-- </div> --}}
 
         <div class="row hide-on-small-and-down">
             <div class="col m12 l10 offset-l1">

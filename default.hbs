@@ -21,12 +21,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/materialize.css"}}"  media="screen,projection"/>
     {{!-- *** replace with minimized file! *** --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800|Hind:400,500,600,700|Ruda:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
   
     {{!-- Ghost outputs important style and meta data with this tag --}}
@@ -70,7 +69,23 @@
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
             $(".post-content").fitVids();
-        });
+            // To hide/show element based on user scroll location
+            $(document).scroll(function() {
+              // alert('test');
+              // y_pos is where the user is scrolled to
+              var y_pos = window.pageYOffset; 
+              // y_pos_break is where classes are added or removed to hide element
+              var y_pos_break = $('#post-content').height() / 2;
+              if (y_pos < y_pos_break) {
+                alert('above');
+                // do nothing
+              }
+              else {
+                alert('below');
+                // remove hide
+              }
+            })
+          });
 
         // $( window ).load(function(){
         //   $('.pushpin-target').pushpin({
@@ -82,7 +97,7 @@
 
     </script>
 
-    {{!-- For masonry layout https://masonry.desandro.com/ --}}
+    {{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
     <script type="text/javascript" src="{{asset "js/masonry.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/imagesloaded.js"}}"></script>
     <script type="text/javascript">
@@ -99,6 +114,7 @@
       });  
     </script>
 
+    {{!-- Masonry layout for home page --}}
     <script type="text/javascript">
       var $grid = $('.grid-home').masonry({
         itemSelector: '.grid-item-home',
@@ -113,6 +129,14 @@
         $grid.masonry();
       });  
     </script>
+
+    {{!-- For button close, remove element from DOM --}}
+    <script>
+      function closeMe(elementToClose) {
+        $(elementToClose).remove();
+      }
+    </script>
+
 
     {{!-- For the back-to-top arrow --}}
     <script>
