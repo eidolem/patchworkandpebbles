@@ -163,7 +163,8 @@
 
 .nav-extended {
   color: #000;
-  background-color: #fff; }
+  background-color: #fff;
+  box-shadow: none; }
   .nav-extended .brand-logo {
     color: #000; }
   .nav-extended a {
@@ -182,7 +183,8 @@
         .nav-extended .nav-wrapper .brand-logo {
           margin: 0rem 3rem; } }
   .nav-extended .nav-content {
-    width: 100%; }
+    width: 100%;
+    border-bottom: 1px solid #ccc; }
     .nav-extended .nav-content .my-tabs {
       position: relative;
       white-space: normal;
@@ -398,6 +400,9 @@
 .sidebar-content {
   margin-top: 8rem; }
 
+.ad-block {
+  margin-bottom: 4rem; }
+
 .related-posts-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
@@ -542,13 +547,12 @@
     padding: 1rem 1rem 1rem 1rem; }
 
 .email-subscribe-popup {
-  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  border-top: 10px solid #000;
+  border: 1px solid #E0E0E0;
   position: fixed;
   z-index: 1000;
   bottom: 1px;
   right: 1rem;
-  background-color: #fff; }
+  background-color: #ffe0e3; }
   @media only screen and (max-width: 600px) {
     .email-subscribe-popup {
       width: 80vw;
@@ -562,48 +566,36 @@
   .email-subscribe-popup a.close {
     text-align: center;
     border-radius: 50%;
-    height: 1.8rem;
-    width: 1.8rem;
+    height: 2.5rem;
+    width: 2.5rem;
     position: absolute;
-    top: -1.2rem;
-    right: -0.7rem;
+    top: -1rem;
+    right: -0.5rem;
     z-index: 1;
     background-color: #fff;
     color: #000;
-    border: 1px solid #ccc; }
+    border: 1px solid #E0E0E0; }
     .email-subscribe-popup a.close .material-icons {
-      font-size: 1.5rem;
-      line-height: 24px; }
-  .email-subscribe-popup .title {
-    padding: 0.8rem 1rem 0.5rem 1rem;
-    border-bottom: 1px solid #ccc;
-    line-height: 3rem;
-    font-family: 'OPTIBodoniCampanileFive', sans-serif;
-    font-weight: 400;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #000;
-    text-decoration: none; }
-    @media only screen and (max-width: 600px) {
-      .email-subscribe-popup .title {
-        font-size: 2rem;
-        padding: 0.5rem 1rem 0rem 1rem; } }
+      font-size: 1.7rem;
+      line-height: 34px;
+      color: #9E9E9E; }
   .email-subscribe-popup #mc_embed_signup label {
     display: block;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding-bottom: 0.4rem;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #666; }
     @media only screen and (max-width: 600px) {
       .email-subscribe-popup #mc_embed_signup label {
-        font-size: 1rem; } }
+        font-size: 1.2rem; } }
   .email-subscribe-popup #mc_embed_signup input.email {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
     color: #666;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    background-color: #fff; }
     @media only screen and (max-width: 600px) {
       .email-subscribe-popup #mc_embed_signup input.email {
         font-size: 1rem;
@@ -613,7 +605,8 @@
       box-shadow: none; }
   .email-subscribe-popup #mc_embed_signup .button {
     height: 2.5rem;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    background-color: #EF5350; }
     @media only screen and (max-width: 600px) {
       .email-subscribe-popup #mc_embed_signup .button {
         height: 2rem; } }
@@ -628,7 +621,7 @@
     padding: 1rem 1rem 1rem 1rem; }
     @media only screen and (max-width: 600px) {
       .email-subscribe-popup #mc-embedded-subscribe-form {
-        padding: 0rem 1rem 0.5rem 1rem; } }
+        padding: 0.5rem 1rem 0.5rem 1rem; } }
 
 .about-me-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);

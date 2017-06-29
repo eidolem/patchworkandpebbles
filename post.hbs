@@ -37,11 +37,7 @@ of the default.hbs template, containing the blog header/footer. --}}
             </section>
         </div>
 
-        {{!-- <div class="row"> --}}
-            {{!-- <section class="col s12 m3 l1"> --}}
-                {{> email-subscribe-popup}}
-            {{!-- </section> --}}
-        {{!-- </div> --}}
+        {{> email-subscribe-popup}}
 
         <div class="row hide-on-small-and-down">
             <div class="col m12 l10 offset-l1">
@@ -84,7 +80,7 @@ of the default.hbs template, containing the blog header/footer. --}}
         // Grab all posts, filtered by tags
         $(document).ready(function () {
                 $.get(
-                    ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]"})
+                    ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
                 ).done(onSuccess)
             });
 
@@ -93,8 +89,15 @@ of the default.hbs template, containing the blog header/footer. --}}
             var $result = $('#list-of-posts');
             // Randomize array
             var sortedPosts = shuffleArray(data.posts);
-            // Take the first 3
-            var displayPosts = sortedPosts.slice(0,3);
+            // If there's less than 6 posts with this tag, only pull the total number
+            if ( $result.length < 6){
+                var displayPosts = sortedPosts.slice(0, sortedPosts.length);
+            }
+            // Else pull max 6
+            else {
+                var displayPosts = sortedPosts.slice(0, 7);
+            }
+
             // Insert at bottom of post list
             $.each(displayPosts, function (i, post) {
                 $result.append(
@@ -108,8 +111,14 @@ of the default.hbs template, containing the blog header/footer. --}}
 
             // list-of-posts-wide is on related-posts-card-wide
             var $result2 = $('#list-of-posts-wide');
-            // Take posts 4-7 from the randomized array
-            var displayPosts = sortedPosts.slice(4,7);
+            // If there's less than 6 posts with this tag, only pull the total number
+            if ( $result.length < 6){
+                var displayPosts = sortedPosts.slice(0, sortedPosts.length);
+            }
+            // Else pull max 6
+            else {
+                var displayPosts = sortedPosts.slice(0, 7);
+            }
             // Insert at end of post list
             $.each(displayPosts, function (i, post) {
                 $result2.append(

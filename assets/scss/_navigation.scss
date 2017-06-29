@@ -2,6 +2,7 @@
 .nav-extended {
 	color: #000;
 	background-color: #fff;
+	box-shadow: none;
 
 	.brand-logo{
 		color: #000;
@@ -30,6 +31,7 @@
 
 	.nav-content {
 		width: 100%;
+		border-bottom: 1px solid #ccc;
 
 		.my-tabs {
 			position: relative;

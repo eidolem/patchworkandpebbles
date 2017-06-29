@@ -69,31 +69,58 @@
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
             $(".post-content").fitVids();
-            // To hide/show element based on user scroll location
+            // Functions for scroll events. Check every 250ms instead of every pixel scroll.
+            // Much less expensive to compute every function.
+            var didScroll;
             $(document).scroll(function() {
-              // alert('test');
-              // y_pos is where the user is scrolled to
-              var y_pos = window.pageYOffset; 
-              // y_pos_break is where classes are added or removed to hide element
-              var y_pos_break = $('#post-content').height() / 2;
-              if (y_pos < y_pos_break) {
-                alert('above');
-                // do nothing
-              }
-              else {
-                alert('below');
-                // remove hide
-              }
-            })
+                didScroll = true;
+            });
+            // Set the interval to 250ms, and call scroll functions, and reset boolean
+            setInterval (function(){
+                if(didScroll) {
+                    showHideSubscribePopup();
+                    showHideMobileNav();
+                    didScroll = false;
+                }
+            }, 250);
+            // For email subscribe popup
+            function showHideSubscribePopup () {
+                // y_pos is where the user is scrolled to
+                var y_pos = window.pageYOffset; 
+                // y_pos_break is where classes are added or removed to hide element
+                var y_pos_break = $('#post-content').height() / 2;
+                if (y_pos<y_pos_break) {
+                  $("#email-subscribe-popup").addClass('hide');
+                }
+                else {
+                  $("#email-subscribe-popup").removeClass('hide');
+                }
+            }
+            // For mobile nav header
+            // Ref: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+            var lastScrollTop = 0;
+            var delta=5;
+            var navbarHeight = 70;
+            function showHideMobileNav() {
+                // Current scroll location
+                var currScroll = $(this).scrollTop();
+                // If they haven't scrolled more than delta, return and don't do anything
+                if(Math.abs(lastScrollTop-currScroll) <= delta) {
+                    return;
+                }
+                //If they scrolled past the navbar, remove fixed class. Required so you never see what's "behind" the navbar
+                if(currScroll>lastScrollTop && currScroll>navbarHeight){
+                    $('#nav-small-med').removeClass('navbar-fixed');
+                }
+                //Else if user didn't scroll past document (possible on a mac)
+                else {
+                    if(currScroll + $(window).height() < $(document).height()) {
+                        $('#nav-small-med').addClass('navbar-fixed');
+                    }
+                }
+                lastScrollTop = currScroll;
+            }
           });
-
-        // $( window ).load(function(){
-        //   $('.pushpin-target').pushpin({
-        //     top: 1050,
-        //     bottom: 3000,
-        //     offset: 100
-        //   });
-        // });
 
     </script>
 
@@ -139,55 +166,55 @@
 
 
     {{!-- For the back-to-top arrow --}}
-    <script>
-        (function($) {
-          ScrollToTop = {
-            setup: function() {
-              var $window = $(window),
-                  $scrollToTopButton = $('<div id="scroll-to-top"></div>').appendTo('body');
+    // <script>
+    //     (function($) {
+    //       ScrollToTop = {
+    //         setup: function() {
+    //           var $window = $(window),
+    //               $scrollToTopButton = $('<div id="scroll-to-top"></div>').appendTo('body');
 
-              $scrollToTopButton.on('click touchstart', function() {
-                $('body, html').animate({ scrollTop: 0 }, 300);
-              });
+    //           $scrollToTopButton.on('click touchstart', function() {
+    //             $('body, html').animate({ scrollTop: 0 }, 300);
+    //           });
 
-              // show and hide scroll to top button logic
-              $window.on('scroll.scroll-to-top', function() {
-                var threshold = 50,
-                    duration = 200;
+    //           // show and hide scroll to top button logic
+    //           $window.on('scroll.scroll-to-top', function() {
+    //             var threshold = 50,
+    //                 duration = 200;
 
-                if ($window.scrollTop() >= threshold && $scrollToTopButton.is(':hidden')) {
-                  $scrollToTopButton.fadeIn(duration);
-                } else if ($window.scrollTop() < threshold && $scrollToTopButton.is(':visible')) {
-                  $scrollToTopButton.fadeOut(duration);
-                }
-              });
+    //             if ($window.scrollTop() >= threshold && $scrollToTopButton.is(':hidden')) {
+    //               $scrollToTopButton.fadeIn(duration);
+    //             } else if ($window.scrollTop() < threshold && $scrollToTopButton.is(':visible')) {
+    //               $scrollToTopButton.fadeOut(duration);
+    //             }
+    //           });
 
-              // Mousewheel events don't work through position-fixed elements. This is a fix.
-              // http://stackoverflow.com/questions/7182502/pass-mousewheel-event-through-fixed-content
-              $scrollToTopButton.on('mousewheel DOMMouseScroll', function(e) {
-                var originalEvent = e.originalEvent,
-                    wheelDelta;
+    //           // Mousewheel events don't work through position-fixed elements. This is a fix.
+    //           // http://stackoverflow.com/questions/7182502/pass-mousewheel-event-through-fixed-content
+    //           $scrollToTopButton.on('mousewheel DOMMouseScroll', function(e) {
+    //             var originalEvent = e.originalEvent,
+    //                 wheelDelta;
 
-                if (originalEvent.wheelDelta) {
-                  wheelDelta = originalEvent.wheelDelta * -1;
-                } else if (originalEvent.detail) {
-                  wheelDelta = originalEvent.detail * 15;
-                }
+    //             if (originalEvent.wheelDelta) {
+    //               wheelDelta = originalEvent.wheelDelta * -1;
+    //             } else if (originalEvent.detail) {
+    //               wheelDelta = originalEvent.detail * 15;
+    //             }
 
-                var scrollTo = wheelDelta + $window.scrollTop();
-                $window.scrollTop(scrollTo);
-              });
-            },
+    //             var scrollTo = wheelDelta + $window.scrollTop();
+    //             $window.scrollTop(scrollTo);
+    //           });
+    //         },
 
-            teardown: function() {
-              $(window).off('scroll.scroll-to-top');
-              $('#scroll-to-top').remove();
-            }
-          }
-        }(jQuery));
+    //         teardown: function() {
+    //           $(window).off('scroll.scroll-to-top');
+    //           $('#scroll-to-top').remove();
+    //         }
+    //       }
+    //     }(jQuery));
 
-        ScrollToTop.setup();
-    </script>
+    //     ScrollToTop.setup();
+    // </script>
 
 </body>
 </html>

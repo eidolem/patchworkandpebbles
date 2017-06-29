@@ -2,13 +2,14 @@
 // Mailchimp
 
 .email-subscribe-popup {
-	box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12), 1px 0 2px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
-	border-top: 10px solid #000;
+	// box-shadow: 0px 0px 30px 0.5px rgba(0,0,0,0.3);
+	// border-top: 10px solid #000;
+	border: 1px solid #E0E0E0;
 	position: fixed;
 	z-index: 1000;
 	bottom: 1px;
 	right: 1rem;
-	background-color: #fff;
+	background-color: #ffe0e3;
 
 	@media#{$small-and-down} {
 		width: 80vw;
@@ -26,50 +27,52 @@
 	a.close {
 		text-align: center;
 		border-radius: 50%;
-		height: 1.8rem;
-		width: 1.8rem;
+		height: 2.5rem;
+		width: 2.5rem;
 		position: absolute;
-		top: -1.2rem;
-		right: -0.7rem;
+		top: -1rem;
+		right: -0.5rem;
 		z-index: 1;
 		background-color: #fff;
 		color: #000;
-		border: 1px solid #ccc;
+		border: 1px solid #E0E0E0;
+		// box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
 
 		.material-icons {
-			font-size: 1.5rem;
-			line-height: 24px;
+			font-size: 1.7rem;
+			line-height: 34px;
+			color: #9E9E9E;
 		}
 	}
 
-	.title {
-		padding: 0.8rem 1rem 0.5rem 1rem;
-		border-bottom: 1px solid #ccc;
-		line-height: 3rem;
-		font-family: 'OPTIBodoniCampanileFive', sans-serif;
-		font-weight: 400;
-		font-size: 2.5rem;
-		text-transform: uppercase;
-		color: #000;
-		text-decoration: none;
+	// .title {
+	// 	padding: 0.8rem 1rem 0.5rem 1rem;
+	// 	border-bottom: 1px solid #ccc;
+	// 	line-height: 3rem;
+	// 	font-family: 'OPTIBodoniCampanileFive', sans-serif;
+	// 	font-weight: 400;
+	// 	font-size: 2.5rem;
+	// 	text-transform: uppercase;
+	// 	color: #000;
+	// 	text-decoration: none;
 
-		@media #{$small-and-down} {
-			font-size: 2rem;
-			padding: 0.5rem 1rem 0rem 1rem;
-		}
-	}
+	// 	@media #{$small-and-down} {
+	// 		font-size: 2rem;
+	// 		padding: 0.5rem 1rem 0rem 1rem;
+	// 	}
+	// }
 
 	#mc_embed_signup {
 		label {
 		    display: block;
-		    font-size: 1.1rem;
+		    font-size: 1.3rem;
 		    padding-bottom: 0.4rem;
 		    font-weight: 400;
 		    font-family: 'Roboto', sans-serif;
 		    color: #666;
 
 		    @media #{$small-and-down} {
-		    	font-size: 1rem;
+		    	font-size: 1.2rem;
 		    }
 		}
 
@@ -79,6 +82,7 @@
 			font-weight: 400;
 			color: #666;
 			margin-bottom: 1rem;
+			background-color: #fff;
 
 			@media #{$small-and-down} {
 				font-size: 1rem;
@@ -94,6 +98,7 @@
 		.button{
 			height: 2.5rem;
 			margin-bottom: 0;
+			background-color: #EF5350;
 
 			@media #{$small-and-down} {
 				height: 2rem;
@@ -115,7 +120,7 @@
 		padding: 1rem 1rem 1rem 1rem;
 
 		@media #{$small-and-down} {
-			padding: 0rem 1rem 0.5rem 1rem;
+			padding: 0.5rem 1rem 0.5rem 1rem;
 		}
 	}
 }
