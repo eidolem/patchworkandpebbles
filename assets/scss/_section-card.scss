@@ -4,6 +4,25 @@
 	border-top: 10px solid #000;
 	margin-bottom: 2rem;
 
+	&[data-state=sewing] {
+		border-top: 10px solid $color-one;
+	}
+	&[data-state=career-gender-equality] {
+		border-top: 10px solid $color-two;
+	}
+	&[data-state=sports-fitness-recovery] {
+		border-top: 10px solid $color-three;
+	}
+	&[data-state=travel] {
+		border-top: 10px solid $color-four;
+	}
+	&[data-state=climbing] {
+		border-top: 10px solid $color-five;
+	}
+	&[data-state=diy-projects] {
+		border-top: 10px solid $color-six;
+	}
+
 	>.title {
 		padding: 1rem;
 		border-bottom: 1px solid #ccc;

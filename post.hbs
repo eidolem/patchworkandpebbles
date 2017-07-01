@@ -5,7 +5,8 @@ of the default.hbs template, containing the blog header/footer. --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
     <article class="{{post_class}}">
-
+    {{!-- If there's a featured image, display it and move the title down --}}
+    {{#if image}}
         <div class="row hide-on-small-and-down">
             <div class="col s12 m12 l12 feature-image-wrapper">
                 <img class="feature-image" src="{{image}}"></img>
@@ -13,7 +14,13 @@ of the default.hbs template, containing the blog header/footer. --}}
         </div>
 
         <div class="row">
-            <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
+            {{#if tags limit="1"}}
+                {{#foreach tags limit="1"}}
+                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header move-title-up" data-state={{slug}}>
+                {{/foreach}}
+            {{else}}
+                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header move-title-up">
+            {{/if}}
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
                     <div class="col s12 m12 l6">
@@ -26,6 +33,29 @@ of the default.hbs template, containing the blog header/footer. --}}
                 </section>
             </header>
         </div>
+    {{!-- If there's no image, don't display it, and don't move the title --}}
+    {{else}}
+        <div class="row">
+            {{#if tags limit="1"}}
+                {{#foreach tags limit="1"}}
+                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header" data-state={{slug}}>
+                {{/foreach}}
+            {{else}}
+                 <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
+            {{/if}}
+                <h1 class="post-title">{{title}}</h1>
+                <section class="post-meta">
+                    <div class="col s12 m12 l6">
+                        <div class="post-tags">{{tags}}</div>
+                    </div>
+                    
+                    <div class="col s12 m12 l6">
+                        <time class="right post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
+                    </div>
+                </section>
+            </header>
+        </div>
+    {{/if}}
 
         <div class="row">
             <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
@@ -56,11 +86,18 @@ of the default.hbs template, containing the blog header/footer. --}}
             </div>
         </div>
 
-
-
-<!--End mc_embed_signup-->
-
     </article>
+
+
+    <script>
+        // $('.post-header').each(function() {
+        //     $.get(ghost.url.api('posts', {limit:'1', filter:"id:{{id}}", include:"tags"})).done(onSuccess);
+        // });
+
+        // function onSuccess(data) {
+        //     $('.post-header').attr("data-state", data.posts[0].tags[0].slug);
+        // }
+    </script>
 
 
     {{!-- In order to grab random posts with the same tags as this post: --}}
@@ -79,6 +116,7 @@ of the default.hbs template, containing the blog header/footer. --}}
     <script>
         // Grab all posts, filtered by tags
         $(document).ready(function () {
+                // Get all the posts with these tags, minus the current post id
                 $.get(
                     ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
                 ).done(onSuccess)
@@ -86,21 +124,21 @@ of the default.hbs template, containing the blog header/footer. --}}
 
         function onSuccess(data) {
             // list-of-posts is on related-posts-card
-            var $result = $('#list-of-posts');
+            var result = $('#list-of-posts');
             // Randomize array
             var sortedPosts = shuffleArray(data.posts);
-            // If there's less than 6 posts with this tag, only pull the total number
-            if ( $result.length < 6){
+            // If there's less than 6 posts with this tag, only take the total number of posts 
+            if ( sortedPosts.length < 6){
                 var displayPosts = sortedPosts.slice(0, sortedPosts.length);
             }
             // Else pull max 6
             else {
-                var displayPosts = sortedPosts.slice(0, 7);
+                var displayPosts = sortedPosts.slice(0, 6);
             }
 
             // Insert at bottom of post list
             $.each(displayPosts, function (i, post) {
-                $result.append(
+                result.append(
                     '<div class="row post">'
                         + '<a href="' + post.url + '" class="valign-wrapper">'
                         + '<div class="image col s4 m4 l4" style="background-image: url(' + post.image + ')"></div>'
@@ -110,18 +148,18 @@ of the default.hbs template, containing the blog header/footer. --}}
             });
 
             // list-of-posts-wide is on related-posts-card-wide
-            var $result2 = $('#list-of-posts-wide');
+            var result2 = $('#list-of-posts-wide');
             // If there's less than 6 posts with this tag, only pull the total number
-            if ( $result.length < 6){
-                var displayPosts = sortedPosts.slice(0, sortedPosts.length);
+            if ( sortedPosts.length < 6){
+                var displayPosts2 = sortedPosts.slice(0, sortedPosts.length);
             }
-            // Else pull max 6
+            // Else pull max 6, but don't take the same 6 as was in the sidebar related posts card
             else {
-                var displayPosts = sortedPosts.slice(0, 7);
+                var displayPosts2 = sortedPosts.slice(7, 13);
             }
             // Insert at end of post list
-            $.each(displayPosts, function (i, post) {
-                $result2.append(
+            $.each(displayPosts2, function (i, post) {
+                result2.append(
                         '<a href="' + post.url + '" class="post col m2 l2">'
                         + '<div class="image" style="background-image: url(' + post.image + ')"></div>'
                         + '<div class="title">' + post.title + '</div>'

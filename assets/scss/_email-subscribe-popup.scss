@@ -2,22 +2,22 @@
 // Mailchimp
 
 .email-subscribe-popup {
-	// box-shadow: 0px 0px 30px 0.5px rgba(0,0,0,0.3);
-	// border-top: 10px solid #000;
 	border: 1px solid #E0E0E0;
-	position: fixed;
 	z-index: 1000;
 	bottom: 1px;
 	right: 1rem;
 	background-color: #ffe0e3;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px !important;
+	position: fixed;
 
 	@media#{$small-and-down} {
-		width: 80vw;
+		width: 100vw;
 		right: 2.5rem;
+		right: 0;
 	}
 
 	@media#{$medium-and-up} {
-		width: 40vw;
+		width: 50vw;
 	}
 
 	@media #{$large-and-up}{
@@ -26,17 +26,17 @@
 
 	a.close {
 		text-align: center;
-		border-radius: 50%;
+		// border-radius: 50%;
 		height: 2.5rem;
 		width: 2.5rem;
 		position: absolute;
-		top: -1rem;
-		right: -0.5rem;
+		top: 0rem;
+		right: 0rem;
 		z-index: 1;
-		background-color: #fff;
+		background-color: #ffe0e3;
 		color: #000;
-		border: 1px solid #E0E0E0;
-		// box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+		// border: 1px solid #E0E0E0;
+		cursor: pointer;
 
 		.material-icons {
 			font-size: 1.7rem;
@@ -45,34 +45,27 @@
 		}
 	}
 
-	// .title {
-	// 	padding: 0.8rem 1rem 0.5rem 1rem;
-	// 	border-bottom: 1px solid #ccc;
-	// 	line-height: 3rem;
-	// 	font-family: 'OPTIBodoniCampanileFive', sans-serif;
-	// 	font-weight: 400;
-	// 	font-size: 2.5rem;
-	// 	text-transform: uppercase;
-	// 	color: #000;
-	// 	text-decoration: none;
-
-	// 	@media #{$small-and-down} {
-	// 		font-size: 2rem;
-	// 		padding: 0.5rem 1rem 0rem 1rem;
-	// 	}
-	// }
-
 	#mc_embed_signup {
+		form {
+			@media #{$small-and-down} {
+				text-align: center;
+			}
+		}
+
 		label {
 		    display: block;
+		    position: relative;
+		    text-align: left;
 		    font-size: 1.3rem;
 		    padding-bottom: 0.4rem;
 		    font-weight: 400;
 		    font-family: 'Roboto', sans-serif;
 		    color: #666;
+		    margin-right: 2rem;
 
 		    @media #{$small-and-down} {
 		    	font-size: 1.2rem;
+		    	text-align: center;
 		    }
 		}
 
@@ -83,11 +76,21 @@
 			color: #666;
 			margin-bottom: 1rem;
 			background-color: #fff;
+			border:1px solid #999;
+			border-radius: 3px;
+			display: block;
+			padding: 0 0.4em;
+			margin: 0 4% 10px 0;
+			min-height: 32px;
+			width: 58%;
+			min-width: 130px;
 
 			@media #{$small-and-down} {
 				font-size: 1rem;
 				height: 2rem;
-				margin-bottom: 0.5rem;
+				margin: 0 0.5rem 0 0;
+				display: inline-block;
+				vertical-align: top;
 			}
 
 			&:focus{
@@ -95,13 +98,29 @@
 			}
 		}
 
+		.clear {
+			clear: none;
+			display: inline;
+			@media #{$small-and-down} {
+				display: inline-block;
+			}
+		}
+
 		.button{
+			clear: both;
+			border: 0 none;
+			border-radius: 4px;
 			height: 2.5rem;
 			margin-bottom: 0;
 			background-color: #EF5350;
+			padding: 0 1rem 0 1rem;
+			// box-sizing: border-box;
+			&:hover{
+				background-color: #ff9391;
+			}
 
 			@media #{$small-and-down} {
-				height: 2rem;
+				margin: 0 0 0 0;
 			}
 		}
 

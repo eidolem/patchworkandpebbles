@@ -23,7 +23,17 @@
     {{!-- Need this /div so the copyright line is full-width outside the container --}}
   </div>
 
-    <div class="footer-copyright">
+    <div class="row footer-copyright">
+            <div class="col s12 m6 l6 footer-left">
+                <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+            </div>
+            <div class="col s12 m6 l6 footer-right">
+                <a target="_blank" href="http://patchworkandpebbles.com/privacy-policy"> Privacy Policy - </a> Published with <a  target="_blank" href="http://ghost.org">Ghost</a> and <a target="_blank" href="http://materializecss.com/">Materialize</a>
+            </div>
+    </div>
+</footer>
+
+{{!--     <div class="footer-copyright">
         <div class="footer-left">
             <a href="{{@blog.url}}">&nbsp&nbsp{{@blog.title}}</a> &copy; {{date format="YYYY"}}
         </div>
@@ -35,4 +45,4 @@
             <a target="_blank" href="http://materializecss.com/">Materialize&nbsp&nbsp</a>
         </div>
     </div>
-</footer>
+ --}}

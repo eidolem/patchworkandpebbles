@@ -1,3 +1,29 @@
+// Colors
+// Mapping.  Nav slug | tag slug | color
+// sewing | quilting-sewing | $color-one
+// career-gender-equality | career-gender-equality | $color-two
+// sports-fitness-recovery | sports-fitness-recovery | $color-three
+// travel | travel-destinations | $color-four
+// climbing | rock-climbing | $color-five
+// diy-projects | diy-projects | $color-six
+// For "All" (the default), use $color-none
+$color-none-light: #b0bec5;
+$color-none: #78909c;
+$color-one-light: #8bc34a;
+$color-one: #4caf50;
+$color-two-light: #ffad12;
+$color-two: #ff9800;
+$color-three-light: #ef5350;
+$color-three: #f44336;
+$color-four-light: #82dce9;
+$color-four: #03a9f4;
+$color-five-light: #ce93d8;
+$color-five: #9C94D5; //#ba68c8;
+$color-six-light: #fff176;
+$color-six: #facc17;
+$color-seven-light: #f48fb1;
+$color-seven: #ec407a;
+
 @import "variables";
 @import "post";
 @import "footer";
@@ -13,6 +39,7 @@
 @import "email-subscribe-card";
 @import "email-subscribe-popup";
 @import "author-card";
+@import "author";
 
 @font-face {
     font-family: 'OPTIBodoniCampanileFive';
@@ -26,31 +53,31 @@
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Slab', serif;
-	margin: 2rem 0 2rem 0;
+	margin: 4rem 0 2rem 0;
 }
 
 h1 { 
-  font-size: 2.2rem;
-}
-
-h2 { 
   font-size: 2rem;
 }
 
-h3 { 
+h2 { 
   font-size: 1.8rem;
 }
 
-h4 {
+h3 { 
   font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 h6 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 p {
@@ -66,6 +93,10 @@ p {
 // For anchors
 a {
 	text-decoration: underline;
+}
+
+mark {
+	background: #f5eb93;
 }
 
 // Needed for Materialize Sticky Footer

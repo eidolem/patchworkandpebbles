@@ -20,17 +20,41 @@
 // The colored header bar that includes post title and modified date
 .post-header {
 	position: relative;
-	background-color: #0f9d58;
+	background-color: $color-none;
+	&[data-state=sewing] {
+		background-color: $color-one;
+	}
+	&[data-state=career-gender-equality] {
+		background-color: $color-two;
+	}
+	&[data-state=sports-fitness-recovery] {
+		background-color: $color-three;
+	}
+	&[data-state=travel] {
+		background-color: $color-four;
+	}
+	&[data-state=climbing] {
+		background-color: $color-five;
+	}
+	&[data-state=diy-projects] {
+		background-color: $color-six;
+	}
 
 	@media #{$medium-only}{
-		margin-top: -20%;
+		
+		&.move-title-up {
+			margin-top: -20%;
+		}
+		
 		&.col {
 			padding: 1rem 1rem 0.5rem 1.5rem;
 		}
 	}
 
 	@media #{$large-and-up}{
-		margin-top: -15%;
+		&.move-title-up {
+			margin-top: -15%;
+		}
 		&.col {
 			padding: 2rem 3rem 1rem 5rem;
 		}
@@ -80,7 +104,13 @@
 	&.col {
 		@media #{$large-and-up}{
 			padding-left: 3rem;
+			margin-right: 4rem;
 		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-none;
+		font-weight: 700;
 	}
 
 	img {

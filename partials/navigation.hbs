@@ -14,14 +14,14 @@
         <div class="nav-content">
             <ul class="my-tabs row">
                 {{#foreach navigation}}
-                    <li class="my-tab subheader-items" id="{{slug}}"><a target="_self" href="{{url}}">{{label}}</a></li>
+                    <li class="my-tab subheader-items" id="{{slug}}"><a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a></li>
                 {{/foreach}}
             </ul>
         </div>
     </nav>
 </div>
 
-{{!-- This is the same as above, only navbar isn't fixed, so it scrolls away on med and small screens --}}
+{{!-- For Small and Med screens: no tabs row, and navbar isn't fixed so it scrolls away on med and small screens --}}
 <div class="hide-on-large-only navbar-fixed" id="nav-small-med">
     <nav class="nav-extended">
         <div class="nav-wrapper" id="nav-wrapper-mobile">
@@ -32,13 +32,6 @@
                 <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li>
             </ul> --}}
             
-        </div>
-        <div class="nav-content hide-on-med-and-down">
-            <ul class="my-tabs row">
-                {{#foreach navigation}}
-                    <li class="my-tab subheader-items" id="{{slug}}"><a target="_self" href="{{url}}">{{label}}</a></li>
-                {{/foreach}}
-            </ul>
         </div>
     </nav>
 
@@ -58,11 +51,12 @@
 </ul>
 
 
+{{!-- Adds a class to make the colored underline if the URL of the page matches the link on the element --}}
 <script>
-    var path = location.pathname
-    $('.my-tab > a').each(function() {
-        if ($(this).attr('href') == path) {
-            $(this).addClass('active');
+    var path = location.pathname;
+    $('.my-tab > a').each(function(i, tab) {
+        if ($(tab).attr('href') == path) {
+            $(tab).addClass('active');
         }
     });
 </script>

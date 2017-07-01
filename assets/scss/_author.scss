@@ -1,0 +1,38 @@
+
+.author-page {
+	.post-header {
+		position: relative;
+		background-color: $color-five;
+		@media #{$medium-only}{		
+			&.col {
+				padding: 1rem 1rem 0.5rem 1.5rem;
+			}
+		}
+
+		@media #{$large-and-up}{
+			&.col {
+				padding: 2rem 3rem 1rem 5rem;
+			}
+		}
+	}
+
+	.post-title {
+		font-weight: 300;	
+		font-family: 'Satisfy', cursive;	
+		text-align: center;	
+		font-size: 8rem;
+		
+		@media #{$medium-and-down}{
+			font-size: 6rem;
+		}
+
+		@media #{$large-and-up}{
+			font-size: 6rem;
+		}
+	}
+
+	.row {
+		margin-bottom: 0;
+	}
+
+}

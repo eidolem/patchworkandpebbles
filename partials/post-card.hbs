@@ -13,7 +13,13 @@
 
                     {{#is "index"}}
                         <section class="card-tag">
-                            {{tags autolink="false"}}
+                            {{#foreach tags}}
+                                {{#if @last}}
+                                    <p data-state="{{slug}}">{{name}}</p>
+                                {{else}}
+                                    <p data-state="{{slug}}">{{name}}, </p>
+                                {{/if}}
+                            {{/foreach}}
                         </section>
                     {{/is}}
 
