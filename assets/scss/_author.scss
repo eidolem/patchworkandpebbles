@@ -14,12 +14,20 @@
 				padding: 2rem 3rem 1rem 5rem;
 			}
 		}
+
+		h1 {
+			margin: 2rem 0;
+		}
+
+		img {
+			margin: 1rem 1rem;
+		}
 	}
 
 	.post-title {
 		font-weight: 300;	
 		font-family: 'Satisfy', cursive;	
-		text-align: center;	
+		// text-align: center;	
 		font-size: 8rem;
 		
 		@media #{$medium-and-down}{
@@ -33,6 +41,10 @@
 
 	.row {
 		margin-bottom: 0;
+	}
+
+	.my-photo {
+		height: 100%;
 	}
 
 }

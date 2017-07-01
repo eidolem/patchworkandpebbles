@@ -798,10 +798,13 @@ nav.nav-extended {
   @media only screen and (min-width: 993px) {
     .author-page .post-header.col {
       padding: 2rem 3rem 1rem 5rem; } }
+  .author-page .post-header h1 {
+    margin: 2rem 0; }
+  .author-page .post-header img {
+    margin: 1rem 1rem; }
 .author-page .post-title {
   font-weight: 300;
   font-family: 'Satisfy', cursive;
-  text-align: center;
   font-size: 8rem; }
   @media only screen and (max-width: 992px) {
     .author-page .post-title {
@@ -811,6 +814,8 @@ nav.nav-extended {
       font-size: 6rem; } }
 .author-page .row {
   margin-bottom: 0; }
+.author-page .my-photo {
+  height: 100%; }
 
 @font-face {
   font-family: 'OPTIBodoniCampanileFive';
