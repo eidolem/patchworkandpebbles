@@ -112,6 +112,7 @@ main {
 }
 
 .page-content {
+	margin-bottom: 0rem;
 	@media #{$large-and-up}{
 		padding-top: 2.9rem;
 	}
