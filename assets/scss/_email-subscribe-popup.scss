@@ -3,7 +3,8 @@
 
 .email-subscribe-popup {
 	border: 1px solid #E0E0E0;
-	z-index: 1000;
+	// sideNav z-index is 999; put the email subscribe popup right under that
+	z-index: 998;
 	bottom: 1px;
 	right: 1rem;
 	background-color: #ffe0e3;

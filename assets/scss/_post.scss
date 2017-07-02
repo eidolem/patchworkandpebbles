@@ -40,14 +40,19 @@
 		background-color: $color-six;
 	}
 
+	@media #{$small-and-down}{
+		&.col {
+			padding-bottom: 1rem;
+		}
+	}
+
 	@media #{$medium-only}{
-		
 		&.move-title-up {
 			margin-top: -20%;
 		}
 		
 		&.col {
-			padding: 1rem 1rem 0.5rem 1.5rem;
+			padding: 1rem 1rem 1rem 1.5rem;
 		}
 	}
 
@@ -97,6 +102,16 @@
 			text-decoration-style: dotted;
 		}
 	}
+
+	.post-date {
+		@media #{$small-and-down}{
+			float:left;
+		}
+
+		@media #{$medium-and-up}{
+			float:right;
+		}
+	}
 }
 
 // Images in a post--make them slightly wider than the text
@@ -136,10 +151,15 @@
 
 	blockquote {
 		// Sets the left colored border and the background of the entire blockquote area
-		border-left: 10px solid #e08433;
-		margin: 3rem 2rem;
-		background: #f1e5c9;
+		// border-left: 10px solid #e08433;
+		// margin: 3rem 2rem;
+		// background: #f1e5c9;
+		// // Changes the colored background area of the top and bottom of the whole blockquote
+		// p:first-child, p:last-child{
+		// 	padding: 0.6rem 0 0.6rem 0;
+		// }
 
+		padding: 0 0.5rem 0 1.5rem;
 		// Changes the style of the text within the blockquote area
 		p{
 		  	font-family: 'Roboto Slab', serif;
@@ -149,11 +169,42 @@
 			font-weight: 300;
 			// Changes line spacing if there's more than one paragraph within the blockquote
 			margin: 1rem 0rem;  
+			position: relative;
 		}
 
-		// Changes the colored background area of the top and bottom of the whole blockquote
-		p:first-child, p:last-child{
+		border: 5px dashed $color-five;
+		margin: 3rem 2rem;
+		background: #f7ffda;
+		border-radius: 30px;
+
+		p:first-child {
 			padding: 0.6rem 0 0.6rem 0;
+			text-indent: 6rem;
+			&:before {
+				content: '\201C';
+				font-family: serif;
+				font-weight: 700;
+				position: absolute;
+				font-size: 10rem;
+				top: 0.5rem;
+				left: -7rem;
+				color: $color-five;
+			}
+		}
+
+		p:last-child {
+			padding: 0.6rem 0 0.6rem 0;
+			&:after {
+				content: '\201D';
+				font-family: serif;
+				font-weight: 700;
+				position: absolute;
+				font-size: 10rem;
+				color: $color-five;
+				bottom: -3.8rem;
+				right: 1rem;
+			}
+
 		}
 	}
 

@@ -9,7 +9,8 @@
 
         <div class="post-listing">
             {{#get "posts" filter="tags:[{{tags[*].slug}}]+id:-{{id}}" limit="3" }}
-             {{!--    {{#foreach posts}}
+             {{!-- to display the first X num posts --}} 
+             {{!--   {{#foreach posts}}
                     <div class="row post">
                         <a href="{{url}}" class="valign-wrapper">
                             <div class="image col s4 m4 l4" style="background-image: url({{image}})"></div>

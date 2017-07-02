@@ -80,19 +80,19 @@ nav.nav-extended {
 
 			.my-tab {
 				display: inline-block;
-				//  15.5% is 93%/6 (full width minus "All" width)
-				width: 15.5%;
+				//  14.3% is (100% - 7% - 7%)/6 (full width minus "All" and "About" width)
+				width: 14.3%;
 				text-align: center;
 				text-transform: uppercase;
 				height: $nav-content-height;
 
 				// Makes "All" smaller to save horiz space
-				&:first-of-type {
+				&:first-of-type, &:last-of-type {
 					width: 7%;
 				}
 
 				a {
-					padding: 8px 10px 0 0;
+					padding: 8px 0 0 0;
 					font-size: 1rem;
 					color: #666;
 					overflow: visible;

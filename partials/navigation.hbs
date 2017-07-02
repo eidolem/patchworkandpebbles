@@ -44,10 +44,14 @@
     <li><a href="/" class="waves-effect">Home</a></li>
     <li><a>Categories</a></li>
     {{#foreach navigation}}
-        <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
+        {{!-- Don't output About in the Categories drop-down. Make sure to configure Navigation in Ghost in correct order, with About last --}}
+        {{#if @last}}
+        {{else}}
+            <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
+        {{/if}}
     {{/foreach}}   
-    <li><a href="/about-me" class="waves-effect">About Me</a></li>
-    <li><a href="/about-me/#contact-card" class="waves-effect">Contact</a></li>
+    <li><a href="/author/melodie" class="waves-effect">About Me</a></li>
+    <li><a href="/author/melodie/#contact-me" class="waves-effect">Contact</a></li>
 </ul>
 
 

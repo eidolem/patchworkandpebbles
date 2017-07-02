@@ -23,12 +23,12 @@ of the default.hbs template, containing the blog header/footer. --}}
             {{/if}}
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
-                    <div class="col s12 m12 l6">
+                    <div class="col s12 m6 l6">
                         <div class="post-tags">{{tags}}</div>
                     </div>
                     
-                    <div class="col s12 m12 l6">
-                        <time class="right post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
+                    <div class="col s12 m6 l6">
+                        <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
                     </div>
                 </section>
             </header>
@@ -120,7 +120,16 @@ of the default.hbs template, containing the blog header/footer. --}}
                 $.get(
                     ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
                 ).done(onSuccess)
+
+                // $.get(
+                //     ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
+                // ).fail(onFail)
             });
+
+        // function onFail(xhr, textStatus, errorThrown) {
+        //     var result = $('#list-of-posts');
+        //     result.append(xhr);
+        // }
 
         function onSuccess(data) {
             // list-of-posts is on related-posts-card
