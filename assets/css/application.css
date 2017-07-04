@@ -21,7 +21,7 @@
     background-color: #4caf50; }
   .post-header[data-state=career-gender-equality] {
     background-color: #ff9800; }
-  .post-header[data-state=sports-fitness-recovery] {
+  .post-header[data-state=sports] {
     background-color: #f44336; }
   .post-header[data-state=travel] {
     background-color: #03a9f4; }
@@ -276,7 +276,7 @@ nav.nav-extended {
         nav.nav-extended .nav-content .my-tabs .my-tab:first-of-type, nav.nav-extended .nav-content .my-tabs .my-tab:last-of-type {
           width: 7%; }
         nav.nav-extended .nav-content .my-tabs .my-tab a {
-          padding: 8px 0 0 0;
+          padding: 8px 5px 0 5px;
           font-size: 1rem;
           color: #666;
           overflow: visible;
@@ -292,7 +292,7 @@ nav.nav-extended {
             border-bottom: 5px solid #4caf50; }
           nav.nav-extended .nav-content .my-tabs .my-tab a.active[data-state=career-gender-equality] {
             border-bottom: 5px solid #ff9800; }
-          nav.nav-extended .nav-content .my-tabs .my-tab a.active[data-state=sports-fitness-recovery] {
+          nav.nav-extended .nav-content .my-tabs .my-tab a.active[data-state=sports] {
             border-bottom: 5px solid #f44336; }
           nav.nav-extended .nav-content .my-tabs .my-tab a.active[data-state=travel-destinations] {
             border-bottom: 5px solid #03a9f4; }
@@ -354,7 +354,7 @@ nav.nav-extended {
         color: #4caf50; }
       .card .card-content .card-tag p[data-state=career-gender-equality] {
         color: #ff9800; }
-      .card .card-content .card-tag p[data-state=sports-fitness-recovery] {
+      .card .card-content .card-tag p[data-state=sports] {
         color: #f44336; }
       .card .card-content .card-tag p[data-state=travel] {
         color: #03a9f4; }
@@ -453,7 +453,7 @@ nav.nav-extended {
     border-top: 10px solid #4caf50; }
   .section-card[data-state=career-gender-equality] {
     border-top: 10px solid #ff9800; }
-  .section-card[data-state=sports-fitness-recovery] {
+  .section-card[data-state=sports] {
     border-top: 10px solid #f44336; }
   .section-card[data-state=travel] {
     border-top: 10px solid #03a9f4; }

@@ -69,20 +69,24 @@ of the default.hbs template, containing the blog header/footer. --}}
 
         {{> email-subscribe-popup}}
 
+        {{!-- At end of content --}}
         <div class="row hide-on-small-and-down">
             <div class="col m12 l10 offset-l1">
                 {{> related-posts-wide}}
             </div>
 
             <div class="col m12 l12 hide-on-small-and-down">
-                <ins class="adsbygoogle"
+                <div class="ad-block my-google-ads">
+                    <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-2599762387787801"
                      data-ad-slot="7650868943"
                      data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </div>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
             </div>
         </div>
 
@@ -90,48 +94,41 @@ of the default.hbs template, containing the blog header/footer. --}}
 
 
     <script>
-        // $('.post-header').each(function() {
-        //     $.get(ghost.url.api('posts', {limit:'1', filter:"id:{{id}}", include:"tags"})).done(onSuccess);
-        // });
+        $('.my-google-ads').each(function() {
+            $.get(ghost.url.api('posts', {limit:'1', filter:"id:{{id}}", include:"tags"})).done(onSuccess);
+        });
 
-        // function onSuccess(data) {
-        //     $('.post-header').attr("data-state", data.posts[0].tags[0].slug);
-        // }
+        function onSuccess(data) {
+            var result = data.posts[0].tags[0].slug;
+        }
     </script>
 
 
     {{!-- In order to grab random posts with the same tags as this post: --}}
-    {{!-- Create an empty array to contain the tags --}}
-    <script>
-        var $tags = [];
-    </script>
-
-    {{!-- Loop over the tags from this post and create an array with just the slugs --}}
-    {{#foreach tags}}
-        <script>
-            $tags.push("{{slug}}");
-        </script>
-    {{/foreach}}
-
     <script>
         // Grab all posts, filtered by tags
         $(document).ready(function () {
-                // Get all the posts with these tags, minus the current post id
-                $.get(
-                    ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
-                ).done(onSuccess)
-
-                // $.get(
-                //     ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
-                // ).fail(onFail)
-            });
-
-        // function onFail(xhr, textStatus, errorThrown) {
-        //     var result = $('#list-of-posts');
-        //     result.append(xhr);
-        // }
-
+            // Get all the posts with these tags, minus the current post id
+            $.get(
+                ghost.url.api('posts', {limit:'all', filter:"id:{{id}}", include:"tags"})
+            ).done(onSuccess)
+        });
+        
         function onSuccess(data) {
+            var result = data.posts[0].tags;
+            var tags = $(result).map(function(i, tag) {
+                return tag.slug;
+            });
+            getRelatedPosts(tags);
+        }
+
+        function getRelatedPosts(tags) {
+            $.get(
+                ghost.url.api('posts', {limit: 'all', filter: "tags:[" + $tags.join(',') + "]+id:-{{id}}"})
+            ).done(renderRelatedPosts)
+        }
+ 
+        function renderRelatedPosts(data) {
             // list-of-posts is on related-posts-card
             var result = $('#list-of-posts');
             // Randomize array
