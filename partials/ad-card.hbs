@@ -1,7 +1,76 @@
-<div class="ad-block" id="my-google-ads">
 
-</div>
+<script>
+    function populateAd(slug, adlocation) {
+    	var channel;
 
+        if(adlocation=='sidebar') {
+	        switch(slug) {
+	            case 'sewing':
+	                channel = '3320972548';
+	                break;
+	            case 'career-gender-equality':
+	                channel = '6274438942';
+	                break;
+	            case 'sports':
+	                channel = '9227905344';
+	                break;
+	            case 'travel':
+	                channel = '6414039748';
+	                break;
+	            case 'climbing':
+	                channel = '9367506147';
+	                break;
+	            case 'diy-projects':
+	                channel = '3181371748';
+	                break;
+	            default: 
+	                channel = '7650868943';
+	        }
+	    }
+	    else {
+	    	switch(slug) {
+            case 'sewing':
+                channel = '4797705742';
+                break;
+            case 'career-gender-equality':
+                channel = '7751172149';
+                break;
+            case 'sports':
+                channel = '1704638546';
+                break;
+            case 'travel':
+                channel = '7890772948';
+                break;
+            case 'climbing':
+                channel = '1844239340';
+                break;
+            case 'diy-projects':
+                channel = '4658104945';
+                break;
+            default: 
+                channel = '4658104945';
+            }
+	    }
+
+        var adUnit = $('#my-google-ads-'+ '{{adlocation}}');
+        adUnit.append(
+            '<ins class="adsbygoogle"'
+            + 'style="display:block"'
+            + 'data-ad-client="ca-pub-2599762387787801"'
+            + 'data-ad-slot=' + "'" + channel + "'"
+            + 'data-ad-format="auto"></ins>'
+        );
+    }
+</script>
+
+
+
+{{!-- For Google AdSense Ads --}}
+{{#foreach tags limit="1"}}
+	<script>
+		populateAd('{{slug}}', '{{adlocation}}');
+	</script>
+{{/foreach}}
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>

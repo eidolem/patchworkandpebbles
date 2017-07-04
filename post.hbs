@@ -12,7 +12,6 @@ of the default.hbs template, containing the blog header/footer. --}}
                 <img class="feature-image" src="{{image}}"></img>
             </div>
         </div>
-
         <div class="row">
             {{#if tags limit="1"}}
                 {{#foreach tags limit="1"}}
@@ -33,6 +32,7 @@ of the default.hbs template, containing the blog header/footer. --}}
                 </section>
             </header>
         </div>
+
     {{!-- If there's no image, don't display it, and don't move the title --}}
     {{else}}
         <div class="row">
@@ -57,42 +57,32 @@ of the default.hbs template, containing the blog header/footer. --}}
         </div>
     {{/if}}
 
-        <div class="row">
-            <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
-                {{content}}
-            </section>
+    {{!-- Post Content and Sidebar --}}
+    <div class="row">
+        <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
+            {{content}}
+        </section>
+        <section class="col s12 l3 offset-l1 hide-on-med-only sidebar-content">
+            {{> sidebar}}
+        </section>
+    </div>
 
-            <section class="col s12 l3 offset-l1 hide-on-med-only sidebar-content">
-                {{> sidebar}}
-            </section>
+    {{!-- Email Popup --}}
+    {{> email-subscribe-popup}}
+
+    {{!-- Anything full width after page-content --}}
+    <div class="row hide-on-small-and-down">
+        <div class="col m12 l10 offset-l1">
+            {{> related-posts-wide}}
+            <div class="ad-block" id="my-google-ads-banner-bottom"></div>
+            {{> ad-card adlocation="banner-bottom"}}
         </div>
-
-        {{> email-subscribe-popup}}
-
-        {{!-- At end of content --}}
-        <div class="row hide-on-small-and-down">
-            <div class="col m12 l10 offset-l1">
-                {{> related-posts-wide}}
-            </div>
-
-            {{!-- <div class="col m12 l12 hide-on-small-and-down">
-                <div class="ad-block my-google-ads">
-                    <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-2599762387787801"
-                     data-ad-slot="7650868943"
-                     data-ad-format="auto"></ins>
-                </div>
-
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div> --}}
-        </div>
-
+    </div>
     </article>
 
 
+
+    {{!-- Get all tags for this post and call RelatedPosts --}}
     <script>
         $('.my-google-ads').each(function() {
             $.get(ghost.url.api('posts', {limit:'1', filter:"id:{{id}}", include:"tags"})).done(onSuccess);
@@ -102,8 +92,7 @@ of the default.hbs template, containing the blog header/footer. --}}
             var result = data.posts[0].tags[0].slug;
         }
     </script>
-
-    <script type="text/javascript" src="{{asset "js/relatedPostsAndAds.js"}}">    </script>
+    <script type="text/javascript" src="{{asset "js/relatedPosts.js"}}">    </script>
     <script>
         // Grab all posts, filtered by tags
         $(document).ready(function () {
@@ -114,5 +103,4 @@ of the default.hbs template, containing the blog header/footer. --}}
         });
     </script>
         
-
 {{/post}}
