@@ -40,10 +40,10 @@
 
     {{!-- AdSense mobile page-level ads --}}
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2599762387787801",
-      enable_page_level_ads: true
-      });
+      // (adsbygoogle = window.adsbygoogle || []).push({
+      // google_ad_client: "ca-pub-2599762387787801",
+      // enable_page_level_ads: true
+      // });
     </script>
 
     <!-- MailChimp -->
@@ -62,10 +62,10 @@
     {{ghost_foot}}
 
     {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/vendor/fitvids.js"}}"></script>
     
     {{!-- For materialize --}}
-    <script type="text/javascript" src="{{asset "js/bin/materialize.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/vendor/bin/materialize.min.js"}}"></script>
     <script type="text/javascript">
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
@@ -126,8 +126,8 @@
     </script>
 
     {{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
-    <script type="text/javascript" src="{{asset "js/masonry.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/imagesloaded.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/vendor/masonry.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/vendor/imagesloaded.js"}}"></script>
     <script type="text/javascript">
       var $grid = $('.grid').masonry({
         itemSelector: '.grid-item',
@@ -158,7 +158,7 @@
       });  
     </script>
 
-    {{!-- For button close, remove element from DOM --}}
+    {{!-- For button close on subscribe popup, remove element from DOM --}}
     <script>
       function closeMe(elementToClose) {
         $(elementToClose).remove();
