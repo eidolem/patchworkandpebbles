@@ -175,6 +175,11 @@
     content: "\E412";
     padding-right: 0.5rem; }
 
+.end-of-content {
+  margin: 2rem auto 1rem auto;
+  width: 30%;
+  border-bottom: 1px solid #b0bec5; }
+
 .page-footer {
   background-color: #E0E0E0;
   margin: 0; }
@@ -231,7 +236,8 @@ nav.nav-extended {
     color: #000; }
   nav.nav-extended a {
     text-decoration: none;
-    color: #000; }
+    color: #000;
+    line-height: 4rem; }
     @media only screen and (max-width: 992px) {
       nav.nav-extended a {
         height: 2.9rem;
@@ -265,15 +271,15 @@ nav.nav-extended {
       position: relative;
       white-space: normal;
       height: 3rem;
-      width: 91%;
+      width: 95%;
       margin: 0 auto; }
       nav.nav-extended .nav-content .my-tabs .my-tab {
         display: inline-block;
-        width: 14.3%;
+        width: 15.5%;
         text-align: center;
         text-transform: uppercase;
         height: 3rem; }
-        nav.nav-extended .nav-content .my-tabs .my-tab:first-of-type, nav.nav-extended .nav-content .my-tabs .my-tab:last-of-type {
+        nav.nav-extended .nav-content .my-tabs .my-tab:first-of-type {
           width: 7%; }
         nav.nav-extended .nav-content .my-tabs .my-tab a {
           padding: 8px 5px 0 5px;
@@ -523,11 +529,19 @@ nav.nav-extended {
 .home-content {
   margin-top: 2rem; }
 
-.sidebar-content {
-  margin-top: 8rem; }
+@media only screen and (max-width: 600px) {
+  .sidebar-content {
+    margin-top: 2rem; } }
+@media only screen and (min-width: 601px) {
+  .sidebar-content {
+    margin-top: 8rem; } }
 
-.ad-block {
-  margin-bottom: 4rem; }
+@media only screen and (max-width: 600px) {
+  .ad-block {
+    margin-bottom: 1rem; } }
+@media only screen and (min-width: 601px) {
+  .ad-block {
+    margin-bottom: 4rem; } }
 
 .related-posts-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);

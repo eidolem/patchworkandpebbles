@@ -20,7 +20,7 @@ function renderRelatedPosts(data) {
     // Randomize array
     var sortedPosts = shuffleArray(data.posts);
     // If there's less than 6 posts with this tag, only take the total number of posts 
-    if ( sortedPosts.length < 6){
+    if ( sortedPosts.length <= 6){
         var displayPosts = sortedPosts.slice(0, sortedPosts.length);
     }
     // Else pull max 6
@@ -42,7 +42,7 @@ function renderRelatedPosts(data) {
     // list-of-posts-wide is on related-posts-card-wide
     var result2 = $('#list-of-posts-wide');
     // If there's less than 6 posts with this tag, only pull the total number
-    if ( sortedPosts.length < 6){
+    if ( sortedPosts.length <= 6){
         var displayPosts2 = sortedPosts.slice(0, sortedPosts.length);
     }
     // Else pull max 6, but don't take the same 6 as was in the sidebar related posts card

@@ -5,11 +5,11 @@
         <div class="nav-wrapper">
             <a href="/" class="brand-logo center">Patchwork & Pebbles</a>
             <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            {{!-- Uncomment when Search is implemented --}}
-            {{!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li>
-            </u --}}
-            
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/author/melodie">About</a>
+                {{!-- Uncomment when Search is implemented --}}
+                {{!-- <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li> --}}
+            </ul>     
         </div>
         <div class="nav-content">
             <ul class="my-tabs row">
@@ -27,11 +27,6 @@
         <div class="nav-wrapper" id="nav-wrapper-mobile">
             <a href="/" class="brand-logo center">Patchwork & Pebbles</a>
             <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            {{!-- Uncomment when Search is implemented --}}
-            {{!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li>
-            </ul> --}}
-            
         </div>
     </nav>
 
@@ -44,11 +39,7 @@
     <li><a href="/" class="waves-effect">Home</a></li>
     <li><a>Categories</a></li>
     {{#foreach navigation}}
-        {{!-- Don't output About in the Categories drop-down. Make sure to configure Navigation in Ghost in correct order, with About last --}}
-        {{#if @last}}
-        {{else}}
-            <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
-        {{/if}}
+        <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
     {{/foreach}}   
     <li><a href="/author/melodie" class="waves-effect">About Me</a></li>
     <li><a href="/author/melodie/#contact-me" class="waves-effect">Contact</a></li>

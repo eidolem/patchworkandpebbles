@@ -61,6 +61,7 @@ of the default.hbs template, containing the blog header/footer. --}}
     <div class="row">
         <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
             {{content}}
+            <div class="end-of-content"></div>
         </section>
         <section class="col s12 l3 offset-l1 hide-on-med-only sidebar-content">
             {{> sidebar}}
@@ -68,14 +69,14 @@ of the default.hbs template, containing the blog header/footer. --}}
     </div>
 
     {{!-- Email Popup --}}
-    {{> email-subscribe-popup}}
+    {{>email-subscribe-popup}}
 
     {{!-- Anything full width after page-content --}}
     <div class="row hide-on-small-and-down">
         <div class="col m12 l10 offset-l1">
-            {{> related-posts-wide}}
+            {{>related-posts-wide}}
             <div class="ad-block" id="my-google-ads-banner-bottom"></div>
-            {{> ad-card adlocation="banner-bottom"}}
+            {{>ad-card adlocation="banner-bottom"}}
         </div>
     </div>
     </article>

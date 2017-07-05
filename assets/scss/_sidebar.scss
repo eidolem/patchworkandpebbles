@@ -1,7 +1,17 @@
 .sidebar-content {
-	margin-top: 8rem;
+	@media #{$small-and-down} {
+		margin-top: 2rem;
+	}
+	@media #{$medium-and-up} {
+		margin-top: 8rem;
+	}
 }
 
 .ad-block {
-	margin-bottom: 4rem;
+	@media #{$small-and-down} {
+		margin-bottom: 1rem;
+	}
+	@media #{$medium-and-up} {
+		margin-bottom: 4rem;
+	}
 }

@@ -1,9 +1,25 @@
 
-<script>
-    function populateAd(slug, adlocation) {
-    	var channel;
+{{!-- Style scripts for Sidebar Ad.  Needs to be above the function --}}
+<style type="text/css">
+	.ad-display-sidebar {display: block;}
+	@media (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})
+		{.ad-display-sidebar {display: none;}}
+</style>
 
-        if(adlocation=='sidebar') {
+{{!-- Style scripts for Banner Bottom Ad.  Needs to be above the function --}}
+<style type="text/css">
+	.ad-display-banner-bottom {display: block;}
+	@media (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen}) 
+		{.ad-display-banner-bottom {display: none;}}
+</style>
+
+
+<script>
+    function populateAd(slug) {
+    	var channel;
+    	var location='{{adlocation}}';
+    	
+    	if(location=='sidebar') {
 	        switch(slug) {
 	            case 'sewing':
 	                channel = '3320972548';
@@ -25,52 +41,75 @@
 	                break;
 	            default: 
 	                channel = '7650868943';
-	        }
-	    }
-	    else {
-	    	switch(slug) {
-            case 'sewing':
-                channel = '4797705742';
-                break;
-            case 'career-gender-equality':
-                channel = '7751172149';
-                break;
-            case 'sports':
-                channel = '1704638546';
-                break;
-            case 'travel':
-                channel = '7890772948';
-                break;
-            case 'climbing':
-                channel = '1844239340';
-                break;
-            case 'diy-projects':
-                channel = '4658104945';
-                break;
-            default: 
-                channel = '4658104945';
-            }
+	        	}
+	        var adUnit = $('#my-google-ads-sidebar');
+	        adUnit.append(
+			    '<ins class="adsbygoogle ad-display-sidebar"'
+			    + 'data-ad-client="ca-pub-2599762387787801"'
+			    // + 'data-ad-slot=' + "'" + channel + "'"
+			    // + 'data-ad-format="auto"'
+			    + '></ins>'
+			);
+
+	        adDisplayParam = {};
+			if( (window.innerWidth <= 600) || (window.innerWidth > 992)) {
+				adDisplayParam = {google_ad_format: 'auto'};
+			}
 	    }
 
-        var adUnit = $('#my-google-ads-'+ '{{adlocation}}');
-        adUnit.append(
-            '<ins class="adsbygoogle"'
-            + 'style="display:block"'
-            + 'data-ad-client="ca-pub-2599762387787801"'
-            + 'data-ad-slot=' + "'" + channel + "'"
-            + 'data-ad-format="auto"></ins>'
-        );
-    }
+	    else {
+	    	switch(slug) {
+	        case 'sewing':
+	            channel = '4797705742';
+	            break;
+	        case 'career-gender-equality':
+	            channel = '7751172149';
+	            break;
+	        case 'sports':
+	            channel = '1704638546';
+	            break;
+	        case 'travel':
+	            channel = '7890772948';
+	            break;
+	        case 'climbing':
+	            channel = '1844239340';
+	            break;
+	        case 'diy-projects':
+	            channel = '4658104945';
+	            break;
+	        default: 
+	            channel = '4658104945';
+	        }
+	        var adUnit = $('#my-google-ads-banner-bottom');
+            adUnit.append(
+			    '<ins class="adsbygoogle ad-display-banner-bottom"'
+			    + 'data-ad-client="ca-pub-2599762387787801"'
+			    // + 'data-ad-slot=' + "'" + channel + "'"
+			    + '></ins>'
+			);
+
+	        adDisplayParam = {};
+			if( window.innerWidth > 600) {
+				adDisplayParam = {google_ad_format: 'auto'};
+			}
+		}
+
+	adChannelParam = {google_ad_channel: channel};
+	var adParams = $.extend(adChannelParam, adDisplayParam);
+    (adsbygoogle = window.adsbygoogle || []).push({params: adChannelParam});
+	}
+
 </script>
+
 
 
 
 {{!-- For Google AdSense Ads --}}
 {{#foreach tags limit="1"}}
 	<script>
-		populateAd('{{slug}}', '{{adlocation}}');
+		populateAd('{{slug}}');
 	</script>
 {{/foreach}}
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+
 </script>
