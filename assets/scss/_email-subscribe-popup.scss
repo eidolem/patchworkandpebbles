@@ -5,7 +5,7 @@
 	border: 1px solid #E0E0E0;
 	// sideNav z-index is 999; put the email subscribe popup right under that
 	z-index: 998;
-	bottom: 1px;
+	bottom: 0px;
 	right: 1rem;
 	background-color: #ffe0e3;
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px !important;
@@ -58,7 +58,7 @@
 		    position: relative;
 		    text-align: left;
 		    font-size: 1.3rem;
-		    padding-bottom: 0.4rem;
+		    padding-bottom: 0.3rem;
 		    font-weight: 400;
 		    font-family: 'Roboto', sans-serif;
 		    color: #666;

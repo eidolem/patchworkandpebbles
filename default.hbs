@@ -5,16 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-
     {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
-
     {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 
     {{!-- Styles'n'Scripts --}}
     {{!-- ***replace with minimized file! *** --}}
@@ -38,16 +35,17 @@
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-    {{!-- AdSense mobile page-level ads --}}
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2599762387787801",
-      enable_page_level_ads: true
-      });
+    {{!-- Amazon mobile pop-over popup ads --}}
+    <script type="text/javascript">
+        amzn_assoc_ad_type = "link_enhancement_widget";
+        amzn_assoc_tracking_id = "patchworkandp-20";
+        amzn_assoc_linkid = "32a6a05f0c8f99fa3ed0327799f77be7";
+        amzn_assoc_placement = "";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
     </script>
+    <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
 
-    <!-- MailChimp -->
-    {{!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> --}}
 </head>
 
 <body class="{{body_class}}">
@@ -66,12 +64,13 @@
     
     {{!-- For materialize --}}
     <script type="text/javascript" src="{{asset "js/vendor/bin/materialize.min.js"}}"></script>
+
+    {{!-- Everything for page ready() --}}
     <script type="text/javascript">
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
             $(".post-content").fitVids();
-            // Functions for scroll events. Check every 250ms instead of every pixel scroll.
-            // Much less expensive to compute every function.
+            // Functions for scroll events. Check every 250ms instead of every pixel scroll. Less expensive to compute every function.
             var didScroll;
             $(document).scroll(function() {
                 didScroll = true;
@@ -85,16 +84,18 @@
                 }
             }, 250);
             // For email subscribe popup
-            function showHideSubscribePopup () {
-                // y_pos is where the user is scrolled to
-                var y_pos = window.pageYOffset; 
-                // y_pos_break is where classes are added or removed to hide element
-                var y_pos_break = $('#post-content').height() / 2;
-                if (y_pos<y_pos_break) {
-                  $("#email-subscribe-popup").addClass('hide');
-                }
-                else {
-                  $("#email-subscribe-popup").removeClass('hide');
+            if (window.location.href.includes("utm_medium=email") == false) {
+                function showHideSubscribePopup () {
+                    // y_pos is where the user is scrolled to
+                    var y_pos = window.pageYOffset; 
+                    // y_pos_break is where classes are added or removed to hide element
+                    var y_pos_break = $('#post-content').height() / 2;
+                    if (y_pos<y_pos_break) {
+                      $("#email-subscribe-popup").addClass('hide');
+                    }
+                    else {
+                      $("#email-subscribe-popup").removeClass('hide');
+                    }
                 }
             }
             // For mobile nav header
@@ -159,7 +160,7 @@
     </script>
 
     {{!-- For button close on subscribe popup, remove element from DOM --}}
-    <script>
+    <script type="text/javascript">
       function closeMe(elementToClose) {
         $(elementToClose).remove();
       }

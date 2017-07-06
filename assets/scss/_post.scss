@@ -21,7 +21,7 @@
 .post-header {
 	position: relative;
 	background-color: $color-none;
-	&[data-state=sewing] {
+	&[data-state=quilting] {
 		background-color: $color-one;
 	}
 	&[data-state=career-gender-equality] {

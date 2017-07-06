@@ -17,7 +17,7 @@
 .post-header {
   position: relative;
   background-color: #78909c; }
-  .post-header[data-state=sewing] {
+  .post-header[data-state=quilting] {
     background-color: #4caf50; }
   .post-header[data-state=career-gender-equality] {
     background-color: #ff9800; }
@@ -356,7 +356,7 @@ nav.nav-extended {
       @media only screen and (min-width: 993px) {
         .card .card-content .card-tag p {
           font-size: 0.8rem; } }
-      .card .card-content .card-tag p[data-state=sewing] {
+      .card .card-content .card-tag p[data-state=quilting] {
         color: #4caf50; }
       .card .card-content .card-tag p[data-state=career-gender-equality] {
         color: #ff9800; }
@@ -455,7 +455,7 @@ nav.nav-extended {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
   margin-bottom: 2rem; }
-  .section-card[data-state=sewing] {
+  .section-card[data-state=quilting] {
     border-top: 10px solid #4caf50; }
   .section-card[data-state=career-gender-equality] {
     border-top: 10px solid #ff9800; }
@@ -689,7 +689,7 @@ nav.nav-extended {
 .email-subscribe-popup {
   border: 1px solid #E0E0E0;
   z-index: 998;
-  bottom: 1px;
+  bottom: 0px;
   right: 1rem;
   background-color: #ffe0e3;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px !important;
@@ -728,7 +728,7 @@ nav.nav-extended {
     position: relative;
     text-align: left;
     font-size: 1.3rem;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.3rem;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #666;
