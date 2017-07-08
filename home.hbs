@@ -53,15 +53,13 @@
     {{!--For Masonry--layout Masonry after each image loads --}}
 	<script>
 	  $('.grid').imagesLoaded().progress( function() {
-
-	    var grid = $('.grid').masonry({
+	    new Masonry('.grid', {
 	        itemSelector: '.grid-item',
 	        columnWidth: '.grid-sizer',
 	        percentPosition: true, 
 	        gutter: '.gutter-sizer',
 	        stagger: 20
 	      });
-	    grid.masonry();
-	});
+		});
     </script>
 </main>
