@@ -1,76 +1,72 @@
 
-// Masonry grid for listing posts in index and page
-.grid {
-	margin: 0 4%;
-}
-
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-item {
-  float: left;
-  margin-bottom: 1rem;
-
-  // height: 300px;
-  // border: 2px solid hsla(0, 0%, 0%, 0.5);
-}
-
-.grid-sizer, .grid-item {
-	@media #{$small-and-down} {
-		width: 100%;
-	}
-
-	@media #{$medium-and-up} {
-		width: 48%;
-	}
-
-	@media #{$large-and-up}{
-		width: 23%;
-	}
-}
-
-.gutter-sizer {
-	width: 4%;
-}
-
-
-
 
 
 // Masonry grid for the homepage only
-.grid-home {
+.home-content.grid {
+	margin: 2rem 4%;
+	
+	.grid:after {
+	  	content: '';
+	  	display: block;
+	  	clear: both;
+	}
+
+	.grid-item {
+	   	float: left;
+	  	margin-bottom: 1rem;
+	}
+
+	.grid-sizer, .grid-item {
+		@media #{$small-and-down} {
+			width: 100%;
+		}
+
+		@media #{$medium-and-up} {
+			width: 47%;
+		}
+
+		@media #{$large-and-up}{
+			width: 30%;
+		}
+	}
+	.gutter-sizer {
+		width: 7%;
+	}
+}
+
+
+
+// Masonry grid for the tag page only
+.tag-content.grid {
 	margin: 0 4%;
-}
-
-.grid-home:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-item-home {
-  float: left;
-  margin-bottom: 1rem;
-
-}
-
-.grid-sizer-home, .grid-item-home {
-	@media #{$small-and-down} {
-		width: 100%;
+	
+	.grid:after {
+	  	content: '';
+	  	display: block;
+	  	clear: both;
 	}
 
-	@media #{$medium-and-up} {
-		width: 47%;
+	.grid-item {
+	   	float: left;
+	  	margin-bottom: 1rem;
 	}
 
-	@media #{$large-and-up}{
-		width: 30%;
+	.grid-sizer, .grid-item {
+		@media #{$small-and-down} {
+			width: 100%;
+		}
+
+		@media #{$medium-and-up} {
+			width: 48%;
+		}
+
+		@media #{$large-and-up}{
+			width: 23%;
+		}
+	}
+	.gutter-sizer {
+		width: 4%;
 	}
 }
 
-.gutter-sizer-home {
-	width: 7%;
-}
+

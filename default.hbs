@@ -13,38 +13,19 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Styles'n'Scripts --}}
-    {{!-- ***replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/materialize.css"}}"  media="screen,projection"/>
-    {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/materialize.min.css"}}"  media="screen,projection"/>
+    {{!-- *** replace with minimized file! *** --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-    {{!-- Amazon mobile pop-over popup ads --}}
-    <script type="text/javascript">
-        amzn_assoc_ad_type = "link_enhancement_widget";
-        amzn_assoc_tracking_id = "patchworkandp-20";
-        amzn_assoc_linkid = "32a6a05f0c8f99fa3ed0327799f77be7";
-        amzn_assoc_placement = "";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "US";
-    </script>
-    <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
 
 </head>
 
@@ -59,17 +40,32 @@
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
 
-    {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/vendor/fitvids.js"}}"></script>
-    
+    {{!-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700|Roboto:300,400,500,700,900|Material+Icons|Aldrich|Satisfy" rel="stylesheet">
+
     {{!-- For materialize --}}
     <script type="text/javascript" src="{{asset "js/vendor/bin/materialize.min.js"}}"></script>
+
+    {{!-- Amazon mobile pop-over popup ads --}}
+    <script type="text/javascript">
+        amzn_assoc_ad_type = "link_enhancement_widget";
+        amzn_assoc_tracking_id = "patchworkandp-20";
+        amzn_assoc_linkid = "32a6a05f0c8f99fa3ed0327799f77be7";
+        amzn_assoc_placement = "";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
+    </script>
+    <script async src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "js/vendor/fitvids.min.js"}}"></script>
 
     {{!-- Everything for page ready() --}}
     <script type="text/javascript">
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
             $(".post-content").fitVids();
+            
             // Functions for scroll events. Check every 250ms instead of every pixel scroll. Less expensive to compute every function.
             var didScroll;
             $(document).scroll(function() {
@@ -122,41 +118,20 @@
                 }
                 lastScrollTop = currScroll;
             }
-          });
 
-    </script>
-
-    {{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
-    <script type="text/javascript" src="{{asset "js/vendor/masonry.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/vendor/imagesloaded.js"}}"></script>
-    <script type="text/javascript">
-      var $grid = $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true, 
-        gutter: '.gutter-sizer',
-        stagger: 30
-      });
-      // layout Masonry after each image loads
-      $grid.imagesLoaded().progress( function() {
-        $grid.masonry();
-      });  
-    </script>
-
-    {{!-- Masonry layout for home page --}}
-    <script type="text/javascript">
-      var $grid = $('.grid-home').masonry({
-        itemSelector: '.grid-item-home',
-        columnWidth: '.grid-sizer-home',
-        percentPosition: true, 
-        gutter: '.gutter-sizer-home',
-        horizontalOrder: true,
-        stagger: 30
-      });
-      // layout Masonry after each image loads
-      $grid.imagesLoaded().progress( function() {
-        $grid.masonry();
-      });  
+            // var $grid = $('.grid-home').masonry({
+            //     itemSelector: '.grid-item-home',
+            //     columnWidth: '.grid-sizer-home',
+            //     percentPosition: true, 
+            //     gutter: '.gutter-sizer-home',
+            //     horizontalOrder: true,
+            //     stagger: 20
+            //   });
+            //   // layout Masonry after each image loads
+            //   $grid.imagesLoaded().progress( function() {
+            //     $grid.masonry();
+            // }); 
+        });
     </script>
 
     {{!-- For button close on subscribe popup, remove element from DOM --}}

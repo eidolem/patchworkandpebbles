@@ -1,5 +1,9 @@
+{{!-- Insert everything in this file into the {body} of the default.hbs template --}}
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
+<script type="text/javascript" src="{{asset "js/vendor/masonry.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/vendor/imagesloaded.min.js"}}"></script>
 
 {{#tag}}
 
@@ -16,7 +20,7 @@
 
 
 {{!-- The main content area --}}
-<div class="grid">
+<div class="tag-content grid">
 	{{#get "posts" filter="tag:{{slug}}" limit="all"}}
         {{#foreach posts}}
             <div class="grid-item">
@@ -28,5 +32,22 @@
         {{/foreach}}
     {{/get}}
 </div> 
+
+
+{{!--For Masonry--layout Masonry after each image loads --}}
+<script>
+  $('.grid').imagesLoaded().progress( function() {
+
+    var grid = $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true, 
+        gutter: '.gutter-sizer',
+        stagger: 20
+      });
+    grid.masonry();
+});
+</script>
+
 
 {{/tag}}

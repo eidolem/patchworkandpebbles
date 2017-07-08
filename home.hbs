@@ -1,49 +1,67 @@
 {{!< default}}
 
-<main class="home-content grid-home">
-        <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="career-gender-equality" disp-title="Career & Gender Equality"}}
-	    </div>
+{{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
+<script type="text/javascript" src="{{asset "js/vendor/masonry.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/vendor/imagesloaded.min.js"}}"></script>
 
-	    <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="sports" disp-title="Sports Fitness & Recovery"}}
-	    </div>
+<main class="home-content grid">
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="career-gender-equality" disp-title="Career & Gender Equality"}}
+    </div>
 
-	    <div class="grid-item-home">
-	    	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-        	{{>author-card}}
-        	{{>email-subscribe-card}}
-	    </div>
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="sports" disp-title="Sports Fitness & Recovery"}}
+    </div>
 
-        <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="quilting" disp-title="Quilting & Sewing"}}
-	    </div>
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+    	{{>author-card}}
+    	{{>email-subscribe-card}}
+    </div>
+
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="quilting" disp-title="Quilting & Sewing"}}
+    </div>
 
 
-	    <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="travel" disp-title="Travel"}}
-	    </div>
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="travel" disp-title="Travel"}}
+    </div>
 
-	    <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="diy-projects" disp-title="DIY Projects"}}
-	    </div> 
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="diy-projects" disp-title="DIY Projects"}}
+    </div> 
 
-	    <div class="grid-item-home">
-        	<div class="grid-sizer-home"></div>
-        	<div class="gutter-sizer-home"></div>
-	        {{>section-card slug="climbing" disp-title="Rock Climbing"}}
-	    </div>
+    <div class="grid-item">
+    	<div class="grid-sizer"></div>
+    	<div class="gutter-sizer"></div>
+        {{>section-card slug="climbing" disp-title="Rock Climbing"}}
+    </div>
 
-   
+
+    {{!--For Masonry--layout Masonry after each image loads --}}
+	<script>
+	  $('.grid').imagesLoaded().progress( function() {
+
+	    var grid = $('.grid').masonry({
+	        itemSelector: '.grid-item',
+	        columnWidth: '.grid-sizer',
+	        percentPosition: true, 
+	        gutter: '.gutter-sizer',
+	        stagger: 20
+	      });
+	    grid.masonry();
+	});
+    </script>
 </main>

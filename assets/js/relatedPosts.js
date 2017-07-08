@@ -14,7 +14,7 @@ function getRelatedPosts(tags) {
     ).done(renderRelatedPosts)
 }
 
-function renderRelatedPosts(data) {
+function renderRelatedPosts(data) { 
     // list-of-posts is on related-posts-card
     var result = $('#list-of-posts');
     // Randomize array

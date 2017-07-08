@@ -30,7 +30,7 @@ nav.nav-extended {
 
 	a {
 		text-decoration: none;
-		color: #000;
+		color: #666;
 		line-height: $nav-height;
 		@media #{$medium-and-down} {
 			height: $nav-height-small;
