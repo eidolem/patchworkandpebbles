@@ -5,7 +5,7 @@
 .home-content.grid {
 	margin: 2rem 4%;
 	
-	.grid:after {
+	:after {
 	  	content: '';
 	  	display: block;
 	  	clear: both;
@@ -39,8 +39,10 @@
 // Masonry grid for the tag page only
 .tag-content.grid {
 	margin: 0 4%;
+
+
 	
-	.grid:after {
+	.after {
 	  	content: '';
 	  	display: block;
 	  	clear: both;
@@ -69,4 +71,67 @@
 	}
 }
 
+.page-load-status {
+	display:none;
+}
 
+// Animations for loading more
+.loader-ellips {
+  font-size: 20px; /* change size here */
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+}
+
+.loader-ellips__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #555; /* change color here */
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.loader-ellips__dot:nth-child(1),
+.loader-ellips__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellips__dot:nth-child(3) { left: 1.5em; }
+.loader-ellips__dot:nth-child(4) { left: 3em; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em) }
+}
+
+.loader-ellips__dot:nth-child(1) {
+  animation-name: reveal;
+}
+
+.loader-ellips__dot:nth-child(2),
+.loader-ellips__dot:nth-child(3) {
+  animation-name: slide;
+}
+
+.loader-ellips__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse;
+}
+
+p.infinite-scroll-last, p.infinite-scroll-error {
+	// Need display:none so first page loaded doesn't show "No more articles". InfiniteScroll makes it display:block.
+	// display:none;
+	text-align: center;
+	margin: 2rem 0 3rem 0;
+	font-family: 'Satisfy', sans-serif;
+	font-weight: 400;
+	font-size: 2rem;
+}

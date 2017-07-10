@@ -141,3 +141,7 @@ main {
 .sidebar-content .pinned{
 	max-width: calc(25% - 1.5rem);
 }
+
+.pagination {
+	visibility:hidden;
+}
