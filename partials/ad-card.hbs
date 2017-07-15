@@ -16,38 +16,44 @@
 
 <script>
     function populateAd(slug) {
-    	var channel;
+    	var myadslot;
+    	var myadchannel;
     	var location='{{adlocation}}';
     	
     	if(location=='sidebar') {
 	        switch(slug) {
 	            case 'sewing':
-	                channel = '3320972548';
+	                myadslot = '3320972548';
+	                myadchannel = '3162535340';
 	                break;
 	            case 'career-gender-equality':
-	                channel = '6274438942';
+	                myadslot = '6274438942';
+	                myadchannel = '7453134143';
 	                break;
 	            case 'sports':
-	                channel = '9227905344';
+	                myadslot = '9227905344';
+	                myadchannel = '8650665745';
 	                break;
 	            case 'travel':
-	                channel = '6414039748';
+	                myadslot = '6414039748';
+	                myadchannel = '4937306542';
 	                break;
 	            case 'climbing':
-	                channel = '9367506147';
+	                myadslot = '9367506147';
+	                myadchannel = '2883333744';
 	                break;
 	            case 'diy-projects':
-	                channel = '3181371748';
+	                myadslot = '3181371748';
+	                myadchannel = '3302136142';
 	                break;
 	            default: 
-	                channel = '7650868943';
+	                myadslot = '7650868943';
+	                myadchannel = '';
 	        	}
 	        var adUnit = $('#my-google-ads-sidebar');
 	        adUnit.append(
 			    '<ins class="adsbygoogle ad-display-sidebar"'
 			    + 'data-ad-client="ca-pub-2599762387787801"'
-			    // + 'data-ad-slot=' + "'" + channel + "'"
-			    // + 'data-ad-format="auto"'
 			    + '></ins>'
 			);
 
@@ -60,31 +66,37 @@
 	    else {
 	    	switch(slug) {
 	        case 'sewing':
-	            channel = '4797705742';
+	            myadslot = '4797705742';
+	            myadchannel = '3162535340';
 	            break;
 	        case 'career-gender-equality':
-	            channel = '7751172149';
+	            myadslot = '7751172149';
+	            myadchannel = '7453134143';
 	            break;
 	        case 'sports':
-	            channel = '1704638546';
+	            myadslot = '1704638546';
+	            myadchannel = '8650665745';
 	            break;
 	        case 'travel':
-	            channel = '7890772948';
+	            myadslot = '7890772948';
+	            myadchannel = '4937306542';
 	            break;
 	        case 'climbing':
-	            channel = '1844239340';
+	            myadslot = '1844239340';
+	            myadchannel = '2883333744';
 	            break;
 	        case 'diy-projects':
-	            channel = '4658104945';
+	            myadslot = '4658104945';
+	            myadchannel = '3302136142';
 	            break;
 	        default: 
-	            channel = '4658104945';
+	            myadslot = '4658104945';
+	            myadchannel = '';
 	        }
 	        var adUnit = $('#my-google-ads-banner-bottom');
             adUnit.append(
 			    '<ins class="adsbygoogle ad-display-banner-bottom"'
 			    + 'data-ad-client="ca-pub-2599762387787801"'
-			    // + 'data-ad-slot=' + "'" + channel + "'"
 			    + '></ins>'
 			);
 
@@ -94,7 +106,7 @@
 			}
 		}
 
-	adChannelParam = {google_ad_channel: channel};
+	adChannelParam = {google_ad_slot: myadslot, google_ad_channel: myadchannel};
 	var adParams = $.extend(adChannelParam, adDisplayParam);
     (adsbygoogle = window.adsbygoogle || []).push({params: adChannelParam});
 	}

@@ -875,7 +875,8 @@ p.infinite-scroll-last, p.infinite-scroll-error {
     margin: 1rem 0 0.5rem 0;
     line-height: 1.5rem; }
   .about-me-card .social-icons-row a {
-    text-decoration: none; }
+    text-decoration: none;
+    display: inline-block; }
   .about-me-card .my-story a {
     text-decoration-style: dotted;
     color: #000;

@@ -3,6 +3,7 @@
 {{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
 <script type="text/javascript" src="{{asset "js/vendor/masonry.min.js"}}"></script>
 <script type="text/javascript" src="{{asset "js/vendor/imagesloaded.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/vendor/infinite-scroll.min.js"}}"></script>
 
 
 <header>
@@ -16,7 +17,7 @@
 
 {{!-- The main content area --}}
 <main class="tag-content grid">
-    {{#get "posts" limit="all" include="tags"}}
+    {{!-- {{#get "posts" limit="all" include="tags"}} --}}
         {{#foreach posts}}
             <div class="grid-item">
             	{{!-- empty element to define responsive widths --}}
@@ -25,19 +26,48 @@
             	 {{> "post-card"}}
             </div>
         {{/foreach}}
-    {{/get}}
+    {{!-- {{/get}} --}}
 </main> 
+
+{{!-- For the animation of loading ellipses --}}
+<div class="page-load-status">
+    <div class="loader-ellips infinite-scroll-request">
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+    </div>
+    <p class="infinite-scroll-last">That's it!&nbsp&nbspNo more articles!</p>
+    <p class="infinite-scroll-error">That's it! No more articles! (error)</p>
+</div>
+
+{{!-- Pagination comes after ellipses to look prettier --}}
+{{pagination}}
+
 
 
 {{!--For Masonry--layout Masonry after each image loads --}}
 <script>
-  $('.grid').imagesLoaded().progress( function() {
-    new Masonry('.grid', {
+    var grid = $('.grid').masonry ({
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         percentPosition: true, 
         gutter: '.gutter-sizer',
         stagger: 20
-      });
+    });
+
+    $('.grid').imagesLoaded().progress( function() {
+        grid.masonry('layout');
+    });
+
+    var msnry = grid.data('masonry');
+
+    grid.infiniteScroll({
+        path: '.older-posts',
+        append: '.grid-item', 
+        outlayer: msnry,
+        status: '.page-load-status',
+        prefill: true, 
+        history: false
     });
 </script>
