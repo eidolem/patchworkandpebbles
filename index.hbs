@@ -16,17 +16,27 @@
 
 
 {{!-- The main content area --}}
-<main class="tag-content grid">
-    {{!-- {{#get "posts" limit="all" include="tags"}} --}}
-        {{#foreach posts}}
-            <div class="grid-item">
-            	{{!-- empty element to define responsive widths --}}
-            	<div class="grid-sizer"></div>
-            	<div class="gutter-sizer"></div>
-            	 {{> "post-card"}}
-            </div>
-        {{/foreach}}
-    {{!-- {{/get}} --}}
+<main class="tag-content">
+    <section class="grid">
+        {{#get "posts" limit=@blog.posts_per_page include="tags"}}
+            {{#foreach posts}}
+                <div class="grid-item-index-first">
+                    <div class="grid-sizer"></div>
+                    <div class="gutter-sizer"></div>
+                    {{> "post-card"}}
+                </div>
+            {{/foreach}}
+        {{/get}}
+
+            {{#foreach posts}}
+                <div class="grid-item">
+                	<div class="grid-sizer"></div>
+                	<div class="gutter-sizer"></div>
+                	 {{> "post-card"}}
+                </div>
+            {{/foreach}}
+        </section>
+    </section>
 </main> 
 
 {{!-- For the animation of loading ellipses --}}
@@ -49,7 +59,7 @@
 {{!--For Masonry--layout Masonry after each image loads --}}
 <script>
     var grid = $('.grid').masonry ({
-        itemSelector: '.grid-item',
+        itemSelector: '.grid-item, .grid-item-index-first',
         columnWidth: '.grid-sizer',
         percentPosition: true, 
         gutter: '.gutter-sizer',

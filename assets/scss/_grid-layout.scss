@@ -37,37 +37,37 @@
 
 
 // Masonry grid for the tag page only
-.tag-content.grid {
-	margin: 0 4%;
-
-
-	
-	.after {
-	  	content: '';
-	  	display: block;
-	  	clear: both;
-	}
-
-	.grid-item {
-	   	float: left;
-	  	margin-bottom: 1rem;
-	}
-
-	.grid-sizer, .grid-item {
-		@media #{$small-and-down} {
-			width: 100%;
+.tag-content {
+	.grid, .grid-index-first {
+		margin: 0 4%;
+		
+		.after {
+		  	content: '';
+		  	display: block;
+		  	clear: both;
 		}
 
-		@media #{$medium-and-up} {
-			width: 48%;
+		.grid-item, .grid-item-index-first {
+		   	float: left;
+		  	margin-bottom: 1rem;
 		}
 
-		@media #{$large-and-up}{
-			width: 23%;
+		.grid-sizer, .grid-item, .grid-item-index-first {
+			@media #{$small-and-down} {
+				width: 100%;
+			}
+
+			@media #{$medium-and-up} {
+				width: 48%;
+			}
+
+			@media #{$large-and-up}{
+				width: 23%;
+			}
 		}
-	}
-	.gutter-sizer {
-		width: 4%;
+		.gutter-sizer, .gutter-sizer-index-first {
+			width: 4%;
+		}
 	}
 }
 

@@ -114,6 +114,7 @@
 	}
 }
 
+
 // Images in a post--make them slightly wider than the text
 .post-content{
 	&.col {
@@ -149,6 +150,8 @@
 			transform: translateX(-50%);
 		}
 	}
+
+
 
 	blockquote {
 		// Sets the left colored border and the background of the entire blockquote area
