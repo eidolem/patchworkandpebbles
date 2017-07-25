@@ -22,17 +22,16 @@
 {{/tag}}
 
 {{!-- The main content area --}}
-<div class="tag-content grid">
-	{{!-- {{#get "posts" filter="tag:{{slug}}" limit="all"}} --}}
+<div class="tag-content">
+    <section class="grid">
         {{#foreach posts}}
             <div class="grid-item">
-            	{{!-- empty element to define responsive widths --}}
             	<div class="grid-sizer"></div>
             	<div class="gutter-sizer"></div>
             	 {{> "post-card"}}
             </div>
         {{/foreach}}
-    {{!-- {{/get}} --}}
+    </section>
 </div> 
 
 {{!-- For the animation of loading ellipses --}}

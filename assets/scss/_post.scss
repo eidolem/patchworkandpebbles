@@ -3,7 +3,7 @@
 //  Wrapper for the cover image (not shown on mobile)
 .feature-image-wrapper {
 	position: relative;
-	height: 33vh;
+	height: 40vh;
 	overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
 	max-width: 100%;
 	top: -1%; left: 0; right: 0; bottom: -1%;
 	margin: auto;
-	opacity: 0.8;
+	opacity: 1;
 }
 
 // The colored header bar that includes post title and modified date
@@ -48,7 +48,7 @@
 
 	@media #{$medium-only}{
 		&.move-title-up {
-			margin-top: -20%;
+			margin-top: -15%;
 		}
 		
 		&.col {
@@ -58,7 +58,7 @@
 
 	@media #{$large-and-up}{
 		&.move-title-up {
-			margin-top: -15%;
+			margin-top: -10%;
 		}
 		&.col {
 			padding: 2rem 3rem 1rem 5rem;

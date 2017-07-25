@@ -1,6 +1,6 @@
 .feature-image-wrapper {
   position: relative;
-  height: 33vh;
+  height: 40vh;
   overflow: hidden; }
 
 .feature-image {
@@ -12,7 +12,7 @@
   right: 0;
   bottom: -1%;
   margin: auto;
-  opacity: 0.8; }
+  opacity: 1; }
 
 .post-header {
   position: relative;
@@ -34,12 +34,12 @@
       padding-bottom: 1rem; } }
   @media only screen and (min-width: 601px) and (max-width: 992px) {
     .post-header.move-title-up {
-      margin-top: -20%; }
+      margin-top: -15%; }
     .post-header.col {
       padding: 1rem 1rem 1rem 1.5rem; } }
   @media only screen and (min-width: 993px) {
     .post-header.move-title-up {
-      margin-top: -15%; }
+      margin-top: -10%; }
     .post-header.col {
       padding: 2rem 3rem 1rem 5rem; } }
 
