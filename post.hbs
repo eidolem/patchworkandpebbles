@@ -25,7 +25,7 @@ of the default.hbs template, containing the blog header/footer. --}}
                     <div class="col s12 m6 l6">
                         <div class="post-tags">{{tags}}</div>
                     </div>
-                    
+
                     <div class="col s12 m6 l6">
                         <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
                     </div>
@@ -45,12 +45,12 @@ of the default.hbs template, containing the blog header/footer. --}}
             {{/if}}
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
-                    <div class="col s12 m12 l6">
+                    <div class="col s12 m6 l6">
                         <div class="post-tags">{{tags}}</div>
                     </div>
-                    
-                    <div class="col s12 m12 l6">
-                        <time class="right post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
+
+                    <div class="col s12 m6 l6">
+                        <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
                     </div>
                 </section>
             </header>
@@ -59,11 +59,11 @@ of the default.hbs template, containing the blog header/footer. --}}
 
     {{!-- Post Content and Sidebar --}}
     <div class="row">
-        <section class="col s12 m8 l6 offset-m2 offset-l1 post-content" id="post-content">
+        <section class="col s12 m8 l7 offset-m2 offset-l1 post-content" id="post-content">
             {{content}}
             {{!-- <div class="end-of-content"></div> --}}
         </section>
-        <section class="col s12 l3 offset-l1 hide-on-med-only sidebar-content">
+        <section class="col s12 l3 offset-l0 hide-on-med-only sidebar-content">
             {{> sidebar}}
         </section>
     </div>

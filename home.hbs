@@ -6,22 +6,28 @@
 
 <main class="home-content grid">
     <div class="grid-item">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        {{>most-recent-card}}
+    </div>
+
+    <div class="grid-item">
     	<div class="grid-sizer"></div>
     	<div class="gutter-sizer"></div>
         {{>section-card slug="career-gender-equality" disp-title="Career & Gender Equality"}}
+    </div>
+    
+    <div class="grid-item">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        {{>author-card}}
+        {{>email-subscribe-card}}
     </div>
 
     <div class="grid-item">
     	<div class="grid-sizer"></div>
     	<div class="gutter-sizer"></div>
         {{>section-card slug="sports" disp-title="Sports Fitness & Recovery"}}
-    </div>
-
-    <div class="grid-item">
-    	<div class="grid-sizer"></div>
-    	<div class="gutter-sizer"></div>
-    	{{>author-card}}
-    	{{>email-subscribe-card}}
     </div>
 
     <div class="grid-item">

@@ -8,6 +8,7 @@
 // For "All" (the default), use $color-none
 $color-none-light: #b0bec5;
 $color-none: #78909c;
+$color-none-dark: #60747d;
 $color-one-light: #8bc34a;
 $color-one: #4caf50;
 $color-two-light: #ffad12;
@@ -50,13 +51,18 @@ $color-seven: #ec407a;
     font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
 	font-family: 'Roboto Slab', serif;
 	margin: 4rem 0 2rem 0;
 }
 
+h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Slab', serif;
+	margin: 2rem 0 2rem 0;
+}
+
 h1 { 
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 { 

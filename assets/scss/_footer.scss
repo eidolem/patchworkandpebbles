@@ -1,20 +1,24 @@
 .page-footer{
-	background-color: #E0E0E0;
+	background-color: #323232;
 	margin: 0;
+
+	p {
+		color: #fff;
+	}
 
 	.footer-copyright{
 		font-size: 0.8rem;
 		height: 40px;
-		background-color: #BDBDBD;
-		color: #000;
+		background-color: #323232;
+		color: #fff;
+		margin-bottom: 0;
+		padding-bottom: 1rem;
 
 		a {
-			color: #000;
+			color: #fff;
 		}
 
 		.footer-left {
-			// position: absolute;
-			// left: 0px;
 			text-align: left;
 		}
 

@@ -30,7 +30,7 @@ nav.nav-extended {
 
 	a {
 		text-decoration: none;
-		color: #666;
+		color: #000;
 		line-height: $nav-height;
 		@media #{$medium-and-down} {
 			height: $nav-height-small;
@@ -48,7 +48,7 @@ nav.nav-extended {
 	}
 
 	.nav-wrapper {
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #fff;
 		height: $nav-height;
 		min-height: $nav-height;
 		@media #{$medium-and-down} {
@@ -69,7 +69,7 @@ nav.nav-extended {
 
 	.nav-content {
 		width: 100%;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #fff;
 
 		.my-tabs {
 			position: relative;
@@ -94,7 +94,7 @@ nav.nav-extended {
 				a {
 					padding: 8px 5px 0 5px;
 					font-size: 1rem;
-					color: #666;
+					color: #000;
 					overflow: visible;
 					overflow-wrap: break-word;
 					word-break: break-word;
