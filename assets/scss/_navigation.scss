@@ -1,136 +1,168 @@
-
-$nav-height: 4rem;
-$nav-height-small: 2.9rem;
-$nav-content-height: 3rem;
-
-.navbar-fixed {
-	height: $nav-height;
-	height: $nav-height;
-	min-height: $nav-height;
-	@media #{$medium-and-down} {
-		height: $nav-height-small;
-		line-height: $nav-height-small;
-		min-height: $nav-height-small;
-	}
-}
-
-nav.nav-extended {
-	color: #000;
+nav {
 	background-color: #fff;
 	box-shadow: none;
-	@media #{$medium-and-down} {
-		height: $nav-height-small;
-		line-height: $nav-height-small;
-		min-height: $nav-height-small;
-	}
-
-	.brand-logo{
-		color: #000;
-	}
-
-	a {
-		text-decoration: none;
-		color: #000;
-		line-height: $nav-height;
-		@media #{$medium-and-down} {
-			height: $nav-height-small;
-			line-height: $nav-height-small;
-			min-height: $nav-height-small;
-		}
-
-		&.button-collapse i {
-			@media #{$medium-and-down} {
-				height: $nav-height-small;
-				line-height: $nav-height-small;
-				min-height: $nav-height-small;
-			}
-		}
-	}
 
 	.nav-wrapper {
-		border-bottom: 1px solid #fff;
-		height: $nav-height;
-		min-height: $nav-height;
+		padding-top: 1.3rem;
+	}
+
+	a.brand {
+		font-family: 'Amatic SC', sans-serif;
+		color: #000;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 2.8rem;
+		font-weight: 400;
+		line-height: 30px;
+		display: inline-block;
+		vertical-align: top;
+		float: left;
+		padding-left: 2rem;
+
 		@media #{$medium-and-down} {
-			height: $nav-height-small;
-			min-height: $nav-height-small;
+			margin: 0 auto;
+			text-align:center;
+			padding-left: 0;
 		}
-	
-		.brand-logo {
+	}
+
+	.menu-items {
+		float: right;
+		line-height: 30px;
+
+		.dropdown {
+			float:left;
+
+			.dropbtn {
+				text-decoration: none;
+				color: #000;
+				background-color:inherit;
+				border:none;
+				outline:none;
+				font-family: 'Roboto Condensed', sans-serif;
+				text-transform: uppercase;
+				margin: 0 1rem 0 1rem;
+				padding: 0;
+				height: 30px;
+				font-weight: 300;
+				font-size: 1.1rem;
+				
+				.material-icons {
+					float:right;
+					font-size: 16px;
+					margin-left: 5px;
+					line-height: 30px;
+				}
+
+				&:hover {
+					border-bottom: 3px solid #000;
+					background-color: inherit;
+					color: #000;
+				}
+			}
+
+			.dropdown-content {
+			    display: none;
+			    position: absolute;
+			    background-color: #fff;
+			    min-width: 160px;
+			    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			    z-index: 1;
+			    opacity: 1;
+			    right:0;
+
+			    a {
+		    	    float: none;
+				    color: #000;
+				    margin: 0;
+				    padding: 10px 10px 10px 16px;
+				    text-decoration: none;
+				    display: block;
+				    text-align: left;
+
+				    &:hover {
+				    	border-left: 5px solid black;
+				    	border-bottom: none;
+				    	padding: 10px 10px 10px 11px;
+
+						&[data-state=quilting-sewing] {
+							border-left: 5px solid $color-one;
+							color: $color-one;
+						}
+						&[data-state=career-gender-equality] {
+							border-left: 5px solid $color-two;
+							color: $color-two;
+						}
+						&[data-state=sports-fitness-recovery] {
+							border-left: 5px solid $color-three;
+							color: $color-three;
+						}
+						&[data-state=travel-destinations] {
+							border-left: 5px solid $color-four;
+							color: $color-four;
+						}
+						&[data-state=rock-climbing] {
+							border-left: 5px solid $color-five;
+							color: $color-five;
+						}
+						&[data-state=diy-projects] {
+							border-left: 5px solid $color-six;
+							color: $color-six;
+						}
+
+				    }
+			    }
+			}
+
+			&:hover .dropdown-content {
+				display:block;
+			}
+
+			&:hover .dropbtn {
+				border-bottom: 3px solid black;
+			}
+		}
+
+		a {
+			float:right;
+			text-decoration: none;
+			color: #000;
 			font-family: 'Roboto Condensed', sans-serif;
 			text-transform: uppercase;
+			margin: 0 1rem 0 1rem;
+			padding: 0;
 			font-weight: 300;
-			@media #{$medium-and-down} {
-				margin: 0rem 1rem;
-				font-size: 1.8rem;
+			font-size: 1.1rem;
+
+			&:hover {
+				border-bottom: 3px solid #000;
+				background-color: inherit;
+				color: #000;
 			}
 		}
 	}
 
-	.nav-content {
-		width: 100%;
-		border-bottom: 1px solid #fff;
+	.nav-small-med {
+		a{
+			color: #000;
+			text-decoration: none;
 
-		.my-tabs {
-			position: relative;
-			white-space: normal;
-			height: $nav-content-height;
-			width: 95%;
-			margin: 0 auto;
-
-			.my-tab {
+			.material-icons {
 				display: inline-block;
-				//  15.5% is (100% - 7%)/6 (full width minus "All")
-				width: 15.5%;
-				text-align: center;
-				text-transform: uppercase;
-				height: $nav-content-height;
-
-				// Makes "All" smaller to save horiz space
-				&:first-of-type {
-					width: 7%;
-				}
-
-				a {
-					padding: 8px 5px 0 5px;
-					font-size: 1rem;
-					color: #000;
-					overflow: visible;
-					overflow-wrap: break-word;
-					word-break: break-word;
-					word-wrap: break-word;
-					line-height: 1.1rem;
-					font-family: 'Roboto Condensed', sans-serif;
-					height: $nav-content-height;
-				}
-
-				a.active {
-					border-bottom: 5px solid $color-none;
-					&[data-state=quilting-sewing] {
-						border-bottom: 5px solid $color-one;
-					}
-					&[data-state=career-gender-equality] {
-						border-bottom: 5px solid $color-two;
-					}
-					&[data-state=sports-fitness-recovery] {
-						border-bottom: 5px solid $color-three;
-					}
-					&[data-state=travel-destinations] {
-						border-bottom: 5px solid $color-four;
-					}
-					&[data-state=rock-climbing] {
-						border-bottom: 5px solid $color-five;
-					}
-					&[data-state=diy-projects] {
-						border-bottom: 5px solid $color-six;
-					}
-				}
+				height: 30px;
+				line-height: 30px;
+				float: left;
 			}
+		}
 
-			.indicator {
-				height: 5px;
-				background-color: #ffad4d;
-			}
+		.brand {
+			display: block;
+			left: 50%;
+			transform: translateX(-50%);
+			position: absolute;
+			font-size: 2.8rem;
+			font-weight: 300;
+			white-space: nowrap;
 		}
 	}
 }
@@ -139,12 +171,12 @@ nav.nav-extended {
 .side-nav {
 	.side-nav-title a {
 		text-transform: uppercase;
-		font-family: 'Roboto Condensed', sans-serif;
-		font-weight: 400;
-		font-size: 1.5rem;
+		font-family: 'Amatic SC', sans-serif;
+		font-weight: 700;
+		font-size: 2rem;
 		text-decoration: none;
 		color: #000;
-		padding-left: 2rem;
+		padding-left: 2.2rem;
 	}
 
 	.divider {

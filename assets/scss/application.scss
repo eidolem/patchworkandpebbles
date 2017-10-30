@@ -19,6 +19,7 @@ $color-four-light: #82dce9;
 $color-four: #03a9f4;
 $color-five-light: #ce93d8;
 $color-five: #9C94D5; //#ba68c8;
+$color-five-dark: #7b6fce;
 $color-six-light: #fff176;
 $color-six: #facc17;
 $color-seven-light: #f48fb1;
@@ -40,6 +41,7 @@ $color-seven: #ec407a;
 @import "email-subscribe-popup";
 @import "author-card";
 @import "author";
+@import "blog-desc-card";
 
 @font-face {
     font-family: 'OPTIBodoniCampanileFive';
@@ -118,9 +120,9 @@ main {
 
 .page-content {
 	margin-bottom: 0rem;
-	@media #{$large-and-up}{
-		padding-top: 2.9rem;
-	}
+	// @media #{$large-and-up}{
+	// 	padding-top: 2.9rem;
+	// }
 }
 
 .divider {

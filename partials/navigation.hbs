@@ -1,21 +1,19 @@
 
 {{!-- This is a fixed navbar for large screens only.  Navbar remains fixed at top. hide-on-med-and-down--}}
 <div class="navbar-fixed hide-on-med-and-down">
-    <nav class="nav-extended">
+    <nav>
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo center">Patchwork & Pebbles</a>
-            <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/author/melodie">About</a>
-                {{!-- Uncomment when Search is implemented --}}
-                {{!-- <li><a href="sass.html"><i class="material-icons left">search</i>Search</a></li> --}}
-            </ul>     
-        </div>
-        <div class="nav-content">
-            <ul class="my-tabs row">
-                {{#foreach navigation}}
-                    <li class="my-tab subheader-items" id="{{slug}}"><a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a></li>
-                {{/foreach}}
+            <a href="/" class="brand">Patchwork & Pebbles</a>
+            <ul class="menu-items">
+                <div class="dropdown">
+                    <button class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a></button>
+                    <div class="dropdown-content">
+                        {{#foreach navigation}}
+                            <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
+                        {{/foreach}}
+                    </div>
+                </div>
+                <a href="/author/melodie">About</a>
             </ul>
         </div>
     </nav>
@@ -23,13 +21,12 @@
 
 {{!-- For Small and Med screens: no tabs row, and navbar isn't fixed so it scrolls away on med and small screens --}}
 <div class="hide-on-large-only navbar-fixed" id="nav-small-med">
-    <nav class="nav-extended">
-        <div class="nav-wrapper" id="nav-wrapper-mobile">
-            <a href="/" class="brand-logo center">Patchwork & Pebbles</a>
+    <nav>
+        <div class="nav-wrapper nav-small-med">
             <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="/" class="brand">Patchwork & Pebbles</a>
         </div>
     </nav>
-
 </div>
 
 {{!-- Sidebar for med and small screens --}}

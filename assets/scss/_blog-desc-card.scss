@@ -1,0 +1,21 @@
+.blog-desc-card {
+	p {
+		
+		@media #{$large-and-up}{
+			font-family: 'Amatic SC', cursive;
+			padding: 10rem 2rem 20rem 2rem;
+			line-height: 5rem;
+			text-align: center;
+			font-size: 4rem;
+		}
+
+		@media #{$medium-and-down}{
+			font-family: 'Pompiere', cursive;
+			margin: 0;
+			padding: 3rem 1.5rem 5rem 1.5rem;
+			line-height: 4rem;
+			text-align: center;
+			font-size: 2.6rem;
+		}
+	}
+}

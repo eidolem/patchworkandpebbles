@@ -130,22 +130,23 @@
 	}
 
 	img {
-
 		@media #{$small-and-down}{
 			display: block;
 			// Materializecss gutter width is 0.75rem (x2). Makes the img full screen width.
 			width: calc(100% + 1.5rem);
 			// Shifts the image to the left to center it
 			transform: translateX(-0.75rem);
+			margin-bottom: 1rem;
 		}
 		
 		@media #{$medium-and-up}{
 			display: block;
-			max-width: 126%;
+			max-width: 110%;
 			height: auto;
 			position: relative;
 			left: 50%;
 			transform: translateX(-50%);
+			margin-bottom: 1rem;
 		}
 	}
 
