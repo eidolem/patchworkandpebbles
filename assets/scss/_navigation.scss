@@ -109,6 +109,10 @@ nav {
 							border-left: 5px solid $color-six;
 							color: $color-six;
 						}
+						&[data-state=pregnancy-kids] {
+							border-left: 5px solid $color-seven;
+							color: $color-seven;							
+						}
 
 				    }
 			    }

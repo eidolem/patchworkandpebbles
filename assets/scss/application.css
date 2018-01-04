@@ -29,8 +29,6 @@
     background-color: #9C94D5; }
   .post-header[data-state=diy-projects] {
     background-color: #facc17; }
-  .post-header[data-state=pregnancy-kids] {
-    background-color: #1DE9B6; }
   @media only screen and (max-width: 600px) {
     .post-header.col {
       padding-bottom: 1rem; } }
@@ -311,8 +309,8 @@ nav {
               border-left: 5px solid #facc17;
               color: #facc17; }
             nav .menu-items .dropdown .dropdown-content a:hover[data-state=pregnancy-kids] {
-              border-left: 5px solid #1DE9B6;
-              color: #1DE9B6; }
+              border-left: 5px solid #ec407a;
+              color: #ec407a; }
       nav .menu-items .dropdown:hover .dropdown-content {
         display: block; }
       nav .menu-items .dropdown:hover .dropbtn {
@@ -406,8 +404,6 @@ nav {
         color: #9C94D5; }
       .card .card-content .card-tag p[data-state=diy-projects] {
         color: #facc17; }
-      .card .card-content .card-tag p[data-state=pregnancy-kids] {
-        color: #1DE9B6; }
   .card .card-content h1.card-title {
     padding: 0rem 0rem 0.5rem 0rem;
     margin: 0;
@@ -558,8 +554,6 @@ p.infinite-scroll-last, p.infinite-scroll-error {
     border-top: 10px solid #9C94D5; }
   .section-card[data-state=diy-projects] {
     border-top: 10px solid #facc17; }
-  .section-card[data-state=pregnancy-kids] {
-    border-top: 10px solid #1DE9B6; }
   .section-card > .title {
     padding: 1rem;
     border-bottom: 1px solid #ccc; }

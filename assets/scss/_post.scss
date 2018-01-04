@@ -39,6 +39,9 @@
 	&[data-state=diy-projects] {
 		background-color: $color-six;
 	}
+	&[data-state=pregnancy-kids] {
+		background-color: $color-seven;
+	}
 
 	@media #{$small-and-down}{
 		&.col {

@@ -22,6 +22,9 @@
 	&[data-state=diy-projects] {
 		border-top: 10px solid $color-six;
 	}
+	&[data-state=pregnancy-kids] {
+		border-top: 10px solid $color-seven;
+	}
 
 	>.title {
 		padding: 1rem;
