@@ -50,10 +50,12 @@
   font-family: 'Roboto', sans-serif;
   letter-spacing: -0.05rem;
   padding-bottom: 2rem;
-  margin-bottom: 0rem; }
+  padding-left: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 2rem; }
   @media only screen and (max-width: 992px) {
     .post-title {
-      font-size: 3rem;
+      font-size: 2.8rem;
       line-height: 4rem; } }
   @media only screen and (min-width: 993px) {
     .post-title {
@@ -80,9 +82,13 @@
     .post-meta .post-date {
       float: right; } }
 
+@media only screen and (max-width: 600px) {
+  .post-content.col {
+    padding: 0 1rem; } }
 @media only screen and (min-width: 993px) {
   .post-content.col {
-    padding-left: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     margin-right: 4rem; } }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   color: #60747d;
@@ -156,8 +162,8 @@
   padding-left: 3rem; }
   .post-content ol li, .post-content ol:not(.browser-default) li, .post-content ul li, .post-content ul:not(.browser-default) li {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3rem;
-    line-height: 2.2rem;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
     font-weight: 300; }
 .post-content ol li, .post-content ol:not(.browser-default) li {
   list-style-type: decimal; }
@@ -187,11 +193,11 @@
 
 .page-footer {
   background-color: #323232;
-  margin: 0; }
+  margin-top: 1rem; }
   .page-footer p {
     color: #fff; }
   .page-footer .footer-copyright {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     height: 40px;
     background-color: #323232;
     color: #fff;
@@ -636,7 +642,7 @@ p.infinite-scroll-last, p.infinite-scroll-error {
 .related-posts-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
-  margin: 4rem 0; }
+  margin: 3rem 0; }
   .related-posts-card > .title {
     padding: 1rem 1rem 0rem 1rem;
     border-bottom: 1px solid #ccc;
@@ -690,7 +696,7 @@ p.infinite-scroll-last, p.infinite-scroll-error {
 .related-posts-wide {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
-  margin: 2rem 3rem 5rem 2rem; }
+  margin: 2rem 3rem 3rem 2rem; }
   .related-posts-wide .title-bar {
     border-bottom: 1px solid #ccc; }
   .related-posts-wide > .row.title-bar a .title {
@@ -741,7 +747,7 @@ p.infinite-scroll-last, p.infinite-scroll-error {
 .email-subscribe-card {
   box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-top: 10px solid #000;
-  margin: 0rem 0 2rem 0rem; }
+  margin: 3rem 0 2rem 0rem; }
   .email-subscribe-card .title {
     padding: 1rem 1rem 0.7rem 1rem;
     border-bottom: 1px solid #ccc;
@@ -992,7 +998,7 @@ p.infinite-scroll-last, p.infinite-scroll-error {
 @media only screen and (min-width: 993px) {
   .blog-desc-card p {
     font-family: 'Amatic SC', cursive;
-    padding: 10rem 2rem 20rem 2rem;
+    padding: 6rem 2rem 15rem 2rem;
     line-height: 5rem;
     text-align: center;
     font-size: 4rem; } }
@@ -1039,10 +1045,10 @@ h6 {
 p {
   font-family: 'Roboto', serif;
   font-weight: 300;
-  line-height: 2.2rem;
+  line-height: 2.1rem;
   word-wrap: break-word;
-  font-size: 1.3rem;
-  margin: 2rem 0 1rem 0;
+  font-size: 1.2rem;
+  margin: 2rem 0;
   color: #000; }
 
 a {

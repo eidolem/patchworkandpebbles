@@ -75,10 +75,12 @@
 	font-family: 'Roboto', sans-serif;		
 	letter-spacing: -0.05rem;
 	padding-bottom: 2rem;
+	padding-left: 1rem;
 	margin-bottom: 0rem;
+	margin-top: 2rem;
 	
 	@media #{$medium-and-down}{
-		font-size: 3rem;
+		font-size: 2.8rem;
 		line-height: 4rem;
 	}
 
@@ -121,8 +123,15 @@
 // Images in a post--make them slightly wider than the text
 .post-content{
 	&.col {
+		@media #{$small-and-down}{
+			padding: 0 1rem;
+		}
+	}
+
+	&.col {
 		@media #{$large-and-up}{
-			padding-left: 3rem;
+			padding-left: 5rem;
+			padding-right: 5rem;
 			margin-right: 4rem;
 		}
 	}
@@ -224,8 +233,8 @@
 
 		li {
 			font-family: 'Roboto', sans-serif;
-	        font-size: 1.3rem;
-	        line-height: 2.2rem;
+	        font-size: 1.2rem;
+	        line-height: 2.1rem;
 	        font-weight: 300;
 		}
 	}
