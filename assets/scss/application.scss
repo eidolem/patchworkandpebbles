@@ -55,13 +55,13 @@ $color-seven: #1DE9B6;//#ec407a;
 }
 
 h1 {
-	font-family: 'Roboto Slab', serif;
-	margin: 4rem 0 2rem 0;
+	font-family: 'Tinos', serif;
+	margin: 5rem 0 1rem 0;
 }
 
 h2, h3, h4, h5, h6 {
-	font-family: 'Roboto Slab', serif;
-	margin: 2rem 0 2rem 0;
+	font-family: 'Tinos', serif;
+	margin: 4rem 0 1rem 0;
 }
 
 h1 { 
@@ -69,7 +69,7 @@ h1 {
 }
 
 h2 { 
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h3 { 
@@ -94,8 +94,13 @@ p {
 	line-height: 2.1rem;
 	word-wrap: break-word;
 	font-size: 1.2rem;
-	margin: 2rem 0;
 	color: #000;
+	margin: 1rem 0;
+
+	// spacing between paragraphs
+	+ p {
+		margin-top: 3rem;
+	}
 }
 
 // For anchors

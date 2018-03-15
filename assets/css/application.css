@@ -16,88 +16,94 @@
 
 .post-header {
   position: relative;
-  background-color: #78909c; }
-  .post-header[data-state=quilting] {
-    background-color: #4caf50; }
-  .post-header[data-state=career-gender-equality] {
-    background-color: #ff9800; }
-  .post-header[data-state=sports] {
-    background-color: #f44336; }
-  .post-header[data-state=travel] {
-    background-color: #03a9f4; }
-  .post-header[data-state=climbing] {
-    background-color: #9C94D5; }
-  .post-header[data-state=diy-projects] {
-    background-color: #facc17; }
-  .post-header[data-state=pregnancy-kids] {
-    background-color: #1DE9B6; }
+  background-color: #ffffff; }
   @media only screen and (max-width: 600px) {
     .post-header.col {
       padding-bottom: 1rem; } }
   @media only screen and (min-width: 601px) and (max-width: 992px) {
-    .post-header.move-title-up {
-      margin-top: -15%; }
-    .post-header.col {
-      padding: 1rem 1rem 1rem 1.5rem; } }
+    .post-header {
+      border-bottom: 1px solid #d3d3d3; }
+      .post-header.move-title-up {
+        margin-top: -15%; }
+      .post-header.col {
+        padding: 3rem 1rem 1rem 1.5rem; } }
   @media only screen and (min-width: 993px) {
-    .post-header.move-title-up {
-      margin-top: -10%; }
-    .post-header.col {
-      padding: 2rem 3rem 1rem 5rem; } }
+    .post-header {
+      border-bottom: 1px solid #d3d3d3; }
+      .post-header.move-title-up {
+        margin-top: -10%; }
+      .post-header.col {
+        padding: 4rem 5rem 2rem 3rem; } }
 
 .post-title {
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Tinos', serif;
+  font-style: italic;
   letter-spacing: -0.05rem;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
+  padding-bottom: 5rem;
   margin-bottom: 0rem;
-  margin-top: 2rem; }
-  @media only screen and (max-width: 992px) {
+  margin-top: 0rem;
+  padding-left: 0.75rem; }
+  @media only screen and (max-width: 600px) {
     .post-title {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
+      padding-top: 3rem;
+      padding-bottom: 2rem; } }
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .post-title {
+      font-size: 3.5rem;
       line-height: 4rem; } }
   @media only screen and (min-width: 993px) {
     .post-title {
-      font-size: 4rem;
-      line-height: 6rem; } }
+      font-size: 3.5rem;
+      line-height: 5rem; } }
 
 .post-meta {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   color: #424242;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   height: 1rem; }
+  @media only screen and (max-width: 600px) {
+    .post-meta {
+      padding-top: 1rem; } }
   .post-meta .post-tags {
-    padding-bottom: 0.5rem; }
+    padding-bottom: 0.5rem;
+    padding-left: 0rem; }
     .post-meta .post-tags a {
       color: #424242;
       text-decoration-style: dotted; }
   @media only screen and (max-width: 600px) {
     .post-meta .post-date {
-      float: left; } }
+      float: left;
+      padding-top: 0.2rem; } }
   @media only screen and (min-width: 601px) {
     .post-meta .post-date {
       float: right; } }
 
 @media only screen and (max-width: 600px) {
   .post-content.col {
-    padding: 0 1rem; } }
+    padding: 3rem 1.5rem 0rem 1.5rem;
+    border-top: 1px solid lightgrey; } }
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .post-content.col {
+    padding: 3rem 1.5rem 0rem 1.5rem; } }
 @media only screen and (min-width: 993px) {
   .post-content.col {
     padding-left: 5rem;
-    padding-right: 5rem;
-    margin-right: 4rem; } }
+    padding-right: 2rem;
+    margin-right: 4rem;
+    padding-top: 3rem; } }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   color: #60747d;
   font-weight: 500; }
 @media only screen and (max-width: 600px) {
   .post-content img {
     display: block;
-    width: calc(100% + 1.5rem);
-    transform: translateX(-0.75rem);
+    width: calc(100% + 3rem);
+    transform: translateX(-1.5rem);
     margin-bottom: 1rem; } }
 @media only screen and (min-width: 601px) {
   .post-content img {
@@ -113,6 +119,7 @@
   margin-bottom: 3rem;
   margin-left: 2rem;
   margin-right: 4rem;
+  margin-top: 3rem;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-left: 0px; }
@@ -630,7 +637,7 @@ p.infinite-scroll-last, p.infinite-scroll-error {
     margin-top: 2rem; } }
 @media only screen and (min-width: 601px) {
   .sidebar-content {
-    margin-top: 8rem; } }
+    margin-top: 5rem; } }
 
 @media only screen and (max-width: 600px) {
   .ad-block {
@@ -1017,18 +1024,18 @@ p.infinite-scroll-last, p.infinite-scroll-error {
   font-weight: normal;
   font-style: normal; }
 h1 {
-  font-family: 'Roboto Slab', serif;
-  margin: 4rem 0 2rem 0; }
+  font-family: 'Tinos', serif;
+  margin: 5rem 0 1rem 0; }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Roboto Slab', serif;
-  margin: 2rem 0 2rem 0; }
+  font-family: 'Tinos', serif;
+  margin: 4rem 0 1rem 0; }
 
 h1 {
   font-size: 2.5rem; }
 
 h2 {
-  font-size: 1.8rem; }
+  font-size: 2rem; }
 
 h3 {
   font-size: 1.6rem; }
@@ -1048,8 +1055,10 @@ p {
   line-height: 2.1rem;
   word-wrap: break-word;
   font-size: 1.2rem;
-  margin: 2rem 0;
-  color: #000; }
+  color: #000;
+  margin: 1rem 0; }
+  p + p {
+    margin-top: 3rem; }
 
 a {
   text-decoration: underline; }
