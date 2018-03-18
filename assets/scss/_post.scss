@@ -20,10 +20,14 @@
 // The colored header bar that includes post title and modified date
 .post-header {
 	position: relative;
-
 	background-color: #ffffff;
 
 	@media #{$small-and-down}{
+		&.move-title-up {
+			margin-top: -12rem;
+			background: linear-gradient(to bottom, rgba(255,0,0,0), #ffffff 7rem);
+		}
+
 		&.col {
 			padding-bottom: 1rem;	
 		}
@@ -64,7 +68,7 @@
 
 	@media #{$small-and-down}{
 		font-size: 3.2rem;
-		padding-top: 3rem;
+		padding-top: 8rem;
 		padding-bottom: 2rem;
 	}
 	
@@ -133,7 +137,7 @@
 	&.col {
 		@media #{$large-and-up}{
 			padding-left: 5rem;
-			padding-right: 2rem;
+			padding-right: 4rem;
 			margin-right: 4rem;
 			padding-top: 3rem;
 		}
