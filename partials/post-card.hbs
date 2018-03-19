@@ -1,38 +1,32 @@
 
-<article>
-    <div class="card z-depth-2 hoverable">
-        <a href={{url}}>
-            <div class="card-image">
-                {{#if image}}
-                    <img src="{{image}}">
-                {{/if}}
-            </div>
+<article class="card">
+    <a href={{url}}>
+        {{#if image}}
+            <div class="card-image" style="background-image: url({{image}})"></div>
+        {{/if}}
 
-            <div class="card-content">
-                <header>
-
-                    {{#is "index"}}
-                        <section class="card-tag">
-                            {{#foreach tags}}
-                                {{#if @last}}
-                                    <p data-state="{{slug}}">{{name}}</p>
-                                {{else}}
-                                    <p data-state="{{slug}}">{{name}}, </p>
-                                {{/if}}
-                            {{/foreach}}
-                        </section>
-                    {{/is}}
-
-                    <h1 class="card-title">
-                        {{title}}
-                    </h1>
-
-                    <section class="card-excerpt">
-                        <p>{{meta_description}}</p>
+        <div class="card-content">
+            <header>
+                {{#is "index"}}
+                    <section class="card-tag">
+                        {{#foreach tags}}
+                            {{#if @last}}
+                                <p data-state="{{slug}}">{{name}}</p>
+                            {{else}}
+                                <p data-state="{{slug}}">{{name}}, </p>
+                            {{/if}}
+                        {{/foreach}}
                     </section>
-                </header>
-            </div>
-        </a>
-    </div>
+                {{/is}}
 
+                <h1 class="card-title">
+                    {{title}}
+                </h1>
+            </header>
+
+            <section class="card-excerpt">
+                <p>{{meta_description}}</p>
+            </section>
+        </div>
+    </a>
 </article>

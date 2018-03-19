@@ -1,23 +1,52 @@
 
 .card {
+	flex: 1 1 300px;
+    overflow: hidden;
+    margin: 0 20px 40px 20px;
+    min-height: 300px;
+    background: #fff 50%;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    transition: all .5s ease;
+
+	&:hover {
+	    box-shadow: 0 0 1px rgba(39,44,49,.05), 0 3px 16px rgba(39,44,49,.2);
+	    transition: all .3s ease;
+	    transform: translate3D(0,-1px,0);
+	}
+
 	a {
 		text-decoration: none;
 		color: #000;
 	}
 
+	.card-image{
+		border-radius: 5px 5px 0 0;
+	    width: auto;
+	    height: 200px;
+	    background: #c5d2d9 no-repeat 50%;
+	    background-size: cover;
+	    overflow: hidden;
+	}
+
 	.card-content {
-		padding: 1rem 1rem;
+		padding: 20px 25px 30px 20px;
 		cursor: pointer;
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		justify-content: space-between;
 
 		.card-tag {
+			padding-bottom: 0.3rem;
+
 			p {
 				text-transform: uppercase;
 				font-family: 'Roboto Condensed', sans-serif;
-				font-weight: 700;
+				font-weight: 400;
 				display: block;
 				line-height: 1rem;
-				color: $color-none;
-
 				@media #{$medium-and-down}{
 					font-size: 1rem;
 				}
@@ -25,6 +54,7 @@
 					font-size: 0.8rem;
 				}
 
+				color: $color-none;
 				&[data-state=quilting] {
 					color: $color-one;
 				}
@@ -47,18 +77,12 @@
 					color: $color-seven;
 				}
 			}
-			text-transform: uppercase;
-			font-size: 0.8rem;
-			padding-bottom: 0.8rem;
-			font-family: 'Roboto Condensed', sans-serif;
-			font-weight: 700;
-			color: #444;
 		}
 
 		h1.card-title {
 			padding: 0rem 0rem 0.5rem 0rem;
 			margin: 0;
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 			font-family: 'Roboto Condensed', sans-serif;
 			font-weight: 400;
 			line-height: 1.5rem;
