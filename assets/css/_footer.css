@@ -1,38 +1,63 @@
-.page-footer {
+.footer-container {
   background-color: #323232;
-  margin-top: 1rem; }
-  .page-footer p {
-    color: #fff; }
-  .page-footer .footer-copyright {
-    font-size: 0.9rem;
-    height: 40px;
-    background-color: #323232;
-    color: #fff;
-    margin-bottom: 0;
-    padding-bottom: 1rem; }
-    .page-footer .footer-copyright a {
-      color: #fff; }
-    .page-footer .footer-copyright .footer-left {
-      text-align: left; }
-    .page-footer .footer-copyright .footer-right {
-      text-align: right; }
-  .page-footer a {
+  display: grid;
+  grid-template-areas: "footer-photo" "footer-contact-info" "footer-policies" "footer-copyright";
+  padding: 0.75rem 0.75rem; }
+  .footer-container a {
     text-decoration: none; }
-  .page-footer .footer-name {
+
+.footer-photo {
+  grid-area: footer-photo;
+  justify-self: center;
+  padding: 1rem 0; }
+  .footer-photo img {
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+    max-width: 150px; }
+
+.footer-contact-info {
+  display: grid;
+  grid-area: footer-contact-info;
+  justify-items: center;
+  font-family: 'Roboto', sans-serif; }
+  .footer-contact-info p {
+    color: #fff; }
+  .footer-contact-info .footer-name {
     font-size: 1.5rem;
-    margin: 0.5rem 0 0 0; }
-  .page-footer .footer-email {
-    margin: 0;
-    font-size: 1rem; }
-  .page-footer .footer-find-me-on {
+    margin: 0; }
+  .footer-contact-info .footer-email {
     font-size: 1rem;
-    margin: 1rem 0 0.5rem 0; }
-  .page-footer img.share-post-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    opacity: 0.5;
-    display: inline-block; }
-    .page-footer img.share-post-icon:hover {
-      opacity: 0.9; }
+    margin: 0; }
+  .footer-contact-info .footer-find-me-on {
+    font-size: 1rem;
+    margin: 0; }
+  .footer-contact-info .footer-social-icons {
+    margin-bottom: 3rem; }
+    .footer-contact-info .footer-social-icons .share-post-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      opacity: 0.5;
+      display: inline-block; }
+      .footer-contact-info .footer-social-icons .share-post-icon:hover {
+        opacity: 0.9; }
+
+.footer-policies {
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  grid-area: footer-policies;
+  justify-self: left; }
+  .footer-policies a {
+    color: #fff;
+    opacity: 0.7;
+    text-decoration: none; }
+
+.footer-copyright {
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  grid-area: footer-copyright;
+  justify-self: left; }
+  .footer-copyright a {
+    color: #fff;
+    opacity: 0.7; }
 
 /*# sourceMappingURL=_footer.css.map */

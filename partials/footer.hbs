@@ -1,36 +1,29 @@
 
-
-<footer class="page-footer">
-    <div class="container">
-      <div class="row">
-          <div class="col s4 offset-s4 m3 offset-m1 l2 offset-l3">
-            <a href="/about-me"><img src="{{@blog.cover}}" class="z-depth-3 circle responsive-img"></a>
-          </div>
-          <div class="center-align col s12 m6 l4">
-            <p class="footer-name">Melodie Meigs</p>
-            <p class="footer-email">patchworkandpebbles@gmail.com</p>
-            <p class="footer-find-me-on">- find me on -</p>
-            <a href="https://www.instagram.com/patchworkandpebbles/" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Instagram - Footer');"><img class="share-post-icon" alt="instagram" src="{{asset "/svg/instagram.svg"}}">&nbsp;</a>
-
-            <a href="https://www.linkedin.com/in/melodie-meigs" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'LinkedIn - Footer');"><img class="share-post-icon" alt="linkedin" src="{{asset "/svg/linkedin.svg"}}">&nbsp;</a>
-
-            <a href="mailto:patchworkandpebbles@gmail.com" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Email - Footer');"><img class="share-post-icon" alt="email" src="{{asset "/svg/email.svg"}}">&nbsp;</a>
-
-            <a href="http://youtube.com/eidolem7" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'YouTube - Footer');"><img class="share-post-icon" alt="youtube" src="{{asset "/svg/youtube.svg"}}">&nbsp;</a>
-          </div>
+<footer class="footer-container">
+  <div class="footer-top-container">
+    <div class="footer-photo">
+      <a href="/about-me"><img src="{{@blog.cover}}"></a>
     </div>
-
-    {{!-- Need this /div so the copyright line is full-width outside the container --}}
+    <div class="footer-contact-info">
+      <p class="footer-name">Melodie Meigs</p>
+      <p class="footer-email">patchworkandpebbles@gmail.com</p>
+      <p class="footer-find-me-on">- find me on -</p>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/patchworkandpebbles/" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Instagram - Footer');"><img class="share-post-icon" alt="instagram" src="{{asset "/svg/instagram.svg"}}">&nbsp;</a>
+        <a href="https://www.linkedin.com/in/melodie-meigs" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'LinkedIn - Footer');"><img class="share-post-icon" alt="linkedin" src="{{asset "/svg/linkedin.svg"}}">&nbsp;</a>
+        <a href="mailto:patchworkandpebbles@gmail.com" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'Email - Footer');"><img class="share-post-icon" alt="email" src="{{asset "/svg/email.svg"}}">&nbsp;</a>
+        <a href="http://youtube.com/eidolem7" target="_blank" onclick="ga('send', 'event', 'Social Connect', 'click', 'YouTube - Footer');"><img class="share-post-icon" alt="youtube" src="{{asset "/svg/youtube.svg"}}">&nbsp;</a>
+      </div>
+    </div>
   </div>
-
-    <div class="row footer-copyright">
-            <div class="col s12 m6 l6 footer-left">
-                <a target="_blank" href="http://patchworkandpebbles.com/affiliate-disclosure"> Affiliate Disclosure - 
-                <a target="_blank" href="http://patchworkandpebbles.com/privacy-policy"> Privacy Policy - 
-                <a target="_blank" href="http://patchworkandpebbles.com/terms"> Terms
-            </div>    
-            <div class="col s12 m6 l6 footer-right">
-                <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} - All Rights Reserved
-            </div>
+  <div class="footer-bottom-container">
+    <div class="footer-policies">
+      <a target="_blank" href="http://patchworkandpebbles.com/affiliate-disclosure">Affiliate Disclosure&nbsp&nbsp&nbsp|&nbsp&nbsp
+      <a target="_blank" href="http://patchworkandpebbles.com/privacy-policy">Privacy Policy&nbsp&nbsp&nbsp|&nbsp&nbsp 
+      <a target="_blank" href="http://patchworkandpebbles.com/terms">Terms
     </div>
+    <div class="footer-copyright">
+      &copy; {{date format="YYYY"}} <a href="{{@blog.url}}">{{@blog.title}}</a> 
+    </div>
+  </div>
 </footer>
