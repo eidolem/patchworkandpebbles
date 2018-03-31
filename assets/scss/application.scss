@@ -1,12 +1,12 @@
-// Mapping.  Nav slug | tag slug | color
-// quilting-sewing | quilting | $color-one
-// career-gender-equality | career-gender-equality | $color-two
-// sports-fitness-recovery | sports | $color-three
-// travel | travel-destinations | $color-four
-// rock-climbing | climbing | $color-five
-// diy-projects | diy-projects | $color-six
-// pregnancy-kids | pregnancy-kids | $color-seven
-// For "All" (the default), use $color-none
+/* Mapping.  Nav slug | tag slug | color*/
+/* quilting-sewing | quilting | $color-one*/
+/* career-gender-equality | career-gender-equality | $color-two*/
+/* sports-fitness-recovery | sports | $color-three*/
+/* travel | travel-destinations | $color-four*/
+/* rock-climbing | climbing | $color-five*/
+/* diy-projects | diy-projects | $color-six*/
+/* pregnancy-kids | pregnancy-kids | $color-seven*/
+/* For "All" (the default), use $color-none*/
 $color-none-light: #b0bec5;
 $color-none: #78909c;
 $color-none-dark: #60747d; 
@@ -17,13 +17,13 @@ $color-two: #ff9800;
 $color-three-light: #ef5350;
 $color-three: #f44336;
 $color-four-light: #82dce9;
-$color-four: #03a9f4;
+$color-four: #03a9f4; 
 $color-five-light: #ce93d8;
-$color-five: #9C94D5; //#ba68c8;
+$color-five: #9C94D5; /*#ba68c8;*/
 $color-five-dark: #7b6fce;
 $color-six-light: #fff176;
 $color-six: #facc17;
-$color-seven: #1DE9B6;//#ec407a;
+$color-seven: #1DE9B6;/*#ec407a;*/
 
 
 @import "variables";
@@ -97,13 +97,13 @@ p {
 	color: #000;
 	margin: 1rem 0;
 
-	// spacing between paragraphs
+	/* spacing between paragraphs*/
 	+ p {
 		margin-top: 3rem;
 	}
 }
 
-// For anchors
+/* For anchors*/
 a {
 	text-decoration: underline;
 }
@@ -112,46 +112,46 @@ mark {
 	background: #f5eb93;
 }
 
-// Needed for Materialize Sticky Footer
+/* Needed for Materialize Sticky Footer*/
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-// Needed for Materialize Sticky Footer
+/* Needed for Materialize Sticky Footer*/
 main {
   flex: 1 0 auto;
 }
 
 .page-content {
 	margin-bottom: 0rem;
-	// @media #{$large-and-up}{
-	// 	padding-top: 2.9rem;
-	// }
+	/* @media #{$large-and-up}{*/
+	/* 	padding-top: 2.9rem;*/
+	/* }*/
 }
 
 .divider {
 	background-color: #ccc;
 }
 
-// Needed for Materialize PushPin. Class for when element is above threshold
+/* Needed for Materialize PushPin. Class for when element is above threshold*/
 .pin-top {
 	position: relative;
 }
 
-// Needed for Materialize PushPin. Class for when element is below threshold
+/* Needed for Materialize PushPin. Class for when element is below threshold*/
 .pin-bottom {
 	position: relative;
 }
 
-// Needed for Materialize PushPin. Class for when element is pinned
+/* Needed for Materialize PushPin. Class for when element is pinned*/
 .pinned {
 	position: fixed !important;
 }
 
-//Fixes the width of the sidebar so that position:fixed looks ok
-//25% is 3 of 12 columns, which is the width of the sidebar on large screens, minus 1.5rem, which is 2x padding of 0.75rem
+/*Fixes the width of the sidebar so that position:fixed looks ok*/
+/*25% is 3 of 12 columns, which is the width of the sidebar on large screens, minus 1.5rem, which is 2x padding of 0.75rem*/
 .sidebar-content .pinned{
 	max-width: calc(25% - 1.5rem);
 }

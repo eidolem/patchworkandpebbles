@@ -5,7 +5,7 @@
 	}
 	.post-header {
 		position: relative;
-		background-color: $color-five;
+		background-color: #fff;
 		@media #{$medium-only}{		
 			&.col {
 				padding: 1rem 1rem 0.5rem 1.5rem;
@@ -29,9 +29,8 @@
 
 	.post-title {
 		font-weight: 300;	
-		font-family: 'Satisfy', cursive;	
-		// text-align: center;	
-		font-size: 8rem;
+		font-family: 'Tinos', serif;
+		font-style: italic;	
 		@media #{$small-and-down}{
 			font-size: 4rem;
 		}
