@@ -1,204 +1,177 @@
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    a {
+	    padding: 10px 8px 10px 20px;
+	    text-decoration: none;
+	    color: #fff;
+	    opacity: 0.9;
+	    display: block;
+	    transition: 0.3s;
+    }
+
+    li {
+    	text-transform: none;
+    	list-style-type: none;
+    	padding: 0 0 0 20px;
+    	font-size: 1.1rem;
+    }
+
+    .closebtn {
+	    position: absolute;
+	    top: 0;
+	    right: 25px;
+	    font-size: 36px;
+	    margin-left: 50px;
+	}
+}
+
 nav {
-	background-color: #fff;
-	box-shadow: none;
+	.topnav {
+		background-color: #fff; 
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 8px 0;
+		z-index: 100;
 
-	.nav-wrapper {
-		padding-top: 1.3rem;
-	}
-
-	a.brand {
-		font-family: 'Amatic SC', sans-serif;
-		color: #000;
-		text-transform: uppercase;
-		text-decoration: none;
-		font-size: 2.8rem;
-		font-weight: 400;
-		line-height: 30px;
-		display: inline-block;
-		vertical-align: top;
-		float: left;
-		padding-left: 2rem;
-
-		@media #{$medium-and-down} {
-			margin: 0 auto;
-			text-align:center;
-			padding-left: 0;
+		@media #{$large-and-up} {
+			position: fixed;
+			top: 0;
+			width: 100%;
 		}
-	}
 
-	.menu-items {
-		float: right;
-		line-height: 30px;
+		a {
+		    text-decoration: none;
+		    color: #000;
+		    margin: 0 20px;
+		    cursor: pointer;
 
-		.dropdown {
-			float:left;
+    		&.title {
+				font-family: 'Amatic SC',sans-serif;
+	    		text-transform: uppercase;
+	    		font-size: 2.5rem;
+	    		font-weight: 400;
+	    		margin: 0 20px;
+			}
+		}
 
-			.dropbtn {
-				text-decoration: none;
-				color: #000;
-				background-color:inherit;
-				border:none;
-				outline:none;
-				font-family: 'Roboto Condensed', sans-serif;
-				text-transform: uppercase;
-				margin: 0 1rem 0 1rem;
-				padding: 0;
-				height: 30px;
-				font-weight: 300;
-				font-size: 1.1rem;
-				
-				.material-icons {
-					float:right;
-					font-size: 16px;
-					margin-left: 5px;
-					line-height: 30px;
+		.right-menu-items {
+			font-family: "Roboto Condensed", sans-serif;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 1.1rem;
+
+			a {
+				&:hover {
+					border-bottom: 1px solid #000;
+				}
+			}
+
+			.dropdown {
+				float: left;
+				.dropbtn {
+					&:hover {
+						border-bottom: 1px solid #000;
+					}
+				}
+				&:hover .dropdown-content{
+					display: block;
 				}
 
-				&:hover {
-					border-bottom: 3px solid #000;
-					background-color: inherit;
-					color: #000;
+				.material-icons {
+					font-size: 1rem;
+					margin-left: 5px;
 				}
 			}
 
 			.dropdown-content {
 			    display: none;
 			    position: absolute;
-			    background-color: #fff;
+			    background-color: #f9f9f9;
 			    min-width: 160px;
 			    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			    z-index: 1;
-			    opacity: 1;
-			    right:0;
 
 			    a {
-		    	    float: none;
-				    color: #000;
-				    margin: 0;
-				    padding: 10px 10px 10px 16px;
+			     	float: none;
+				    color: black;
+				    padding: 12px 16px;
 				    text-decoration: none;
 				    display: block;
-				    text-align: left;
+				    text-align: left;   
+				    text-transform: none;	
+				    margin: 0;
 
 				    &:hover {
-				    	border-left: 5px solid black;
+				    	border-left: 3px solid black;
 				    	border-bottom: none;
-				    	padding: 10px 10px 10px 11px;
+				    	padding-left: 13px;
 
 						&[data-state=quilting-sewing] {
-							border-left: 5px solid $color-one;
-							color: $color-one;
+							border-left: 3px solid $color-one;
 						}
 						&[data-state=career-gender-equality] {
-							border-left: 5px solid $color-two;
-							color: $color-two;
+							border-left: 3px solid $color-two;
 						}
 						&[data-state=sports-fitness-recovery] {
-							border-left: 5px solid $color-three;
-							color: $color-three;
+							border-left: 3px solid $color-three;
 						}
 						&[data-state=travel-destinations] {
-							border-left: 5px solid $color-four;
-							color: $color-four;
+							border-left: 3px solid $color-four;
 						}
 						&[data-state=rock-climbing] {
-							border-left: 5px solid $color-five;
-							color: $color-five;
+							border-left: 3px solid $color-five;
 						}
 						&[data-state=diy-projects] {
-							border-left: 5px solid $color-six;
-							color: $color-six;
+							border-left: 3px solid $color-six;
 						}
 						&[data-state=pregnancy-kids] {
-							border-left: 5px solid $color-seven;
-							color: $color-seven;							
+							border-left: 3px solid $color-seven;
 						}
-
 				    }
 			    }
 			}
-
-			&:hover .dropdown-content {
-				display:block;
-			}
-
-			&:hover .dropbtn {
-				border-bottom: 3px solid black;
-			}
 		}
 
-		a {
-			float:right;
-			text-decoration: none;
-			color: #000;
-			font-family: 'Roboto Condensed', sans-serif;
-			text-transform: uppercase;
-			margin: 0 1rem 0 1rem;
-			padding: 0;
-			font-weight: 300;
-			font-size: 1.1rem;
-
-			&:hover {
-				border-bottom: 3px solid #000;
-				background-color: inherit;
-				color: #000;
-			}
+		.icon {
+			display: none;
 		}
 	}
 
-	.nav-small-med {
-		a{
-			color: #000;
-			text-decoration: none;
-
-			.material-icons {
-				display: inline-block;
-				height: 30px;
-				line-height: 30px;
-				float: left;
-			}
-		}
-
-		.brand {
-			display: block;
-			left: 50%;
-			transform: translateX(-50%);
-			position: absolute;
-			font-size: 2.8rem;
-			font-weight: 300;
-			white-space: nowrap;
-		}
+	@media #{$medium-and-down} {
+  		.topnav {
+  			.right-menu-items {
+  				display: none;
+  			}
+		 	.icon {
+	    		display: flex;
+	    	}
+	    	a{
+	    		font-size: 1.5rem;
+	    		&.title {
+	    			flex: auto;
+	    			text-align: center;
+	    		}
+	    	}
+  		}
 	}
 }
 
 
-.side-nav {
-	.side-nav-title a {
-		text-transform: uppercase;
-		font-family: 'Amatic SC', sans-serif;
-		font-weight: 700;
-		font-size: 2rem;
-		text-decoration: none;
-		color: #000;
-		padding-left: 2.2rem;
-	}
 
-	.divider {
-		margin: 0;
-	}
-
-	li {
-		text-transform: uppercase;
-
-		a {
-			text-decoration: none;
-			font-weight: 300;
-			font-size: 1.2rem;
-		}
-
-		+.subheader-items {
-			text-transform: none;
-			padding-left: 2rem;
-		}
-	}
-}

@@ -4,32 +4,22 @@ of the default.hbs template, containing the blog header/footer. --}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-    <article class="{{post_class}}">
-
-        {{#if image}}
-            <div class="row hide-on-small-and-down">
-                <div class="col s12 m12 l12 feature-image-wrapper">
+    <article class="{{post_class}} post-content-wrapper">
+        <header class="post-header">
+            {{#if image}}
+                <div class="feature-image-wrapper">
                     <img class="feature-image" src="{{image}}"></img>
                 </div>
-            </div>
-            <div class="row">
-                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
+                <div class="post-data-wrapper move-title-up">
+            {{else}}
+                <div class="post-data-wrapper">
+            {{/if}}
                     <h1 class="post-title">{{title}}</h1>
-                </header>
-            </div>
-        {{else}}
-            <div class="row">
-                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
-                    <h1 class="post-title">{{title}}</h1>
-                </header>
-            </div>
-        {{/if}}
+                </div>
+        </header>
 
-        <div class="row">
-            <section class="col s12 m8 l6 offset-m2 offset-l2 post-content" id="post-content">
-                {{content}}
-            </section>
-        </div>
+        <section class="post-content" id="post-content">
+            {{content}}
+        </section>
     </article>  
-
 {{/post}}

@@ -1,4 +1,3 @@
-
 .tag-page-header {
 	display: flex;
 	justify-content: center;
@@ -22,6 +21,13 @@
 		text-align: center;
 		font-size: 1.3rem;
 		margin: 0;
+
+		@media #{$medium-only} {
+			width: 75%;
+		}
+		@media #{$large-and-up} {
+			width: 50%;
+		}
 	}
 }
 

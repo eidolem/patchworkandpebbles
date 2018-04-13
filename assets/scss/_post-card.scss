@@ -1,3 +1,4 @@
+@import "variables";
 
 .card {
 	flex: 1 1 300px;
@@ -48,6 +49,7 @@
 				font-weight: 400;
 				display: block;
 				line-height: 1rem;
+				margin: 0 0;
 				@media #{$medium-and-down}{
 					font-size: 1rem;
 				}
@@ -95,6 +97,7 @@
 				font-weight: 300;
 				font-size: 1.1rem;
 				line-height: 1.4rem;
+				margin: 0 0;
 			}
 		}
 	}

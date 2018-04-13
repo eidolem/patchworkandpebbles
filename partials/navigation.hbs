@@ -1,54 +1,41 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/">Home</a>
+    <a href="">Categories</a>
+        {{#foreach navigation}}
+            <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
+        {{/foreach}}
+    <a href="/author/melodie">About Me</a>
+    <a href="/author/melodie/#contact-me">Contact</a>
+</div>
 
-{{!-- This is a fixed navbar for large screens only.  Navbar remains fixed at top. hide-on-med-and-down--}}
-<div class="navbar-fixed hide-on-med-and-down">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/" class="brand">Patchwork & Pebbles</a>
-            <ul class="menu-items">
-                <div class="dropdown">
-                    <button class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a></button>
-                    <div class="dropdown-content">
-                        {{#foreach navigation}}
-                            <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
-                        {{/foreach}}
-                    </div>
+
+<nav>
+    <div class="topnav" id="navbar">
+        <span class="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </span>
+        <a href="/" class="title">Patchwork & Pebbles</a>
+        <div class="right-menu-items">
+            <div class="dropdown">
+                <a class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a>
+                <div class="dropdown-content">  
+                    {{#foreach navigation}}
+                        <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
+                    {{/foreach}}
                 </div>
-                <a href="/author/melodie">About</a>
-            </ul>
+            </div>
+            <a href="/author/melodie">About</a>
         </div>
-    </nav>
-</div>
+    </div>
+</nav>
 
-{{!-- For Small and Med screens: no tabs row, and navbar isn't fixed so it scrolls away on med and small screens --}}
-<div class="hide-on-large-only navbar-fixed" id="nav-small-med">
-    <nav>
-        <div class="nav-wrapper nav-small-med">
-            <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            <a href="/" class="brand">Patchwork & Pebbles</a>
-        </div>
-    </nav>
-</div>
-
-{{!-- Sidebar for med and small screens --}}
-<ul id="slide-out" class="side-nav">
-    <li class="side-nav-title"><a href="/">{{@blog.title}}</a></li>
-    <div class="divider"></div>
-    <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a>Categories</a></li>
-    {{#foreach navigation}}
-        <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
-    {{/foreach}}   
-    <li><a href="/author/melodie" class="waves-effect">About Me</a></li>
-    <li><a href="/author/melodie/#contact-me" class="waves-effect">Contact</a></li>
-</ul>
-
-
-{{!-- Adds a class to make the colored underline if the URL of the page matches the link on the element --}}
 <script>
-    var path = location.pathname;
-    $('.my-tab > a').each(function(i, tab) {
-        if ($(tab).attr('href') == path) {
-            $(tab).addClass('active');
-        }
-    });
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 </script>

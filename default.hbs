@@ -17,10 +17,8 @@
     {{ghost_head}}
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/materialize.min.css"}}"  media="screen,projection"/>
-    
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/application.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -30,13 +28,12 @@
 
     {{!-- AdSense regular ad slots --}}
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 </head>
 
 <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{navigation}}
-    <main role="main" class="page-content">
+    <main role="main" class="page-content" id="page-content">
       {{{body}}}
     </main>
     {{> footer}}
@@ -64,22 +61,20 @@
     {{!-- Everything for page ready() --}}
     <script type="text/javascript">
         $( document ).ready(function(){
-            $(".button-collapse").sideNav();
             $(".post-content").fitVids();
             
-            // Functions for scroll events. Check every 250ms instead of every pixel scroll. Less expensive to compute every function.
+            // Detect scroll events. Check every 250ms instead of every pixel scroll. Less expensive to compute every function.
             var didScroll;
             $(document).scroll(function() {
                 didScroll = true;
             });
-            // Set the interval to 250ms, and call scroll functions, and reset boolean
             setInterval (function(){
                 if(didScroll) {
                     showHideSubscribePopup();
-                    showHideMobileNav();
                     didScroll = false;
                 }
             }, 250);
+
             // For email subscribe popup
             if (window.location.href.includes("utm_medium=email") == false) {
                 function showHideSubscribePopup () {
@@ -94,30 +89,6 @@
                       $("#email-subscribe-popup").removeClass('hide');
                     }
                 }
-            }
-            // For mobile nav header
-            // Ref: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
-            var lastScrollTop = 0;
-            var delta=5;
-            var navbarHeight = 70;
-            function showHideMobileNav() {
-                // Current scroll location
-                var currScroll = $(this).scrollTop();
-                // If they haven't scrolled more than delta, return and don't do anything
-                if(Math.abs(lastScrollTop-currScroll) <= delta) {
-                    return;
-                }
-                //If they scrolled past the navbar, remove fixed class. Required so you never see what's "behind" the navbar
-                if(currScroll>lastScrollTop && currScroll>navbarHeight){
-                    $('#nav-small-med').removeClass('navbar-fixed');
-                }
-                //Else if user didn't scroll past document (possible on a mac)
-                else {
-                    if(currScroll + $(window).height() < $(document).height()) {
-                        $('#nav-small-med').addClass('navbar-fixed');
-                    }
-                }
-                lastScrollTop = currScroll;
             }
         });
     </script>
