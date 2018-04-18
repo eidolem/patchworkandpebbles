@@ -27,36 +27,41 @@
 }
 
 html {
-	font-family: 'Roboto', sans-serif;
-	font-weight: normal;
+	font-family: 'PT Serif', serif;
+	font-weight: 400;
+	color: #000;
 	color: rgba(0,0,0,.87);
 	@media #{$small-and-down} {
-		font-size: 14px;
+		font-size: 18px;
+		line-height: 1.8rem;
 	}
 	@media #{$medium-only} {
-		font-size: 14.5px;
+		font-size: 18px;
+		line-height: 1.8rem;
 	}
 	@media #{$large-and-up} {
-	 	font-size: 15px;
+	 	font-size: 20px;
+	 	line-height: 2rem;
 	}
 }
 
 h1 {
-	font-family: 'Tinos', serif;
+	font-family: 'Montserrat', sans-serif;
 	margin: 5rem 0 1rem 0;
 	color: $color-none-dark;
 	font-weight: 500;
+	line-height: 2rem;
 }
 
 h2, h3, h4, h5, h6 {
-	font-family: 'Tinos', serif;
+	font-family: 'Montserrat', sans-serif;
 	margin: 4rem 0 1rem 0;
 	color: $color-none-dark;
 	font-weight: 500;
 }
 
 h1 { 
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h2 { 
@@ -80,14 +85,8 @@ h6 {
 }
 
 p {
-	font-family: 'Roboto', serif;
-	font-weight: 300;
-	line-height: 2.1rem;
 	word-wrap: break-word;
-	font-size: 1.2rem;
-	color: #000;
 	margin: 1rem 0;
-
 	/* spacing between paragraphs*/
 	+ p {
 		margin-top: 3rem;
@@ -131,35 +130,23 @@ figcaption {
 	}
 }
 
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+.divider {
+	background-color: #ccc;
+	height: 1px;
 }
 
-main {
-  flex: 1 0 auto;
+.site {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .page-content {
-	margin-bottom: 0rem;
-	// To compensate for sticky topbar nav on large screens
+	flex: 1 0 100%;
+	/* To compensate for sticky topbar nav on large screens*/
 	@media #{$large-and-up} {
 		padding-top: 60px;
 	}
 }
 
-.divider {
-	background-color: #ccc;
-}
-
-/*Fixes the width of the sidebar so that position:fixed looks ok*/
-/*25% is 3 of 12 columns, which is the width of the sidebar on large screens, minus 1.5rem, which is 2x padding of 0.75rem*/
-// .sidebar-content .pinned{
-// 	max-width: calc(25% - 1.5rem);
-// }
-
-.pagination {
-	visibility:hidden;
-}

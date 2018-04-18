@@ -383,89 +383,182 @@ template {
   color: rgba(0, 0, 0, 0.87);
   font-size: 3.3rem; }
 
-.footer-container {
-  background-color: #323232;
-  padding: 0.75rem 0.75rem; }
-  .footer-container a {
-    text-decoration: none; }
+.site-footer {
+  color: #ccc;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem; }
+  .site-footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 300; }
+  .site-footer .footer-top {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: #1f292f;
+    padding: 2rem 0; }
+    @media only screen and (min-width: 993px) {
+      .site-footer .footer-top {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: flex-start; } }
+    @media only screen and (min-width: 1201px) {
+      .site-footer .footer-top {
+        justify-content: center; } }
+    .site-footer .footer-top .footer-section {
+      flex: 1 1 auto;
+      padding: 2rem 0;
+      max-width: 300px; }
+      @media only screen and (min-width: 1201px) {
+        .site-footer .footer-top .footer-section {
+          margin: 0 5rem; } }
+      .site-footer .footer-top .footer-section .footer-photo img {
+        width: 100%;
+        margin: 0 1rem 1rem 0; }
+      .site-footer .footer-top .footer-section .footer-social-icons {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0.5rem 0; }
+        .site-footer .footer-top .footer-section .footer-social-icons img {
+          width: 1.8rem;
+          height: 1.8rem;
+          padding: 0 0.8rem 0 0; }
+      .site-footer .footer-top .footer-section #mc_embed_signup {
+        clear: left;
+        width: 100%;
+        white-space: nowrap;
+        margin: 0.5rem 0 4rem 0; }
+        .site-footer .footer-top .footer-section #mc_embed_signup .clear {
+          display: inline-block; }
+        .site-footer .footer-top .footer-section #mc_embed_signup .button {
+          text-overflow: ellipsis;
+          padding: 15px 15px;
+          background-color: #ccc;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-right: none;
+          border-radius: 2px;
+          display: inline-block;
+          margin-left: -6px; }
+          .site-footer .footer-top .footer-section #mc_embed_signup .button:hover {
+            cursor: pointer; }
+        .site-footer .footer-top .footer-section #mc_embed_signup input.email {
+          text-overflow: ellipsis;
+          padding: 15px 15px;
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-right: none;
+          border-radius: 2px;
+          display: inline-block;
+          width: 60%; }
+          .site-footer .footer-top .footer-section #mc_embed_signup input.email:focus {
+            outline: none;
+            color: #fff; }
+  .site-footer .footer-bottom {
+    padding: 1rem 1rem;
+    background-color: #192126;
+    text-align: center;
+    font-size: 0.9rem; }
+  .site-footer .footer-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0; }
+    .site-footer .footer-header.connect-header {
+      padding-top: 4rem; }
 
-.footer-top-container {
-  padding: 1rem 0;
+.site-header {
+  background-color: #fff;
   display: flex;
-  justify-content: center; }
-  @media only screen and (max-width: 600px) {
-    .footer-top-container {
-      flex-direction: column; } }
-  @media only screen and (min-width: 601px) {
-    .footer-top-container {
-      flex-direction: row; } }
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  z-index: 100; }
+  @media only screen and (min-width: 993px) {
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%; } }
+  .site-header a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 20px;
+    cursor: pointer; }
+    .site-header a.title {
+      font-family: 'Amatic SC',sans-serif;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin: 0 20px; }
+  .site-header .right-menu-items {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.1rem; }
+    .site-header .right-menu-items a:hover {
+      border-bottom: 1px solid #000; }
+    .site-header .right-menu-items .dropdown {
+      float: left; }
+      .site-header .right-menu-items .dropdown .dropbtn:hover {
+        border-bottom: 1px solid #000; }
+      .site-header .right-menu-items .dropdown:hover .dropdown-content {
+        display: block; }
+      .site-header .right-menu-items .dropdown .material-icons {
+        font-size: 1rem;
+        margin-left: 5px; }
+    .site-header .right-menu-items .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+      .site-header .right-menu-items .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        text-transform: none;
+        margin: 0; }
+        .site-header .right-menu-items .dropdown-content a:hover {
+          border-left: 3px solid black;
+          border-bottom: none;
+          padding-left: 13px; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=quilting-sewing] {
+            border-left: 3px solid #4caf50; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=career-gender-equality] {
+            border-left: 3px solid #ff9800; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=sports-fitness-recovery] {
+            border-left: 3px solid #f44336; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=travel-destinations] {
+            border-left: 3px solid #03a9f4; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=rock-climbing] {
+            border-left: 3px solid #9C94D5; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=diy-projects] {
+            border-left: 3px solid #facc17; }
+          .site-header .right-menu-items .dropdown-content a:hover[data-state=pregnancy-kids] {
+            border-left: 3px solid #1DE9B6; }
+  .site-header .icon {
+    display: none; }
 
-.footer-photo {
-  display: grid;
-  justify-items: center;
-  margin: 1rem 2rem; }
-  .footer-photo img {
-    border-radius: 50%;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
-    max-width: 150px; }
-
-.footer-contact-info {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  margin: 1rem 2rem;
-  font-family: 'Roboto', sans-serif; }
-  .footer-contact-info p {
-    color: #fff;
-    margin: 0; }
-  .footer-contact-info .footer-name {
+@media only screen and (max-width: 992px) {
+  .topnav .right-menu-items {
+    display: none; }
+  .topnav .icon {
+    display: flex; }
+  .topnav a {
     font-size: 1.5rem; }
-  .footer-contact-info .footer-email {
-    font-size: 1rem; }
-  .footer-contact-info .footer-find-me-on {
-    font-size: 1rem; }
-  .footer-contact-info .footer-social-icons .share-post-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    display: inline-block;
-    opacity: 0.7; }
-
-.footer-bottom-container {
-  display: grid;
-  grid-template-areas: "footer-policies" "footer-copyright"; }
-  @media only screen and (min-width: 601px) {
-    .footer-bottom-container {
-      grid-template-areas: "footer-policies footer-copyright"; } }
-
-.footer-policies {
-  font-size: 0.9rem;
-  font-family: 'Roboto', sans-serif;
-  grid-area: footer-policies;
-  justify-self: left;
-  align-self: end; }
-  .footer-policies a {
-    color: #fff;
-    opacity: 0.6;
-    text-decoration: none; }
-
-.footer-copyright {
-  font-size: 0.9rem;
-  font-family: 'Roboto', sans-serif;
-  grid-area: footer-copyright;
-  justify-self: left;
-  align-self: end; }
-  .footer-copyright a {
-    color: #fff;
-    opacity: 0.6; }
-  @media only screen and (min-width: 601px) {
-    .footer-copyright {
-      justify-self: right; } }
-
+    .topnav a.title {
+      flex: auto;
+      text-align: center; } }
 .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   top: 0;
   left: 0;
   background-color: #000;
@@ -497,103 +590,6 @@ template {
     font-size: 36px;
     margin-left: 50px; }
 
-nav .topnav {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 0;
-  z-index: 100; }
-  @media only screen and (min-width: 993px) {
-    nav .topnav {
-      position: fixed;
-      top: 0;
-      width: 100%; } }
-  nav .topnav a {
-    text-decoration: none;
-    color: #000;
-    margin: 0 20px;
-    cursor: pointer; }
-    nav .topnav a.title {
-      font-family: 'Amatic SC',sans-serif;
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      font-weight: 400;
-      margin: 0 20px; }
-  nav .topnav .right-menu-items {
-    font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1.1rem; }
-    nav .topnav .right-menu-items a:hover {
-      border-bottom: 1px solid #000; }
-    nav .topnav .right-menu-items .dropdown {
-      float: left; }
-      nav .topnav .right-menu-items .dropdown .dropbtn:hover {
-        border-bottom: 1px solid #000; }
-      nav .topnav .right-menu-items .dropdown:hover .dropdown-content {
-        display: block; }
-      nav .topnav .right-menu-items .dropdown .material-icons {
-        font-size: 1rem;
-        margin-left: 5px; }
-    nav .topnav .right-menu-items .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
-      nav .topnav .right-menu-items .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        text-transform: none;
-        margin: 0; }
-        nav .topnav .right-menu-items .dropdown-content a:hover {
-          border-left: 3px solid black;
-          border-bottom: none;
-          padding-left: 13px; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=quilting-sewing] {
-            border-left: 3px solid #4caf50; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=career-gender-equality] {
-            border-left: 3px solid #ff9800; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=sports-fitness-recovery] {
-            border-left: 3px solid #f44336; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=travel-destinations] {
-            border-left: 3px solid #03a9f4; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=rock-climbing] {
-            border-left: 3px solid #9C94D5; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=diy-projects] {
-            border-left: 3px solid #facc17; }
-          nav .topnav .right-menu-items .dropdown-content a:hover[data-state=pregnancy-kids] {
-            border-left: 3px solid #1DE9B6; }
-  nav .topnav .icon {
-    display: none; }
-@media only screen and (max-width: 992px) {
-  nav .topnav .right-menu-items {
-    display: none; }
-  nav .topnav .icon {
-    display: flex; }
-  nav .topnav a {
-    font-size: 1.5rem; }
-    nav .topnav a.title {
-      flex: auto;
-      text-align: center; } }
-
-/* Media Query Ranges*/
-/* Mapping.  Nav slug | tag slug | color*/
-/* quilting-sewing | quilting | $color-one*/
-/* career-gender-equality | career-gender-equality | $color-two*/
-/* sports-fitness-recovery | sports | $color-three*/
-/* travel | travel-destinations | $color-four*/
-/* rock-climbing | climbing | $color-five*/
-/* diy-projects | diy-projects | $color-six*/
-/* pregnancy-kids | pregnancy-kids | $color-seven*/
-/* For "All" (the default), use $color-none*/
-/*#ba68c8;*/
-/*#ec407a;*/
 .card {
   flex: 1 1 300px;
   overflow: hidden;
@@ -1177,33 +1173,38 @@ nav .topnav {
   font-weight: normal;
   font-style: normal; }
 html {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-family: 'PT Serif', serif;
+  font-weight: 400;
+  color: #000;
   color: rgba(0, 0, 0, 0.87); }
   @media only screen and (max-width: 600px) {
     html {
-      font-size: 14px; } }
+      font-size: 18px;
+      line-height: 1.8rem; } }
   @media only screen and (min-width: 601px) and (max-width: 992px) {
     html {
-      font-size: 14.5px; } }
+      font-size: 18px;
+      line-height: 1.8rem; } }
   @media only screen and (min-width: 993px) {
     html {
-      font-size: 15px; } }
+      font-size: 20px;
+      line-height: 2rem; } }
 
 h1 {
-  font-family: 'Tinos', serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 5rem 0 1rem 0;
   color: #60747d;
-  font-weight: 500; }
+  font-weight: 500;
+  line-height: 2rem; }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Tinos', serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 4rem 0 1rem 0;
   color: #60747d;
   font-weight: 500; }
 
 h1 {
-  font-size: 2.5rem; }
+  font-size: 2rem; }
 
 h2 {
   font-size: 2rem; }
@@ -1221,12 +1222,7 @@ h6 {
   font-size: 1.3rem; }
 
 p {
-  font-family: 'Roboto', serif;
-  font-weight: 300;
-  line-height: 2.1rem;
   word-wrap: break-word;
-  font-size: 1.2rem;
-  color: #000;
   margin: 1rem 0;
   /* spacing between paragraphs*/ }
   p + p {
@@ -1263,26 +1259,21 @@ figcaption {
     content: "\E412";
     padding-right: 0.5rem; }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column; }
+.divider {
+  background-color: #ccc;
+  height: 1px; }
 
-main {
-  flex: 1 0 auto; }
+.site {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  min-height: 100vh; }
 
 .page-content {
-  margin-bottom: 0rem; }
+  flex: 1 0 100%;
+  /* To compensate for sticky topbar nav on large screens*/ }
   @media only screen and (min-width: 993px) {
     .page-content {
       padding-top: 60px; } }
-
-.divider {
-  background-color: #ccc; }
-
-/*Fixes the width of the sidebar so that position:fixed looks ok*/
-/*25% is 3 of 12 columns, which is the width of the sidebar on large screens, minus 1.5rem, which is 2x padding of 0.75rem*/
-.pagination {
-  visibility: hidden; }
 
 /*# sourceMappingURL=application.css.map */

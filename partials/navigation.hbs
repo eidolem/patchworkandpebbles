@@ -1,3 +1,24 @@
+
+
+<header class="site-header">
+    <span class="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">
+        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </span>
+    <a href="/" class="title">Patchwork & Pebbles</a>
+    <div class="right-menu-items">
+        <div class="dropdown">
+            <a class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a>
+            <div class="dropdown-content">  
+                {{#foreach navigation}}
+                    <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
+                {{/foreach}}
+            </div>
+        </div>
+        <a href="/author/melodie">About</a>
+    </div>
+</header>
+
+
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/">Home</a>
@@ -10,31 +31,11 @@
 </div>
 
 
-<nav>
-    <div class="topnav" id="navbar">
-        <span class="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">
-            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-        </span>
-        <a href="/" class="title">Patchwork & Pebbles</a>
-        <div class="right-menu-items">
-            <div class="dropdown">
-                <a class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a>
-                <div class="dropdown-content">  
-                    {{#foreach navigation}}
-                        <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
-                    {{/foreach}}
-                </div>
-            </div>
-            <a href="/author/melodie">About</a>
-        </div>
-    </div>
-</nav>
 
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
