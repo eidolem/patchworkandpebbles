@@ -1,0 +1,29 @@
+.related-posts {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 0 5%;
+	a {
+		text-decoration: none;
+	}
+	.title {
+		margin-top: 1rem;
+		font-size: 1.4rem;
+		text-decoration: none;
+		/*border-bottom: 1px solid #ccc;*/
+	}
+	.list-of-posts {
+		.related-post .related-post-image {
+			height: 90px;
+		}
+	}
+	.more-on {
+		font-family: 'Quicksand', sans-serif;
+		font-size: 0.8rem;
+		a {
+			text-decoration: underline;
+			color: #4e4e4e;
+			-webkit-text-decoration-style: dotted;
+			        text-decoration-style: dotted;
+		}
+	}
+}

@@ -1,40 +1,46 @@
 
 
-<header class="site-header">
-    <span class="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">
+<nav class="site-header">
+    <span class="icon" style="font-size:20px;cursor:pointer" onclick="openNav()">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </span>
-    <a href="/" class="title">Patchwork & Pebbles</a>
-    <div class="right-menu-items">
-        <div class="dropdown">
-            <a class="dropbtn">Categories<i class="material-icons">keyboard_arrow_down</i></a>
-            <div class="dropdown-content">  
-                {{#foreach navigation}}
-                    <a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a>
-                {{/foreach}}
-            </div>
-        </div>
-        <a href="/author/melodie">About</a>
-    </div>
-</header>
+    <ul>
+        <li><a href="/" class="title">Patchwork&nbsp;&amp;&nbsp;Pebbles</a></li>
+        <li class="right-menu-items">
+            <ul>
+                <li class="dropdown"><a>CATEGORIES<i class="material-icons">keyboard_arrow_down</i></a>
+                    <ul class="dropdown-content">  
+                        {{#foreach navigation}}
+                            <li><a data-state="{{slug}}" target="_self" href="{{url}}">{{label}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </li>
+                <li><a href="/author/melodie">ABOUT</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 
-
-<div id="mySidenav" class="sidenav">
+<nav id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/">Home</a>
-    <a href="">Categories</a>
-        {{#foreach navigation}}
-            <li class="subheader-items"><a href="{{url}}" class="waves-effect">{{label}}</a></li>
-        {{/foreach}}
-    <a href="/author/melodie">About Me</a>
-    <a href="/author/melodie/#contact-me">Contact</a>
-</div>
-
-
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="">CATEGORIES</a></li>
+        <li>
+            <ul>
+                {{#foreach navigation}}
+                    <li><a href="{{url}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+        </li>
+        <li><a href="/author/melodie">ABOUT ME</a></li>
+        <li><a href="/author/melodie/#contact-me">CONTACTS</a></li>
+    </ul>
+</nav>
 
 <script>
 function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("mySidenav").style.width = "325px";
 }
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";

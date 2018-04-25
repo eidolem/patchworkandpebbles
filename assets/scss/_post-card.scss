@@ -9,94 +9,54 @@
     border-radius: 5px;
     box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
     transition: all .5s ease;
-
 	&:hover {
 	    box-shadow: 0 0 1px rgba(39,44,49,.05), 0 3px 16px rgba(39,44,49,.2);
 	    transition: all .3s ease;
 	    -webkit-transform: translate3D(0,-1px,0);
 	            transform: translate3D(0,-1px,0);
 	}
-
 	a {
 		text-decoration: none;
 		color: #000;
 	}
-
 	.card-image{
-		border-radius: 5px 5px 0 0;
-	    width: auto;
 	    height: 200px;
 	    background: #c5d2d9 no-repeat 50%;
 	    background-size: cover;
 	    overflow: hidden;
 	}
-
 	.card-content {
-		padding: 20px 25px 30px 20px;
-		cursor: pointer;
-		display: flex;
-		flex-grow: 1;
-		flex-direction: column;
-		justify-content: space-between;
-
+		padding: 20px 15px 30px 15px;
 		.card-tag {
 			padding-bottom: 0.3rem;
-
 			p {
 				text-transform: uppercase;
-				font-family: 'Roboto Condensed', sans-serif;
-				font-weight: 400;
+				font-family: 'PT Sans Narrow', sans-serif;
+				font-weight: 700;
 				display: block;
 				line-height: 1rem;
 				margin: 0 0;
-				@media #{$medium-and-down}{
-					font-size: 1rem;
-				}
+				font-size: 1rem;
 				@media #{$large-and-up}{
 					font-size: 0.8rem;
 				}
-
-				color: $color-none;
-				&[data-state=quilting] {
-					color: $color-one;
-				}
-				&[data-state=career-gender-equality] {
-					color: $color-two;
-				}
-				&[data-state=sports] {
-					color: $color-three;
-				}
-				&[data-state=travel] {
-					color: $color-four;
-				}
-				&[data-state=climbing] {
-					color: $color-five;
-				}
-				&[data-state=diy-projects] {
-					color: $color-six;
-				}
-				&[data-state=pregnancy-kids] {
-					color: $color-seven;
-				}
+				color: #738a94;
 			}
 		}
-
 		h1.card-title {
 			padding: 0rem 0rem 0.5rem 0rem;
 			margin: 0;
-			font-size: 1.3rem;
-			font-family: 'Roboto Condensed', sans-serif;
-			font-weight: 400;
-			line-height: 1.5rem;
+			font-size: 1.1rem;
+			color: #000;
+			line-height: normal;
 		}
-
 		.card-excerpt {
 			p {
-				font-family: 'Roboto Condensed', sans-serif;
+				font-family: 'PT Sans Narrow', sans-serif;
 				font-weight: 300;
-				font-size: 1.1rem;
-				line-height: 1.4rem;
+				font-size: 1rem;
 				margin: 0 0;
+				opacity: 0.9;
 			}
 		}
 	}

@@ -3,34 +3,15 @@
 	justify-content: center;
 	align-items: center;
 	height: auto;
-	margin: 2rem 1rem 4rem 1rem;
+	margin: 2rem 1rem 3rem 1rem;
 	flex-direction: column;
 
 	.tag-page-title {
-		font-family: 'Roboto Condensed', sans-serif;
-		font-weight: 300;
-		font-size: 3rem;
+		font-weight: 400;
+		font-size: 2.5rem;
 		text-align: center;
-		line-height: 3rem;
-		margin: 2rem 0;
-	}
-
-	.tag-page-description {
-		font-family: 'Roboto Condensed', sans-serif;
-		font-weight: 300;
-		text-align: center;
-		font-size: 1.3rem;
-		margin: 0;
-
-		@media #{$medium-only} {
-			width: 75%;
-		}
-		@media #{$large-and-up} {
-			width: 50%;
-		}
 	}
 }
-
 
 .tag-main{
 	margin: 0 auto;
@@ -44,5 +25,3 @@
 	flex-flow: row wrap;
     justify-content: center;
 }
-
-

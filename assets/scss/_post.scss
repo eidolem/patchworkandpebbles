@@ -1,236 +1,179 @@
-
-
-.post-content-wrapper {
-	padding: 0 1.5rem 0rem 1.5rem;
+.post-container {
+	display: -ms-grid;
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"header"
-		"content";
-}
-
-.post-header {
-	grid-area: header;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	margin-bottom: 3rem;
+	.feature-image {
+		width: 100vw;
+	 	height: 40vh;
+	 	position: relative;
+	 	left: 50%;
+	 	right: 50%;
+	 	margin-left: -50vw;
+	 	margin-right: -50vh;
+	 	-o-object-fit: cover;
+	 	   object-fit: cover;	
+	}
+	@media #{$small-and-down} {
+		.feature-image-wrapper::after {
+	 		display: block;
+	 		position: relative;
+	 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+	 		margin-top: -150px;
+	 		height: 150px;
+	 		width: 100%;
+	 		content: '';
+	 	}
+ 	}
+	.post-header {
+		padding: 0 0 2.5rem 5%;
+		@media #{$medium-and-up} {
+			padding: 3rem 2rem 1rem 2rem;
+			margin: -5rem 0 2rem 0;
+			background-color: #fff;
+			border-bottom: 1px solid #d3d3d3;
+			z-index: 2;
+			width: 75vw;
+			-ms-grid-column-align: center;
+			    justify-self: center;
+		}
+		@media #{$large-and-up} {
+			padding: 3rem 4rem 1rem 4rem;
+			width: 60vw;
+		}
+		.post-title {
+			margin: 0 0 4rem 0;
+			font-size: 2.3rem;
+		}
+		&.move-title-down {
+			margin-top: 4rem;
+		}
+		.post-meta-wrapper {
+			display: flex;
+			flex-flow: column wrap;
+			@media #{$medium-and-up} {
+				flex-flow: row wrap;
+				justify-content: space-between;
+			}
+		}
+		.post-tags, .post-date {
+			font-family: 'PT Sans', sans-serif;
+			text-transform: uppercase;
+			font-size: 0.8rem;
+			padding-bottom: 0.5rem;
+			a {
+				color: #4e4e4e;
+				-webkit-text-decoration-style: dotted;
+				        text-decoration-style: dotted;
+			}
+		}
+	}
 }
 
 .post-content {
-	grid-area: content;
-	padding: 3rem 0 3rem 0;
-	@media #{$medium-and-up} {
-		width: 60vw;
-		margin: 0 auto;
+	> *:not( img ):not( video ) {
+	    padding-left: 5%;
+	    padding-right: 5%;
 	}
-}
-
-.feature-image, .feature-image-wrapper {
-	width: 100vw;
-	height: 40vh;
-	position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vh;
-	object-fit: cover;
-}
-
-@media #{$small-and-down} {
-	.feature-image-wrapper::after {
-		display: block;
-		position: relative;
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
-		margin-top: -150px;
-		height: 150px;
-		width: 100%;
-		content: '';
-	}
-}
-
-.feature-image {
-	width: 100vw;
-	height: 40vh;
-	position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vh;
-	object-fit: cover;
-}
-
-.post-data-wrapper {
-	align-self: center;
-	padding-bottom: 3rem;
-	border-bottom: 1px solid #d3d3d3;
-	width: 100%;
-	z-index: 2;
-
 	@media #{$medium-and-up} {
 		width: 75vw;
-		padding: 5rem 2rem 5rem 2rem;
-		background-color: #fff;
+		-ms-grid-column-align: center;
+		    justify-self: center;
 	}
 }
 
-@media #{$medium-and-up} {
-	.move-title-up {
-		margin-top: -5rem;
-	}
-}
-
-.post-title {
-	font-weight: 300;	
-	font-family: 'Tinos', serif;		
-	font-style: italic;
-	letter-spacing: -0.05rem;
-	margin: 0 0;
-	color: rgba(0,0,0,.87);
-	font-size: 3.3rem;
+.post-footer {
+	display: flex;
+	flex-flow: column wrap; 
+	justify-content: center;
 }
 
 
-//////////////////////////////////////////////////////////////////////
-// //  Styling for modified date
-// .post-meta {
-// 	font-family: 'Noto Sans', sans-serif;
-// 	font-weight: 400;
-// 	color: #424242;
-// 	font-size: 0.8rem;
-// 	letter-spacing: 0.05rem;
-// 	text-transform: uppercase;
-// 	height: 1rem;
+/* .post-content-wrapper {*/
+/* 	padding: 0 1.5rem 0rem 1.5rem;*/
+/* 	display: grid;*/
+/* 	grid-template-columns: 1fr;*/
+/* 	grid-template-rows: auto;*/
+/* 	grid-template-areas:*/
+/* 		"header"*/
+/* 		"content";*/
+/* }*/
 
-// 	@media #{$small-and-down}{
-// 		padding-top: 1rem;
-// 	}
+/* .post-header {*/
+/* 	grid-area: header;*/
+/* 	display: flex;*/
+/* 	flex-direction: column;*/
+/* 	justify-content: center;*/
+/* }*/
 
-// 	.post-tags {
-// 		padding-bottom: 0.5rem;
-// 		padding-left: 0rem;
-// 		a {
-// 			color: #424242;
-// 			text-decoration-style: dotted;
-// 		}
-// 	}
+/* .post-content {*/
+/* 	grid-area: content;*/
+/* 	padding: 3rem 0 3rem 0;*/
+/* 	@media #{$medium-and-up} {*/
+/* 		width: 60vw;*/
+/* 		margin: 0 auto;*/
+/* 	}*/
+/* }*/
 
-// 	.post-date {
-// 		@media #{$small-and-down}{
-// 			float:left;
-// 			padding-top: 0.2rem;
-// 		}
+/* .feature-image, .feature-image-wrapper {*/
+/* 	width: 100vw;*/
+/* 	height: 40vh;*/
+/* 	position: relative;*/
+/* 	left: 50%;*/
+/* 	right: 50%;*/
+/* 	margin-left: -50vw;*/
+/* 	margin-right: -50vh;*/
+/* 	object-fit: cover;*/
+/* }*/
 
-// 		@media #{$medium-and-up}{
-// 			float:right;
-// 		}
-// 	}
-// }
+/* @media #{$small-and-down} {*/
+/* 	.feature-image-wrapper::after {*/
+/* 		display: block;*/
+/* 		position: relative;*/
+/* 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);*/
+/* 		margin-top: -150px;*/
+/* 		height: 150px;*/
+/* 		width: 100%;*/
+/* 		content: '';*/
+/* 	}*/
+/* }*/
 
-// 	img {
-// 		@media #{$small-and-down}{
-// 			display: block;
-// 			// Materializecss gutter width is 0.75rem (x2). Makes the img full screen width.
-// 			// Note that theme has gutter width at 1.5rem 
-// 			width: calc(100% + 3rem);
-// 			// Shifts the image to the left to center it
-// 			transform: translateX(-1.5rem);
-// 			margin-bottom: 1rem;
-// 		}
-		
-// 		@media #{$medium-and-up}{
-// 			display: block;
-// 			max-width: 110%;
-// 			height: auto;
-// 			position: relative;
-// 			left: 50%;
-// 			transform: translateX(-50%);
-// 			margin-bottom: 1rem;
-// 		}
-// 	}
+/* .feature-image {*/
+/* 	width: 100vw;*/
+/* 	height: 40vh;*/
+/* 	position: relative;*/
+/* 	left: 50%;*/
+/* 	right: 50%;*/
+/* 	margin-left: -50vw;*/
+/* 	margin-right: -50vh;*/
+/* 	object-fit: cover;*/
+/* }*/
 
+/* .post-data-wrapper {*/
+/* 	align-self: center;*/
+/* 	padding-bottom: 3rem;*/
+/* 	border-bottom: 1px solid #d3d3d3;*/
+/* 	width: 100%;*/
+/* 	z-index: 2;*/
 
+/* 	@media #{$medium-and-up} {*/
+/* 		width: 75vw;*/
+/* 		padding: 5rem 2rem 5rem 2rem;*/
+/* 		background-color: #fff;*/
+/* 	}*/
+/* }*/
 
-// 	blockquote {
-// 		padding-left: 0rem;
-// 		margin-bottom: 3rem;
-// 		margin-left: 2rem;
-// 		margin-right: 4rem;
-// 		margin-top: 3rem;
-// 		border-top: 1px solid #ccc;
-// 		border-bottom: 1px solid #ccc;
-// 		border-left: 0px;  //to get rid of the materialize left border
+/* @media #{$medium-and-up} {*/
+/* 	.move-title-up {*/
+/* 		margin-top: -5rem;*/
+/* 	}*/
+/* }*/
 
-// 		p{
-// 		  	font-family: 'Roboto Condensed', sans-serif;
-// 			font-size: 1.5rem;
-// 			line-height: 2.2rem;
-// 			color: #6b0096;
-// 			font-weight: 300;
-// 			position: relative;
-// 			margin-top: 0rem;
-// 			margin-left: 1rem;
-// 		}
-
-// 		p:only-child{
-// 			margin-top: 3rem;
-// 			&:before {
-// 				content: '\201C';
-// 				font-family: serif;
-// 				font-weight: 700;
-// 				position: absolute;
-// 				font-size: 3rem;
-// 				top: -2rem;
-// 				left: 12rem;
-// 				color: #ccc;
-// 			}
-// 		}
-
-// 		p:first-child {
-// 			margin-top: 3rem;
-// 			&:before {
-// 				content: '\201C';
-// 				font-family: serif;
-// 				font-weight: 700;
-// 				position: absolute;
-// 				font-size: 3rem;
-// 				top: -2rem;
-// 				left: 10rem;
-// 				color: #ccc;
-// 			}
-// 		}
-// 	}
-
-// 	// Basic formatting for ordered and unordered lists, minus the bullet type
-// 	ol, ol:not(.browser-default), ul, ul:not(.browser-default){
-// 		padding-left: 3rem;
-
-// 		li {
-// 			font-family: 'Roboto', sans-serif;
-// 	        font-size: 1.2rem;
-// 	        line-height: 2.1rem;
-// 	        font-weight: 300;
-// 		}
-// 	}
-
-// 	// Bullet style is decimal for ordered lists...
-// 	ol, ol:not(.browser-default) {
-// 	    li {
-// 	        list-style-type: decimal;
-// 	        // ...unless there's an embedded unorded list within an ordered list
-// 	        ul li{
-// 	      	    list-style-type: disc;
-// 	      	}
-// 		}
-// 	}
-
-// 	// Bullet style is disc for unordered lists...
-// 	ul, ul:not(.browser-default) {
-// 	    li {
-// 	      	list-style-type: disc;
-// 	      	// ...unless there's an embedded ordered list within an unordered list
-// 	      	ol li{
-// 	      		list-style-type: decimal;
-// 	      	}
-// 		}
-// 	}
+/* .post-title {*/
+/* 	font-weight: 300;	*/
+/* 	font-family: 'Tinos', serif;		*/
+/* 	font-style: italic;*/
+/* 	letter-spacing: -0.05rem;*/
+/* 	margin: 0 0;*/
+/* 	color: rgba(0,0,0,.87);*/
+/* 	font-size: 3.3rem;*/
+/* }*/

@@ -3,21 +3,15 @@
 
 {{#tag}}
 
-<header>
-	<div class="tag-page-header">
-	    <div class="tag-page-title">
-	    	{{name}}
-	    </div>
-	    <h2 class="tag-page-description">
-        	{{description}}
-	    </h2>
-	</div>
+<header class="tag-page-header">
+    <h1 class="tag-page-title">
+    	{{name}}
+    </h1>
 </header>
 
 {{/tag}}
 
 
-{{!-- The main content area --}}
 <main class="tag-main">
     <section class="tag-feed">
         {{#foreach posts limit="1000"}}

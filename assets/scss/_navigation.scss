@@ -1,177 +1,117 @@
-
 .site-header {
-	background-color: #fff; 
+	background-color: #fff;
 	display: flex;
-	justify-content: space-around;
+	flex-flow: row wrap;
 	align-items: center;
-	padding: 8px 0;
+	justify-content: flex-start;
 	z-index: 100;
-
+	width: 100%;
 	@media #{$large-and-up} {
 		position: fixed;
-		top: 0;
-		width: 100%;
 	}
-
 	a {
-	    text-decoration: none;
-	    color: #000;
-	    margin: 0 20px;
-	    cursor: pointer;
-
-		&.title {
-			font-family: 'Amatic SC',sans-serif;
-    		text-transform: uppercase;
-    		font-size: 2.5rem;
-    		font-weight: 400;
-    		margin: 0 20px;
+		color: #000;
+		opacity: 0.8;
+		text-decoration: none;
+		&:hover {
+			opacity: 1;
 		}
 	}
-
-	.right-menu-items {
-		font-family: "Roboto Condensed", sans-serif;
-		text-transform: uppercase;
-		font-weight: 300;
-		font-size: 1.1rem;
-
-		a {
-			&:hover {
-				border-bottom: 1px solid #000;
-			}
-		}
-
-		.dropdown {
-			float: left;
-			.dropbtn {
-				&:hover {
-					border-bottom: 1px solid #000;
-				}
-			}
-			&:hover .dropdown-content{
-				display: block;
-			}
-
-			.material-icons {
-				font-size: 1rem;
-				margin-left: 5px;
-			}
-		}
-
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #f9f9f9;
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-		    a {
-		     	float: none;
-			    color: black;
-			    padding: 12px 16px;
-			    text-decoration: none;
-			    display: block;
-			    text-align: left;   
-			    text-transform: none;	
-			    margin: 0;
-
-			    &:hover {
-			    	border-left: 3px solid black;
-			    	border-bottom: none;
-			    	padding-left: 13px;
-
-					&[data-state=quilting-sewing] {
-						border-left: 3px solid $color-one;
-					}
-					&[data-state=career-gender-equality] {
-						border-left: 3px solid $color-two;
-					}
-					&[data-state=sports-fitness-recovery] {
-						border-left: 3px solid $color-three;
-					}
-					&[data-state=travel-destinations] {
-						border-left: 3px solid $color-four;
-					}
-					&[data-state=rock-climbing] {
-						border-left: 3px solid $color-five;
-					}
-					&[data-state=diy-projects] {
-						border-left: 3px solid $color-six;
-					}
-					&[data-state=pregnancy-kids] {
-						border-left: 3px solid $color-seven;
-					}
-			    }
-		    }
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-around;
+		list-style-type: none;
+		margin: 0 0;
+		padding: 0 0;
+		@media #{$large-and-up} {
+			width: 100%;
 		}
 	}
-
 	.icon {
-		display: none;
-	}
-}
-
-@media #{$medium-and-down} {
-	.topnav {
-		.right-menu-items {
+		margin-left: 15px;
+		@media #{$large-and-up} {
 			display: none;
 		}
- 		.icon {
+	}
+	.title {
+		font-family: 'Amatic SC', sans-serif;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		margin-left: 30px;
+	}
+	.right-menu-items {
+		display: none;
+		@media #{$large-and-up} {
 			display: flex;
-		}
-		a{
-			font-size: 1.5rem;
-			&.title {
-				flex: auto;
-				text-align: center;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 0.9rem;
+			i {
+				vertical-align: text-bottom;
 			}
-		}
+			.dropdown {
+				margin-right: 1rem;
+				&:hover .dropdown-content{
+					display: block;
+				}
+			}
+			.dropdown-content {
+				display: none;
+				position: absolute;
+    			background-color: #f9f9f9;
+    			width: auto;
+    			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    			padding: 10px 25px;
+    			margin-left: -40px;
+    			li {
+    				padding: 8px 0;
+    				a {
+    					display: block;
+    				}
+    			}
+			}
+		}		
 	}
 }
-
 
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1000;
-    top: 0;
-    left: 0;
     background-color: #000;
-    overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    white-space: nowrap;
-
-    a {
-	    padding: 10px 8px 10px 20px;
-	    text-decoration: none;
-	    color: #fff;
-	    opacity: 0.9;
-	    display: block;
-	    transition: 0.3s;
-    }
-
-    li {
-    	text-transform: none;
-    	list-style-type: none;
-    	padding: 0 0 0 20px;
-    	font-size: 1.1rem;
-    }
-
+    padding-top: 40px;
+    overflow-x: hidden;
     .closebtn {
 	    position: absolute;
 	    top: 0;
 	    right: 25px;
 	    font-size: 36px;
 	    margin-left: 50px;
+	    color: #ccc;
+	    text-decoration: none;
 	}
+    ul {
+    	padding-left: 30px;
+    	list-style-type: none;
+		li {
+			a {
+			    padding: 5px 10px 5px 0;
+			    text-decoration: none;
+			    color: #ccc;
+			    display: block;
+			    transition: 0.3s;
+		        font-family: 'Quicksand', sans-serif;
+			    font-size: 1rem;
+			    font-weight: 300;
+			    text-transform: uppercase;
+			    white-space: nowrap;
+			}
+			ul li a {
+				text-transform: none;
+			}
+		}
+    }
 }
-
-
-
-

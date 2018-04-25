@@ -1,108 +1,38 @@
-{{!-- "< default" means - insert everything in this file into the {{{body}}} 
-of the default.hbs template, containing the blog header/footer. --}}
 {{!< default}}
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-    <article class="{{post_class}}">
-    {{!-- If there's a featured image, display it and move the title down --}}
+<article class="{{post_class}} post-container">
     {{#if image}}
-        <div class="row ">
-            <div class="col s12 m12 l12 feature-image-wrapper">
-                <img class="feature-image" src="{{image}}"></img>
-            </div>
+        <div class='feature-image-wrapper'><img class="feature-image" src="{{image}}"></img></div>
+            <header class="post-header">
+        {{else}}
+            <header class="post-header move-title-down">
+        {{/if}}
+        <h1 class="post-title">{{title}}</h1>
+        <div class="post-meta-wrapper">
+            <div class="post-tags">{{tags}}</div>
+            <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
         </div>
-        <div class="row">
-            {{#if tags limit="1"}}
-                {{#foreach tags limit="1"}}
-                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header move-title-up" data-state={{slug}}>
-                {{/foreach}}
-            {{else}}
-                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header move-title-up">
-            {{/if}}
-                <h1 class="post-title">{{title}}</h1>
-                <section class="post-meta">
-                    <div class="col s12 m6 l6">
-                        <div class="post-tags">{{tags}}</div>
-                    </div>
+    </header>
+    <section class="post-content" id="post-content">
+        {{content}}
+    </section>
+</article>
 
-                    <div class="col s12 m6 l6">
-                        <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
-                    </div>
-                </section>
-            </header>
-        </div>
-
-    {{!-- If there's no image, don't display it, and don't move the title --}}
-    {{else}}
-        <div class="row">
-            {{#if tags limit="1"}}
-                {{#foreach tags limit="1"}}
-                <header class="col s12 m10 l10 offset-m1 offset-l1 post-header" data-state={{slug}}>
-                {{/foreach}}
-            {{else}}
-                 <header class="col s12 m10 l10 offset-m1 offset-l1 post-header">
-            {{/if}}
-                <h1 class="post-title">{{title}}</h1>
-                <section class="post-meta">
-                    <div class="col s12 m6 l6">
-                        <div class="post-tags">{{tags}}</div>
-                    </div>
-
-                    <div class="col s12 m6 l6">
-                        <time class="post-date">updated {{date updated_at format="MM.DD.YYYY"}}</time>
-                    </div>
-                </section>
-            </header>
-        </div>
-    {{/if}}
-
-    {{!-- Post Content and Sidebar --}}
-    <div class="row">
-        <section class="col s12 m8 l7 offset-m2 offset-l1 post-content" id="post-content">
-            {{content}}
-            {{!-- <div class="end-of-content"></div> --}}
-        </section>
-        <section class="col s12 l3 offset-l0 hide-on-med-only sidebar-content">
-            {{> sidebar}}
-        </section>
-    </div>
-
-    {{!-- Email Popup --}}
-    {{>email-subscribe-popup}}
-
-    {{!-- Anything full width after page-content --}}
-    <div class="row hide-on-small-and-down">
-        <div class="col m12 l12 end-of-content"></div>
-        <div class="col m12 l10 offset-l1 center-align">
-            {{>related-posts-wide}}
-            <div class="ad-block" id="my-google-ads-banner-bottom"></div>
-            {{>ad-card amazon_uuid="888261e6-8f78-467f-83c7-46590bbf8985"}}
-        </div>
-    </div>
-    </article>
+<aside class="post-footer">
+    {{!-- {{>ad-card amazon_uuid="9feef2bb-67cb-48e6-b2e8-43234a8ca829"}} --}}
+    {{>related-posts}}
+</aside>
 
 
 
-    {{!-- Get all tags for this post and call RelatedPosts --}}
-    <script>
-        $('.my-google-ads').each(function() {
-            $.get(ghost.url.api('posts', {limit:'1', filter:"id:{{id}}", include:"tags"})).done(onSuccess);
-        });
+<script>
+    $(document).ready(function () {
+        // Get the tags from this post and pass to getTagsRelatedPostsTags
+        $.get(
+            ghost.url.api('posts', {limit:'all', filter:"id:{{id}}", include:"tags"})
+        ).done(getTagsRelatedPostsTags);
+    });
+</script>
 
-        function onSuccess(data) {
-            var result = data.posts[0].tags[0].slug;
-        }
-    </script>
-    <script type="text/javascript" src="{{asset "js/relatedPosts.min.js"}}">    </script>
-    <script>
-        // Grab all posts, filtered by tags
-        $(document).ready(function () {
-            // Get all the posts with these tags, minus the current post id
-            var tags = $.get(
-                ghost.url.api('posts', {limit:'all', filter:"id:{{id}}", include:"tags"})
-            ).done(getTagsRelatedPostsTags);
-        });
-    </script>
-        
 {{/post}}

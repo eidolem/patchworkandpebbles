@@ -1,0 +1,13 @@
+
+{{#if tags}}
+    <div class="related-posts">
+        {{#foreach tags limit="1"}}
+            <a href="{{url}}"><h1 class="title">Related Articles</h1></a>
+        {{/foreach}}
+            
+        {{!-- for the jquery api to insert posts here --}}
+        <div class="list-of-posts" id="list-of-posts"></div>
+
+        <div class="more-on">more on {{tags}}</div>
+    </div>
+{{/if}}

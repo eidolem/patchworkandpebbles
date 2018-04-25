@@ -1,4 +1,6 @@
-   // In order to grab random posts with the same tags as this post:
+// In order to grab random posts with the same tags as this post:
+
+//1. Make an array with the tags from this post (passed in thru data)
 function getTagsRelatedPostsTags(data) {
     var result = data.posts[0].tags;
     var tags = [];
@@ -8,14 +10,15 @@ function getTagsRelatedPostsTags(data) {
     getRelatedPosts(tags);
 }
 
+//2. Get all posts with any of these tags
 function getRelatedPosts(tags) {
     $.get(
         ghost.url.api('posts', {limit: 'all', filter: "tags:[" + tags.join(',') + "]+id:-{{id}}"})
     ).done(renderRelatedPosts)
 }
 
+//3. Pull random posts from list and append markup to where #list-of-posts
 function renderRelatedPosts(data) { 
-    // list-of-posts is on related-posts-card
     var result = $('#list-of-posts');
     // Randomize array
     var sortedPosts = shuffleArray(data.posts);
@@ -28,13 +31,11 @@ function renderRelatedPosts(data) {
         var displayPosts = sortedPosts.slice(0, 6);
     }
 
-    // Insert at bottom of post list
     $.each(displayPosts, function (i, post) {
         result.append(
-            '<div class="row post">'
-                + '<a href="' + post.url + '" class="valign-wrapper">'
-                + '<div class="image col s4 m4 l4" style="background-image: url(' + post.image + ')"></div>'
-                + '<div class="title col s8 m8 l8">' + post.title + '</div>'
+            '<a href="' + post.url + '" class="related-post">'
+                + '<div class="related-post-image" style="background-image: url(' + post.image + ')"></div>'
+                + '<div class="related-post-title">' + post.title + '</div>'
                 + '</a></div>'
         );
     });
