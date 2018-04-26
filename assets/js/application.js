@@ -19,7 +19,7 @@ function getRelatedPosts(tags) {
 
 //3. Pull random posts from list and append markup to where #list-of-posts
 function renderRelatedPosts(data) { 
-    var result = $('#list-of-posts');
+    var result = $('.list-of-posts');
     // Randomize array
     var sortedPosts = shuffleArray(data.posts);
     // If there's less than 6 posts with this tag, only take the total number of posts 
@@ -32,7 +32,7 @@ function renderRelatedPosts(data) {
     }
 
     $.each(displayPosts, function (i, post) {
-        result.append(
+        result.prepend(
             '<a href="' + post.url + '" class="related-post">'
                 + '<div class="related-post-image" style="background-image: url(' + post.image + ')"></div>'
                 + '<div class="related-post-title">' + post.title + '</div>'
@@ -41,24 +41,24 @@ function renderRelatedPosts(data) {
     });
 
     // list-of-posts-wide is on related-posts-card-wide
-    var result2 = $('#list-of-posts-wide');
-    // If there's less than 6 posts with this tag, only pull the total number
-    if ( sortedPosts.length <= 6){
-        var displayPosts2 = sortedPosts.slice(0, sortedPosts.length);
-    }
-    // Else pull max 6, but don't take the same 6 as was in the sidebar related posts card
-    else {
-        var displayPosts2 = sortedPosts.slice(7, 13);
-    }
-    // Insert at end of post list
-    $.each(displayPosts2, function (i, post) {
-        result2.append(
-                '<a href="' + post.url + '" class="post col m2 l2">'
-                + '<div class="image" style="background-image: url(' + post.image + ')"></div>'
-                + '<div class="title">' + post.title + '</div>'
-                + '</a>'
-        );
-    });
+    // var result2 = $('#list-of-posts-wide');
+    // // If there's less than 6 posts with this tag, only pull the total number
+    // if ( sortedPosts.length <= 6){
+    //     var displayPosts2 = sortedPosts.slice(0, sortedPosts.length);
+    // }
+    // // Else pull max 6, but don't take the same 6 as was in the sidebar related posts card
+    // else {
+    //     var displayPosts2 = sortedPosts.slice(7, 13);
+    // }
+    // // Insert at end of post list
+    // $.each(displayPosts2, function (i, post) {
+    //     result2.append(
+    //             '<a href="' + post.url + '" class="post col m2 l2">'
+    //             + '<div class="image" style="background-image: url(' + post.image + ')"></div>'
+    //             + '<div class="title">' + post.title + '</div>'
+    //             + '</a>'
+    //     );
+    // });
 }
 
 // Function to randomize an array
