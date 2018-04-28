@@ -19,10 +19,10 @@ function getRelatedPosts(tags) {
 
 //3. Pull random posts from list and append markup to where #list-of-posts
 function renderRelatedPosts(data) { 
-    var result = $('.list-of-posts');
+    var result = $('#list-of-posts-sidebar');
     // Randomize array
     var sortedPosts = shuffleArray(data.posts);
-    // If there's less than 6 posts with this tag, only take the total number of posts 
+    // If there's fewer than 6 posts with this tag, only take the total number of posts 
     if ( sortedPosts.length <= 6){
         var displayPosts = sortedPosts.slice(0, sortedPosts.length);
     }
@@ -30,35 +30,35 @@ function renderRelatedPosts(data) {
     else {
         var displayPosts = sortedPosts.slice(0, 6);
     }
-
     $.each(displayPosts, function (i, post) {
         result.prepend(
-            '<a href="' + post.url + '" class="related-post">'
-                + '<div class="related-post-image" style="background-image: url(' + post.image + ')"></div>'
-                + '<div class="related-post-title">' + post.title + '</div>'
+            '<a href="' + post.url + '" class="post-card">'
+                + '<div class="post-image" style="background-image: url(' + post.image + ')"></div>'
+                + '<div class="post-title">' + post.title + '</div>'
                 + '</a></div>'
         );
     });
 
-    // list-of-posts-wide is on related-posts-card-wide
-    // var result2 = $('#list-of-posts-wide');
-    // // If there's less than 6 posts with this tag, only pull the total number
-    // if ( sortedPosts.length <= 6){
-    //     var displayPosts2 = sortedPosts.slice(0, sortedPosts.length);
-    // }
-    // // Else pull max 6, but don't take the same 6 as was in the sidebar related posts card
-    // else {
-    //     var displayPosts2 = sortedPosts.slice(7, 13);
-    // }
-    // // Insert at end of post list
-    // $.each(displayPosts2, function (i, post) {
-    //     result2.append(
-    //             '<a href="' + post.url + '" class="post col m2 l2">'
-    //             + '<div class="image" style="background-image: url(' + post.image + ')"></div>'
-    //             + '<div class="title">' + post.title + '</div>'
-    //             + '</a>'
-    //     );
-    // });
+
+    var result2 = $('#list-of-posts-footer');
+    // Randomize array
+    var sortedPosts2 = shuffleArray(data.posts);
+    // If there's fewer than 4 posts with this tag, only take the total number of posts 
+    if ( sortedPosts2.length <= 4){
+        var displayPosts2 = sortedPosts2.slice(0, sortedPosts2.length);
+    }
+    // Else pull max 4
+    else {
+        var displayPosts2 = sortedPosts2.slice(0, 4);
+    }
+    $.each(displayPosts2, function (i, post) {
+        result2.prepend(
+            '<a href="' + post.url + '" class="post-card">'
+                + '<div class="post-image" style="background-image: url(' + post.image + ')"></div>'
+                + '<div class="post-title">' + post.title + '</div>'
+                + '</a></div>'
+        );
+    });
 }
 
 // Function to randomize an array

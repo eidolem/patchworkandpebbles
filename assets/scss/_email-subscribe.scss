@@ -1,0 +1,38 @@
+.email-subscribe {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 0.9rem;
+	#mc_embed_signup {
+		width: 100%;
+		white-space: nowrap;
+		margin: 0.5rem 0 4rem 0;
+		.clear {
+			display: inline-block;
+		}
+		.button {
+		    padding: 10px 10px;
+		    background-color: transparent;
+		    border: 1px solid #4e4e4e;
+		    border-radius: 20px;
+		    display: block;
+		    color: #4e4e4e;
+		    &:hover {
+		    	cursor: pointer;
+		    	color: #000;
+		    }
+		}
+		input.email {
+		    padding: 15px 0 10px 0;
+		    background-color: transparent;
+		    border: none;
+		    border-bottom: 1px solid #4e4e4e;
+		    color: #4e4e4e;
+		    display: block;
+		    margin-bottom: 10px;
+		    width: 100%;
+		    &:focus{
+		    	outline: none;
+		    	color: #000;
+		    }
+		}
+	}
+}

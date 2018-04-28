@@ -1,85 +1,74 @@
 {{!< default}}
+<div class="home-content-wrapper">
+    <section class="list-of-categories">
+        <div class="category-list-title">A personal blog from an person. <br>Find Inspiration.</div>
+        <a href="/tag/sports" class="category-listing">
+            <img src="/assets/img/fitness.svg" alt="kettlebell">
+            <div class="category-title">Sports Fitness & Recovery</div>
+        </a>
+        <a href="/tag/career-gender-equality" class="category-listing">
+            <img src="/assets/img/career.svg" alt="lightbulb">
+            <div class="category-title">Career & Gender Equality</div>
+        </a>
+        <a href="/tag/quilting" class="category-listing">
+            <img src="/assets/img/quilting.svg" alt="sewing machine">
+            <div class="category-title">Quilting & Sewing</div>
+        </a>
+        <a href="/tag/travel" class="category-listing">
+            <img src="/assets/img/travelrv.svg" alt="rv trailer">
+            <div class="category-title">Travel Destinations</div>
+        </a>
+        <a href="/tag/climbing" class="category-listing">
+            <img src="/assets/img/rockclimbing.svg" alt="rock climbing">
+            <div class="category-title">Rock Climbing</div>
+        </a>
+        <a href="/tag/diy-projects" class="category-listing">
+            <img src="/assets/img/diyprojects.svg" alt="drill">
+            <div class="category-title">DIY Projects</div>
+        </a>
+        <a href="/tag/pregnancy-kids" class="category-listing">
+            <img src="/assets/img/kids.svg" alt="swing">
+            <div class="category-title">Pregnancy & Kids</div>
+        </a>
+    </section>
 
-{{!-- For masonry layout for index and tag pages https://masonry.desandro.com/ --}}
-<script type="text/javascript" src="{{asset "js/vendor/masonry.min.js"}}"></script>
-<script type="text/javascript" src="{{asset "js/vendor/imagesloaded.min.js"}}"></script>
-
-<main class="home-content grid">
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>most-recent-card}}
-        </div>
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>blog-desc-card}}
-        </div>
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>author-card}}
-            {{>email-subscribe-card}}
-        </div>
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>section-card slug="pregnancy-kids" disp-title="Pregnancy & Kids"}}
-        </div>
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>section-card slug="sports" disp-title="Sports Fitness & Recovery"}}
-        </div>
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>section-card slug="diy-projects" disp-title="DIY Projects"}}
-        </div> 
-
-        <div class="grid-item">
-        	<div class="grid-sizer"></div>
-        	<div class="gutter-sizer"></div>
-            {{>section-card slug="quilting" disp-title="Quilting & Sewing"}}
-        </div>
-
-
-        <div class="grid-item">
-        	<div class="grid-sizer"></div>
-        	<div class="gutter-sizer"></div>
-            {{>section-card slug="travel" disp-title="Travel"}}
-        </div>
-
-        <div class="grid-item">
-        	<div class="grid-sizer"></div>
-        	<div class="gutter-sizer"></div>
-            {{>section-card slug="climbing" disp-title="Rock Climbing"}}
-        </div>
-
-
-        <div class="grid-item">
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
-            {{>section-card slug="career-gender-equality" disp-title="Career & Gender Equality"}}
-        </div>
-
-
-
-    {{!--For Masonry--layout Masonry after each image loads --}}
-	<script>
-	  $('.grid').imagesLoaded().progress( function() {
-	    new Masonry('.grid', {
-	        itemSelector: '.grid-item',
-	        columnWidth: '.grid-sizer',
-	        percentPosition: true, 
-	        gutter: '.gutter-sizer',
-	        stagger: 20
-	      });
-		});
-    </script>
-</main>
+    {{!-- <section class="category-tile" style="background-image: url(/assets/img/fitness.svg)"> --}}
+    <section class="category-banner">
+        <div class="category-title">Sports Fitness & Recovery</div>
+    </section>
+    <section class="category-banner">
+        <div class="category-title">Career & Gender Equality</div>
+    </section>
+    <section class="category-banner">
+        <div class="category-title">Quilting & Sewing</div>
+    </section>
+    <section class="category-banner">
+        <div class="category-title">Travel Destinations</div>
+    </section>
+    <section class="category-banner">
+        <div class="category-title">Rock Climbing</div>
+    </section>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left" style="background-image: url(/assets/img/diyprojectslight.svg)">
+                <div class="category-title">DIY Projects</div>
+                {{!-- <div class="category-icon-banner"><img src="/assets/img/diyprojectslight.svg" alt="drill"></div> --}}
+                <div class="category-description">how-to guides for the enterprising DIY-yer</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:diy-projects" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div>
+    </section>
+    <section class="category-banner">
+        <div class="category-title">Pregnancy & Kids</div>
+    </section>
+</div>

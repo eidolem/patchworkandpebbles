@@ -1,17 +1,19 @@
-.sidebar-content {
-	@media #{$small-and-down} {
-		margin-top: 2rem;
-	}
-	@media #{$medium-and-up} {
-		margin-top: 5rem;
-	}
-}
-
-.ad-block {
-	@media #{$small-and-down} {
-		margin-bottom: 1rem;
-	}
-	@media #{$medium-and-up} {
-		margin-bottom: 4rem;
+.sidebar {
+	@media #{$large-and-up} {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		> * {
+			margin: 2rem 0;
+		}
+		.title {
+			margin: 1rem 0 0.5rem 0;
+			font-size: 1.5rem;
+			text-decoration: none;
+			color: #4e4e4e;
+			@media #{$large-and-up} {
+				font-size: 1.3rem;
+			}
+		}
 	}
 }

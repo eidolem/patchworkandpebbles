@@ -3,13 +3,13 @@
     <div class="related-posts">
 
         {{#foreach tags limit="1"}}
-            <a href="{{url}}"><h1 class="title">Related Articles</h1></a>
+            <a href="{{url}}"><h2 class="header">Related Articles</h2></a>
         {{/foreach}}
             
         {{!-- for the jquery api to insert posts here --}}
-        <div class="list-of-posts {{class}}"></div>
+        <div class="list-of-posts" id="{{class}}"></div>
 		{{#foreach tags limit="1"}}
-			<a href="{{url}}"><div class="more-on"><i class="fas fa-plus-circle"></i>&nbsp;more</div></a>
+			<a href="{{url}}"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
 		{{/foreach}}
     </div>
 {{/if}}

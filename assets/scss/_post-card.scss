@@ -1,12 +1,13 @@
 
 .card {
-	flex: 1 1 300px;
+	flex: 1 1 270px;
     overflow: hidden;
-    margin: 0 20px 40px 20px;
+    margin: 0 25px 40px 25px;
     min-height: 300px;
+    max-width: 350px;
     background: #fff 50%;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
     transition: all .5s ease;
 	&:hover {
@@ -26,7 +27,7 @@
 	    overflow: hidden;
 	}
 	.card-content {
-		padding: 20px 15px 30px 15px;
+		padding: 10px 15px 30px 15px;
 		.card-tag {
 			padding-bottom: 0.3rem;
 			p {
@@ -40,23 +41,28 @@
 				@media #{$large-and-up}{
 					font-size: 0.8rem;
 				}
-				color: #738a94;
+				color: #adadad;
 			}
 		}
 		h1.card-title {
 			padding: 0rem 0rem 0.5rem 0rem;
 			margin: 0;
-			font-size: 1.1rem;
+			font-size: 1.3rem;
 			color: #000;
 			line-height: normal;
+			@media #{$medium-and-up}{
+				font-size: 1.1rem;
+			}
 		}
 		.card-excerpt {
 			p {
 				font-family: 'PT Sans Narrow', sans-serif;
-				font-weight: 300;
 				font-size: 1rem;
 				margin: 0 0;
-				opacity: 0.9;
+				color: #4e4e4e;
+				@media #{$large-and-up}{
+					font-size: 0.9rem;
+				}
 			}
 		}
 	}

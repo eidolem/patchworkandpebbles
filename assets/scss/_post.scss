@@ -9,12 +9,14 @@
 		"post-footer";
 	margin-bottom: 3rem;
 	@media #{$large-and-up}{
-        grid-template-columns: 6fr 3fr;
-        grid-template-areas:
-	 		"feature-image feature-image"
-	 		"post-header post-header"
-	 		"post-content sidebar"
-	 		"post-footer post-footer";
+		&:not( .page ) {
+	        grid-template-columns: 6fr 3fr;
+	        grid-template-areas:
+		 		"feature-image feature-image"
+		 		"post-header post-header"
+		 		"post-content sidebar"
+		 		"post-footer post-footer";
+	 	}
 	}
 	.feature-image-wrapper {
 		@media #{$large-and-up} {
@@ -23,7 +25,7 @@
 	}
 	.feature-image {
 		width: 100vw;
-	 	height: 40vh;
+	 	height: 30vh;
 	 	position: relative;
 	 	left: 50%;
 	 	right: 50%;
@@ -47,7 +49,7 @@
 		padding: 0 0 2.5rem 5%;
 		@media #{$medium-and-up} {
 			padding: 3rem 2rem 1rem 2rem;
-			margin: -5rem 0 2rem 0;
+			margin: -8rem 0 2rem 0;
 			background-color: #fff;
 			border-bottom: 1px solid #d3d3d3;
 			z-index: 2;
@@ -60,9 +62,12 @@
 			width: 60vw;
 		}
 		.post-title {
-			margin: 0 0 4rem 0;
+			margin: 0 1rem 2rem 0;
 			font-size: 2.3rem;
 			color: #000;
+			@media #{$medium-and-up} {
+				margin: 0 0 4rem 0;
+			}
 		}
 		&.move-title-down {
 			margin-top: 4rem;
@@ -90,12 +95,15 @@
 }
 
 .post-content {
-	padding-left: 20px;
-	padding-right: 20px;
+	> *:not( .fluid-width-video-wrapper ) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
     img {
     	width: calc(100% + 40px);
     	transform: translateX(-20px);
     	display: block;
+    	margin-bottom: 2rem;
     }
 	@media #{$medium-and-up} {
 		width: 75vw;
@@ -104,17 +112,22 @@
 	}
 	@media #{$large-and-up} {
 		grid-area: post-content;
-		justify-self: end;
-		width: auto;
+		width: 80%;
 		max-width: 800px;
+		justify-self: flex-end;
+		margin-right: 2rem;
 	}
+}
+
+.page .post-content {
+	justify-self: center;
 }
 
 .sidebar {
 	display: none;
 	@media #{$large-and-up} {
 		grid-area: sidebar;
-		display: block;
+		// display: block;
 		justify-self: center;
 		width: 80%;
 		max-width: 300px;

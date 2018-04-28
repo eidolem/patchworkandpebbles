@@ -63,33 +63,6 @@
     <script type="text/javascript">
         $( document ).ready(function(){
             $(".post-content").fitVids();
-            
-            // Detect scroll events. Check every 250ms instead of every pixel scroll. Less expensive to compute every function.
-            var didScroll;
-            $(document).scroll(function() {
-                didScroll = true;
-            });
-            setInterval (function(){
-                if(didScroll) {
-                    didScroll = false;
-                }
-            }, 250);
-
-            // For email subscribe popup
-            if (window.location.href.includes("utm_medium=email") == false) {
-                function showHideSubscribePopup () {
-                    // y_pos is where the user is scrolled to
-                    var y_pos = window.pageYOffset; 
-                    // y_pos_break is where classes are added or removed to hide element
-                    var y_pos_break = $('#post-content').height() / 2;
-                    if (y_pos<y_pos_break) {
-                      $("#email-subscribe-popup").addClass('hide');
-                    }
-                    else {
-                      $("#email-subscribe-popup").removeClass('hide');
-                    }
-                }
-            }
         });
     </script>
 

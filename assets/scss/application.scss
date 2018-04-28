@@ -9,6 +9,7 @@
 @import "section-card";
 @import "home";
 @import "sidebar";
+@import "email-subscribe";
 @import "author-card";
 @import "author";
 @import "blog-desc-card";
@@ -31,7 +32,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Quicksand', sans-serif;
-	color: $color-none-dark;
+	color: #60747d;
 	font-weight: 500;
 }
 
@@ -75,9 +76,13 @@ p {
 }
 
 a {
-	text-decoration: underline;
+	text-decoration: none;
 	cursor: pointer;
-	color: #6879ff;
+	color: inherit;
+}
+
+.post-content a {
+	color: #00B0B9;
 }
 
 mark {
@@ -112,12 +117,25 @@ figcaption {
 	}
 }
 
-img {
-	width: 100%;
+blockquote {
+	font-family: 'PT Sans Narrow', sans-serif;
+	color: #6b0096;
+	font-size: 1.3rem;
+	margin: 3rem 20% 3rem auto;
+	width: 70%;
+	text-align: justify;
+	background-image: url("/assets/img/left-quote.svg");
+	background-repeat: no-repeat;
+	background-size: 60px;
+	background-position: center top;
+	overflow: visible;
+	p {
+		padding-top: 2rem;
+	}
 }
 
 ul, ol {
-	margin-left: 2rem;
+	margin-left: 3rem;
 	li ul, li ol {
 		margin-left: 0;
 	}
@@ -142,3 +160,31 @@ ul, ol {
 	}
 }
 
+.more-on {
+	-ms-grid-row-align: center;
+	    align-self: center;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 0.9rem;
+	margin: 10px 0 20px 0;
+	text-align: center;
+	text-decoration: none;
+	color: #4e4e4e;
+	i {
+		color: #4e4e4e;
+		font-size: 1rem;
+	}
+}
+
+.header {
+	font-family: 'Quicksand', sans-serif;
+	color: #4e4e4e;
+	&::after {
+	    content: "";
+	    display: block;
+	    width: 60px;
+	    height: 4px;
+	    background-color: #00B0B9;
+	    border-radius: 10px;
+	    margin-top: 10px;
+	}
+}
