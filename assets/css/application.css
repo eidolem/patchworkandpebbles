@@ -838,13 +838,14 @@ template {
   flex-flow: row wrap;
   justify-content: center;
   max-width: 1000px; }
-  .list-of-categories a {
-    color: #4e4e4e; }
+  .list-of-categories a:hover {
+    color: #00B0B9; }
   .list-of-categories .category-list-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.5rem;
     text-align: center;
-    width: 100%; }
+    width: 90%;
+    margin-bottom: 30px; }
   .list-of-categories .category-listing {
     display: flex;
     flex-flow: column nowrap;
@@ -855,56 +856,70 @@ template {
       max-width: 75px; }
     .list-of-categories .category-listing .category-title {
       margin: 10px 0;
-      font-family: 'PT Sans', sans-serif; }
+      font-family: 'PT Sans', sans-serif;
+      text-align: center; }
 
 .category-banner-wrapper {
   min-height: 300px;
   width: 100%; }
-  .category-banner-wrapper:nth-child(odd) {
-    background-image: linear-gradient(90deg, #eaeaea, #c5c5c5); }
   .category-banner-wrapper:nth-child(even) {
+    background-color: #e2e1de; }
+  .category-banner-wrapper:nth-child(odd) {
     background-color: #fff; }
+  .category-banner-wrapper a .more-on {
+    font-size: 1.4rem;
+    color: #9e9e9e;
+    margin: 20px 0 10px 0; }
+    .category-banner-wrapper a .more-on i {
+      color: #9e9e9e; }
 
 .category-banner {
   display: flex;
   flex-flow: row wrap;
-  padding: 20px 0; }
+  justify-content: center; }
   .category-banner .category-banner-left {
     display: flex;
     flex-flow: column nowrap;
-    flex: 1 1 55%;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 20px 15px 0 30px;
-    justify-content: flex-start; }
+    flex: 1 1 auto;
+    align-items: center;
+    max-width: 600px;
+    justify-content: center; }
+    @media only screen and (min-width: 993px) {
+      .category-banner .category-banner-left {
+        margin-right: 80px; } }
     .category-banner .category-banner-left .category-title {
       font-family: 'Quicksand', sans-serif;
-      font-size: 5rem;
-      line-height: 4rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      color: #cacaca;
-      text-align: left;
-      text-transform: uppercase;
-      z-index: 2; }
-    .category-banner .category-banner-left .category-icon-banner {
-      display: flex;
-      height: 250px;
-      width: 250px;
-      border-radius: 50%;
-      background-color: #00B0B9; }
-      .category-banner .category-banner-left .category-icon-banner img {
-        height: 150px;
-        width: 150px;
-        margin: auto auto; }
+      color: #4e4e4e;
+      margin: 40px 15px 20px 15px; }
+    .category-banner .category-banner-left img {
+      width: 100px;
+      height: 100px; }
     .category-banner .category-banner-left .category-description {
       font-family: 'PT Sans', sans-serif;
-      margin-top: 3rem; }
+      margin: 40px 15px 40px 15px;
+      color: #9e9e9e;
+      font-size: 1.3rem;
+      text-align: center;
+      width: 80%; }
   .category-banner .category-banner-right {
     display: flex;
-    flex: 1 1 40%;
-    justify-content: center; }
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
+    max-width: 400px;
+    align-items: center; }
+    .category-banner .category-banner-right.list-of-posts {
+      margin: 40px 0 30px 0; }
     .category-banner .category-banner-right .post-card {
-      max-width: 300px; }
+      width: 325px; }
+      @media only screen and (max-width: 992px) {
+        .category-banner .category-banner-right .post-card .post-title {
+          font-size: 1rem; } }
+
+.icons-credit {
+  font-size: 0.7rem;
+  margin: 30px 0 10px 0; }
 
 @media only screen and (min-width: 993px) {
   .sidebar {
@@ -954,122 +969,65 @@ template {
         outline: none;
         color: #000; }
 
-.about-me-card {
-  box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.12), 1px 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-  border-top: 10px solid #000;
-  margin: 0rem 0 4rem 0rem; }
-  .about-me-card .title {
-    padding: 1rem 1rem 0.7rem 1rem;
-    border-bottom: 1px solid #ccc;
-    font-family: 'OPTIBodoniCampanileFive', serif;
-    font-weight: 400;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #000;
-    text-decoration: none;
-    line-height: 3rem; }
-    .about-me-card .title a {
-      text-decoration: none;
-      color: #000; }
-  .about-me-card .about-me-name {
-    font-size: 0.9rem;
-    margin: 1rem 0 0.5rem 0;
+.author-page {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; }
+  @media only screen and (min-width: 601px) {
+    .author-page {
+      width: 80%;
+      max-width: 800px; } }
+  .author-page .post-header {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin-top: 50px;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #d3d3d3; }
+    .author-page .post-header .post-title {
+      font-size: 2.3rem;
+      color: #000;
+      margin: 0 50px 0 0; }
+    .author-page .post-header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; }
+  .author-page .timeline-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px dashed #9C94D5;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+    margin: 0 5% 0 5%; }
+    .author-page .timeline-item p {
+      padding-right: 10px; }
+    .author-page .timeline-item img.timeline-icon, .author-page .timeline-item a.timeline-icon {
+      max-height: 50px;
+      max-width: 50px;
+      margin: 0 0; }
+  .author-page .post-content .timeline-spacer {
+    width: 5vw;
+    margin: 0 auto;
+    height: 3rem;
+    border-left-width: 3px;
+    border-left-style: dashed;
+    border-left-color: #9C94D5; }
+  .author-page .contact-me {
+    font-size: 1.2rem;
     text-align: center;
-    padding-bottom: 1rem; }
-  .about-me-card .about-me-find-me-on {
-    font-size: 1rem;
-    margin: 1rem 0 0.5rem 0; }
-  .about-me-card .row {
-    margin-bottom: 0; }
-    .about-me-card .row .col {
-      padding: 0 0.5rem 0 0.5rem; }
-  .about-me-card p {
-    font-size: 1.1rem;
-    margin: 1rem 0 0.5rem 0;
-    line-height: 1.5rem; }
-  .about-me-card .social-icons-row a {
-    text-decoration: none;
-    display: inline-block; }
-  .about-me-card .my-story a {
-    text-decoration-style: dotted;
-    color: #000;
-    font-weight: 300; }
-  .about-me-card img {
-    max-width: 100%;
-    margin-top: 1rem; }
-  .about-me-card img.social-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    opacity: 0.5;
-    display: inline-block; }
-    .about-me-card img.social-icon:hover {
-      opacity: 0.9; }
-
-.author-page .row {
-  margin-bottom: 0; }
-.author-page .post-header {
-  position: relative;
-  background-color: #fff; }
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
-    .author-page .post-header.col {
-      padding: 1rem 1rem 0.5rem 1.5rem; } }
-  @media only screen and (min-width: 993px) {
-    .author-page .post-header.col {
-      padding: 2rem 3rem 1rem 5rem; } }
-  .author-page .post-header h1 {
-    margin: 2rem 0; }
-  .author-page .post-header img {
-    margin: 1rem 1rem; }
-.author-page .post-title {
-  font-weight: 300;
-  font-family: 'Tinos', serif;
-  font-style: italic; }
-  @media only screen and (max-width: 600px) {
-    .author-page .post-title {
-      font-size: 4rem; } }
-  @media only screen and (max-width: 992px) {
-    .author-page .post-title {
-      font-size: 5rem; } }
-  @media only screen and (min-width: 993px) {
-    .author-page .post-title {
-      font-size: 6rem; } }
-.author-page .my-photo {
-  height: 100%; }
-.author-page .post-content .my-story-short .timeline-item {
-  border: 3px dashed #9C94D5;
-  border-radius: 10px;
-  padding: 1rem 1rem;
-  margin-top: 0;
-  margin-bottom: 0; }
-  .author-page .post-content .my-story-short .timeline-item p {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 1rem; }
-  .author-page .post-content .my-story-short .timeline-item .icon, .author-page .post-content .my-story-short .timeline-item a {
-    max-height: 4rem;
-    max-width: 4rem;
-    padding: 0; }
-.author-page .post-content .my-story-short .timeline-spacer {
-  height: 3rem;
-  border-left-width: 3px;
-  border-left-style: dashed;
-  border-left-color: #9C94D5; }
-
-@media only screen and (min-width: 993px) {
-  .blog-desc-card p {
-    font-family: 'Amatic SC', cursive;
-    padding: 6rem 2rem 15rem 2rem;
-    line-height: 5rem;
-    text-align: center;
-    font-size: 4rem; } }
-@media only screen and (max-width: 992px) {
-  .blog-desc-card p {
-    font-family: 'Pompiere', cursive;
-    margin: 0;
-    padding: 3rem 1.5rem 5rem 1.5rem;
-    line-height: 4rem;
-    text-align: center;
-    font-size: 2.6rem; } }
+    font-family: 'Quicksand', sans-serif;
+    color: #4e4e4e;
+    font-weight: 500;
+    margin-bottom: 70px; }
+    .author-page .contact-me img {
+      max-width: 300px;
+      margin: 70px auto 0 auto; }
 
 html {
   font-family: 'PT Serif', serif;

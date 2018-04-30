@@ -1,14 +1,14 @@
 {{!< default}}
 <div class="home-content-wrapper">
     <section class="list-of-categories">
-        <div class="category-list-title">A personal blog from an person. <br>Find Inspiration.</div>
+        <div class="category-list-title">A personal blog.<br>Find inspiration.<br>Find your passion.</div>
         <a href="/tag/sports" class="category-listing">
             <img src="/assets/img/fitness.svg" alt="kettlebell">
             <div class="category-title">Sports Fitness & Recovery</div>
         </a>
-        <a href="/tag/career-gender-equality" class="category-listing">
-            <img src="/assets/img/career.svg" alt="lightbulb">
-            <div class="category-title">Career & Gender Equality</div>
+        <a href="/tag/pregnancy-kids" class="category-listing">
+            <img src="/assets/img/kids.svg" alt="swing">
+            <div class="category-title">Pregnancy & Kids</div>
         </a>
         <a href="/tag/quilting" class="category-listing">
             <img src="/assets/img/quilting.svg" alt="sewing machine">
@@ -26,49 +26,151 @@
             <img src="/assets/img/diyprojects.svg" alt="drill">
             <div class="category-title">DIY Projects</div>
         </a>
-        <a href="/tag/pregnancy-kids" class="category-listing">
-            <img src="/assets/img/kids.svg" alt="swing">
-            <div class="category-title">Pregnancy & Kids</div>
+        <a href="/tag/career-gender-equality" class="category-listing">
+            <img src="/assets/img/career.svg" alt="lightbulb">
+            <div class="category-title">Career & Gender Equality</div>
         </a>
     </section>
 
-    {{!-- <section class="category-tile" style="background-image: url(/assets/img/fitness.svg)"> --}}
-    <section class="category-banner">
-        <div class="category-title">Sports Fitness & Recovery</div>
-    </section>
-    <section class="category-banner">
-        <div class="category-title">Career & Gender Equality</div>
-    </section>
-    <section class="category-banner">
-        <div class="category-title">Quilting & Sewing</div>
-    </section>
-    <section class="category-banner">
-        <div class="category-title">Travel Destinations</div>
-    </section>
-    <section class="category-banner">
-        <div class="category-title">Rock Climbing</div>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
+                <div class="category-title">Sports Fitness & Recovery</div>
+                <img src="/assets/img/fitness.svg" alt="kettlebell">
+                <div class="category-description">on kettlebells, ACL reconstruction surgery, and rock climbing training</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:sports" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/sports"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
     </section>
     <section class="category-banner-wrapper">
         <section class="category-banner">
-            <div class="category-banner-left" style="background-image: url(/assets/img/diyprojectslight.svg)">
+            <div class="category-banner-left">
+                <div class="category-title">Pregnancy & Kids</div>
+                <img src="/assets/img/kids.svg" alt="swing">
+                <div class="category-description">deep-dives into fit pregnancy and travel with a #cragbaby</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:pregnancy-kids" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/pregnancy-kids"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
+    </section>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
+                <div class="category-title">Quilting & Sewing</div>
+                <img src="/assets/img/quilting.svg" alt="sewing machine">
+                <div class="category-description">creating with thread + fabric + sewing machine</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:quilting" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/sewing"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
+    </section>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
+                <div class="category-title">Travel Locations</div>
+                <img src="/assets/img/travelrv.svg" alt="rv trailer">
+                <div class="category-description">photo guides for the outdoor enthusiast</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:travel" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/travel"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
+    </section>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
+                <div class="category-title">Rock Climbing</div>
+                <img src="/assets/img/rockclimbing.svg" alt="rock climbing">
+                <div class="category-description">crag beta and training for the rock crusher</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:climbing" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/climbing"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
+    </section>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
                 <div class="category-title">DIY Projects</div>
-                {{!-- <div class="category-icon-banner"><img src="/assets/img/diyprojectslight.svg" alt="drill"></div> --}}
+                <img src="/assets/img/diyprojects.svg" alt="drill">
                 <div class="category-description">how-to guides for the enterprising DIY-yer</div>
             </div>
             <div class="category-banner-right list-of-posts">
                 {{#get "posts" limit="3" filter="tag:diy-projects" order="published_at desc"}}
                     {{#foreach posts}}
-                        <div class="post-card">
+                        <a href="{{url}}"><div class="post-card">
                             <div class="post-image" style="background-image: url({{image}})"></div>
                             <div class="post-title">{{title}}</div>
-                        </div>
+                        </div></a>
                     {{/foreach}}
                 {{/get}}
             </div>
         </section>
-        <div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div>
+        <a href="/tag/diy-projects"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
     </section>
-    <section class="category-banner">
-        <div class="category-title">Pregnancy & Kids</div>
+    <section class="category-banner-wrapper">
+        <section class="category-banner">
+            <div class="category-banner-left">
+                <div class="category-title">Career & Gender Equality</div>
+                <img src="/assets/img/career.svg" alt="lightbulb">
+                <div class="category-description">a point of view from a female engineer in silicon valley</div>
+            </div>
+            <div class="category-banner-right list-of-posts">
+                {{#get "posts" limit="3" filter="tag:career-gender-equality" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <a href="{{url}}"><div class="post-card">
+                            <div class="post-image" style="background-image: url({{image}})"></div>
+                            <div class="post-title">{{title}}</div>
+                        </div></a>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+        <a href="/tag/career-gender-equality"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
     </section>
+    <div class="icons-credit">...icons on this page made by <a href="http://www.freepik.com" title="Freepik">Freepik,</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>, licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY...</a></div>
 </div>

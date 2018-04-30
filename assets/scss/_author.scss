@@ -1,80 +1,72 @@
 
 .author-page {
-	.row {
-		margin-bottom: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	@media #{$medium-and-up} {
+		width: 80%;
+		max-width: 800px;
 	}
 	.post-header {
-		position: relative;
-		background-color: #fff;
-		@media #{$medium-only}{		
-			&.col {
-				padding: 1rem 1rem 0.5rem 1.5rem;
-			}
+		display: flex;
+		flex-flow: row nowrap;
+		width: 80%;
+		margin-top: 50px;
+		align-items: center;
+	    padding-bottom: 50px;
+    	border-bottom: 1px solid #d3d3d3;
+		.post-title {
+		    font-size: 2.3rem;
+	        color: #000;
+	        margin: 0 50px 0 0;
 		}
-
-		@media #{$large-and-up}{
-			&.col {
-				padding: 2rem 3rem 1rem 5rem;
-			}
-		}
-
-		h1 {
-			margin: 2rem 0;
-		}
-
 		img {
-			margin: 1rem 1rem;
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
 		}
 	}
 
-	.post-title {
-		font-weight: 300;	
-		font-family: 'Tinos', serif;
-		font-style: italic;	
-		@media #{$small-and-down}{
-			font-size: 4rem;
+	.timeline-item {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+		border: 3px dashed #9C94D5;
+		border-radius: 10px;
+		padding: 1rem 1rem;
+		margin: 0 5% 0 5%;
+		p {
+			padding-right: 10px;
 		}
-		
-		@media #{$medium-and-down}{
-			font-size: 5rem;
-		}
-
-		@media #{$large-and-up}{
-			font-size: 6rem;
-		}
-	}
-
-	.my-photo {
-		height: 100%;
-	}
-
-	.post-content {
-		.my-story-short {
-			.timeline-item {
-				border: 3px dashed $color-five;
-				border-radius: 10px;
-				padding: 1rem 1rem;
-				margin-top: 0;
-				margin-bottom: 0;
-
-				p {
-					margin-top: 0;
-					margin-bottom: 0;
-					margin-right: 1rem;
-				}
-				.icon, a {
-					max-height: 4rem;
-					max-width: 4rem;
-					padding: 0;
-				}
-			}
-			.timeline-spacer {
-				height: 3rem;
-				border-left-width: 3px;
-				border-left-style: dashed;
-				border-left-color: $color-five;
-			}
+		img.timeline-icon, a.timeline-icon {
+			max-height: 50px;
+			max-width: 50px;
+			margin: 0 0;
 		}
 	}
+	.post-content .timeline-spacer {
+		width: 5vw;
+		margin: 0 auto;
+		height: 3rem;
+		border-left-width: 3px;
+		border-left-style: dashed;
+		border-left-color: #9C94D5;
+	}
 
+	.contact-me {
+	    font-size: 1.2rem;
+	    text-align: center;
+	    font-family: 'Quicksand', sans-serif;
+	    color: #4e4e4e;
+	    font-weight: 500;
+	    margin-bottom: 70px;
+		img {
+			max-width: 300px;
+			margin: 70px auto 0 auto;
+		}
+	}
 }
