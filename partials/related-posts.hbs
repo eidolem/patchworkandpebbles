@@ -9,7 +9,7 @@
         {{!-- for the jquery api to insert posts here --}}
         <div class="list-of-posts" id="{{class}}"></div>
 		{{#foreach tags limit="1"}}
-			<a href="{{url}}"><div class="more-on"><i class="fas fa-plus-square"></i>&nbsp;more</div></a>
+			<span class="more-on"><a href="{{url}}"><i class="fas fa-plus-square"></i>&nbsp;more</a></span>
 		{{/foreach}}
     </div>
 {{/if}}

@@ -1,8 +1,9 @@
 .post-container {
 	display: -ms-grid;
 	display: grid;
-	grid-template-columns: 1fr;
- 	grid-template-areas:
+	-ms-grid-columns: 1fr;
+	    grid-template-columns: 1fr;
+ 	                grid-template-areas:
 		"feature-image"
 		"post-header"
 		"post-content"
@@ -10,8 +11,9 @@
 	margin-bottom: 3rem;
 	@media #{$large-and-up}{
 		&:not( .page ) {
-	        grid-template-columns: 6fr 3fr;
-	        grid-template-areas:
+	        -ms-grid-columns: 6fr 3fr;
+	            grid-template-columns: 6fr 3fr;
+	                        grid-template-areas:
 		 		"feature-image feature-image"
 		 		"post-header post-header"
 		 		"post-content sidebar"
@@ -20,6 +22,8 @@
 	}
 	.feature-image-wrapper {
 		@media #{$large-and-up} {
+			-ms-grid-row: 1;
+			-ms-grid-column: 1;
 			grid-area: feature-image;
 		}
 	}
@@ -54,9 +58,12 @@
 			border-bottom: 1px solid #d3d3d3;
 			z-index: 2;
 			width: 75vw;
-            justify-self: center;
+            -ms-grid-column-align: center;
+                justify-self: center;
 		}
 		@media #{$large-and-up} {
+			-ms-grid-row: 2;
+			-ms-grid-column: 1;
 			grid-area: post-header;
 			padding: 3rem 4rem 1rem 4rem;
 			width: 60vw;
@@ -88,7 +95,8 @@
 			color: #000;
 			a {
 				color: #000;
-		        text-decoration-style: dotted;
+                -webkit-text-decoration: underline dotted;
+                        text-decoration: underline dotted;
 			}
 		}
 	}
@@ -101,7 +109,8 @@
 	}
     img {
     	width: calc(100% + 40px);
-    	transform: translateX(-20px);
+    	-webkit-transform: translateX(-20px);
+    	        transform: translateX(-20px);
     	display: block;
     	margin-bottom: 2rem;
     }
@@ -111,6 +120,8 @@
             justify-self: center;
 	}
 	@media #{$large-and-up} {
+		-ms-grid-row: 3;
+		-ms-grid-column: 1;
 		grid-area: post-content;
 		width: 80%;
 		max-width: 800px;
@@ -120,15 +131,16 @@
 }
 
 .page .post-content {
-	justify-self: center;
+	-ms-grid-column-align: center;
+	    justify-self: center;
 }
 
 .sidebar {
 	display: none;
 	@media #{$large-and-up} {
 		grid-area: sidebar;
-		// display: block;
-		justify-self: center;
+		-ms-grid-column-align: center;
+		    justify-self: center;
 		width: 80%;
 		max-width: 300px;
 	}
@@ -138,7 +150,10 @@
 	display: flex;
 	flex-flow: column wrap; 
 	justify-content: center;
+	margin-top: 3rem;
 	@media #{$large-and-up} {
+		-ms-grid-row: 4;
+		-ms-grid-column: 1;
 		grid-area: post-footer;
 	}
 }

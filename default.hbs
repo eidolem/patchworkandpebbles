@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
 <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
@@ -18,13 +18,13 @@
 
     {{!-- Styles'n'Scripts --}}
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/application.min.css"}}" />
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     {{!-- Fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand:300,400,500,700|PT+Sans+Narrow:400,700|Montserrat:300,400,500,600,700,800,900|Open+Sans:300,300i,400,400i,600,600i,700,700i|Open+Sans+Condensed:300,700|Source+Sans+Pro|PT+Serif:400,400i,700,700i|PT+Sans:400,400i,700,700i|Noto+Sans:400,700|Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700|Roboto:300,400,500,700,900|Material+Icons|Tinos:400,400i|Aldrich|Amatic+SC|Pompiere" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Quicksand:300,400,500,700|PT+Sans+Narrow:400,700|PT+Serif:400,400i,700,700i|PT+Sans:400,400i,700,700i|Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
     {{!-- AdSense regular ad slots --}}
@@ -58,6 +58,10 @@
     
     {{!-- Get all tags for this post and call RelatedPosts --}}
     <script type="text/javascript" src="{{asset "js/application.js"}}"></script>
+
+    {{!-- For external svg browser support --}}
+    <script type="text/javascript" src="{{asset "/js/vendor/svg4everybody.min.js"}}></script>
+    <script>svg4everybody();</script>
 
     {{!-- Everything for page ready() --}}
     <script type="text/javascript">

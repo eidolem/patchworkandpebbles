@@ -32,10 +32,10 @@ function renderRelatedPosts(data) {
     }
     $.each(displayPosts, function (i, post) {
         result.prepend(
-            '<a href="' + post.url + '" class="post-card">'
+            '<span><a href="' + post.url + '" class="post-card">'
                 + '<div class="post-image" style="background-image: url(' + post.image + ')"></div>'
                 + '<div class="post-title">' + post.title + '</div>'
-                + '</a></div>'
+                + '</a></span></div>'
         );
     });
 
@@ -53,10 +53,10 @@ function renderRelatedPosts(data) {
     }
     $.each(displayPosts2, function (i, post) {
         result2.prepend(
-            '<a href="' + post.url + '" class="post-card">'
+            '<span><a href="' + post.url + '" class="post-card">'
                 + '<div class="post-image" style="background-image: url(' + post.image + ')"></div>'
                 + '<div class="post-title">' + post.title + '</div>'
-                + '</a></div>'
+                + '</a></span></div>'
         );
     });
 }

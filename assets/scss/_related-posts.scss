@@ -1,5 +1,5 @@
 
-//Common related-posts attributes
+/*Common related-posts attributes*/
 .related-posts {
 	display: flex;
 	flex-flow: column nowrap;
@@ -11,8 +11,8 @@
 }
 
 
-//Default format for vertical list of posts, where image and title are in same row for each post
-//Sidebar (shown on large only) and footer (small and med)
+/*Default format for vertical list of posts, where image and title are in same row for each post*/
+/*Sidebar (shown on large only) and footer (small and med)*/
 .list-of-posts {
 	display: flex;
 	flex-flow: column wrap;
@@ -21,6 +21,9 @@
 		display: flex;
 		flex-flow: row nowrap;
 		margin: 10px 0;
+			&:hover {
+				color: $highlight-color;
+			}
 		.post-image {
 			flex: 0 0 100px;
 			width: 100px;
@@ -31,7 +34,8 @@
 		}
 		.post-title {
 			flex: 1 1 60%;
-		    align-self: center;
+		    -ms-grid-row-align: center;
+		        align-self: center;
 			font-family: 'Quicksand', sans-serif;
 			word-wrap: break-word;
 			margin-left: 15px;
@@ -42,8 +46,8 @@
 }
 
 
-//Overwrite defaults for footer (small only, where it's vertical)
-//And for footer (med, large where it's horizontal)
+/*Overwrite defaults for footer (small only, where it's vertical)*/
+/*And for footer (med, large where it's horizontal)*/
 .post-footer{
 	max-width: 100vw;
 	@media #{$small-and-down} {
@@ -68,9 +72,9 @@
 			.post-card {
 				flex-flow: column nowrap;
 				align-items: center;
-				flex: 0 1 150px;
+				flex: 0 1 100px;
 				margin: 10px 20px;
-				width: 200px;
+				max-width: 200px;
 				.post-title {
 					flex: 1 1 auto;
 					margin: 10px 0;
@@ -79,9 +83,6 @@
 					text-align: center;
 				}
 			}
-		}
-		.more-on {
-			margin-left: 20px;
 		}
 	}
 

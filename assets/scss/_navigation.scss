@@ -10,12 +10,8 @@
 		position: fixed;
 	}
 	a {
-		color: #000;
-		opacity: 0.8;
+		color: #4e4e4e;
 		text-decoration: none;
-		&:hover {
-			opacity: 1;
-		}
 	}
 	ul {
 		display: flex;
@@ -69,6 +65,9 @@
     				padding: 8px 0;
     				a {
     					display: block;
+    					&:hover {
+    						color: $highlight-color;
+    					}
     				}
     			}
 			}
@@ -85,6 +84,8 @@
     transition: 0.5s;
     padding-top: 40px;
     overflow-x: hidden;
+    top: 0;
+    left: 0;
     .closebtn {
 	    position: absolute;
 	    top: 0;

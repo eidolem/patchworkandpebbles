@@ -6,11 +6,12 @@
 @import "post-card";
 @import "tag";
 @import "related-posts";
-@import "section-card";
 @import "home";
 @import "sidebar";
 @import "email-subscribe";
 @import "author";
+
+@namespace svg url(http://www.w3.org/2000/svg);
 
 html {
 	font-family: 'PT Serif', serif;
@@ -80,7 +81,7 @@ a {
 }
 
 .post-content a {
-	color: #00B0B9;
+	color: $highlight-color;
 }
 
 mark {
@@ -119,7 +120,7 @@ blockquote {
 	font-family: 'PT Sans Narrow', sans-serif;
 	color: #6b0096;
 	font-size: 1.3rem;
-	margin: 3rem 20% 3rem auto;
+	margin: 3rem auto 3rem auto;
 	width: 70%;
 	text-align: justify;
 	background-image: url("/assets/img/left-quote.svg");
@@ -159,8 +160,8 @@ ul, ol {
 }
 
 .more-on {
-	-ms-grid-row-align: center;
-	    align-self: center;
+	display: flex;
+	justify-content: center;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 0.9rem;
 	margin: 10px 0 20px 0;
@@ -170,6 +171,16 @@ ul, ol {
 	i {
 		color: #4e4e4e;
 		font-size: 1rem;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		&:hover {
+			color: $highlight-color;
+			i {
+				color: $highlight-color;
+			}
+		}
 	}
 }
 
@@ -181,7 +192,7 @@ ul, ol {
 	    display: block;
 	    width: 60px;
 	    height: 4px;
-	    background-color: #00B0B9;
+	    background-color: $highlight-color;
 	    border-radius: 10px;
 	    margin-top: 10px;
 	}
