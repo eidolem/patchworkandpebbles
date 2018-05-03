@@ -18,7 +18,7 @@
 
     {{!-- Styles'n'Scripts --}}
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/application.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -58,10 +58,6 @@
     
     {{!-- Get all tags for this post and call RelatedPosts --}}
     <script type="text/javascript" src="{{asset "js/application.js"}}"></script>
-
-    {{!-- For external svg browser support --}}
-    <script type="text/javascript" src="{{asset "/js/vendor/svg4everybody.min.js"}}></script>
-    <script>svg4everybody();</script>
 
     {{!-- Everything for page ready() --}}
     <script type="text/javascript">

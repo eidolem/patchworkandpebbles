@@ -390,7 +390,7 @@ template {
   -webkit-transform: translateX(-20px);
   transform: translateX(-20px);
   display: block;
-  margin-bottom: 2rem; }
+  margin-top: 49px; }
 @media only screen and (min-width: 601px) {
   .post-content {
     width: 75vw;
@@ -513,7 +513,8 @@ template {
       white-space: nowrap; }
 
 .site-header {
-  background-color: #fff;
+  /* background-color: #fff;*/
+  background-color: #042641;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -522,9 +523,11 @@ template {
   width: 100%; }
   @media only screen and (min-width: 993px) {
     .site-header {
-      position: fixed; } }
+      position: fixed;
+      height: 60px; } }
   .site-header a {
-    color: #4e4e4e;
+    /* color: #4e4e4e;*/
+    color: #fff;
     text-decoration: none; }
   .site-header ul {
     display: flex;
@@ -545,7 +548,7 @@ template {
   .site-header .title {
     font-family: 'Amatic SC', sans-serif;
     text-transform: uppercase;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     margin-left: 30px; }
   .site-header .right-menu-items {
     display: none; }
@@ -556,7 +559,8 @@ template {
         font-size: 0.9rem; }
         .site-header .right-menu-items i {
           vertical-align: text-bottom;
-          color: #4e4e4e; }
+          /* color: #4e4e4e;*/
+          color: #fff; }
         .site-header .right-menu-items .dropdown {
           margin-right: 1rem; }
           .site-header .right-menu-items .dropdown:hover .dropdown-content {
@@ -564,7 +568,8 @@ template {
         .site-header .right-menu-items .dropdown-content {
           display: none;
           position: absolute;
-          background-color: #f9f9f9;
+          /* background-color: #f9f9f9;*/
+          background-color: #042641;
           width: auto;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           padding: 10px 25px;
@@ -1108,7 +1113,7 @@ blockquote {
   background-position: center top;
   overflow: visible; }
   blockquote p {
-    padding-top: 2rem; }
+    padding-top: 60px; }
 
 ul, ol {
   margin-left: 3rem; }

@@ -1,5 +1,6 @@
 .site-header {
-	background-color: #fff;
+	/* background-color: #fff;*/
+	background-color: #042641;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
@@ -8,9 +9,11 @@
 	width: 100%;
 	@media #{$large-and-up} {
 		position: fixed;
+		height: 60px;
 	}
 	a {
-		color: #4e4e4e;
+		/* color: #4e4e4e;*/
+		color: #fff;
 		text-decoration: none;
 	}
 	ul {
@@ -34,7 +37,7 @@
 	.title {
 		font-family: 'Amatic SC', sans-serif;
 		text-transform: uppercase;
-		font-size: 2.3rem;
+		font-size: 2.2rem;
 		margin-left: 30px;
 	}
 	.right-menu-items {
@@ -45,8 +48,9 @@
 			font-size: 0.9rem;
 			i {
 				vertical-align: text-bottom;
-			    color: #4e4e4e;
-			}
+			    /* color: #4e4e4e;*/
+			    color: #fff;
+			} 
 			.dropdown {
 				margin-right: 1rem;
 				&:hover .dropdown-content{
@@ -56,7 +60,8 @@
 			.dropdown-content {
 				display: none;
 				position: absolute;
-    			background-color: #f9f9f9;
+    			/* background-color: #f9f9f9;*/
+    			background-color: #042641;
     			width: auto;
     			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     			padding: 10px 25px;
