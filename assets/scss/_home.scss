@@ -25,6 +25,7 @@
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: center;
+		justify-content: center;
 		margin: 2rem 2rem;
 		min-width: 200px;
 		.category-title {
@@ -36,10 +37,41 @@
 			width: 75px;
 			height: 75px;
 		}
+		svg {
+			fill: #4e4e4e;
+		}
 		&:hover{
 			.category-list-icon {
 				fill: $highlight-color;
 			}
+		}
+	}
+}
+
+.most-recent-posts {
+	width: 100%;
+	background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);
+	margin-bottom: 0;
+	.header {
+		font-size: 2.2rem;
+		margin: 60px 20px 30px 20px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.more-on {
+	    font-size: 1.2rem;
+	    background-color: #ececec;
+	    height: 45px;
+	    width: 90px;
+	    border-radius: 0 0 90px 90px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    position: relative;
+	    top: 63px;
+		i {
+			font-size: 2.5rem;
+			margin-top: -45px;
+			color: #fff;
 		}
 	}
 }
@@ -116,7 +148,7 @@
 	    position: relative;
 	    top: 63px;
 	}
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		/*background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);*/
 		background-color: #042641;
 		.more-on {
@@ -141,7 +173,7 @@
 	 		}
 	 	}
 	}
-	&:nth-child(odd) {
+	&:nth-child(even) {
 		background-color: #fff;
 		.more-on {
 			background-color: #fff;

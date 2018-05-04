@@ -1,0 +1,19 @@
+
+
+<section class="most-recent-posts">
+    <a href="/page/2"><h2 class="header">Most Recent Articles</h2></a>
+    <div class="list-of-posts">
+        {{#get "posts" limit="4" order="published_at desc"}}
+            {{#foreach posts}}
+                <a href={{url}}>
+                    <div class="post-card">
+                        <div class="post-image" style="background-image: url({{image}})"></div>
+                        <div class="post-title">{{title}}</div>
+                    </div>
+                </a>
+            {{/foreach}}    
+        {{/get}}
+    </div>
+        
+	<span class="more-on"><a href="/page/2"><i class="fas fa-plus-circle"></i></a></span>
+</section>
