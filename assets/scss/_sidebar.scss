@@ -2,7 +2,7 @@
 	@media #{$large-and-up} {
 		display: flex;
 		flex-flow: column nowrap;
-		justify-content: space-between;
+		/*justify-content: flex-start;*/
 		> * {
 			margin: 2rem 0;
 		}

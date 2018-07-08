@@ -1,5 +1,12 @@
 {{!< default}}
 
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-2599762387787801",
+          enable_page_level_ads: true
+     });
+    </script>
+
 {{#post}}
 <article class="{{post_class}} post-container">
     {{#if image}}
@@ -19,13 +26,14 @@
     </section>
 
     <aside class="sidebar">
-        {{>ad-card-amazon amazon_uuid="9feef2bb-67cb-48e6-b2e8-43234a8ca829"}}
+        {{>ad-card-amazon}}
         {{>related-posts class="list-of-posts-sidebar"}}
         {{>email-subscribe}}
+        {{>ad-card-google}}
     </aside> 
 
     <aside class="post-footer">
-        {{>ad-card-google}}
+        {{!--{{>ad-card-google}}--}}        
         {{>related-posts class="list-of-posts-footer"}}
     </aside>
 

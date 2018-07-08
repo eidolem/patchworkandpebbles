@@ -31,7 +31,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Quicksand', sans-serif;
-	color: #60747d;
+	color: $highlight-color; 
 	font-weight: 500;
 }
 
@@ -47,7 +47,7 @@ h2 {
 
 h3 { 
   font-size: 1.2rem;
-  margin: 2rem 0 1rem 0;
+  margin: 3rem 0 1rem 0;
 }
 
 h4 {
@@ -123,12 +123,12 @@ blockquote {
 	margin: 3rem auto 3rem auto;
 	width: 70%;
 	text-align: justify;
-	background-image: url("/assets/img/left-quote.svg");
+	background-image: url("/assets/img/leftquote.svg");
 	background-repeat: no-repeat;
 	background-size: 60px;
 	background-position: center top;
 	overflow: visible;
-	p {
+	p:first-of-type {
 		padding-top: 60px;
 	}
 }

@@ -3,7 +3,7 @@
 	display: grid;
 	-ms-grid-columns: 1fr;
 	    grid-template-columns: 1fr;
- 	                                                                                    grid-template-areas:
+ 	        grid-template-areas:
 		"feature-image"
 		"post-header"
 		"post-content"
@@ -13,7 +13,7 @@
 		&:not( .page ) {
 	        -ms-grid-columns: 6fr 3fr;
 	            grid-template-columns: 6fr 3fr;
-	                                                                                            grid-template-areas:
+	                grid-template-areas:
 		 		"feature-image feature-image"
 		 		"post-header post-header"
 		 		"post-content sidebar"
@@ -150,6 +150,7 @@
 	display: flex;
 	flex-flow: column wrap; 
 	justify-content: center;
+	align-items: center;
 	margin-top: 3rem;
 	@media #{$large-and-up} {
 		-ms-grid-row: 4;

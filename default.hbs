@@ -18,7 +18,7 @@
 
     {{!-- Styles'n'Scripts --}}
     {{!-- *** replace with minimized file! *** --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/application.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/application.min.css"}}" />
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -41,17 +41,6 @@
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-
-    {{!-- Amazon mobile pop-over popup ads --}}
-    <script type="text/javascript">
-        amzn_assoc_ad_type = "link_enhancement_widget";
-        amzn_assoc_tracking_id = "patchworkandp-20";
-        amzn_assoc_linkid = "32a6a05f0c8f99fa3ed0327799f77be7";
-        amzn_assoc_placement = "";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "US";
-    </script>
-    <script async src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
 
     {{!-- Fitvids makes video embeds responsive and awesome --}}
     <script type="text/javascript" src="{{asset "js/vendor/fitvids.min.js"}}"></script>

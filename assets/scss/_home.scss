@@ -26,12 +26,19 @@
 		flex-flow: column nowrap;
 		align-items: center;
 		justify-content: center;
-		margin: 2rem 2rem;
-		min-width: 200px;
+		margin: 1rem;
+		min-width: 150px;
+		max-width: 150px;
+		@media #{$large-and-up} {
+			margin: 2rem 2rem;
+			min-width: 200px;
+		}
 		.category-title {
 			margin: 10px 0;
 			font-family: 'PT Sans', sans-serif;
 			text-align: center;
+			font-size: 0.9rem;
+			margin-top: 20px;
 		}
 		.category-list-icon {
 			width: 75px;
@@ -50,13 +57,17 @@
 
 .most-recent-posts {
 	width: 100%;
-	background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);
+	background: linear-gradient(#dcdcdc 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);
 	margin-bottom: 0;
 	.header {
 		font-size: 2.2rem;
 		margin: 60px 20px 30px 20px;
 		margin-left: 20px;
 		margin-right: 20px;
+		text-align: center;
+		&::after{
+		    margin: 10px auto 0 auto;
+		}
 	}
 	.more-on {
 	    font-size: 1.2rem;
@@ -71,7 +82,7 @@
 		i {
 			font-size: 2.5rem;
 			margin-top: -45px;
-			color: #fff;
+			color: #cecece;
 		}
 	}
 }
@@ -79,7 +90,7 @@
 /*For the full-width display*/
 .category-banner-wrapper {
 	width: 100%;
-	padding-top: 40px;
+	padding-top: 20px;
 	.category-banner {
 		display: flex;
 		flex-flow: row wrap;
@@ -91,7 +102,7 @@
 		flex-flow: column nowrap;
 		flex: 1 1 auto;
 		align-items: center;
-		max-width: 600px;
+		max-width: 500px;
 		justify-content: center;
 		@media #{$large-and-up} {
 			margin-right: 80px;
@@ -99,7 +110,6 @@
 		.category-title {
 			font-family: 'Quicksand', sans-serif;
 			font-size: 2.2rem;
-			font-weight: 700;
 			color: #3a3a3a;
 			margin: 40px 15px 20px 15px;
 			text-align: center;
@@ -123,7 +133,7 @@
 		display: flex;
 		flex-flow: column nowrap;
 		flex: 1 1 auto;
-		max-width: 400px;
+		max-width: 500px;
 		align-items: center;
 		&.list-of-posts {
 			margin-top: 50px;
@@ -150,10 +160,12 @@
 	}
 	&:nth-child(odd) {
 		/*background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);*/
-		background-color: #042641;
+		background-color: $highlight-color;
 		.more-on {
-			/*background-color: #ececec;*/
-			background-color: #042641;
+			background-color: $highlight-color;
+			a:hover i{
+				color: #cecece;
+			}
 		}
 		i {
 			font-size: 2.5rem;
@@ -169,7 +181,7 @@
 	 	.post-card {
 	 		color: #fff;
 	 		&:hover {
-	 			color: $highlight-color;
+	 			color: #cecece;
 	 		}
 	 	}
 	}
@@ -188,7 +200,7 @@
 
 .icons-credit{
 	font-size: 0.7rem;
-	margin: 70px 0 10px 0;
+	margin: 50px 0 5px 0;
 	font-family: 'PT Sans', sans-serif;
-	text-align: center;
+	text-align: right;
 }

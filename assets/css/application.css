@@ -299,7 +299,7 @@ template {
   display: none; }
 
 /* Media Query Ranges*/
-/* #3fc121; */
+/*#5755d9*/
 .post-container {
   display: -ms-grid;
   display: grid;
@@ -424,6 +424,7 @@ template {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 3rem; }
   @media only screen and (min-width: 993px) {
     .post-footer {
@@ -514,7 +515,7 @@ template {
 
 .site-header {
   /* background-color: #fff;*/
-  background-color: #042641;
+  background-color: #00B0B9;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -568,8 +569,8 @@ template {
         .site-header .right-menu-items .dropdown-content {
           display: none;
           position: absolute;
-          /* background-color: #f9f9f9;*/
-          background-color: #042641;
+          background-color: #f9f9f9;
+          /*background-color: #042641;*/
           width: auto;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           padding: 10px 25px;
@@ -577,7 +578,8 @@ template {
           .site-header .right-menu-items .dropdown-content li {
             padding: 8px 0; }
             .site-header .right-menu-items .dropdown-content li a {
-              display: block; }
+              display: block;
+              color: #4e4e4e; }
               .site-header .right-menu-items .dropdown-content li a:hover {
                 color: #00B0B9; } }
 
@@ -726,9 +728,9 @@ template {
     .list-of-posts .post-card:hover {
       color: #00B0B9; }
     .list-of-posts .post-card .post-image {
-      flex: 0 0 100px;
-      width: 100px;
-      height: 100px;
+      flex: 0 0 150px;
+      width: 150px;
+      height: 150px;
       background-size: cover;
       background-position: center;
       border-radius: 50%; }
@@ -798,12 +800,19 @@ template {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    margin: 2rem 2rem;
-    min-width: 200px; }
+    margin: 1rem;
+    min-width: 150px;
+    max-width: 150px; }
+    @media only screen and (min-width: 993px) {
+      .list-of-categories .category-listing {
+        margin: 2rem 2rem;
+        min-width: 200px; } }
     .list-of-categories .category-listing .category-title {
       margin: 10px 0;
       font-family: 'PT Sans', sans-serif;
-      text-align: center; }
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 20px; }
     .list-of-categories .category-listing .category-list-icon {
       width: 75px;
       height: 75px; }
@@ -814,13 +823,16 @@ template {
 
 .most-recent-posts {
   width: 100%;
-  background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);
+  background: linear-gradient(#dcdcdc 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);
   margin-bottom: 0; }
   .most-recent-posts .header {
     font-size: 2.2rem;
     margin: 60px 20px 30px 20px;
     margin-left: 20px;
-    margin-right: 20px; }
+    margin-right: 20px;
+    text-align: center; }
+    .most-recent-posts .header::after {
+      margin: 10px auto 0 auto; }
   .most-recent-posts .more-on {
     font-size: 1.2rem;
     background-color: #ececec;
@@ -834,12 +846,12 @@ template {
     .most-recent-posts .more-on i {
       font-size: 2.5rem;
       margin-top: -45px;
-      color: #fff; }
+      color: #cecece; }
 
 /*For the full-width display*/
 .category-banner-wrapper {
   width: 100%;
-  padding-top: 40px; }
+  padding-top: 20px; }
   .category-banner-wrapper .category-banner {
     display: flex;
     flex-flow: row wrap;
@@ -850,7 +862,7 @@ template {
     flex-flow: column nowrap;
     flex: 1 1 auto;
     align-items: center;
-    max-width: 600px;
+    max-width: 500px;
     justify-content: center; }
     @media only screen and (min-width: 993px) {
       .category-banner-wrapper .category-banner-left {
@@ -858,7 +870,6 @@ template {
     .category-banner-wrapper .category-banner-left .category-title {
       font-family: 'Quicksand', sans-serif;
       font-size: 2.2rem;
-      font-weight: 700;
       color: #3a3a3a;
       margin: 40px 15px 20px 15px;
       text-align: center; }
@@ -878,7 +889,7 @@ template {
     display: flex;
     flex-flow: column nowrap;
     flex: 1 1 auto;
-    max-width: 400px;
+    max-width: 500px;
     align-items: center; }
     .category-banner-wrapper .category-banner-right.list-of-posts {
       margin-top: 50px; }
@@ -900,10 +911,11 @@ template {
     top: 63px; }
   .category-banner-wrapper:nth-child(odd) {
     /*background: linear-gradient(#ececec 10%, #ffffff 40%, #ffffff 60%, #ececec 90%);*/
-    background-color: #042641; }
+    background-color: #00B0B9; }
     .category-banner-wrapper:nth-child(odd) .more-on {
-      /*background-color: #ececec;*/
-      background-color: #042641; }
+      background-color: #00B0B9; }
+      .category-banner-wrapper:nth-child(odd) .more-on a:hover i {
+        color: #cecece; }
     .category-banner-wrapper:nth-child(odd) i {
       font-size: 2.5rem;
       margin-top: -45px;
@@ -915,7 +927,7 @@ template {
     .category-banner-wrapper:nth-child(odd) .post-card {
       color: #fff; }
       .category-banner-wrapper:nth-child(odd) .post-card:hover {
-        color: #00B0B9; }
+        color: #cecece; }
   .category-banner-wrapper:nth-child(even) {
     background-color: #fff; }
     .category-banner-wrapper:nth-child(even) .more-on {
@@ -927,15 +939,15 @@ template {
 
 .icons-credit {
   font-size: 0.7rem;
-  margin: 70px 0 10px 0;
+  margin: 50px 0 5px 0;
   font-family: 'PT Sans', sans-serif;
-  text-align: center; }
+  text-align: right; }
 
 @media only screen and (min-width: 993px) {
   .sidebar {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between; }
+    /*justify-content: flex-start;*/ }
     .sidebar > * {
       margin: 2rem 0; }
     .sidebar .title {
@@ -1058,7 +1070,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Quicksand', sans-serif;
-  color: #60747d;
+  color: #00B0B9;
   font-weight: 500; }
 
 h1 {
@@ -1071,7 +1083,7 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
-  margin: 2rem 0 1rem 0; }
+  margin: 3rem 0 1rem 0; }
 
 h4 {
   font-size: 1.2rem;
@@ -1134,12 +1146,12 @@ blockquote {
   margin: 3rem auto 3rem auto;
   width: 70%;
   text-align: justify;
-  background-image: url("/assets/img/left-quote.svg");
+  background-image: url("/assets/img/leftquote.svg");
   background-repeat: no-repeat;
   background-size: 60px;
   background-position: center top;
   overflow: visible; }
-  blockquote p {
+  blockquote p:first-of-type {
     padding-top: 60px; }
 
 ul, ol {
